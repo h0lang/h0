@@ -1,5 +1,6 @@
->+14egip
-0 aM4096 b:rd	a ?O<b4Gb4095.:xe\b"Invalid display or image input." cBa0 ?O!c>c108.:xe\b"Invalid X11 socket address." d+c1 ?>d-b2.:xe\b"Missing image path." eBad ?ADe16e.:xe\b"Invalid X11 cookie length." f++d1e ?Gf-b1.:xe\b"Missing image path." g:u0	Va1d ?Eg수.:xe\b"Could not connect to the X11 server." h:xl	gVa+d1fVafb Y:찍	g h
+>+14egipq
+0 aM4096 b:a4	1a ?Eb18446744073709551614.:xi ?O!bEb수.:xe\b"Usage: h0-image-linux IMAGE" cM0 d:a4	2c ?Dd18446744073709551614.:xe\b"Usage: h0-image-linux IMAGE" :xg	Va0b
+0-xi aM4096 b:rd	a ?O<b4Gb4095.:xe\b"Invalid display or image input." cBa0 ?O!c>c108.:xe\b"Invalid X11 socket address." d+c1 ?>d-b2.:xe\b"Missing image path." eBad ?ADe16e.:xe\b"Invalid X11 cookie length." f++d1e ?Gf-b1.:xe\b"Missing image path." g:u0	Va1d ?Eg수.:xe\b"Could not connect to the X11 server." h:xl	gVa+d1fVafb Y:찍	g h
 3-xl'bc @Zc	1 ?!Bcd.:xe\b"Image paths cannot contain NUL." d:결	c0 ?Ed수.:xe\b"Could not open the image." e:옮	d0	2 ?O!e>e67108864	2 Y:디	d .:xe\b"Empty image or file size above 64 MiB." f:옮	d0	0 ?f	2 Y:디	d .:xe\b"Could not rewind the image." g:m0	e ?!g	2 Y:디	d .:xe\b"Could not allocate the file buffer." h\!ge i:f0	dh Y:디	d ?Die	2 Y:m1	ge .:xe\b"Could not read the image." j:xm	abh Y:m1	ge j
 3-xm'bc d:q0	c e!!d ?!d d:p0	c ?!d.:xe\b"Unsupported or damaged image." fTd32 g&d4294967295 ?O>f32767>g32767.:xe\b"Image dimensions exceed 32767 pixels." hS*fg2 ?>h268435456.:xe\b"Pixel buffer exceeds 256 MiB." j:m0	h ?!j.:xe\b"Could not allocate the pixel buffer." k\!jh l0 ?e	1	1 l:xn	ck l:xo	ck ?!l	2 Y:m1	jh .:xe\b"Could not decode the image." m:x0	abkd Y:m1	jh ?m.:xe\b"X11 setup, format, or display failed." 0
 2-xn'a"b c:q2	a ?O!c>c335544320.0 d:m0	c ?!d.0 e\!dc f:q1	aeb Y:m1	dc ?!f.0 g**Tf32&f4294967295	4 h0 W<hg	2 \Q4bh:xk	\B4bh +h4 f
@@ -7,3 +8,11 @@
 1-xk bTa24 ?Eb255.&a16777215 c*192-255b d:xj	&a255bc e:xj	&Ta8	255bc f:xj	&Ta16	255bc ||dSe8Sf16
 3-xj /++*abc127	255
 1-xe'a Y:ew	a Y:ew\b"\n" 1
+1-xg'a bM128 c:a5	\b"DISPLAY"b ?O!cGc128.:xe\b"Set DISPLAY to a local X11 display." dM108 e:xd	Vb0cd ?!e.:xe\b"Use a local X11 display such as :0." fM16 g:xq	Vd16ef h:u0	Vd0e ?Eh수.:xe\b"Could not connect to the X11 server." i:xl	hVf0ga Y:찍	h i
+2-xd'a"b ?!Za.0 c0 ?EBa0	58 c1 ?AAGZa5E\B4a0\s"unix"!c	2 ?EBa4	58 c5 ?AGZa6E\B2a4\s"/:" c6 ?!c.0 dc W<dZa	2 ?!AGBad48LBad57' +d1 ?Edc.0 ?A<dZaOD-Zad	2D\B2ad\s".0".0 WA<+c1dEBac48+c1 e-dc ?>e5.0 f\b"/tmp/.X11-unix/X" @16	1 XbgBfg @e	1 Xb+g16Ba+cg +e16
+2-xq'a"b cM4110 d:a5	\b"XAUTHORITY"c ?Ed수.0 ?O!dEd18446744073709551614	4 d:a5	\b"HOME"c ?O!d>d4095.0 @12	1 Xc+deB\b"/.Xauthority"e +d12 e:결	Vc0d0 ?Ee수.0 f:옮	e0	2 ?O!f>f1048576	2 Y:디	e .0 g:옮	e0	0 ?g	2 Y:디	e .0 h:m0	f ?!h	2 Y:디	e .0 i\!hf j:f0	ei Y:디	e k0 ?Ejf k:xw	iab Y:m1	hf k
+3-xw'ab"c dM128 e0 f:결\b"/proc/sys/kernel/hostname"0 ?Df수	4 e:닷	fd Y:디	f ?>e128 e0 ?AeEBd-e1	10 -e1 :xx	abVd0ec
+4-xx'abc"d e0 f0 g0 W<eZa	20 ?<-Zae2.0 h:xv	ae i+e2 j:xr	ai ?Ej수.0 k:xr	aj ?Ek수.0 l:xr	ak ?El수.0 m:xr	al ?Em수.0 em ?D-m+l2	16` ?!:xz	Va+k2l\b"MIT-MAGIC-COOKIE-1"` nVa+j2k ?AZn!:xz	nb` o\iEh65535	1\iAAEh256Zc:xz	Va+i2jc2	0 ?!o` p+So1!!Zn ?>pf	2 fp g+l2 ?!f.0 @16	1 XdhBa+gh 16
+2-xr'a ?O>bZa<-Zab2.수 c++b2:xv	ab \i>cZa	수c
+2-xv'a |SBab8Ba+b1
+2-xz'ab ?DZaZb.0 @Za	1 ?DBacBbc.0 1

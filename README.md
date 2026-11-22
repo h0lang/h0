@@ -20,7 +20,7 @@ When the requested function is already known, use mode `24`. Put its exact name 
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
-For the 18 public examples with standard-library imports, the complete native standard-library contract table costs 2,365 tokens in `o200k_base` and 2,383 in `cl100k_base`. Target-specific output had medians of 292.5 and 301.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 70,270 to 33,978 and from 70,725 to 34,219 respectively. The comparison counts supplied reference and source text.
+For the 18 public examples with standard-library imports, the complete native standard-library contract table costs 2,435 tokens in `o200k_base` and 2,453 in `cl100k_base`. Target-specific output had medians of 292.5 and 301.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 72,431 to 34,949 and from 72,906 to 35,210 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
@@ -112,15 +112,15 @@ Load `>+m` for the [u64 map](std/map.h0) on Windows x64, Linux x64, or RV64. Sup
 
 The [Windows image viewer](examples/bmp-viewer.h0) opens uncompressed 24-bit and 32-bit BMP and PNG, including Adam7, at original pixel size. H0 reads and decodes files, composites PNG transparency against gray, and calls Windows to display the result. It accepts files up to 64 MiB, pixel buffers up to 256 MiB, and PNG scratch buffers up to 320 MiB.
 
-The [Linux image viewer](examples/image-viewer-linux.h0) uses the same BMP and PNG decoders and connects directly to X11. Input is the address-length byte, address bytes, cookie-length byte (`0` or `16`), optional cookie bytes, and the UTF-8 image path. Provide a valid cookie when the server requires authentication. The following example targets a local display `:0` that accepts the current user without a cookie.
+The [Linux image viewer](examples/image-viewer-linux.h0) uses the same BMP and PNG decoders and connects directly to X11. It reads `DISPLAY` for a local display such as `:0` or `unix:0.0` and selects an applicable `MIT-MAGIC-COOKIE-1` entry from `XAUTHORITY`, or from `$HOME/.Xauthority` when `XAUTHORITY` is unset or empty. The window closes on a key press or a window manager close request. [X.Org client authentication](https://www.x.org/guide/communication/)
 
 ```sh
 bootstrap/seed/h0-linux-x64 1 < examples/image-viewer-linux.h0 > h0-image-linux
 chmod +x h0-image-linux
-printf '\021/tmp/.X11-unix/X0\000%s' './photo.png' | ./h0-image-linux
+./h0-image-linux './my photo.png'
 ```
 
-The window closes on a key press or a window manager close request.
+With no arguments, the viewer still accepts an address-length byte, address bytes, cookie-length byte (`0` or `16`), optional cookie bytes, and the image path on stdin.
 
 Build and run the viewer from the repository root in `cmd.exe`.
 
@@ -138,6 +138,8 @@ On Linux, `bootstrap/seed/h0-linux-x64 8 < examples/bmp-viewer.h0 > h0-bmp-viewe
 The [Win32 example](examples/win.h0) creates a hidden window, checks its position and size, and destroys it. Mode `8` builds it as a GUI executable.
 
 Load `>+n` to copy the Windows command line into a caller-owned UTF-16LE buffer with `:w5`. The result is the byte count before the trailing UTF-16 NUL, or `u64::MAX` on failure. The viewer parses its path argument in H0. [Windows command-line API](https://learn.microsoft.com/en-us/windows/win32/api/processenv/nf-processenv-getcommandlinew)
+
+On Linux x64, load `>+q` for the [process input module](std/process-linux.h0). `:a4` copies the argument at a zero-based index and `:a5` copies the value for an exact environment key. Both use caller-owned buffers and return the byte count. `u64::MAX - 1` means absent and `u64::MAX` means an error or insufficient output space. The module reads the initial argument and environment records from procfs. [Linux procfs environment](https://man7.org/linux/man-pages/man5/proc_pid_environ.5.html)
 
 In Windows x64 builds, `\@q` gives the Win64 callback address of the local H0 function `q`. The function can take up to eight integer or pointer arguments and return a scalar. References to the same function in one executable yield the same address. The [callback example](examples/win-callback.h0) registers an H0 window procedure, sends it a message, and checks the result.
 
