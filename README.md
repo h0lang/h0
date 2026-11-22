@@ -1,5 +1,7 @@
 # Project H0
 
+H0 prioritizes reducing the total tokens AI agents use to complete programming tasks. Compare prompt and guide input, code, reasoning, and repair through a passing result on the same tasks. Track native runtime, binary size, and build time separately.
+
 H0 (Human Zero) is a native programming language for AI agents. Its Tape notation uses positional registers and compact Hangul instructions. Separate packed functions with a newline or `;;`. The [calendar example](examples/calendar.h0) fits five functions on one line.
 
 H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AGENTS.md) for the language reference, native build commands, standard library, and compiler entry points.
