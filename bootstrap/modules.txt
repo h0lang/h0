@@ -6,3 +6,4 @@ bootstrap/compiler/source.h0
 bootstrap/compiler/optimizations.h0
 bootstrap/compiler/labels.h0
 bootstrap/compiler/diagnostics.h0
+bootstrap/compiler/linux-files.h0
