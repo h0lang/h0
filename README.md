@@ -49,6 +49,10 @@ Load `>+e` for the [BMP decoder](std/bmp.h0). It reads uncompressed 24-bit BGR a
 
 The [BMP example](examples/bmp.h0) builds for Windows and Linux x64. It takes a hex-encoded UTF-8 file path and writes a binary PPM image to standard output. The example accepts files up to 120 KiB. The decoder uses the caller's buffer sizes.
 
+The [Win32 module](std/win.h0) is available with `>+f` on Windows x64. It opens a system DLL by its null-terminated UTF-16LE basename, looks up an ASCII export by its null-terminated name, and calls scalar or pointer signatures using sixteen little-endian 64-bit argument slots. Zero unused slots. A buffer address returned by the module is valid while the caller keeps that buffer live. Release DLL handles after the last call.
+
+The [Win32 example](examples/win.h0) creates a hidden window, checks its position and size, and destroys it. Mode `8` builds it as a GUI executable.
+
 Use `>+2` for the [HTTP request framing module](std/http.h0). The [loopback example](examples/http.h0) uses `>+012` to receive one HTTP/1.1 request with a bounded Content-Length body.
 
 ```sh

@@ -28,3 +28,4 @@ bootstrap/compiler/windows-tcp-connect-import.h0
 bootstrap/compiler/linux-tcp-connect.h0
 bootstrap/compiler/windows-tcp-connect.h0
 bootstrap/compiler/windows-imports.h0
+bootstrap/compiler/windows-ffi.h0
