@@ -10,7 +10,7 @@ For an agent editing an existing program, supply [CORE.md](CORE.md), the program
 
 For edits restricted to particular functions, run either native compiler with mode `23` and the original file on stdin. Each output row gives the zero-based section ordinal, inclusive start byte, exclusive end byte, and function name, separated by spaces. `-` marks an unnamed section. Offsets address the original UTF-8 bytes, including in `;;`-packed files. Imports are skipped, so the caller can read them separately if needed. This mode locates sections in one file. It can index a section with unfinished instructions when its header and boundaries are intact. Use the check modes for validation. On a boundary error it reports `E111` and exits with status 2. Discard output after any nonzero exit.
 
-In `o200k_base`, sending the range list and just the file-picker function for the Windows viewer costs 344 tokens, compared with 2,055 for the complete source. Across five files with one function selected per file, input fell from 7,317 to 1,509 tokens. These counts cover the supplied source and range lists. Task success and reasoning tokens require separate measurement.
+In `o200k_base`, sending the range list and just the file-picker function for the Windows viewer costs 380 tokens, compared with 2,307 for the complete source. Across five files with one function selected per file, input fell from 7,956 to 1,602 tokens. These counts cover the supplied source and range lists. Task success and reasoning tokens require separate measurement.
 
 When the requested function is already known, use mode `24`. Put its exact name or zero-based section ordinal on the first stdin line, followed by the original H0 file. The compiler writes the selected original bytes followed by LF. Use ordinals for unnamed sections or to select among duplicate names. A missing or ambiguous selector reports `E112` and exits with status 2. The excerpt omits imports and other sections, so retain the original file for builds and edits that use numeric or relative calls.
 
@@ -20,7 +20,7 @@ When the requested function is already known, use mode `24`. Put its exact name 
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
-For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,184 tokens in `o200k_base` and 2,200 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 58,818 to 28,601 and from 59,191 to 28,795 respectively. The comparison counts supplied reference and source text.
+For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,223 tokens in `o200k_base` and 2,240 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 59,742 to 28,940 and from 60,133 to 29,137 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
@@ -112,11 +112,16 @@ Build and run the viewer from the repository root in `cmd.exe`.
 if not exist build mkdir build
 bootstrap\seed\h0-windows-x64.exe 8 < examples\bmp-viewer.h0 > build\h0-bmp-viewer.exe
 build\h0-bmp-viewer.exe
+build\h0-bmp-viewer.exe "C:\Pictures\my image.png"
 ```
+
+With one path argument, the viewer opens that file directly. Quote a path containing spaces. Relative paths are resolved from the current working directory. With no argument, the viewer opens the file picker.
 
 On Linux, `bootstrap/seed/h0-linux-x64 8 < examples/bmp-viewer.h0 > h0-bmp-viewer.exe` creates the Windows executable.
 
 The [Win32 example](examples/win.h0) creates a hidden window, checks its position and size, and destroys it. Mode `8` builds it as a GUI executable.
+
+Load `>+n` to copy the Windows command line into a caller-owned UTF-16LE buffer with `:w5`. The result is the byte count before the trailing UTF-16 NUL, or `u64::MAX` on failure. The viewer parses its path argument in H0. [Windows command-line API](https://learn.microsoft.com/en-us/windows/win32/api/processenv/nf-processenv-getcommandlinew)
 
 In Windows x64 builds, `\@q` gives the Win64 callback address of the local H0 function `q`. The function can take up to eight integer or pointer arguments and return a scalar. References to the same function in one executable yield the same address. The [callback example](examples/win-callback.h0) registers an H0 window procedure, sends it a message, and checks the result.
 
