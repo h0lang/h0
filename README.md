@@ -18,13 +18,19 @@ The H0 [scanning module](std/scan.h0) reads those fields from a byte view into l
 
 On Windows and Linux x64 the [file module](std/fs.h0) provides open, read, write, close, seek, and append-only open (`:첨`). Use `:편` for read-write access that preserves file contents. Its second argument is `0` to open an existing file or `1` to create the file if absent. It also implements exact reads, complete writes, and file-to-file copying in H0. The [file example](examples/file.h0) takes a hex-encoded UTF-8 path and copies the file to stdout. Its `>+14` header tells the seed to load standard I/O and file operations from the repository.
 
-Linux x64 file replacement is defined by [std/fs-replace-linux.h0](std/fs-replace-linux.h0). Append it to a program using `>+4` and call `:f3<TAB>ab` with path bytes and contents. It writes a sibling temporary file and syncs it before renaming. It returns the byte count or Max and rejects directories and symbolic links.
+Use `>+a` to load file replacement and its file module dependency. Call `:f3<TAB>ab` with path bytes and contents on Windows or Linux x64. It writes and syncs a sibling temporary file before renaming. It returns the byte count or Max and rejects directories and symbolic links. The [example](examples/replace.h0) accepts a hex-encoded path and contents.
 
 ```sh
 mkdir -p build
-cat examples/replace-linux.h0 std/fs-replace-linux.h0 | bootstrap/seed/h0-linux-x64 1 > build/replace
+bootstrap/seed/h0-linux-x64 1 < examples/replace.h0 > build/replace
 chmod +x build/replace
 ./build/replace 6275696c642f6e6f74652e747874 48300a
+```
+
+```bat
+if not exist build mkdir build
+bootstrap\seed\h0-windows-x64.exe 0 < examples\replace.h0 > build\replace.exe
+build\replace.exe 6275696c642f6e6f74652e747874 48300a
 ```
 
 Use `>+6` for the [arena allocator](std/arena.h0). It allocates aligned byte offsets in a caller-provided buffer and can rewind to a checkpoint. The [arena example](examples/arena.h0) runs on Windows, Linux, and raw RV64.
