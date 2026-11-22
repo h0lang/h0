@@ -20,7 +20,7 @@ When the requested function is already known, use mode `24`. Put its exact name 
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
-For the 20 public examples with standard-library imports, the complete native standard-library contract table costs 2,553 tokens in `o200k_base` and 2,571 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 82,682 to 38,153 and from 83,207 to 38,428 respectively. The comparison counts supplied reference and source text.
+For the 21 public examples with standard-library imports, the complete native standard-library contract table costs 2,666 tokens in `o200k_base` and 2,685 in `cl100k_base`. Target-specific output had medians of 272 and 281. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 89,047 to 39,770 and from 89,617 to 40,052 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
@@ -183,6 +183,10 @@ The [RV64 multicore example](examples/rv64-smp.h0) uses four harts with a 4 KiB 
 (printf '@2147483648 4 4\n'; cat examples/rv64-smp.h0) | bootstrap/seed/h0-linux-x64 25 > h0-smp.elf
 qemu-system-riscv64 -machine virt -smp 4 -m 16M -bios none -kernel h0-smp.elf -display none -serial stdio -monitor none
 ```
+
+Load `>+t` for [RV64 machine traps](std/trap-rv64.h0). Define a local `3-ti` function that receives `mcause`, `mepc`, and the hart's scratch word, and returns the resume PC. `:t3` sets the scratch word and installs the direct trap vector with interrupts disabled. It returns `1` if the hardware rejects the vector. Use `:t4` to set the `mie` mask, `:t5` to toggle global machine interrupts, and `:t8` and `:t9` to write and read the scratch word. `:t6` and `:t7` perform fenced, aligned 64-bit MMIO reads and writes. The trap entry saves the integer registers on the interrupted stack and supports non-nested machine traps. [RISC-V machine-level architecture](https://docs.riscv.org/reference/isa/priv/machine.html)
+
+The [timer example](examples/rv64-timer.h0) programs the QEMU `virt` machine timer for three interrupts, resumes H0 after each one, then writes `H0 MTI 3` to UART. Build it in mode `25`, using the same QEMU command as the UART example above. [QEMU RISC-V virt board](https://www.qemu.org/docs/master/system/riscv/virt.html)
 
 For functions with fixed-size byte buffers, the native seed sizes the stack arena from the buffer declarations. Aligned fixed declarations above 4 MiB in one function report `E108`. The compiler sums declarations conservatively across branches. Functions with runtime-sized allocations keep a 512 KiB arena by default and can grow it through fixed declarations. On Windows and Linux x64, use `>+g` for larger or independently sized buffers.
 
