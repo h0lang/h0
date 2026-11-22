@@ -1,0 +1,7 @@
+bootstrap/compiler/emit.h0
+bootstrap/compiler/syntax.h0
+bootstrap/compiler/images.h0
+bootstrap/compiler/lowering.h0
+bootstrap/compiler/source.h0
+bootstrap/compiler/optimizations.h0
+bootstrap/compiler/labels.h0
