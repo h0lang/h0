@@ -18,7 +18,7 @@ On Windows and Linux x64 the [file module](std/fs.h0) provides open, read, write
 
 Use `>+7` to include the [buffered stream module](std/stream.h0) and its file dependency. The stream position accounts for unread buffered bytes.
 
-On Linux x64, `>+0` includes the [TCP module](std/net.h0). The [echo example](examples/tcp.h0) binds to loopback, prints its assigned port, and serves one connection.
+On Windows and Linux x64, `>+0` includes the [TCP module](std/net.h0). The same [echo example](examples/tcp.h0) builds on both targets, binds to loopback, prints its assigned port, and serves one connection. Windows uses the system Winsock DLL.
 
 ```sh
 mkdir -p build

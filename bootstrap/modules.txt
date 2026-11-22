@@ -11,3 +11,4 @@ bootstrap/compiler/windows-files.h0
 bootstrap/compiler/words.h0
 bootstrap/compiler/modules.h0
 bootstrap/compiler/linux-tcp.h0
+bootstrap/compiler/windows-tcp.h0
