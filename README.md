@@ -14,13 +14,13 @@ The H0 [formatting module](std/fmt.h0) uses single-syllable slots `값` for unsi
 
 The H0 [scanning module](std/scan.h0) reads those fields from a byte view into little-endian 64-bit words and checks their range.
 
-On Windows and Linux x64 the [file module](std/fs.h0) provides open, read, write, close, and seek. The [file example](examples/file.h0) takes a hex-encoded UTF-8 path and copies the file to stdout.
+On Windows and Linux x64 the [file module](std/fs.h0) provides open, read, write, close, and seek. The [file example](examples/file.h0) takes a hex-encoded UTF-8 path and copies the file to stdout. Its `>+14` header tells the seed to load standard I/O and file operations from the repository.
 
-Append the [buffered stream module](std/stream.h0) with `std/fs.h0` to use caller-owned read and write buffers. The stream position accounts for unread buffered bytes.
+Use `>+7` to include the [buffered stream module](std/stream.h0) and its file dependency. The stream position accounts for unread buffered bytes.
 
 ```sh
 mkdir -p build
-cat examples/file.h0 std/fs.h0 std/io.h0 | bootstrap/seed/h0-linux-x64 1 > build/file
+bootstrap/seed/h0-linux-x64 1 < examples/file.h0 > build/file
 chmod +x build/file
 ./build/file 524541444d452e6d64
 ```
@@ -29,8 +29,7 @@ On Windows, run these commands in `cmd.exe`.
 
 ```bat
 if not exist build mkdir build
-copy /b /y examples\file.h0+std\fs.h0+std\io.h0 build\file.h0
-bootstrap\seed\h0-windows-x64.exe 0 < build\file.h0 > build\file.exe
+bootstrap\seed\h0-windows-x64.exe 0 < examples\file.h0 > build\file.exe
 build\file.exe 524541444d452e6d64
 ```
 

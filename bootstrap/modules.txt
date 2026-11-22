@@ -9,3 +9,4 @@ bootstrap/compiler/diagnostics.h0
 bootstrap/compiler/linux-files.h0
 bootstrap/compiler/windows-files.h0
 bootstrap/compiler/words.h0
+bootstrap/compiler/modules.h0

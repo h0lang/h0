@@ -10,6 +10,7 @@ foreach ($module in [IO.File]::ReadAllLines((Join-Path $PSScriptRoot "modules.tx
     $lines += [IO.File]::ReadAllLines((Join-Path $root $module))
 }
 $lines += $io[4..($io.Length - 1)]
+$lines += [IO.File]::ReadAllLines((Join-Path $root "std/fs.h0"))
 [IO.File]::WriteAllText($bundle, ($lines -join "`n") + "`n", [Text.UTF8Encoding]::new($false))
 $seed = Join-Path $PSScriptRoot "seed/h0-windows-x64.exe"
 foreach ($target in @(@("h0-windows-x64.exe", 0), @("h0-linux-x64", 1))) {
