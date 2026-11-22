@@ -8,7 +8,7 @@ The Linux seed is a static ELF that calls the kernel directly. The Windows seed 
 
 The bootstrap compiler is split into [H0 modules](bootstrap/compiler), with [standard I/O](std/io.h0) shared by the compiler and applications. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell to assemble the compiler sources and build both seeds with H0.
 
-On Windows and Linux x64, `std/io.h0` provides separate stdout and stderr writes. Call `:wr` for stdout or `:ew` for stderr, passing a byte view.
+On Windows and Linux x64, `>+1` loads standard I/O. Use `:!42` to print a word in decimal or `:!\b"hello"` to print bytes. The compiler selects the output function from the operand type. Use `:ew` to write a byte view to stderr.
 
 The H0 [formatting module](std/fmt.h0) uses single-syllable slots `값` for unsigned decimal, `간` for signed decimal, and `개` for hexadecimal in byte templates.
 
