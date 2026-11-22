@@ -1,0 +1,4 @@
+0-t0 a:tk ?!a.수 b:w1	a\b"QueryUnbiasedInterruptTimePrecise\0" cM8 d:w4	c eM128 \Q8e0d ?b	3 Y:w3	be Y:w2	a ./\B8c0	10000 b:w1	a\b"QueryUnbiasedInterruptTime\0" ?!b	2 Y:w2	a .수 f:w3	be Y:w2	a ?!&f4294967295.수 /\B8c0	10000
+1-t2 ?Ea수.수 b:t0 ?Eb수.수 ?Gba.0 c:tk ?!c.수 d:w1	c\b"Sleep\0" ?!d	2 Y:w2	c .수 eM128 f0 W<ba	5 g-ab \Q8e0\i>g2147483647	2147483647g Y:w3	de b:t0 ?Eb수	2 f수 ' Y:w2	c f
+0-tk :w0\b"k\0e\0r\0n\0e\0l\03\02\0.\0d\0l\0l\0\0\0"
+1-t1 ?>a2147483647.수 ?!a.0 b:t0 ?OEb수Ga-수b.수 :t2	++ba1
