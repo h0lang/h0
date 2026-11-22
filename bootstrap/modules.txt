@@ -30,3 +30,4 @@ bootstrap/compiler/windows-tcp-connect.h0
 bootstrap/compiler/windows-imports.h0
 bootstrap/compiler/windows-ffi.h0
 bootstrap/compiler/windows-callback.h0
+bootstrap/compiler/mapped-view.h0

@@ -51,7 +51,9 @@ The [BMP example](examples/bmp.h0) builds for Windows and Linux x64. It takes a 
 
 The [Win32 module](std/win.h0) is available with `>+f` on Windows x64. It opens a system DLL by its null-terminated UTF-16LE basename, looks up an ASCII export by its null-terminated name, and calls scalar or pointer signatures using sixteen little-endian 64-bit argument slots. Zero unused slots. A buffer address returned by the module is valid while the caller keeps that buffer live. Release DLL handles after the last call.
 
-The [Windows BMP viewer](examples/bmp-viewer.h0) opens a file picker and displays the selected image at its original pixel size. It uses H0 for file input and pixel decoding, and Windows controls to display the bitmap. It accepts uncompressed 24-bit and 32-bit BMP files up to 64 KiB.
+On Windows and Linux x64, load `>+g` for [operating-system memory](examples/memory.h0). Call `:m0` with the byte count for a zero-initialized region and `:m1` with its address and original size to release it. Allocation returns zero on failure. The binding `b\!an` gives a fresh mutable byte view `b` of the address `a` and length `n`. Byte accesses are bounds-checked. The caller must provide a live, exclusive memory range and end all accesses through the view before releasing that range.
+
+The [Windows BMP viewer](examples/bmp-viewer.h0) opens a file picker and displays the selected image at its original pixel size. It uses H0 for file input and pixel decoding, and Windows controls to display the bitmap. It accepts uncompressed 24-bit and 32-bit BMP files up to 64 MiB.
 
 Build and run the viewer from the repository root in `cmd.exe`.
 
