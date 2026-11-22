@@ -16,6 +16,8 @@ The H0 [scanning module](std/scan.h0) reads those fields from a byte view into l
 
 On Windows and Linux x64 the [file module](std/fs.h0) provides open, read, write, close, and seek. The [file example](examples/file.h0) takes a hex-encoded UTF-8 path and copies the file to stdout.
 
+Append the [buffered stream module](std/stream.h0) with `std/fs.h0` to use caller-owned read and write buffers. The stream position accounts for unread buffered bytes.
+
 ```sh
 mkdir -p build
 cat examples/file.h0 std/fs.h0 std/io.h0 | bootstrap/seed/h0-linux-x64 1 > build/file
