@@ -8,7 +8,7 @@ H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AG
 
 For an agent editing an existing program, supply [CORE.md](CORE.md), the program's source, and its scoped glyph records. Run `bootstrap/seed/h0-linux-x64 10 < examples/calendar.h0` on Linux or `bootstrap\seed\h0-windows-x64.exe 10 < examples\calendar.h0` in Windows `cmd.exe`. Each record gives one glyph and its escaped expansion. Use the full guide for extended syntax and complete library signatures.
 
-Across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
+In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
 The Linux seed is a static ELF that calls the kernel directly. The Windows seed imports `KERNEL32.dll` for operating-system services. Both seeds run without a Python interpreter or C runtime.
 
@@ -95,6 +95,8 @@ build\file.exe 524541444d452e6d64
 ```
 
 Use seed mode `0` to build Windows console PE, `1` to build Linux ELF, `2` for raw RV64 code, or `8` to build a PE with the Windows GUI subsystem. For an English diagnostic before building, use modes `5`, `6`, `7`, and `9` for the corresponding targets. All modes read the source from standard input. Check modes report success or an error code and message. When available, they also report the one-based function section and original line and column. Columns count Unicode scalars.
+
+Use modes `11`, `12`, and `13` to repair source for Windows x64, Linux x64, and RV64. The compiler tries one edit for a repeated view parameter marker, a missing space after a block count, or a missing tab after a call label. It writes the original source when valid or the repaired source when exactly one candidate passes the target check. Otherwise it reports the original diagnostic and status `2`. Check the program behavior with its tests after applying a repair.
 
 ## Developer
 
