@@ -20,7 +20,7 @@ When the requested function is already known, use mode `24`. Put its exact name 
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
-For the 17 public examples with standard-library imports, the complete native standard-library contract table costs 2,276 tokens in `o200k_base` and 2,295 in `cl100k_base`. Target-specific output had medians of 276 and 284. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 64,423 to 30,930 and from 64,872 to 31,148 respectively. The comparison counts supplied reference and source text.
+For the 18 public examples with standard-library imports, the complete native standard-library contract table costs 2,365 tokens in `o200k_base` and 2,383 in `cl100k_base`. Target-specific output had medians of 292.5 and 301.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 70,270 to 33,978 and from 70,725 to 34,219 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
@@ -73,6 +73,8 @@ On Linux x64, load `>+o` for [Unix-domain streams](std/unix-linux.h0). Call `:u0
 
 The [X11 probe](examples/x11-probe.h0) uses that module to connect to a local display. Its stdin contains one address-length byte, the address bytes, and an optional 16-byte `MIT-MAGIC-COOKIE-1` value. It prints the X11 version after the server accepts the setup request. [X11 connection setup](https://www.x.org/releases/X11R7.7/doc/xproto/x11protocol.html)
 
+Load `>+p` for [native X11 windows](std/x11-linux.h0) on Linux x64. `:x0` takes a dedicated connected Unix descriptor, an empty or 16-byte authorization view, top-down BGRX8 pixels, and the dimensions packed as width in the high 32 bits and height in the low 32 bits. It displays an original-size window, repaints after exposure, and returns zero on close. The caller closes the descriptor. The display must support a little-endian 24-bit TrueColor root with 32-bit pixels. [X11 requests and pixel formats](https://www.x.org/releases/X11R7.7/doc/xproto/x11protocol.html)
+
 Use `>+c` for DNS over TCP on Windows and Linux x64. Call `:d0<TAB>abcd` with the resolver's IPv4 word and port, a 16-bit query ID, and an ASCII hostname. It returns an IPv4 word or Max. It validates the response against the question and follows up to 15 CNAME hops in the answer. The [hostname client](examples/connect-name.h0) accepts the resolver address word, resolver TCP port, HTTP port, and hex-encoded hostname.
 
 Use `>+k` for nonblocking TCP and socket readiness on Windows and Linux x64. Call `:n3(socket, 1)` to enable nonblocking mode or pass `0` to restore blocking mode. `:n4` reads once, `:n5` sends once, and `:n6` accepts a nonblocking socket from a nonblocking listener. Reads and sends can return partial counts. The top three u64 values indicate failure, would-block, and interruption, in descending order.
@@ -109,6 +111,16 @@ On Windows and Linux x64, load `>+g` for [operating-system memory](examples/memo
 Load `>+m` for the [u64 map](std/map.h0) on Windows x64, Linux x64, or RV64. Supply a writable buffer of exactly `8+17n` bytes, where `n` is a power of two and at least 4. Initialize or reset it with `:k0`. The map holds up to `3n/4` entries and accepts every u64 key and value. Insert or update with `:k1`, read into an eight-byte output view with `:k2`, remove with `:k3`, and count with `:k4`. The library uses the caller's buffer for the entire lifetime of the map.
 
 The [Windows image viewer](examples/bmp-viewer.h0) opens uncompressed 24-bit and 32-bit BMP and PNG, including Adam7, at original pixel size. H0 reads and decodes files, composites PNG transparency against gray, and calls Windows to display the result. It accepts files up to 64 MiB, pixel buffers up to 256 MiB, and PNG scratch buffers up to 320 MiB.
+
+The [Linux image viewer](examples/image-viewer-linux.h0) uses the same BMP and PNG decoders and connects directly to X11. Input is the address-length byte, address bytes, cookie-length byte (`0` or `16`), optional cookie bytes, and the UTF-8 image path. Provide a valid cookie when the server requires authentication. The following example targets a local display `:0` that accepts the current user without a cookie.
+
+```sh
+bootstrap/seed/h0-linux-x64 1 < examples/image-viewer-linux.h0 > h0-image-linux
+chmod +x h0-image-linux
+printf '\021/tmp/.X11-unix/X0\000%s' './photo.png' | ./h0-image-linux
+```
+
+The window closes on a key press or a window manager close request.
 
 Build and run the viewer from the repository root in `cmd.exe`.
 
