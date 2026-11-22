@@ -20,7 +20,7 @@ When the requested function is already known, use mode `24`. Put its exact name 
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
-For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,223 tokens in `o200k_base` and 2,240 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 59,742 to 28,940 and from 60,133 to 29,137 respectively. The comparison counts supplied reference and source text.
+For the 17 public examples with standard-library imports, the complete native standard-library contract table costs 2,276 tokens in `o200k_base` and 2,295 in `cl100k_base`. Target-specific output had medians of 276 and 284. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 64,423 to 30,930 and from 64,872 to 31,148 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
@@ -68,6 +68,10 @@ Use `>+7` to include the [buffered stream module](std/stream.h0) and its file de
 On Windows and Linux x64, `>+0` includes the [TCP module](std/net.h0). The same [echo example](examples/tcp.h0) builds on both targets, binds to loopback, prints its assigned port, and serves one connection. Windows uses the system Winsock DLL.
 
 Use `>+b` for outbound IPv4 TCP. `:n1<TAB>ab` opens a blocking connection to address word `a` and port `b` in 1–65535, returning a socket or Max. The first IPv4 octet occupies the high byte. The [HTTP client example](examples/connect.h0) accepts the decimal address word and port. For a local peer, pass `2130706433` and its listening port.
+
+On Linux x64, load `>+o` for [Unix-domain streams](std/unix-linux.h0). Call `:u0` with a pathname of 1–107 bytes without NUL or an abstract address of 1–108 bytes beginning with NUL. It returns a connected blocking descriptor or `u64::MAX`. Use `:n0` to send, `:찬` to receive, and `:찍` to close. [Unix socket interface](https://man7.org/linux/man-pages/man7/unix.7.html)
+
+The [X11 probe](examples/x11-probe.h0) uses that module to connect to a local display. Its stdin contains one address-length byte, the address bytes, and an optional 16-byte `MIT-MAGIC-COOKIE-1` value. It prints the X11 version after the server accepts the setup request. [X11 connection setup](https://www.x.org/releases/X11R7.7/doc/xproto/x11protocol.html)
 
 Use `>+c` for DNS over TCP on Windows and Linux x64. Call `:d0<TAB>abcd` with the resolver's IPv4 word and port, a 16-bit query ID, and an ASCII hostname. It returns an IPv4 word or Max. It validates the response against the question and follows up to 15 CNAME hops in the answer. The [hostname client](examples/connect-name.h0) accepts the resolver address word, resolver TCP port, HTTP port, and hex-encoded hostname.
 
