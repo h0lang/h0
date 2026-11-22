@@ -6,13 +6,17 @@ H0 (Human Zero) is a native programming language for AI agents. Its Tape notatio
 
 H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AGENTS.md) for the language reference, native build commands, standard library, and compiler entry points.
 
-For an agent editing an existing program, supply [CORE.md](CORE.md), the program's source, and its scoped glyph records. Run `bootstrap/seed/h0-linux-x64 10 < examples/calendar.h0` on Linux or `bootstrap\seed\h0-windows-x64.exe 10 < examples\calendar.h0` in Windows `cmd.exe`. Each record gives one glyph and its escaped expansion. Use the full guide for extended syntax and complete library signatures.
+For an agent editing an existing program, supply [CORE.md](CORE.md), the program's source, and its scoped glyph records. Run `bootstrap/seed/h0-linux-x64 19 < examples/calendar.h0` on Linux or `bootstrap\seed\h0-windows-x64.exe 19 < examples\calendar.h0` in Windows `cmd.exe`. The compact map is described below. Use the full guide for extended syntax and complete library signatures.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
-On both native seeds, mode `17` packs selected standard-library calls whose repetition can offset the cost of a glyph record. It also packs remaining calls when the source already uses that alias. Mode `18` packs every mapped call and suits agents that already have the alias definitions. Both modes read H0 from stdin and emit H0 on stdout. Use mode `10` on the result to get definitions for its glyphs.
+On both native seeds, mode `17` packs selected standard-library calls whose repetition can offset the cost of a glyph record. It also packs remaining calls when the source already uses that alias. Mode `18` packs every mapped call and suits agents that already have the alias definitions. Both modes read H0 from stdin and emit H0 on stdout. Use mode `19` on the result for a compact map, or mode `10` for individually quoted records.
 
 Across the 20 public examples, mode `17` reduced source plus per-file glyph records from 5,460 to 5,427 tokens in `o200k_base` and from 5,513 to 5,504 in `cl100k_base`. Mode `18` reduced source alone from 5,087 to 4,905 and from 5,125 to 5,076 respectively. With fresh per-file glyph records, mode `18` increased the totals to 5,565 and 5,793. The measurements count input text.
+
+Mode `19` returns two LF-terminated rows. The first maps code glyphs and the second maps escaped Hangul inside byte literals. Each Hangul syllable starts a record whose ASCII expansion continues until the next syllable or the end of the row. Tabs are literal. Backslashes, newlines, carriage returns, and other control bytes use `\\`, `\n`, `\r`, and `\xHH` respectively. Empty rows have no records.
+
+For the 20 public examples in separate sessions, one copy of CORE, the source, and its glyph map per example totaled 27,460 tokens with quoted maps and the previous CORE, and 27,089 with compact maps and the shortened CORE in `o200k_base`. In `cl100k_base` the totals were 27,633 and 27,255. These are input token counts.
 
 The Linux seed is a static ELF that calls the kernel directly. The Windows seed imports `KERNEL32.dll` for operating-system services. Both seeds run without a Python interpreter or C runtime.
 
