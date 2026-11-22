@@ -27,3 +27,4 @@ bootstrap/compiler/file-replace-module.h0
 bootstrap/compiler/windows-tcp-connect-import.h0
 bootstrap/compiler/linux-tcp-connect.h0
 bootstrap/compiler/windows-tcp-connect.h0
+bootstrap/compiler/windows-imports.h0

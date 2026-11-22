@@ -66,7 +66,7 @@ bootstrap\seed\h0-windows-x64.exe 0 < examples\file.h0 > build\file.exe
 build\file.exe 524541444d452e6d64
 ```
 
-Use seed mode `0` to build Windows PE, `1` to build Linux ELF, or `2` for raw RV64 code. For an English diagnostic before building, use modes `5`, `6`, and `7` for the same targets. All modes read the source from standard input. Check modes report success or an error code and message. When available, they also report the one-based function section and original line and column. Columns count Unicode scalars.
+Use seed mode `0` to build Windows console PE, `1` to build Linux ELF, `2` for raw RV64 code, or `8` to build a PE with the Windows GUI subsystem. For an English diagnostic before building, use modes `5`, `6`, `7`, and `9` for the corresponding targets. All modes read the source from standard input. Check modes report success or an error code and message. When available, they also report the one-based function section and original line and column. Columns count Unicode scalars.
 
 ## Developer
 
