@@ -49,6 +49,15 @@ Use `>+b` for outbound IPv4 TCP. `:n1<TAB>ab` opens a blocking connection to add
 
 Use `>+c` for DNS over TCP on Windows and Linux x64. Call `:d0<TAB>abcd` with the resolver's IPv4 word and port, a 16-bit query ID, and an ASCII hostname. It returns an IPv4 word or Max. It validates the response against the question and follows up to 15 CNAME hops in the answer. The [hostname client](examples/connect-name.h0) accepts the resolver address word, resolver TCP port, HTTP port, and hex-encoded hostname.
 
+Load `>+j` for [JSON](std/json.h0). Parse UTF-8 once into a caller-owned tape with `:j0`. Each 16-byte record contains four little-endian u32 fields for the source start, exclusive source end, index after the subtree, and kind. Root is node 0. Object keys and values alternate in the tape. Use `:j2` to look up a UTF-8 key, `:j3` for a zero-based array index, and `:j5` for the source span. Pass the used portion of the tape to all three functions. Numbers stay exact in the source, including exponent notation. `:j1` decodes a quoted string and `:j4` quotes UTF-8. The parser supports up to 64 nested containers with a constant call stack and rejects malformed UTF-8 and unpaired surrogate escapes. [JSON specification](https://www.rfc-editor.org/rfc/rfc8259).
+
+This two-line program prints the exact source text for the value associated with `n`.
+
+```text
+>+1j
+0 a\b"{\"n\":42}" bM48 c:j0	ab ?Ec수.2 d:j2	aVb0*c16	0\b"n" ?Ed수.3 e:j5	Vb0*c16d Y:wr	VaTe32&e4294967295 :fl
+```
+
 Load `>+e` for the [BMP decoder](std/bmp.h0). It reads uncompressed 24-bit BGR and 32-bit BGRX BMP images with DIB headers of at least 40 bytes. It handles bottom-up and top-down rows and strips row padding. Call `:p0` with a byte view to validate the image and get the width in the high 32 bits and height in the low 32 bits. Call `:p1` with the image and a disjoint writable buffer to decode packed RGB8 in top-down row order. Both return zero on failure.
 
 Load `>+h` for [DEFLATE and zlib decoding](std/deflate.h0). `:z0` reads raw DEFLATE and `:z1` reads a zlib stream and verifies Adler-32. Both take the compressed byte view and a disjoint writable output view and return the decoded length or `u64::MAX`. Each call expects exactly one stream. The decoder rejects preset dictionaries, truncated input, trailing bytes, and short output buffers. Discard output on failure. The same H0 module builds for Windows x64, Linux x64, and RV64. [DEFLATE specification](https://www.rfc-editor.org/rfc/rfc1951) and [zlib specification](https://www.rfc-editor.org/rfc/rfc1950).
