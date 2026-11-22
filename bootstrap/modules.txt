@@ -20,3 +20,4 @@ bootstrap/compiler/x64-rip.h0
 bootstrap/compiler/linux-tcp-code.h0
 bootstrap/compiler/x64-indexed.h0
 bootstrap/compiler/instruction-recipe.h0
+bootstrap/compiler/linux-file-meta.h0
