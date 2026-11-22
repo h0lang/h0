@@ -20,7 +20,7 @@ When the requested function is already known, use mode `24`. Put its exact name 
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
-For the 19 public examples with standard-library imports, the complete native standard-library contract table costs 2,500 tokens in `o200k_base` and 2,518 in `cl100k_base`. Target-specific output had medians of 276 and 284. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 77,604 to 36,517 and from 78,103 to 36,784 respectively. The comparison counts supplied reference and source text.
+For the 20 public examples with standard-library imports, the complete native standard-library contract table costs 2,553 tokens in `o200k_base` and 2,571 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 82,682 to 38,153 and from 83,207 to 38,428 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
@@ -166,13 +166,22 @@ build\file.exe 524541444d452e6d64
 
 Use seed mode `0` to build Windows console PE, `1` to build Linux ELF, `2` for raw RV64 code, `8` for a Windows GUI PE, or `25` for an RV64 machine-mode boot ELF. For an English diagnostic before building, use modes `5`, `6`, `7`, `9`, and `26` respectively. All modes read the source from standard input. Check modes report success or an error code and message. When available, they also report the one-based function section and original line and column. Columns count Unicode scalars.
 
-Mode `25` emits a boot entry that sets the stack for hart 0 and enters H0. Secondary harts and a returning hart 0 park in a wait-for-interrupt loop. The ELF has an executable code segment and a separate writable stack segment. It defaults to load address `0x80000000` and a 1 MiB stack. An optional first line `@<decimal load address> <stack KiB>` selects a page-aligned 32-bit load address and a stack from 4 to 16,384 KiB in 4 KiB increments. Size the stack for the compiled program and its call depth. Mode `2` continues to emit a callable routine for a host that supplies the stack.
+Mode `25` emits an RV64 machine-mode boot entry. It defaults to load address `0x80000000`, a 1 MiB stack, and one active hart. An optional first line `@<decimal load address> <stack KiB> [hart count]` selects a page-aligned 32-bit load address, a stack from 4 to 16,384 KiB in 4 KiB increments, and 1–64 active harts. Each enabled hart gets its own stack. With more than one enabled hart, the H0 entry receives the hart ID, the firmware's second argument, and the address of a zero-initialized 4 KiB shared page. The ELF loader must zero its writable segment. Harts outside the configured range and harts that return park in a wait-for-interrupt loop. Mode `2` emits a callable routine for a host that supplies the stack.
 
 The [RV64 UART example](examples/rv64-uart.h0) initializes a 16550-compatible UART at the QEMU `virt` board's address and sends `H0 RV64`. The `>+r` module takes the MMIO base as an argument so other memory-mapped 16550 devices can use it. RV64 mapped byte views use `B` and `X` for byte transactions. [QEMU RISC-V virt board](https://www.qemu.org/docs/master/system/riscv/virt.html)
 
 ```sh
 (printf '@2147483648 4\n'; cat examples/rv64-uart.h0) | bootstrap/seed/h0-linux-x64 25 > h0-uart.elf
 qemu-system-riscv64 -machine virt -smp 4 -m 16M -bios none -kernel h0-uart.elf -display none -serial stdio -monitor none
+```
+
+Load `>+s` for [RV64 atomics](std/atomic-rv64.h0). `:at` fetches and adds, `:ax` exchanges, and `:ac` compares and exchanges. Each returns the previous u64 value. The address must be nonzero and eight-byte aligned in live coherent RAM. The module requires the RISC-V A extension and uses acquire/release ordering. [RISC-V atomic instructions](https://docs.riscv.org/reference/isa/unpriv/a-st-ext.html)
+
+The [RV64 multicore example](examples/rv64-smp.h0) uses four harts with a 4 KiB stack each. It checks both 40,000 fetch-add updates and 40,000 compare-and-exchange updates, then reads per-hart values published in the shared page.
+
+```sh
+(printf '@2147483648 4 4\n'; cat examples/rv64-smp.h0) | bootstrap/seed/h0-linux-x64 25 > h0-smp.elf
+qemu-system-riscv64 -machine virt -smp 4 -m 16M -bios none -kernel h0-smp.elf -display none -serial stdio -monitor none
 ```
 
 For functions with fixed-size byte buffers, the native seed sizes the stack arena from the buffer declarations. Aligned fixed declarations above 4 MiB in one function report `E108`. The compiler sums declarations conservatively across branches. Functions with runtime-sized allocations keep a 512 KiB arena by default and can grow it through fixed declarations. On Windows and Linux x64, use `>+g` for larger or independently sized buffers.
