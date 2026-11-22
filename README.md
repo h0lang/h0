@@ -20,7 +20,7 @@ When the requested function is already known, use mode `24`. Put its exact name 
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
-For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,182 tokens in `o200k_base` and 2,198 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 58,786 to 28,599 and from 59,159 to 28,793 respectively. The comparison counts supplied reference and source text.
+For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,184 tokens in `o200k_base` and 2,200 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 58,818 to 28,601 and from 59,191 to 28,795 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
@@ -92,7 +92,7 @@ Load `>+e` for the [BMP decoder](std/bmp.h0). It reads uncompressed 24-bit BGR a
 
 Load `>+h` for [DEFLATE and zlib decoding](std/deflate.h0). `:z0` reads raw DEFLATE and `:z1` reads a zlib stream and verifies Adler-32. Both take the compressed byte view and a disjoint writable output view and return the decoded length or `u64::MAX`. Each call expects exactly one stream. The decoder rejects preset dictionaries, truncated input, trailing bytes, and short output buffers. Discard output on failure. The same H0 module builds for Windows x64, Linux x64, and RV64. [DEFLATE specification](https://www.rfc-editor.org/rfc/rfc1951) and [zlib specification](https://www.rfc-editor.org/rfc/rfc1950).
 
-Load `>+i` for the [PNG decoder](std/png.h0). It reconstructs noninterlaced grayscale, RGB, indexed, grayscale-alpha, and RGBA images at all legal sample depths. It checks every chunk CRC, combines split IDAT payloads, and decodes transparency from alpha samples or the transparency chunk. [PNG specification](https://www.w3.org/TR/png-3/).
+Load `>+i` for the [PNG decoder](std/png.h0). It reconstructs noninterlaced and Adam7 grayscale, RGB, indexed, grayscale-alpha, and RGBA images at all legal sample depths. It checks every chunk CRC, combines split IDAT payloads, and decodes transparency from alpha samples or the transparency chunk. [PNG specification](https://www.w3.org/TR/png-3/).
 
 Call `:q0` with the file bytes to read the checked header and return the width in the high 32 bits and height in the low 32 bits. `:q2` returns the required scratch capacity. Call `:q1` with the file, disjoint scratch, and a disjoint pixel buffer of at least `4 * width * height` bytes. It returns the dimensions and fills packed top-down BGRA8 with straight alpha. Zero means failure. Discard output on failure. Windows and Linux x64 and RV64 use the same module.
 
@@ -104,7 +104,7 @@ On Windows and Linux x64, load `>+g` for [operating-system memory](examples/memo
 
 Load `>+m` for the [u64 map](std/map.h0) on Windows x64, Linux x64, or RV64. Supply a writable buffer of exactly `8+17n` bytes, where `n` is a power of two and at least 4. Initialize or reset it with `:k0`. The map holds up to `3n/4` entries and accepts every u64 key and value. Insert or update with `:k1`, read into an eight-byte output view with `:k2`, remove with `:k3`, and count with `:k4`. The library uses the caller's buffer for the entire lifetime of the map.
 
-The [Windows image viewer](examples/bmp-viewer.h0) opens uncompressed 24-bit and 32-bit BMP and noninterlaced PNG at original pixel size. H0 reads and decodes files, composites PNG transparency against gray, and calls Windows to display the result. It accepts files up to 64 MiB, pixel buffers up to 256 MiB, and PNG scratch buffers up to 320 MiB.
+The [Windows image viewer](examples/bmp-viewer.h0) opens uncompressed 24-bit and 32-bit BMP and PNG, including Adam7, at original pixel size. H0 reads and decodes files, composites PNG transparency against gray, and calls Windows to display the result. It accepts files up to 64 MiB, pixel buffers up to 256 MiB, and PNG scratch buffers up to 320 MiB.
 
 Build and run the viewer from the repository root in `cmd.exe`.
 
