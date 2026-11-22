@@ -1,1 +1,7 @@
-1- b&Ta32	255 ?Eb1	2 Y:121\b"error E101: invalid function header, entry, or host declaration.\n" .2 ?Eb2Y:121\b"error E102: invalid or unsupported instruction or operand. Section " ?Eb3Y:121\b"error E103: unknown call label. Section " ?Eb4Y:121\b"error E104: ambiguous call label. Section " Y:ou	&a4294967295 Y:121\b" (one-based).\n" 2
+1- b&Ta32	255 ?Eb1Y:121\b"error E101: invalid function header, entry, or host declaration." ?Eb2Y:121\b"error E102: invalid or unsupported instruction or operand." ?Eb3Y:121\b"error E103: unknown call label." ?Eb4Y:121\b"error E104: ambiguous call label." c&a16383 d&Ta14	262143 e&Ta40	2097151 ?c	3 Y:121\b" Section " Y:ou	c Y:121\b"." ?Ad	e	5 Y:121\b" Line " Y:ou	d Y:121\b", column " Y:ou	e Y:121\b"." Y:121\b"\n" 2
+2-'a cM24 d0 e0 f0 W<dZa	5 gBad ?AAAEg92<+d2ZaOEBa+d1	115EBa+d1	98EBa+d2	34	2 d:122a+d3 ` ?Eg35	2 WA<dZaDBad10+d1 ` ?AAEg92<+d1ZaOOEBa+d1	106EBa+d1	107EBa+d1	109	16 h-de ?<b+fh.+e-bf +fh iAdAGBa-d1	48LBa-d1	57 ?AiEbf.d +fi :15c+d2 j:140acBa+d1 ?j.d k:9c16 l:162k ?<b+fl.d +fl d:96c ed ` +d1 +e-bf
+2-'a c0 d0 W<cZa	8 eBac ?AAAEe92<+c2ZaOEBa+c1	115EBa+c1	98EBa+c2	34	6 f:122a+c3 g-fc ?<b+dg.+c-bd +dg cf ` ?Ee35	2 WA<cZaADBac10DBac13+c1 ` +c1 ?AAEe13<cZaEBac10` f+1OEe10Ee13 ?<b+df.-c1 +df Za
+2-'a c0 d0 e0 fM0 W<cZa	16 gBac ?AAAEg92<+c2ZaOEBa+c1	115EBa+c1	98EBa+c2	34	2 c:122a+c3 ` ?Eg35	2 WA<cZaDBac10+c1 ` +c1 ?OO<g224>g239G+c1Za` h-c1 i:120ah j:90if0	0 ?!j` k-hd ?<b+ek.+d-be +ek ?<b+ej.h +ej +c2 dc +d-be
+2- ||9223372036854775808&a1099511627775S+b1	40
+2-'a ?!ATb63&Tb40	2097151.b c-&Tb40	2097151	1 ?>cZacZa d1 e1 @c	2 gBaf ?OEg10AEg13OG+f1ZaDBa+f1	10	2	1 +d1 e1 +eD&g192	128 ||9223372036854775808&b1099511627775|Sd14Se40
+1- b1 W>a9	2 /a10 +b1 b

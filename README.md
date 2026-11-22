@@ -8,7 +8,7 @@ The Linux seed is a static ELF that calls the kernel directly. The Windows seed 
 
 The bootstrap compiler is split into [H0 modules](bootstrap/compiler), with [standard I/O](std/io.h0) shared by the compiler and applications. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell to assemble the compiler sources and build both seeds with H0.
 
-Use seed mode `0` to build Windows PE, `1` to build Linux ELF, or `2` for raw RV64 code. For an English diagnostic before building, use modes `5`, `6`, and `7` for the same targets. All modes read the source from standard input. Check modes report success or an error code with a message and the function section when available.
+Use seed mode `0` to build Windows PE, `1` to build Linux ELF, or `2` for raw RV64 code. For an English diagnostic before building, use modes `5`, `6`, and `7` for the same targets. All modes read the source from standard input. Check modes report success or an error code and message. When available, they also report the one-based function section and original line and column. Columns count Unicode scalars.
 
 ## Developer
 
