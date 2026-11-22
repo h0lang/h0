@@ -34,3 +34,4 @@ bootstrap/compiler/mapped-view.h0
 bootstrap/compiler/scoped-guide.h0
 bootstrap/compiler/syntax-repair.h0
 bootstrap/compiler/stack-arenas.h0
+bootstrap/compiler/linux-net-event.h0
