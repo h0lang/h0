@@ -98,6 +98,10 @@ Use seed mode `0` to build Windows console PE, `1` to build Linux ELF, `2` for r
 
 Use modes `11`, `12`, and `13` to repair source for Windows x64, Linux x64, and RV64. The compiler tries one edit for a repeated view parameter marker, a missing space after a block count, or a missing tab after a call label. It writes the original source when valid or the repaired source when exactly one candidate passes the target check. Otherwise it reports the original diagnostic and status `2`. Check the program behavior with its tests after applying a repair.
 
+Modes `14`, `15`, and `16` use the same checks and emit only `offset op` followed by a newline. The offset is a zero-based UTF-8 byte index in the original input. Operation `1` deletes the byte at that index, `2` inserts a space before it, and `3` inserts a tab before it. Valid input produces empty output. A rejected repair returns the original diagnostic and status `2`.
+
+With a missing block separator injected into each of 16 public examples, the median repair output went from 138 tokens to 4 in `o200k_base` and from 143.5 to 4 in `cl100k_base`. These counts cover compiler output only.
+
 ## Developer
 
 Hyeonwoo Kim (kookmin20103324@gmail.com) created and maintains Project H0. Run either native compiler seed with argument `4` to display the author credit.
