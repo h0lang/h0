@@ -71,6 +71,10 @@ In Windows x64 builds, `\@q` gives the Win64 callback address of the local H0 fu
 
 Use `>+2` for the [HTTP request framing module](std/http.h0). The [loopback example](examples/http.h0) uses `>+012` to receive one HTTP/1.1 request with a bounded Content-Length body.
 
+Load `>+d` for the [HTTP response module](std/http-response.h0). Call `:r0` with the TCP socket, a zeroed reader buffer of at least 17 bytes, the method flag (`0` ordinary or `1` HEAD), and a disjoint writable body buffer. The result packs the status code in the high 32 bits and the body length in the low 32 bits. Reuse the reader buffer on the same socket to preserve bytes read ahead. A result of `Max` invalidates the reader state. Close the connection and discard the output on failure.
+
+The module handles Content-Length, chunked transfer, and responses ending at EOF. It limits both headers and trailers to 16 KiB and accepts only the chunked transfer coding. The [HTTP GET example](examples/http-get.h0) takes a numeric IPv4 DNS resolver address, its TCP port, the HTTP port, and the hex-encoded hostname. It writes the decoded body to standard output with a 64 KiB limit.
+
 ```sh
 mkdir -p build
 bootstrap/seed/h0-linux-x64 1 < examples/file.h0 > build/file
