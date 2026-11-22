@@ -14,13 +14,22 @@ The H0 [formatting module](std/fmt.h0) uses single-syllable slots `값` for unsi
 
 The H0 [scanning module](std/scan.h0) reads those fields from a byte view into little-endian 64-bit words and checks their range.
 
-On Linux x64 the [file module](std/fs.h0) provides open, read, write, close, and seek through direct kernel calls. The [file example](examples/file.h0) takes a hex-encoded path and copies the file to stdout. This command builds it with the H0 seed and prints `README.md`.
+On Windows and Linux x64 the [file module](std/fs.h0) provides open, read, write, close, and seek. The [file example](examples/file.h0) takes a hex-encoded UTF-8 path and copies the file to stdout.
 
 ```sh
 mkdir -p build
 cat examples/file.h0 std/fs.h0 std/io.h0 | bootstrap/seed/h0-linux-x64 1 > build/file
 chmod +x build/file
 ./build/file 524541444d452e6d64
+```
+
+On Windows, run these commands in `cmd.exe`.
+
+```bat
+if not exist build mkdir build
+copy /b /y examples\file.h0+std\fs.h0+std\io.h0 build\file.h0
+bootstrap\seed\h0-windows-x64.exe 0 < build\file.h0 > build\file.exe
+build\file.exe 524541444d452e6d64
 ```
 
 Use seed mode `0` to build Windows PE, `1` to build Linux ELF, or `2` for raw RV64 code. For an English diagnostic before building, use modes `5`, `6`, and `7` for the same targets. All modes read the source from standard input. Check modes report success or an error code and message. When available, they also report the one-based function section and original line and column. Columns count Unicode scalars.
