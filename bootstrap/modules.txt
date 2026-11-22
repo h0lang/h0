@@ -39,3 +39,4 @@ bootstrap/compiler/linux-time.h0
 bootstrap/compiler/call-pack.h0
 bootstrap/compiler/compact-guide.h0
 bootstrap/compiler/std-guide.h0
+bootstrap/compiler/outline.h0
