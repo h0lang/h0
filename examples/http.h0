@@ -1,0 +1,3 @@
+>+012
+0 a:잭	0	0 ?Ea수.1 b:젠	a ?O!b>b65535.2 Y:ou	b Y:wr	\b"\n" c:짓	a Y:찍	a ?Ec수.3 dM8192 e0 f0 g0 W1	8 ?GeZd.:x0	c h0 Kde	1 h:찬cj ?O!hEh수.:x0	c ie +eh ?!f	3 f:h0	Vd0e	i ?Ef수.:x0	c ?f	2 g:h1	Vd0f	Zd ?Eg수.:x0	c ?AgGeg' h:n0	c\b"HTTP/1.1 200 OK\r\nContent-Length: 3\r\nConnection: close\r\n\r\nH0\n" Y:찍	c Dh60
+1-x0 Y:n0	a\b"HTTP/1.1 400 Bad Request\r\nContent-Length: 0\r\nConnection: close\r\n\r\n" Y:찍	a 1

@@ -20,6 +20,8 @@ Use `>+7` to include the [buffered stream module](std/stream.h0) and its file de
 
 On Windows and Linux x64, `>+0` includes the [TCP module](std/net.h0). The same [echo example](examples/tcp.h0) builds on both targets, binds to loopback, prints its assigned port, and serves one connection. Windows uses the system Winsock DLL.
 
+Use `>+2` for the [HTTP request framing module](std/http.h0). The [loopback example](examples/http.h0) uses `>+012` to receive one HTTP/1.1 request with a bounded Content-Length body.
+
 ```sh
 mkdir -p build
 bootstrap/seed/h0-linux-x64 1 < examples/file.h0 > build/file
