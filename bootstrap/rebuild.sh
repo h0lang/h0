@@ -12,7 +12,7 @@ seed=bootstrap/seed/h0-linux-x64
         cat "$module"
     done < bootstrap/modules.txt
     tail -n +5 std/io.h0
-    cat std/fs.h0
+    cat std/fs.h0 std/num.h0
 } > "$bundle"
 "$seed" 1 < "$bundle" > "$out/h0-linux-x64.new"
 chmod +x "$out/h0-linux-x64.new"
