@@ -10,7 +10,9 @@ The bootstrap compiler is split into [H0 modules](bootstrap/compiler), with [sta
 
 On Windows and Linux x64, `std/io.h0` provides separate stdout and stderr writes. Call `:wr` for stdout or `:ew` for stderr, passing a byte view.
 
-The H0 [formatting module](std/fmt.h0) writes unsigned decimal, signed decimal and lowercase hexadecimal into a caller-provided byte view.
+The H0 [formatting module](std/fmt.h0) uses single-syllable slots `값` for unsigned decimal, `간` for signed decimal, and `개` for hexadecimal in byte templates.
+
+The H0 [scanning module](std/scan.h0) reads those fields from a byte view into little-endian 64-bit words and checks their range.
 
 Use seed mode `0` to build Windows PE, `1` to build Linux ELF, or `2` for raw RV64 code. For an English diagnostic before building, use modes `5`, `6`, and `7` for the same targets. All modes read the source from standard input. Check modes report success or an error code and message. When available, they also report the one-based function section and original line and column. Columns count Unicode scalars.
 
