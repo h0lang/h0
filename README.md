@@ -20,7 +20,7 @@ When the requested function is already known, use mode `24`. Put its exact name 
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
-For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,074 tokens in `o200k_base` and 2,090 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 55,890 to 27,431 and from 56,279 to 27,641 respectively. The comparison counts supplied reference and source text.
+For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,182 tokens in `o200k_base` and 2,198 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 58,786 to 28,599 and from 59,159 to 28,793 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
@@ -101,6 +101,8 @@ The [BMP example](examples/bmp.h0) builds for Windows and Linux x64. It takes a 
 The [Win32 module](std/win.h0) is available with `>+f` on Windows x64. It opens a system DLL by its null-terminated UTF-16LE basename, looks up an ASCII export by its null-terminated name, and calls scalar or pointer signatures using sixteen little-endian 64-bit argument slots. Zero unused slots. A buffer address returned by the module is valid while the caller keeps that buffer live. Release DLL handles after the last call.
 
 On Windows and Linux x64, load `>+g` for [operating-system memory](examples/memory.h0). Call `:m0` with the byte count for a zero-initialized region and `:m1` with its address and original size to release it. Allocation returns zero on failure. The binding `b\!an` gives a fresh mutable byte view `b` of the address `a` and length `n`. Byte accesses are bounds-checked. The caller must provide a live, exclusive memory range and end all accesses through the view before releasing that range.
+
+Load `>+m` for the [u64 map](std/map.h0) on Windows x64, Linux x64, or RV64. Supply a writable buffer of exactly `8+17n` bytes, where `n` is a power of two and at least 4. Initialize or reset it with `:k0`. The map holds up to `3n/4` entries and accepts every u64 key and value. Insert or update with `:k1`, read into an eight-byte output view with `:k2`, remove with `:k3`, and count with `:k4`. The library uses the caller's buffer for the entire lifetime of the map.
 
 The [Windows image viewer](examples/bmp-viewer.h0) opens uncompressed 24-bit and 32-bit BMP and noninterlaced PNG at original pixel size. H0 reads and decodes files, composites PNG transparency against gray, and calls Windows to display the result. It accepts files up to 64 MiB, pixel buffers up to 256 MiB, and PNG scratch buffers up to 320 MiB.
 
