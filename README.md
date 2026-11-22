@@ -12,6 +12,14 @@ For edits restricted to particular functions, run either native compiler with mo
 
 In `o200k_base`, sending the range list and just the file-picker function for the Windows viewer costs 344 tokens, compared with 2,055 for the complete source. Across five files with one function selected per file, input fell from 7,317 to 1,509 tokens. These counts cover the supplied source and range lists. Task success and reasoning tokens require separate measurement.
 
+When the requested function is already known, use mode `24`. Put its exact name or zero-based section ordinal on the first stdin line, followed by the original H0 file. The compiler writes the selected original bytes followed by LF. Use ordinals for unnamed sections or to select among duplicate names. A missing or ambiguous selector reports `E112` and exits with status 2. The excerpt omits imports and other sections, so retain the original file for builds and edits that use numeric or relative calls.
+
+```sh
+(printf 'vf\n'; cat examples/bmp-viewer.h0) | bootstrap/seed/h0-linux-x64 24
+```
+
+With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
+
 For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,074 tokens in `o200k_base` and 2,090 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 55,890 to 27,431 and from 56,279 to 27,641 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
