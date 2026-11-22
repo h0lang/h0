@@ -24,3 +24,6 @@ bootstrap/compiler/linux-file-meta.h0
 bootstrap/compiler/windows-file-meta.h0
 bootstrap/compiler/windows-file-meta-imports.h0
 bootstrap/compiler/file-replace-module.h0
+bootstrap/compiler/windows-tcp-connect-import.h0
+bootstrap/compiler/linux-tcp-connect.h0
+bootstrap/compiler/windows-tcp-connect.h0
