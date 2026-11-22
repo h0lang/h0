@@ -6,6 +6,10 @@ H0 (Human Zero) is a native programming language for AI agents. Its Tape notatio
 
 H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AGENTS.md) for the language reference, native build commands, standard library, and compiler entry points.
 
+For an agent editing an existing program, supply [CORE.md](CORE.md), the program's source, and its scoped glyph records. Run `bootstrap/seed/h0-linux-x64 10 < examples/calendar.h0` on Linux or `bootstrap\seed\h0-windows-x64.exe 10 < examples\calendar.h0` in Windows `cmd.exe`. Each record gives one glyph and its escaped expansion. Use the full guide for extended syntax and complete library signatures.
+
+Across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
+
 The Linux seed is a static ELF that calls the kernel directly. The Windows seed imports `KERNEL32.dll` for operating-system services. Both seeds run without a Python interpreter or C runtime.
 
 The bootstrap compiler is split into [H0 modules](bootstrap/compiler), with [standard I/O](std/io.h0) shared by the compiler and applications. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell to assemble the compiler sources and build both seeds with H0.
