@@ -6,7 +6,9 @@ H0 (Human Zero) is a native programming language for AI agents. Its Tape notatio
 
 H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AGENTS.md) for the language reference, native build commands, standard library, and compiler entry points.
 
-For an agent editing an existing program, supply [CORE.md](CORE.md), the program's source, and its scoped glyph records. Run `bootstrap/seed/h0-linux-x64 19 < examples/calendar.h0` on Linux or `bootstrap\seed\h0-windows-x64.exe 19 < examples\calendar.h0` in Windows `cmd.exe`. The compact map is described below. Use the full guide for extended syntax and complete library signatures.
+For an agent editing an existing program, supply [CORE.md](CORE.md), the program's source, and its scoped glyph records. Run `bootstrap/seed/h0-linux-x64 19 < examples/calendar.h0` on Linux or `bootstrap\seed\h0-windows-x64.exe 19 < examples\calendar.h0` in Windows `cmd.exe`. The compact map is described below. For the selected standard-library contracts, run mode `20` for Windows, `21` for Linux, or `22` for RV64 with the source on stdin. Each mode reads `AGENTS.md` in the repository root and prints only the imported modules and their implicit dependencies for that target. Use check modes `5`, `6`, or `7` to validate target support and source syntax. Use the full guide for extended syntax.
+
+For the 16 public examples with standard-library imports, the complete native standard-library contract table costs 2,074 tokens in `o200k_base` and 2,090 in `cl100k_base`. Target-specific output had medians of 274 and 282.5. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 55,890 to 27,431 and from 56,279 to 27,641 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.
 
