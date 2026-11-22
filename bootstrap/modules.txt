@@ -5,3 +5,4 @@ bootstrap/compiler/lowering.h0
 bootstrap/compiler/source.h0
 bootstrap/compiler/optimizations.h0
 bootstrap/compiler/labels.h0
+bootstrap/compiler/diagnostics.h0
