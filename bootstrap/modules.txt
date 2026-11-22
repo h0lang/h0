@@ -14,3 +14,5 @@ bootstrap/compiler/linux-tcp.h0
 bootstrap/compiler/windows-tcp.h0
 bootstrap/compiler/intrinsics.h0
 bootstrap/compiler/windows-unwind.h0
+bootstrap/compiler/x64-encode.h0
+bootstrap/compiler/linux-file-code.h0
