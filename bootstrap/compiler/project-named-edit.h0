@@ -1,11 +1,16 @@
-2-myedit'a z:movern	a0 ?Ez수.:myerr c&z4294967295 ?OO>c32!&T7616971751c1AAGc14Lc16b.:myerr d:movern	aTz32 ?Ed수.:myerr e&d4294967295 ?O!e>e8192.:myerr fM++32*e40Za \Q8f0	8589934592 \Q8f16e g0 ?b g:myw	aTd32ef ?!b g:myread	aTd32ef ?AEg수b.:mye ?Eg수.:myerr :mproject	a|c|S1	59Sb58gf
+2-myedit'a z:movern	a0 ?Ez수.:myerr c&z4294967295 ?OO>c32!&T7616971751c1AAGc14Lc16b.:myerr d:movern	aTz32 ?Ed수.:myerr e&d4294967295 ?O!e>e8192.:myerr fM++32*e40Za \Q8f0	8589934592 \Q8f16e g0 ?b g:myw	aTd32ef ?!b g:myread	aTd32ef ?AEg수b.:mye ?Eg수.:myerr :mproject	a|c|S1	59Sb58&g4294967295Vf0\ibTg32Zf
 4-myread'a"d e+32*c40 fM24 @c	19 h:296ab ?GhZa.수 i:mx	Vabh-hb ?O!i>i8191.수 j:movern	a+h1 ?Ej수.수 k&j4294967295 lTj32 m+lk ?OO!kGmZaDBam10.수 o:es	ValmVab+bif ?OOo\B8f0D\B8f8k.수 n+32*g40 \Q8dn수 \Q8d+n24|lSk32 \Q8d+n32|eSi32 Y:92adb+bie +ei b+m1 b
-7-myapply'abcd hMZd Y:92dh0Zd0 i:264bh ?i.i j\B8h16 ?D\B8h8j.:275 kM*j8 l:myorder	hk ?l.l mM+Za\i&Tg58	1+Za*2ZbZb Y:92am0f0 nf oM*j24 @j	15 q&\B8k*p8	4294967295 r\B8h+q8 s\B8h+q16 t-sr u:em	c+re+se ?!u.:ey v\B8h+q24 wTv32 x&v4294967295 ?&Tg58	1	4 y\B8h+q32 w:myv	aVbrsVh&y4294967295+&y4294967295Ty32mxn ?Ew수.:mye xn Y:msrecord	op&Tu32	131071&u1048575txw ?&Tg58	1 +nw \Q4o+*p24	20+n1 Y:92bmrsn +nt Y:92amfZan :mproject	Vm0+n-Zaf|&g255	13835058055282163712no
+7-myapply'abcd hMZd Y:92dh0Zd0 i:264bh ?i.i j\B8h16 ?D\B8h8j.:275 k+ZaZb ?&Tg58	1 k:mys	ahf ?Ek수.:mye ?>+kZd393216.:myj	abchefg lMk :mydo	abchl|eSf32g
 2-myorder'a"b c\B8a16 @c	5 e+32*d40 f|S\B8a+e8	32e g*d8 WAg>\B8b-g8f	2 \Q8bg\B8b-g8 -g8 \Q8bgf 0
 0-myerr Y:121\b"error E129: expected target, distinct named function replacements, and project paths.\n" 3
-4-myw'a"d e+32*c40 @c	4 g:mya	adb+32*f40e ?Eg수.수 b&g4294967295 +eTg32 b
+4-myw'a"d e+32*c40 @c	4 g:mya	adb+32*f40e ?Eg수.수 b&g4294967295 +eTg32 |bSe32
 5-mya'a"b f:296ac ?GfZa.수 g:mx	Vacf-fc ?O!g>g8191.수 h+f1 i:myb	ah ?Ei수.수 j&i1048575 k&Ti20	524287 l&Ti39	524287 \Q8bd수 \Q8b+d24h \Q8b+d32|eSg32 Y:92abc+cge |+++jkl1Sg32
 2-myb'a c:movern	ab ?Ec수.수 d:movern	aTc32 ?Ed수.수 e&c4294967295 f&d4294967295 gTd32 ?OOO!e>e524287>f524287G++gefZa.수 ?DBa++gef10.수 |g|Se20Sf39
 6-myv'abc"d g:myb	ae ?Eg수.수 h&g1048575 i&Tg20	524287 j&Tg39	524287 k:myf	bVah+hi ?Ek수.수 l+-Zbij ?>l-Zdf.수 Y:92bd0kf Y:92ad+hi++hij+fk m+ki Y:92bdmZb++fkj nM24 o:es	Vdf+flcn ?OOo\B8n0D\B8n8l.수 l
-2-myf'ab ?O!Zb>ZbZa.수 cM*4Zb d0 @-Zb1	5 f+e1 gBbf WAdDgBbd	1 d\B4c*4-d1 ?EgBbd +d1 \Q4c*4fd d0 e수 @Za	4 gBaf WAdDgBbd	1 d\B4c*4-d1 ?EgBbd +d1 ?EdZb	3 ?De수.수 e-+f1Zb d\B4c*4-d1 e
+2-myf'ab ?O!Zb>ZbZa.수 ?>Zb98304.:myg	ab cM*4Zb :myk	abc
+2-myg'ab cM2097152 :myk	abc
+3-myk'ab"c d0 @-Zb1	5 f+e1 gBbf WAdDgBbd	1 d\B4c*4-d1 ?EgBbd +d1 \Q4c*4fd d0 e수 @Za	4 gBaf WAdDgBbd	1 d\B4c*4-d1 ?EgBbd +d1 ?EdZb	3 ?De수.수 e-+f1Zb d\B4c*4-d1 e
 0-mye Y:121\b"error E130: expected one unique old byte span in each distinct named function and a replacement preserving the function name.\n" 3
+3-mys'ab d-Zac @\B8b16	9 f+32*e40 g:myb	a\B8b+f24 ?Eg수.수 i\B8b+f8 j\B8b+f16 k-ji l&Tg20	524287 ?>lk.수 +d+-*2kl&Tg39	524287 d
+7-myj'abcd hM1572864 :mydo	abcdh|eSf32g
+7-mydo'abcd"e hTf32 i&f4294967295 j&Tg58	1 k\ij0h ?!j Y:92ae0h0 l\B8d16 mM*l8 n:myorder	dm ?n.n oM*l24 @l	15 q&\B8m*p8	4294967295 r\B8d+q8 s\B8d+q16 t-sr u:em	c+ri+si ?!u.:ey v\B8d+q24 wTv32 x&v4294967295 ?j	4 y\B8d+q32 w:myv	aVbrsVd&y4294967295+&y4294967295Ty32exk ?Ew수.:mye xk Y:msrecord	op&Tu32	131071&u1048575txw ?j +kw \Q4o+*p24	20+k1 Y:92bersk +kt Y:92aehZak :mproject	Ve0+k-Zah|&g255	13835058055282163712ko

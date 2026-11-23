@@ -1,0 +1,196 @@
+{
+  "scope": "Actual native builds and binary comparison using the Windows seed and the Linux seed under WSL2. Original sources unchanged. The negative and long unique lookup fixtures are in lookup_checks.",
+  "build_cases": [
+    {
+      "source_bytes": 95019,
+      "old_bytes": 47001,
+      "new_bytes": 38000,
+      "hosts": {
+        "windows": {
+          "packet_bytes": 85099,
+          "previous_exit": 0,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "5e538e870a52f12896712265630e106e0fb279652441e7ae4e45fbdc2cea92d5"
+        },
+        "linux": {
+          "packet_bytes": 85103,
+          "previous_exit": 0,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "87e7e2c088056d830c320697d461a6319f558d8e99309af6d78f9944611b597d"
+        }
+      }
+    },
+    {
+      "source_bytes": 160019,
+      "old_bytes": 100001,
+      "new_bytes": 99000,
+      "hosts": {
+        "windows": {
+          "packet_bytes": 199101,
+          "previous_exit": 3221225501,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "bc1fb99d949df8c9840e266a0c87ac241bcc533676333d16413cf902acf78ab2"
+        },
+        "linux": {
+          "packet_bytes": 199105,
+          "previous_exit": 132,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "59cd3b8640f97534b6e41a4029008cefbfe37b1e569110bde9f0935690749f44"
+        }
+      }
+    },
+    {
+      "source_bytes": 220019,
+      "old_bytes": 140001,
+      "new_bytes": 90000,
+      "hosts": {
+        "windows": {
+          "packet_bytes": 230101,
+          "previous_exit": 3221225501,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "4cc61cf3cf123155f240300c6aeee07c5bbd65da86ad6fc0bb60e6b67cc9fc43"
+        },
+        "linux": {
+          "packet_bytes": 230105,
+          "previous_exit": 132,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "ecb9ae936911647c2431bf94b93b3435f8da76267a9b91262b559a5b867dd89f"
+        }
+      }
+    },
+    {
+      "source_bytes": 370019,
+      "old_bytes": 290001,
+      "new_bytes": 1000,
+      "hosts": {
+        "windows": {
+          "packet_bytes": 291100,
+          "previous_exit": 3221225501,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "8531e4caa16f8835b483ffe6ef1ee06048c967b65dbf9c9b8a13e06ae466aa02"
+        },
+        "linux": {
+          "packet_bytes": 291104,
+          "previous_exit": 132,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "0066eaa1d266fa1f12f55595e4d2c991677bce5fbbffa97bfe57195c815c9815"
+        }
+      }
+    },
+    {
+      "source_bytes": 500019,
+      "old_bytes": 390001,
+      "new_bytes": 120000,
+      "hosts": {
+        "windows": {
+          "packet_bytes": 510102,
+          "previous_exit": 3221225501,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "3d077b9d1d1a518f2728608d88a7fe011ac6d4c39b88676122d1b3ef958edd54"
+        },
+        "linux": {
+          "packet_bytes": 510106,
+          "previous_exit": 132,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "e69ca58dc68738fe47a509cf051783392125906cbf8b6897abd5e9e0d54400a8"
+        }
+      }
+    },
+    {
+      "source_bytes": 510019,
+      "old_bytes": 400001,
+      "new_bytes": 124000,
+      "hosts": {
+        "windows": {
+          "packet_bytes": 524102,
+          "previous_exit": 3221225501,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "73f5e8583aebb6bb8fc338d8b5d07c7327745f2e147ae991aebab32719e8cfbf"
+        },
+        "linux": {
+          "packet_bytes": 524106,
+          "previous_exit": 132,
+          "fixed_exit": 0,
+          "matches_mode57": true,
+          "binary_sha256": "d8419204936da6af03f5f28a270deaa3d2c7b634246fd1554c9e82e04739e290"
+        }
+      }
+    }
+  ],
+  "lookup_checks": {
+    "long-overlap": {
+      "windows": {
+        "packet_bytes": 47104,
+        "returned": "E130"
+      },
+      "linux": {
+        "packet_bytes": 47108,
+        "returned": "E130"
+      },
+      "source_bytes": 95019
+    },
+    "long-near-miss": {
+      "windows": {
+        "packet_bytes": 47107,
+        "returned": "E130"
+      },
+      "linux": {
+        "packet_bytes": 47111,
+        "returned": "E130"
+      },
+      "source_bytes": 95019
+    },
+    "long-unique": {
+      "windows": {
+        "packet_bytes": 85107,
+        "returned": "ok"
+      },
+      "linux": {
+        "packet_bytes": 85111,
+        "returned": "ok"
+      },
+      "source_bytes": 95019
+    },
+    "large-envelope": {
+      "windows": {
+        "packet_bytes": 199111,
+        "returned": "ok"
+      },
+      "linux": {
+        "packet_bytes": 199115,
+        "returned": "ok"
+      },
+      "source_bytes": 160019
+    }
+  },
+  "seed_fixed_point_sha256": {
+    "h0-windows-x64.exe": "62e289f4d65e1c5a73b9de90e806a8eda6ab63db7ce14b559e62dffb84959377",
+    "h0-linux-x64": "54bf7d8e3d873ea115609da00abc52395aeffc2215744ce2a480b656521f6931"
+  },
+  "linux_self_host": true,
+  "regressions": {
+    "matcher": {
+      "unique": 26,
+      "missing": 51,
+      "ambiguous": 23
+    },
+    "native_replays": 6,
+    "oracle_cases_per_replay_per_target": 5580,
+    "targets_with_build_and_check_parity": [
+      "Windows x64",
+      "Linux x64",
+      "RV64"
+    ]
+  }
+}

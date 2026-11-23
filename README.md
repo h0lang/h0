@@ -192,6 +192,10 @@ Mode `58` applies exact byte replacements within named functions. Send `target L
 
 Replaying six accepted dispatch edits gave identical Windows and Linux binaries to whole-section replacement. With compact JSON arrays, the same changes took 218 versus 339 output tokens in `o200k_base`, and 216 versus 339 in `cl100k_base`. One very short edit was smaller as a whole-section replacement. These counts cover the submitted edit text. [Replay results](benchmarks/native-anchored-project-edits.json)
 
+In a separate Codex writing pilot, ten responses passed all 5,580 checks each. Two anchored attempts timed out at provider capacity and returned no usage. Across the four pairs with usage in both conditions, exact byte edits used 379 output tokens versus 325 for whole functions, including 49 versus zero reasoning tokens. Total provider usage was 72,722 versus 74,068. These figures describe the four paired results. [Fresh agent trials](benchmarks/native-anchor-author-codex.json)
+
+The native edit modes also built equivalent Windows and Linux binaries for tested requests up to about 524 kB. The previously failing requests now complete without changing the original source. [Large-project build checks](benchmarks/native-anchor-large-project.json)
+
 Replaying the six initial section-edit submissions with mode `54` accepted 6/6 without a model retry. Their recorded usage totaled 146,454 tokens, compared with 145,535 for the pilot's whole-file submissions. The original failed submission's executable passed all 4,212 oracle cases on Windows and Linux.
 
 Re-encoding the six accepted H0 dispatch submissions above as JSON byte edits reduced replacement output from 1,140 to 362 tokens in `o200k_base` and from 1,132 to 362 in `cl100k_base`. Both encodings used compact JSON and identical submitted source changes. Each mode `53` build matched the complete-file build byte for byte and passed all 4,212 oracle cases for its task. The counts cover the submitted JSON.
