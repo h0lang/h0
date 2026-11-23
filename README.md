@@ -48,6 +48,10 @@ For a one-function edit in each of 11 examples, returning the middle named secti
 
 Mode `29` applies several replacements together. Send the decimal record count followed by LF, then one `ordinal LF byteCount LF replacement LF` record per section, and finally the original source. Sort records by distinct ascending section ordinal from the original file. Byte counts use UTF-8 and exclude separators. The compiler verifies every replacement range before writing the patched source. Run the target check on the result.
 
+Modes `43`, `44`, and `45` take the same batch and check the edited program for Windows x64, Linux x64, and RV64, respectively. A successful check writes the patched source. A failed check returns status 2 and the same diagnostic as modes `30`, `31`, or `32`, including the failing section when its source span is available. The tool checks the batch against the original section boundaries before applying it.
+
+For six failed example edits, the combined patch and check output took 189 tokens in `o200k_base` and 190 in `cl100k_base`. When both the intermediate source and the diagnostic from separate commands were included, the same edits took 5,199 and 5,242 tokens respectively. For a valid two-section batch in the Windows image viewer, one checked command took a median of 9.54 ms versus 16.08 ms for two commands over 14 paired runs, including process startup.
+
 Mode `42` extracts several sections in one pass. Send a positive decimal count followed by LF, then that many distinct ascending zero-based ordinals, one per LF-terminated line, followed by the original source. The compiler writes the count and one `ordinal LF byteCount LF section LF` record per selection. Append the original source to the records and pass them to mode `29` to apply replacements. Update each byte count after editing its section. Invalid requests report `E121` and missing ordinals report `E112`.
 
 ```sh
