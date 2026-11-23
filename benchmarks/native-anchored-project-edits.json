@@ -1,0 +1,209 @@
+{
+  "mode": 58,
+  "matcher_randomized": {
+    "unique": 26,
+    "missing": 51,
+    "ambiguous": 23
+  },
+  "oracle_replays": [
+    {
+      "task": "zero_units",
+      "repeat": 1,
+      "oracle_cases_per_target": 5580,
+      "targets": {
+        "0": {
+          "bytes": 15360,
+          "sha256": "9dcad445410b4c64dd129095f1dbb32e7a0d830ae8a28a0069fdd5ab1e1a0ec0"
+        },
+        "1": {
+          "bytes": 13895,
+          "sha256": "8a31a8f7dd04765400c1df8e1f4eb7bf8c40a63a23690773983653198c185bcf"
+        }
+      },
+      "output_tokens": {
+        "o200k_base": {
+          "named": 35,
+          "anchored": 41,
+          "named_rows": 31,
+          "anchored_rows": 35
+        },
+        "cl100k_base": {
+          "named": 34,
+          "anchored": 40,
+          "named_rows": 31,
+          "anchored_rows": 35
+        }
+      }
+    },
+    {
+      "task": "zero_units",
+      "repeat": 2,
+      "oracle_cases_per_target": 5580,
+      "targets": {
+        "0": {
+          "bytes": 15360,
+          "sha256": "e4612c90cad40a8208ab474fcc1860d72e53a12bf965bbc3618a67662d17bb5b"
+        },
+        "1": {
+          "bytes": 13904,
+          "sha256": "38721f0f0b78b75790e04700959f0a3c3e1b04ab8cfd0c605e2f7698c0133e13"
+        }
+      },
+      "output_tokens": {
+        "o200k_base": {
+          "named": 36,
+          "anchored": 37,
+          "named_rows": 32,
+          "anchored_rows": 31
+        },
+        "cl100k_base": {
+          "named": 35,
+          "anchored": 36,
+          "named_rows": 32,
+          "anchored_rows": 31
+        }
+      }
+    },
+    {
+      "task": "last_peak",
+      "repeat": 1,
+      "oracle_cases_per_target": 5580,
+      "targets": {
+        "0": {
+          "bytes": 15360,
+          "sha256": "20541d804f296c7556544fe82cafd65f8ae8fa5707485e293fe5de5829a27ec2"
+        },
+        "1": {
+          "bytes": 13750,
+          "sha256": "26ee1ca53f57a74afb44b0ea4c2387f148f752e9f30ace3c98ed70212d1a9a6e"
+        }
+      },
+      "output_tokens": {
+        "o200k_base": {
+          "named": 45,
+          "anchored": 21,
+          "named_rows": 41,
+          "anchored_rows": 15
+        },
+        "cl100k_base": {
+          "named": 45,
+          "anchored": 20,
+          "named_rows": 42,
+          "anchored_rows": 15
+        }
+      }
+    },
+    {
+      "task": "last_peak",
+      "repeat": 2,
+      "oracle_cases_per_target": 5580,
+      "targets": {
+        "0": {
+          "bytes": 15360,
+          "sha256": "20541d804f296c7556544fe82cafd65f8ae8fa5707485e293fe5de5829a27ec2"
+        },
+        "1": {
+          "bytes": 13750,
+          "sha256": "26ee1ca53f57a74afb44b0ea4c2387f148f752e9f30ace3c98ed70212d1a9a6e"
+        }
+      },
+      "output_tokens": {
+        "o200k_base": {
+          "named": 45,
+          "anchored": 21,
+          "named_rows": 41,
+          "anchored_rows": 15
+        },
+        "cl100k_base": {
+          "named": 45,
+          "anchored": 20,
+          "named_rows": 42,
+          "anchored_rows": 15
+        }
+      }
+    },
+    {
+      "task": "priority_delivery",
+      "repeat": 1,
+      "oracle_cases_per_target": 5580,
+      "targets": {
+        "0": {
+          "bytes": 15360,
+          "sha256": "045ee3b5575e3b6246113298d297fa7c0bfdf6f9ebd835c2f85df2d8920d0594"
+        },
+        "1": {
+          "bytes": 13998,
+          "sha256": "7a70a2dae4f1df52f35642ee6c90c20a1214060508f11068e16c8ab5aa7917f4"
+        }
+      },
+      "output_tokens": {
+        "o200k_base": {
+          "named": 104,
+          "anchored": 72,
+          "named_rows": 97,
+          "anchored_rows": 61
+        },
+        "cl100k_base": {
+          "named": 103,
+          "anchored": 71,
+          "named_rows": 96,
+          "anchored_rows": 60
+        }
+      }
+    },
+    {
+      "task": "priority_delivery",
+      "repeat": 2,
+      "oracle_cases_per_target": 5580,
+      "targets": {
+        "0": {
+          "bytes": 15360,
+          "sha256": "045ee3b5575e3b6246113298d297fa7c0bfdf6f9ebd835c2f85df2d8920d0594"
+        },
+        "1": {
+          "bytes": 13998,
+          "sha256": "7a70a2dae4f1df52f35642ee6c90c20a1214060508f11068e16c8ab5aa7917f4"
+        }
+      },
+      "output_tokens": {
+        "o200k_base": {
+          "named": 104,
+          "anchored": 72,
+          "named_rows": 97,
+          "anchored_rows": 61
+        },
+        "cl100k_base": {
+          "named": 103,
+          "anchored": 71,
+          "named_rows": 96,
+          "anchored_rows": 60
+        }
+      }
+    }
+  ],
+  "summary": {
+    "o200k_base": {
+      "named": 369,
+      "anchored": 264,
+      "named_rows": 339,
+      "anchored_rows": 218
+    },
+    "cl100k_base": {
+      "named": 365,
+      "anchored": 258,
+      "named_rows": 339,
+      "anchored_rows": 216
+    }
+  },
+  "scope": "Exact output envelope tokens for archived responses, without a new authoring model run. Rebuilt Windows and Linux binaries match named whole-section replacement. Windows, Linux, and RV64 also pass synthetic build and check parity.",
+  "regression_checks": {
+    "invalid": 7,
+    "windows_linux_rv64_fixture_targets": 9,
+    "linux_native_compiler_targets": 3
+  },
+  "seed_fixed_point_sha256": {
+    "h0-windows-x64.exe": "a8c411c7edee4bb88115fbe268e0bc70633830cd07ae660ad7f3619d48d24ef9",
+    "h0-linux-x64": "f3d6f9e26b9b59530c9b17198da942e6ed6fff4ee309680483ba280717e31c3e"
+  },
+  "linux_self_host": true
+}
