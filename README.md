@@ -508,6 +508,8 @@ The [file concatenation CLI](examples/cat.h0) copies files to stdout in argument
 
 The [fixed-string grep CLI](examples/grep.h0) searches stdin or named files, prints 1-based line numbers, and returns 0 on a match, 1 when no line matches, or 2 for usage and I/O errors. The search is byte-exact and carries a line across read boundaries. Use `할ab` from `>+3` to build a little-endian prefix table for needle a, then `에abc` to find needle b in data a using its table c. The result is the first byte offset or Max. An empty needle matches at offset zero.
 
+The [external line sorter](examples/sort-lines.h0) reads stdin and writes a bytewise sort to stdout. Give it two distinct scratch paths to create or overwrite, separate from the input and any redirected output. It sorts runs in a 4 MiB data buffer and merges them through disk files. Lines may contain up to 65,536 bytes before LF. Duplicate and empty lines are preserved, and an unterminated final line receives LF.
+
 ## Developer
 
 Hyeonwoo Kim (kookmin20103324@gmail.com) created and maintains Project H0. Run either native compiler seed with argument `4` to display the author credit.
