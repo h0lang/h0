@@ -61,3 +61,4 @@ bootstrap/compiler/startup-args.h0
 bootstrap/compiler/x64-constant-view.h0
 bootstrap/compiler/binary64.h0
 bootstrap/compiler/decimal64.h0
+bootstrap/compiler/x64-register-alu.h0
