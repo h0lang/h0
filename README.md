@@ -48,6 +48,18 @@ Native builds validate every function and then omit local functions unreachable 
 
 Native x64 and RV64 builds lower unsigned multiplication, division, and remainder by a constant power of two to shifts or bit masks. The compiler evaluates the left operand before applying the operation, including when the divisor is one. In raw RV64 output for a single unary function, division and remainder by eight each fell from 36 to 20 bytes and from 12 to 8 executed instructions in emulation. Multiplication by 1,024 fell from 12 to 4 bytes and from 4 to 2 instructions.
 
+For other nonzero unsigned constant divisors below `2^63`, x64 builds compute an integer reciprocal at compile time and emit a high multiply, a shift, and a correction when required. Remainder reconstructs the quotient product and subtracts it from the dividend. Divisors above `2^63` use a comparison on x64 and RV64, since the quotient can only be zero or one. RV64 keeps native division for the remaining non-power-of-two constants. [Multiply-and-shift integer division](https://libdivide.com/)
+
+One Windows x64 machine ran each program with affinity to one logical CPU. The benchmark starts with `a=11995408973635179863` and `sum=0`. For `i` from zero to 23,999,999 it performs `a ^= a >> 7`, `a += i`, `a ^= a OP divisor`, and `sum += a` with u64 wrapping, then prints the sum. The table reports median elapsed milliseconds over six runs after warm-up, including process startup. Rust 1.100.0 used `-C opt-level=3 -C target-cpu=native`.
+
+| Operation | Previous H0 | H0 | Rust |
+| --- | ---: | ---: | ---: |
+| / 3 | 106.76 | 57.47 | 59.22 |
+| / 7 | 105.21 | 71.26 | 74.87 |
+| / 10 | 107.06 | 56.15 | 59.19 |
+| % 10 | 127.60 | 78.12 | 74.54 |
+| / 18,446,744,073,709,551,557 | 104.98 | 55.35 | 38.50 |
+
 The Linux seed is a static ELF that calls the kernel directly. The Windows seed imports `KERNEL32.dll` for operating-system services. Both seeds run without a Python interpreter or C runtime.
 
 The bootstrap compiler is split into [H0 modules](bootstrap/compiler), with [standard I/O](std/io.h0) shared by the compiler and applications. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell to assemble the compiler sources and build both seeds with H0.
