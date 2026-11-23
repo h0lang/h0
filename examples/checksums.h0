@@ -1,0 +1,6 @@
+>+134q
+0 aM4096 b:a4	1a cM1 d:a4	2c ?ODd-수	1Eb수.:csusage ?Eb-수	1.:csfile	수 ?AEb1EBa0	45.:csfile	수 e:결	Va0b0 ?Ee수.:cserr f:csfile	e g:디	e ?f.f ?g.:cserr 0
+0-csusage Y:ew	\b"usage: checksums [FILE]\n" 2
+0-cserr Y:ew	\b"checksums: I/O failed\n" 2
+1-csfile bM4096 cM65536 Y를b d0 e1 W1	7 f0 ?Ea수	1	1 f:들c f:닷ac ?>fZc.:cserr ?!f' d으Vc0fbd e임Vc0fe ?OEd수Ee수.:cserr :csout	de
+2-csout cM8 @4	2 XcdTaS-3d3 Xc+d4TbS-3d3 dM18 e태cd0 ?De16.:cserr @8	1 Xd-16fBd-15f Xd8	32 Xd17	10 ?D:wr	d	18.:cserr :fl

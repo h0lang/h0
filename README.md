@@ -512,6 +512,8 @@ The [external line sorter](examples/sort-lines.h0) reads stdin and writes a byte
 
 The [SHA-256 CLI](examples/sha256.h0) hashes a file or stdin and prints its lowercase hexadecimal digest. In `>+3`, `아a` initializes a 104-byte state, `여ab` adds bytes, and `오ab` snapshots the 32-byte digest into b without consuming the state. `와ab` hashes a byte span in one call. The compiler emits x64 SHA instructions for CPUs that advertise them and uses scalar H0 on other targets. The algorithm follows [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final).
 
+The [checksum CLI](examples/checksums.h0) reads a file or stdin and prints CRC-32 and Adler-32. With `>+3`, `를a` prepares a reusable CRC table, `으abc` updates an IEEE CRC-32 from initial value 0, and `임ab` updates Adler-32 from initial value 1. The zlib decoder uses the same Adler-32 implementation. On x64, Adler-32 uses SSE2 and CRC-32 uses carry-less multiplication when available. CRC-32 also has a table-based path.
+
 ## Developer
 
 Hyeonwoo Kim (kookmin20103324@gmail.com) created and maintains Project H0. Run either native compiler seed with argument `4` to display the author credit.
