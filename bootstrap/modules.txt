@@ -101,3 +101,4 @@ bootstrap/compiler/file-transfer.h0
 bootstrap/compiler/fixed-search.h0
 bootstrap/compiler/sha256-x64.h0
 bootstrap/compiler/checksums-x64.h0
+bootstrap/compiler/tag-dispatch.h0
