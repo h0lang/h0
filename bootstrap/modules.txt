@@ -62,4 +62,4 @@ bootstrap/compiler/x64-constant-view.h0
 bootstrap/compiler/binary64.h0
 bootstrap/compiler/decimal64.h0
 bootstrap/compiler/x64-register-alu.h0
-bootstrap/compiler/x64-compare-branch.h0
+bootstrap/compiler/scalar-compare-branch.h0
