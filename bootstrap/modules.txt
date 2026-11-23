@@ -49,3 +49,4 @@ bootstrap/compiler/section-edit.h0
 bootstrap/compiler/batch-edit.h0
 bootstrap/compiler/reachability.h0
 bootstrap/compiler/error-context.h0
+bootstrap/compiler/unsigned-power.h0

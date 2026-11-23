@@ -46,6 +46,8 @@ For the 20 public examples in separate sessions, one copy of CORE, the source, a
 
 Native builds validate every function and then omit local functions unreachable from the entry and target-specific roots. The reachability pass follows direct calls and Windows callback addresses and retains an installed RV64 machine trap handler. It regenerates machine code and relocations for the retained functions. Across the public examples accepted by each target, total binary bytes fell from 286,208 to 246,784 on Windows x64 (22), from 261,129 to 212,204 on Linux x64 (21), and from 16,292 to 14,744 for raw RV64 (8). These totals include file headers and alignment where the target emits them.
 
+Native x64 and RV64 builds lower unsigned multiplication, division, and remainder by a constant power of two to shifts or bit masks. The compiler evaluates the left operand before applying the operation, including when the divisor is one. In raw RV64 output for a single unary function, division and remainder by eight each fell from 36 to 20 bytes and from 12 to 8 executed instructions in emulation. Multiplication by 1,024 fell from 12 to 4 bytes and from 4 to 2 instructions.
+
 The Linux seed is a static ELF that calls the kernel directly. The Windows seed imports `KERNEL32.dll` for operating-system services. Both seeds run without a Python interpreter or C runtime.
 
 The bootstrap compiler is split into [H0 modules](bootstrap/compiler), with [standard I/O](std/io.h0) shared by the compiler and applications. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell to assemble the compiler sources and build both seeds with H0.
