@@ -37,6 +37,10 @@ With the same numeric import, `í™”abm` computes the exact product modulo `m`, `ì
 
 The single-line example takes 63 tokens in both measured tokenizers. With ASCII calls and an explicit import it takes 74 in o200k_base and 73 in cl100k_base. In an exploratory Windows x64 run with 8,192 wide-modulus exponentiations per process, H0 took 25.05 ms for odd moduli and 26.90 ms for even moduli. The H0 double-and-add baseline took 426.68 and 432.30 ms. The Rust u128 implementation took 17.85 and 15.86 ms. [Example](examples/modular.h0) [Correctness and timing data](benchmarks/native-modular-arithmetic.json)
 
+`\*ab` returns the upper 64 bits of the full unsigned product. The native compiler emits x64 MUL or RV64 MULHU. The modular library uses this operator in Montgomery reduction. On RV64 the standalone function fell from 156 to 30 bytes and from 63 to 12 executed instructions, including function entry and return. [Intel instruction reference](https://cdrdv2-public.intel.com/835757/325383-sdm-vol-2abcd.pdf) [RISC-V M extension](https://riscv.github.io/riscv-unified-db/manual/html/isa/isa_20240411/chapters/m-st-ext.html)
+
+In the paired Windows x64 rerun, the native operator reduced the odd and even modular exponentiation batches from 22.98 to 20.25 ms and from 23.78 to 20.29 ms. The Rust u128 reference took 14.02 and 14.05 ms. [Operator validation and paired samples](benchmarks/native-mulhi.json)
+
 For editing existing native H0 code, start with [EDIT.md](EDIT.md) and the source plus its scoped glyph and module records. [CORE.md](CORE.md) and [AGENTS.md](AGENTS.md) provide the remaining operations and contracts on demand. Count any later reference reads in end-to-end agent usage.
 
 Native binary64 values use one scalar containing the IEEE 754 bit pattern. Use `\F+`, `\F-`, `\F*`, and `\F/` for arithmetic, `\F^` for square root, and `\F<`, `\F=`, and `\F>` for ordered comparisons. Comparisons involving NaN return zero. Use `\Fi` or `\Fu` to convert signed or unsigned 64-bit integers to binary64. The inverse operators `\FI` and `\FU` truncate toward zero and saturate at the destination limits. NaN converts to zero.

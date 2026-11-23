@@ -1,0 +1,176 @@
+{
+  "operator_correctness": {
+    "seed": 610748,
+    "expression_shapes": 9,
+    "targets": {
+      "0": {
+        "passed": 31979,
+        "bytes": 8192,
+        "sha256": "f4b244e5ba41402194a1be9eb52747623aa6b20500ccda600e3b24c8a233c5bd"
+      },
+      "1": {
+        "passed": 31979,
+        "bytes": 6856,
+        "sha256": "1f6c58adb29879b4137a35bd58763c0d744e2c4d9c63a0b92643bf31da0f2847"
+      },
+      "2": {
+        "passed": 31979,
+        "bytes": 482,
+        "sha256": "7a7a0cfaa481755d139d84b1010b45302986c1ac445a1eb7322440dbc6f3e89c",
+        "environment": "Unicorn RV64"
+      }
+    }
+  },
+  "modular_correctness": {
+    "seed": 682921,
+    "cases_by_operation": {
+      "0": 20096,
+      "1": 20096,
+      "2": 114061
+    },
+    "targets": {
+      "0": {
+        "program_sha256": "2be50fb994f059110f7a6d2ead1d8e73dbb7710998525e1295d74b875c257d16",
+        "file_bytes": 12288,
+        "passed": 154253,
+        "total": 154253
+      },
+      "1": {
+        "program_sha256": "12a33854e890d095be1743370f499a22c4ae93c148d873663ceb64399a6f8894",
+        "file_bytes": 11228,
+        "passed": 154253,
+        "total": 154253
+      },
+      "2": {
+        "program_sha256": "164f90f43571b8e17a57d111e0b4fbe35ceb01232d3f8ee0684d9cdda0495abc",
+        "file_bytes": 3688,
+        "passed": 1156,
+        "total": 1156,
+        "environment": "Unicorn RV64"
+      }
+    }
+  },
+  "rv64_raw_primitive": {
+    "portable": {
+      "bytes": 156,
+      "cases": 1036,
+      "instructions_min": 63,
+      "instructions_max": 63
+    },
+    "native": {
+      "bytes": 30,
+      "cases": 1036,
+      "instructions_min": 12,
+      "instructions_max": 12
+    }
+  },
+  "source_tokens": {
+    "o200k_base": {
+      "previous_module": 577,
+      "new_module": 526,
+      "portable_expression_function": 47,
+      "native_expression_function": 5
+    },
+    "cl100k_base": {
+      "previous_module": 589,
+      "new_module": 537,
+      "portable_expression_function": 48,
+      "native_expression_function": 5
+    }
+  },
+  "windows_runtime": {
+    "scope": "Exploratory Windows x64 modular exponentiation on 64-bit exponents and moduli with the high bit set. Odd and even moduli measured separately. Includes process and buffered binary I/O. This is not a scored replacement exam.",
+    "seed": 91793,
+    "logical_core": 0,
+    "rust": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
+    "binary_bytes": {
+      "h0-mulhi": 10240,
+      "h0-portable": 10240,
+      "rust-u128": 139776
+    },
+    "results": {
+      "odd-wide": {
+        "records": 8192,
+        "median_ms": {
+          "h0-mulhi": 20.2506,
+          "h0-portable": 22.9755,
+          "rust-u128": 14.0166
+        },
+        "samples_ms": {
+          "h0-mulhi": [
+            40.5011,
+            42.2008,
+            18.9012,
+            21.8696,
+            19.4047,
+            20.2506,
+            18.4507
+          ],
+          "h0-portable": [
+            43.9277,
+            21.5938,
+            22.9755,
+            23.0338,
+            21.4401,
+            23.7813,
+            21.7708
+          ],
+          "rust-u128": [
+            13.6278,
+            36.0231,
+            14.0166,
+            14.7642,
+            13.3477,
+            14.2068,
+            13.3374
+          ]
+        }
+      },
+      "even-wide": {
+        "records": 8192,
+        "median_ms": {
+          "h0-mulhi": 20.2897,
+          "h0-portable": 23.7786,
+          "rust-u128": 14.0485
+        },
+        "samples_ms": {
+          "h0-mulhi": [
+            20.2897,
+            26.1139,
+            20.4657,
+            19.0172,
+            22.1485,
+            19.5116,
+            19.4992
+          ],
+          "h0-portable": [
+            23.6809,
+            26.0652,
+            22.833,
+            22.9454,
+            25.1781,
+            24.4875,
+            23.7786
+          ],
+          "rust-u128": [
+            14.0154,
+            14.7857,
+            14.1158,
+            14.0485,
+            14.2292,
+            13.8124,
+            13.8242
+          ]
+        }
+      }
+    }
+  },
+  "preceding_compiler_commit": "d2c543d4130238e9cf14909f23b16af9295c7b97",
+  "seed_fixed_point_sha256": {
+    "h0-windows-x64.exe": "945758faaa019fbb55aec2580658cd69b6ddc17320d1ff3568a6a2f1c0cc5d7e",
+    "h0-linux-x64": "7d99ba14e3c7309efcfd315996c8d427e5a1e4067b260a60605d1ee2a436d317"
+  },
+  "linux_self_host": true,
+  "missing_operand_diagnostic": "E102",
+  "byte_repeat_escape_unchanged": true
+}
