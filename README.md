@@ -29,7 +29,7 @@ H0 (Human Zero) is a native programming language for AI agents. Its Tape notatio
 
 H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AGENTS.md) for the language reference, native build commands, standard library, and compiler entry points.
 
-Import `>+5` for native numeric functions. `약ab` computes the unsigned greatest common divisor, with `gcd(0, 0) = 0`. `승ab` computes the unsigned least common multiple, returning zero for a zero operand and wrapping the result modulo `2^64`. `열a` computes the Fibonacci number at unsigned index `a` modulo `2^64`, using powers of the Fibonacci recurrence matrix for small indices and fast doubling for large ones. The [integer divisors example](examples/integer-divisors.h0) runs on Windows x64, Linux x64, and bare-metal RV64.
+Use the `정` prefix or `>+5` header for native numeric functions. For example, `정0 열12` returns 144. `약ab` computes the unsigned greatest common divisor, with `gcd(0, 0) = 0`. `승ab` computes the unsigned least common multiple, returning zero for a zero operand and wrapping the result modulo `2^64`. `열a` computes the Fibonacci number at unsigned index `a` modulo `2^64`, using powers of the Fibonacci recurrence matrix for small indices and fast doubling for large ones. The [integer divisors example](examples/integer-divisors.h0) runs on Windows x64, Linux x64, and bare-metal RV64.
 
 For editing existing native H0 code, start with [EDIT.md](EDIT.md) and the source plus its scoped glyph and module records. [CORE.md](CORE.md) and [AGENTS.md](AGENTS.md) provide the remaining operations and contracts on demand. Count any later reference reads in end-to-end agent usage.
 
