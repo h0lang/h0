@@ -118,7 +118,7 @@ Mode `48` takes the same path list without the target line and returns the assem
 printf '1\napp.h0\nlogic.h0\n' | bootstrap/seed/h0-linux-x64 47 > app
 ```
 
-The [bootstrap source list](bootstrap/modules.txt) orders the compiler’s H0 modules and shared standard I/O. The rebuild scripts invoke mode `48` to assemble this source list before producing both native seeds. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell to assemble the compiler sources and build both seeds with H0.
+The [bootstrap source list](bootstrap/modules.txt) orders the compiler’s H0 modules and shared standard I/O. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell. Both scripts use mode `48` to assemble the source list, then build both seeds with H0.
 
 On Windows and Linux x64, `>+1` loads standard I/O. Use `:!42` to print a word in decimal or `:!\b"hello"` to print bytes. The compiler selects the output function from the operand type. Use `:ew` to write a byte view to stderr. The decimal encoder in `std/num.h0` is loaded automatically.
 
