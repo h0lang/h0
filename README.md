@@ -19,6 +19,10 @@ H0 used 0.64% more total tokens and took 21% less time at the median. It used 2,
 
 A follow-up varied only the H0 editing guide. Five added syntax examples cost 164 prompt tokens per edit in `o200k_base`. Both versions passed all six attempts. Examples reduced reported reasoning tokens from 912 to 763 and increased total tokens from 148,725 to 149,515, or 0.53%. The short guide remains the default. One attempt hit provider capacity and returned no usage. Its successful rerun is counted, and the interruption is recorded separately. [Guide variant and per-attempt results](benchmarks/native-edit-guide-codex.json)
 
+A later paired pilot tested three previously unused dispatch changes, twice per language, against the same 5,580 oracle cases. H0 used its short editing guide and submitted only changed functions. Rust submitted complete changed files. All twelve attempts passed on their first response. H0 used 147,777 total tokens versus 150,357 for Rust (1.72% fewer), with median task times of 10.27 s and 14.57 s respectively. The H0 workflow enabled native recovery, and zero submissions needed it. The pilot used Codex with `gpt-6.2-sol` and provider-managed caching.
+
+For accepted executables, H0 was 11,264 bytes versus 140,288 to 140,800 for optimized Rust. With 44,640 framed cases per process on one Windows logical CPU, H0 took 4.4 to 5.2 times as long across the six pairs. The runtime measurements include process startup and binary stdin/stdout. [Held-out tasks, usage, grades, and runtime samples](benchmarks/native-heldout-edits-codex.json)
+
 ## Native toolchain
 
 H0 (Human Zero) is a native programming language for AI agents. Its Tape notation uses positional registers and compact Hangul instructions. Separate packed functions with a newline or `;;`. The [calendar example](examples/calendar.h0) fits five functions on one line.

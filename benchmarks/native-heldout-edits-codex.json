@@ -1,0 +1,617 @@
+{
+  "baseline_commit": "6a761538ba6f86fad356fec115405cbc87cbceb0",
+  "rust_compiler": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
+  "oracle_cases_per_run": 5580,
+  "oracle_corpus_sha256": "2afaadc2b47cff174417e50adaeb715b5fc196c5cb5096cef4455b00ed64c617",
+  "tasks": {
+    "zero_units": "Treat shipments with zero units as inactive in every report. They still consume one slot in the original prefix, break consecutive runs, and do not change any returned index.",
+    "last_peak": "In mode 4, choose the last index on a tie for the largest shipment. Preserve all other modes and the empty result sentinel. Zero-unit active shipments are valid candidates.",
+    "priority_delivery": "In mode 6, priority shipments without an arrival minute cost the standard 2 per unit until they are delivered. In mode 7, count units only from delivered priority shipments. Leave the priority surcharge and all other reports unchanged."
+  },
+  "seed_sha256": "1c01e6f9814bccaf960309ab91a8437ebbb737442f8b3b2d0fcc174e5b44445b",
+  "model": "gpt-6.2-sol",
+  "agent": "codex-cli 0.171.0-alpha.13",
+  "effort": "medium",
+  "cache": "fresh sessions with provider-managed caching",
+  "condition": "One tool-free Codex response per trial on Windows x64; no model repair. H0 used its short editing guide, function replacements resolved with mode 23, and native recovery in mode 54. Rust used complete changed files and rustc -O. The same 5,580 behavioral cases graded both. Second round reversed language order by task.",
+  "schemas": {
+    "rust": {
+      "type": "object",
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "files"
+      ],
+      "additionalProperties": false
+    },
+    "sections": {
+      "type": "object",
+      "properties": {
+        "edits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "edits"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "summary": {
+    "rust": {
+      "accepted": 6,
+      "attempts": 6,
+      "median_elapsed_ms": 14570.0,
+      "tokens_per_accepted_edit": 25059.5,
+      "requests": 6,
+      "input_tokens": 147748,
+      "output_tokens": 2609,
+      "cached_input_tokens": 82304,
+      "cache_write_input_tokens": 0,
+      "reasoning_tokens": 23,
+      "total_tokens": 150357
+    },
+    "sections": {
+      "accepted": 6,
+      "attempts": 6,
+      "median_elapsed_ms": 10265.5,
+      "tokens_per_accepted_edit": 24629.5,
+      "requests": 6,
+      "input_tokens": 146848,
+      "output_tokens": 929,
+      "cached_input_tokens": 66048,
+      "cache_write_input_tokens": 0,
+      "reasoning_tokens": 404,
+      "total_tokens": 147777
+    }
+  },
+  "infrastructure_interruptions": [],
+  "runs_in_execution_order": [
+    {
+      "task": "zero_units",
+      "variant": "rust",
+      "repeat": 1,
+      "prompt_sha256": "57690eed21d8b6fc0a61c3489914c6a7e7ad96fd427e605d3c8fca5c6e8ca9cb",
+      "prompt_o200k_tokens": 1782,
+      "elapsed_ms": 17797,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24865,
+        "cached_input_tokens": 14208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 506,
+        "reasoning_output_tokens": 0
+      },
+      "recovery_needed": null,
+      "accepted_executable_bytes": 140288,
+      "case_counts": {
+        "changed_cases": 116,
+        "changed_passed": 116,
+        "preserved_cases": 5464,
+        "preserved_passed": 5464
+      }
+    },
+    {
+      "task": "zero_units",
+      "variant": "sections",
+      "repeat": 1,
+      "prompt_sha256": "9ffc16373b0a3bf5c37c915e59970a6563e46c153c87dc670e3863cbd11d3c61",
+      "prompt_o200k_tokens": 1630,
+      "elapsed_ms": 11500,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24715,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 221,
+        "reasoning_output_tokens": 160
+      },
+      "recovery_needed": false,
+      "accepted_executable_bytes": 11264,
+      "case_counts": {
+        "changed_cases": 116,
+        "changed_passed": 116,
+        "preserved_cases": 5464,
+        "preserved_passed": 5464
+      }
+    },
+    {
+      "task": "last_peak",
+      "variant": "sections",
+      "repeat": 1,
+      "prompt_sha256": "0b6454d38b31be971589b9a8c59e4a1eafa1ba630ed3dc77f8313b9436c6faa5",
+      "prompt_o200k_tokens": 1632,
+      "elapsed_ms": 6953,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24717,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 55,
+        "reasoning_output_tokens": 0
+      },
+      "recovery_needed": false,
+      "accepted_executable_bytes": 11264,
+      "case_counts": {
+        "changed_cases": 23,
+        "changed_passed": 23,
+        "preserved_cases": 5557,
+        "preserved_passed": 5557
+      }
+    },
+    {
+      "task": "last_peak",
+      "variant": "rust",
+      "repeat": 1,
+      "prompt_sha256": "88e88d0c9a044f7ee4101189a09e58c91b92872cdf61de3f394e3ea643099683",
+      "prompt_o200k_tokens": 1784,
+      "elapsed_ms": 14828,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24867,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 419,
+        "reasoning_output_tokens": 0
+      },
+      "recovery_needed": null,
+      "accepted_executable_bytes": 140800,
+      "case_counts": {
+        "changed_cases": 23,
+        "changed_passed": 23,
+        "preserved_cases": 5557,
+        "preserved_passed": 5557
+      }
+    },
+    {
+      "task": "priority_delivery",
+      "variant": "rust",
+      "repeat": 1,
+      "prompt_sha256": "d3b5491e84b01e29e891a9b5ad5b13a7f18b96094cd8d3272d4f190c0f2f1626",
+      "prompt_o200k_tokens": 1795,
+      "elapsed_ms": 14156,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24878,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 378,
+        "reasoning_output_tokens": 10
+      },
+      "recovery_needed": null,
+      "accepted_executable_bytes": 140288,
+      "case_counts": {
+        "changed_cases": 38,
+        "changed_passed": 38,
+        "preserved_cases": 5542,
+        "preserved_passed": 5542
+      }
+    },
+    {
+      "task": "priority_delivery",
+      "variant": "sections",
+      "repeat": 1,
+      "prompt_sha256": "52c9ce0f1ab065ad76cf525454eb3fc508b08d356247c0609e6126d1c84bc7f8",
+      "prompt_o200k_tokens": 1643,
+      "elapsed_ms": 10312,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24728,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 216,
+        "reasoning_output_tokens": 76
+      },
+      "recovery_needed": false,
+      "accepted_executable_bytes": 11264,
+      "case_counts": {
+        "changed_cases": 38,
+        "changed_passed": 38,
+        "preserved_cases": 5542,
+        "preserved_passed": 5542
+      }
+    },
+    {
+      "task": "zero_units",
+      "variant": "sections",
+      "repeat": 2,
+      "prompt_sha256": "9ffc16373b0a3bf5c37c915e59970a6563e46c153c87dc670e3863cbd11d3c61",
+      "prompt_o200k_tokens": 1630,
+      "elapsed_ms": 11250,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24715,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 230,
+        "reasoning_output_tokens": 168
+      },
+      "recovery_needed": false,
+      "accepted_executable_bytes": 11264,
+      "case_counts": {
+        "changed_cases": 116,
+        "changed_passed": 116,
+        "preserved_cases": 5464,
+        "preserved_passed": 5464
+      }
+    },
+    {
+      "task": "zero_units",
+      "variant": "rust",
+      "repeat": 2,
+      "prompt_sha256": "57690eed21d8b6fc0a61c3489914c6a7e7ad96fd427e605d3c8fca5c6e8ca9cb",
+      "prompt_o200k_tokens": 1782,
+      "elapsed_ms": 16375,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24865,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 506,
+        "reasoning_output_tokens": 0
+      },
+      "recovery_needed": null,
+      "accepted_executable_bytes": 140288,
+      "case_counts": {
+        "changed_cases": 116,
+        "changed_passed": 116,
+        "preserved_cases": 5464,
+        "preserved_passed": 5464
+      }
+    },
+    {
+      "task": "last_peak",
+      "variant": "rust",
+      "repeat": 2,
+      "prompt_sha256": "88e88d0c9a044f7ee4101189a09e58c91b92872cdf61de3f394e3ea643099683",
+      "prompt_o200k_tokens": 1784,
+      "elapsed_ms": 14312,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23395,
+        "cached_input_tokens": 16256,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 419,
+        "reasoning_output_tokens": 0
+      },
+      "recovery_needed": null,
+      "accepted_executable_bytes": 140800,
+      "case_counts": {
+        "changed_cases": 23,
+        "changed_passed": 23,
+        "preserved_cases": 5557,
+        "preserved_passed": 5557
+      }
+    },
+    {
+      "task": "last_peak",
+      "variant": "sections",
+      "repeat": 2,
+      "prompt_sha256": "0b6454d38b31be971589b9a8c59e4a1eafa1ba630ed3dc77f8313b9436c6faa5",
+      "prompt_o200k_tokens": 1632,
+      "elapsed_ms": 7453,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23245,
+        "cached_input_tokens": 14208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 69,
+        "reasoning_output_tokens": 0
+      },
+      "recovery_needed": false,
+      "accepted_executable_bytes": 11264,
+      "case_counts": {
+        "changed_cases": 23,
+        "changed_passed": 23,
+        "preserved_cases": 5557,
+        "preserved_passed": 5557
+      }
+    },
+    {
+      "task": "priority_delivery",
+      "variant": "sections",
+      "repeat": 2,
+      "prompt_sha256": "52c9ce0f1ab065ad76cf525454eb3fc508b08d356247c0609e6126d1c84bc7f8",
+      "prompt_o200k_tokens": 1643,
+      "elapsed_ms": 10219,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24728,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 138,
+        "reasoning_output_tokens": 0
+      },
+      "recovery_needed": false,
+      "accepted_executable_bytes": 11264,
+      "case_counts": {
+        "changed_cases": 38,
+        "changed_passed": 38,
+        "preserved_cases": 5542,
+        "preserved_passed": 5542
+      }
+    },
+    {
+      "task": "priority_delivery",
+      "variant": "rust",
+      "repeat": 2,
+      "prompt_sha256": "d3b5491e84b01e29e891a9b5ad5b13a7f18b96094cd8d3272d4f190c0f2f1626",
+      "prompt_o200k_tokens": 1795,
+      "elapsed_ms": 14297,
+      "accepted": true,
+      "cases_passed": 5580,
+      "cases_total": 5580,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24878,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 381,
+        "reasoning_output_tokens": 13
+      },
+      "recovery_needed": null,
+      "accepted_executable_bytes": 140288,
+      "case_counts": {
+        "changed_cases": 38,
+        "changed_passed": 38,
+        "preserved_cases": 5542,
+        "preserved_passed": 5542
+      }
+    }
+  ],
+  "accepted_program_runtime": {
+    "logical_cpu_index": 0,
+    "cases_per_process": 44640,
+    "includes": "process startup and binary stdin/stdout",
+    "paired_timings": {
+      "zero_units-1": {
+        "rust": {
+          "median_ms": 14.7361,
+          "samples_us": [
+            14733,
+            18293,
+            18513,
+            13259,
+            17495,
+            14736,
+            17639,
+            13009,
+            12957
+          ]
+        },
+        "sections": {
+          "median_ms": 76.5303,
+          "samples_us": [
+            172535,
+            74374,
+            66623,
+            186738,
+            171828,
+            69556,
+            181678,
+            76530,
+            68461
+          ]
+        }
+      },
+      "zero_units-2": {
+        "rust": {
+          "median_ms": 13.9166,
+          "samples_us": [
+            13916,
+            13522,
+            16685,
+            17034,
+            14928,
+            12743,
+            13766,
+            14046,
+            13570
+          ]
+        },
+        "sections": {
+          "median_ms": 66.8973,
+          "samples_us": [
+            66897,
+            57030,
+            49204,
+            81549,
+            100962,
+            174472,
+            54799,
+            63831,
+            172971
+          ]
+        }
+      },
+      "last_peak-1": {
+        "rust": {
+          "median_ms": 14.1665,
+          "samples_us": [
+            13480,
+            16591,
+            12841,
+            14395,
+            14166,
+            13178,
+            16137,
+            13719,
+            14837
+          ]
+        },
+        "sections": {
+          "median_ms": 73.3362,
+          "samples_us": [
+            73336,
+            86462,
+            53825,
+            48978,
+            90279,
+            91183,
+            97889,
+            70226,
+            57619
+          ]
+        }
+      },
+      "last_peak-2": {
+        "rust": {
+          "median_ms": 13.2355,
+          "samples_us": [
+            13522,
+            12931,
+            13087,
+            33524,
+            12850,
+            14487,
+            12864,
+            13235,
+            14393
+          ]
+        },
+        "sections": {
+          "median_ms": 58.0776,
+          "samples_us": [
+            58077,
+            166263,
+            54564,
+            56893,
+            52119,
+            93706,
+            160325,
+            53828,
+            103304
+          ]
+        }
+      },
+      "priority_delivery-1": {
+        "rust": {
+          "median_ms": 13.9395,
+          "samples_us": [
+            15217,
+            15814,
+            15545,
+            13536,
+            15523,
+            13214,
+            13240,
+            13900,
+            13939
+          ]
+        },
+        "sections": {
+          "median_ms": 71.6248,
+          "samples_us": [
+            165775,
+            71624,
+            90695,
+            53125,
+            69305,
+            54206,
+            76607,
+            54063,
+            97007
+          ]
+        }
+      },
+      "priority_delivery-2": {
+        "rust": {
+          "median_ms": 13.9231,
+          "samples_us": [
+            13193,
+            17095,
+            13526,
+            13923,
+            13754,
+            14582,
+            15837,
+            13417,
+            15502
+          ]
+        },
+        "sections": {
+          "median_ms": 65.0953,
+          "samples_us": [
+            52485,
+            61505,
+            118956,
+            51704,
+            74888,
+            94871,
+            65095,
+            180509,
+            53721
+          ]
+        }
+      }
+    }
+  }
+}
