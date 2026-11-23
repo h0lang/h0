@@ -248,6 +248,8 @@ With `>+3`, `면a` returns `1` when shared byte view `a` is identical to its rev
 
 `생ab` (also `:b9`) counts words in a byte view. ASCII bytes 09–0D and 20 separate words. It writes the LF count and byte count as two little-endian u64 values to the first 16 bytes of the destination and returns the word count. A short destination returns `u64::MAX` and stays intact.
 
+`태abc` (also `:b6`) converts bytes between binary and ASCII hexadecimal. Mode 0 writes lowercase digits and mode 1 decodes either case. It returns the number of bytes written and preserves the rest of the destination. Invalid input or a short destination returns `u64::MAX` and leaves the destination intact.
+
 Import `>+3` for byte reductions. `셈a` sums the shared byte view `a` with wrapping arithmetic, `밑a` returns its minimum, and `윗a` returns its maximum. An empty view sums to zero and has minimum and maximum of 256. The native compiler lowers these operations to bounded 16-byte SSE2 loops on x64 and a register-only byte loop on RV64. An empty view never reads memory, and the x64 loop processes the final partial block byte by byte. [Intel SSE2 instruction reference](https://intel.github.io/SDM/sdm.html)
 
 Use `>+3` for Base64 on Windows x64, Linux x64, and freestanding RV64. Call `:b0<TAB>ab` to encode and `:b1<TAB>ab` to decode, with source `a` and disjoint mutable destination `b`. The result is the byte count. An empty destination queries the size and validates the input. Malformed input or insufficient space returns Max before writing any bytes. The decoder requires the standard alphabet, padding, and zero pad bits. [Base64 example](examples/base64.h0) · [RFC 4648, section 4](https://www.rfc-editor.org/rfc/rfc4648.html#section-4)
