@@ -514,6 +514,8 @@ The [SHA-256 CLI](examples/sha256.h0) hashes a file or stdin and prints its lowe
 
 The [checksum CLI](examples/checksums.h0) reads a file or stdin and prints CRC-32 and Adler-32. With `>+3`, `를a` prepares a reusable CRC table, `으abc` updates an IEEE CRC-32 from initial value 0, and `임ab` updates Adler-32 from initial value 1. The zlib decoder uses the same Adler-32 implementation. On x64, Adler-32 uses SSE2 and CRC-32 uses carry-less multiplication when available. CRC-32 also has a table-based path.
 
+The [hex dump CLI](examples/hexdump.h0) emits the canonical `hexdump -C` layout on Windows and Linux x64. It reads stdin by default and treats multiple files as one stream, preserving partial rows across file boundaries. Use a single dash to read stdin among the paths, `-v` to show every row, and `--` to end option parsing. Place options before paths.
+
 ## Developer
 
 Hyeonwoo Kim (kookmin20103324@gmail.com) created and maintains Project H0. Run either native compiler seed with argument `4` to display the author credit.

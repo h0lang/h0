@@ -1,0 +1,14 @@
+>+14q
+0 aM4096 bM8192 cM45056 dM1056 Y:hxt	d e1 f0 g0 h0 W1	15 i:a4	ea ?Ei-수	1' ?Ei수.:hxhu j0 ?!f	1 j:hxhop	Va0i ?Ej1	2 +e1 ` ?Ej2	3 Xd25	1 +e1 ` ?Ej3	3 f1 +e1 ` ?Ej4.:hxhu f1 g1 j:hxhi	Va0ibcd ?Ej2.2 h|hj +e1 ?!g	2 h:hxhs	bcd수 ?h.:hxhe j\B8d0 kBd26 ?Ojk	6 l0 ?k	1 l:hxhr	Vb0kc0jd +jk l:hxha	clj Xcl10 ?D:wr	Vc0+l1+l1.:hxhe ?Eh1.1 :fl
+1-hxhop'a ?!Za.0 ?DBa0	45.0 ?AEZa1EBa0	45.0 ?EZa2	4 bBa1 ?Eb67.1 ?Eb118.2 ?Eb45.3 .4 4
+0-hxhu Y:ew	\b"usage: hexdump [-C] [-v] [--] [FILE ...]\n" 2
+0-hxhe Y:ew	\b"hexdump: input or output failed\n" 2
+1-hxhf'a Y:ew	\b"hexdump: cannot read " Y:ew	a Y:ew	\b"\n" 1
+4-hxhi'a"bcd e수 ?!AEZa1EBa0	45	2 e:결a0 ?Ee수.:hxhf	a f:hxhs	bcde g0 ?De수	1 g:디	e ?Ef2.:hxhe ?Ofg.:hxhf	a 0
+4-hxhs"abc W1	11 eBc26 f0 Kae	1 f:hxhb	hd ?>fZa.1 ?!f.0 +fe g:hxfrows	Va0fbc ?D:wr	Vb0gg.2 h&f15 Xc26h @h	1 XaiBa+-fhi 0
+2-hxhb"a ?Eb수.:들a :닷ba
+3-hxfrows'a"bc d\B8c0 e0 @TZa4	5 gSf4 h\B8ag i\B8a+g8 ?AA!Bc25dAEh\B8c8Ei\B8c16	1	4 ?!Bc24	4 Xbe42 Xb+e1	10 +e2 Xc24	1 Xc24	0 \Q8c8h \Q8c16i e:hxhr	Vag+g16bedc +d16 \Q8c0d e
+5-hxhr'ae"b f:hxha	bcd Xbf32 Xb+f1	32 @16	2 h++f2+*g3Gg8 ?<gZa	3	1 i\B4e+32SBag2 \Q4bhi Xb++f53gTi24 \Q4bh\s"    " Xb+f26	32 Xb+f51	32 Xb+f52	124 Xb++f53Za124 Xb++f54Za10 ++f55Za
+1-hxt"a \Q8a0	0 \Q4a24	0 @256	1 \Q4a+32Sb2|||:hxhn	Tb4S:hxhn	&b15	8	2097152S\iL-b32	94b46	24 0
+3-hxha"a d8 eTc32 We	2 +d1 eTe4 @d	1 Xa+bf:hxhn	&TcS-d+f1	2	15 +bd
+1-hxhn +a\i<a10	48	87
