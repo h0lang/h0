@@ -59,3 +59,4 @@ bootstrap/compiler/mutex-module.h0
 bootstrap/compiler/callers.h0
 bootstrap/compiler/startup-args.h0
 bootstrap/compiler/x64-constant-view.h0
+bootstrap/compiler/binary64.h0
