@@ -1,0 +1,5 @@
+1-mspanframe'a b:movern	a0 ?Eb수.:mspanerror	\b"" c&b4294967295 ?O>c32!&T7616857063c1.:mspanerror	\b"" d:movern	aTb32 ?Ed수.:mspanerror	\b"" e&d4294967295 ?O!e>e/Za8.:mspanerror	\b"" fTd32 gM*e24 h0 i0 @e	25 k:movern	af ?Ek수.:mspanerror	\b"" fTk32 k&k4294967295 ?O>k131071Aj<kh.:mspanerror	\b"" l:movern	af ?El수.:mspanerror	\b"" fTl32 l&l4294967295 m:movern	af ?Em수.:mspanerror	\b"" fTm32 m&m4294967295 ?>+lm524288.:mspanerror	\b"" ?AEkh<li.:mspanerror	\b"" n:movern	af ?En수.:mspanerror	\b"" fTn32 n&n4294967295 ?O>n524288G+n1-Zaf.:mspanerror	\b"" ?DBa+fn10.:mspanerror	\b"" :msrecord	gjklmfn hk i+lm f++fn1 :mproject	a|c9223372036854775808fg
+7-msrecord"a h*b24 \Q4ahc \Q4a+h4d \Q4a+h8e \Q4a+h12f \Q4a+h16g
+5-msplice'abd"c fM524330 g:mread	af0 ?Eg수.수 h:mspanapply	bVf0gdce ?Eh수.~1 ?!h.수 :mfinish	ceh
+5-mspanapply'abc"d f0 ge @/Zc24	13 i*h24 j\B4c+i4 k\B4c+i8 l\B4c+i12 m\B4c+i16 ?>+jkZb.수 n-jf ?G+nm-Zdg.수 Y:92bdfjg +gn Y:92adl+lmg +gm f+jk h-Zbf ?>h-Zdg.수 Y:92bdfZbg -+ghe
+1-mspanerror'a Y:121\b"error E127: invalid project edit list or byte range" ?Za	2 Y:121\b": " Y:121a Y:121\b"\n" 3
