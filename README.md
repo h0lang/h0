@@ -23,6 +23,8 @@ A later paired pilot tested three previously unused dispatch changes, twice per 
 
 For accepted executables, H0 was 11,264 bytes versus 140,288 to 140,800 for optimized Rust. With 44,640 framed cases per process on one Windows logical CPU, H0 took 4.4 to 5.2 times as long across the six pairs. The runtime measurements include process startup and binary stdin/stdout. [Held-out tasks, usage, grades, and runtime samples](benchmarks/native-heldout-edits-codex.json)
 
+A replay gave both languages the complete program and required only named function replacements. Ten submissions passed all 5,580 cases each. Two attempts, one per language, timed out after the provider reported capacity limits and returned no usage. Across the four pairs with complete usage, H0 used 72,602 total tokens versus 72,040 for Rust. The visible prompts and JSON answers took 7,018 versus 7,928 tokens in `o200k_base`. Median end-to-end time was 8.60 s for H0 and 11.25 s for Rust. These figures describe the completed pairs. [Matched function-edit trials and interruptions](benchmarks/native-dispatch-fair-function-codex.json)
+
 ## Native toolchain
 
 H0 (Human Zero) is a native programming language for AI agents. Its Tape notation uses positional registers and compact Hangul instructions. Separate packed functions with a newline or `;;`. The [calendar example](examples/calendar.h0) fits five functions on one line.
