@@ -95,3 +95,4 @@ bootstrap/compiler/hex-codec.h0
 bootstrap/compiler/base64-body.h0
 bootstrap/compiler/f64-row.h0
 bootstrap/compiler/ring-batch.h0
+bootstrap/compiler/io-vector.h0
