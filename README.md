@@ -107,6 +107,8 @@ Use `>+x` to start native threads on Windows and Linux x64. Define a local `1-tt
 
 Call `:tb(state)` to wait for completion and release the thread resources. Keep the state and any memory the worker accesses live through the join. After joining, `:tc(state, output)` writes the worker's full 64-bit result into an output view of at least 8 bytes. Each operation returns zero on success or `u64::MAX` on failure. The [thread example](examples/threads.h0) starts two workers and checks both results. [Windows CreateThread](https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createthread) [Linux clone](https://man7.org/linux/man-pages/man2/clone.2.html)
 
+Load `>+s` for `:at(address, increment)`, `:ax(address, value)`, and `:ac(address, expected, replacement)`. Fetch-add, exchange, and compare-exchange return the previous u64 value. Fetch-add wraps modulo 2⁶⁴. Compare-exchange updates the word only when the returned value equals the expected value. The address must be nonzero, eight-byte aligned, and in live coherent memory. Use atomic accesses for a word shared with a running thread. The [shared counter example](examples/atomic-threads.h0) runs four workers and verifies a counter for each update method. Windows and Linux x64 use locked instructions. [Intel instruction set reference](https://cdrdv2-public.intel.com/671110/325383-sdm-vol-2abcd.pdf)
+
 Use `>+7` to include the [buffered stream module](std/stream.h0) and its file dependency. Pass mode `2` to `:s0` for append-only output. Modes `3` and `4` allow buffered reads and in-place writes on the same stream. Mode `4` also creates a missing file. Switching to writes discards read-ahead after restoring the logical position. Switching to reads flushes pending writes. Use `:s6` to query the logical position without flushing and `:s7` to read exactly a destination buffer’s length. Use `:s8` to read through a delimiter, preserving unread bytes for the next call. A flush completes partial writes through the file module.
 
 On Windows and Linux x64, `>+0` includes the [TCP module](std/net.h0). The same [echo example](examples/tcp.h0) builds on both targets, binds to loopback, prints its assigned port, and serves one connection. Windows uses the system Winsock DLL.
@@ -219,7 +221,7 @@ The [RV64 UART example](examples/rv64-uart.h0) initializes a 16550-compatible UA
 qemu-system-riscv64 -machine virt -smp 4 -m 16M -bios none -kernel h0-uart.elf -display none -serial stdio -monitor none
 ```
 
-Load `>+s` for [RV64 atomics](std/atomic-rv64.h0). `:at` fetches and adds, `:ax` exchanges, and `:ac` compares and exchanges. Each returns the previous u64 value. The address must be nonzero and eight-byte aligned in live coherent RAM. The module requires the RISC-V A extension and uses acquire/release ordering. [RISC-V atomic instructions](https://docs.riscv.org/reference/isa/unpriv/a-st-ext.html)
+The `>+s` atomic operations also target RV64 with the RISC-V A extension and use acquire/release ordering. [RISC-V atomic instructions](https://docs.riscv.org/reference/isa/unpriv/a-st-ext.html)
 
 The [RV64 multicore example](examples/rv64-smp.h0) uses four harts with a 4 KiB stack each. It checks both 40,000 fetch-add updates and 40,000 compare-and-exchange updates, then reads per-hart values published in the shared page.
 
