@@ -9,3 +9,9 @@
 6-pschoose'b"a g0 @c	7 i&\B8b*h8	4294967295 Xai9 j0 ?f	1	1 j:psother	abcdeh j:pscheck	ade Xai32 ?Ej수.수 ?j	2 ?g.수 g|\iTj20j0+i1 g
 6-psother'b"a g+f1 i0 W<gc	6 j&\B8b*g8	4294967295 Xaj9 k:pscheck	ade Xaj32 ?k	2 ?i.수 iS+j1	20 +g1 i
 3-pscheck'a d:176ab O!dATd63O>:lu	d:lu	c>&d16383&c16383
+6-mrecover'abc gMZa Y:92ag0Za0 hM128 i:mctarget	e l0 ?AAEi26ZaEBa0	64 l+1:296a0 ?GlZa.f j:mrprep	ghlif ?Ej수.f ?!:mrverify	bch+dlj.f k:176g\iAGe30Le32-e25e \iTk63fk
+5-mrprep"ab ?Dd26.:psround	abde f0 Kac	1 f:mrboot	hb f
+2-mrboot"ab c:176a7 ?!Tc63.수 :psround	ab7c
+1-mctarget ?<a3.+a5 ?Ea8.9 ?Ea25.26 \iGa30-a25a
+5-mrverify'abc @e	3 g+d\B8c*f8 h:em	ag+g1 ?O!h!:mrspan	b&Th32	131071&h1048575.0 1
+3-mrspan'a d0 @/Za24	8 f*e24 g\B4af ?>gb.0 ?<gb` h+d\B4a+f4 i\B4a+f16 ?AGch<c+hi.1 +d-i\B4a+f8 0
