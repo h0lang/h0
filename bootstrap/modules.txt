@@ -67,3 +67,4 @@ bootstrap/compiler/batch-guide.h0
 bootstrap/compiler/batch-extract.h0
 bootstrap/compiler/checked-edit.h0
 bootstrap/compiler/windows-path-x64.h0
+bootstrap/compiler/edit-guide.h0

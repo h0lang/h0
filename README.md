@@ -60,6 +60,10 @@ Mode `42` extracts several sections in one pass. Send a positive decimal count f
 
 For the six public examples with at least two named functions, extracting the middle two with mode `42` took 1,360 tokens versus 5,682 for complete source in `o200k_base`, including the extraction metadata. In `cl100k_base` it took 1,373 versus 5,730. Extracting the first five named sections of the Windows viewer took a median of 7.47 ms in one call versus 37.40 ms in five mode `24` calls over 12 paired runs, including process startup.
 
+Mode `46` takes the mode `42` request and prefixes its extraction records with the two compact glyph rows from mode `19`. The rows include only glyphs present in the selected sections, once per row in first-use order. Skip the first two LF-terminated rows to pass the records to mode `29` or modes `43`–`45`. Use modes `20`–`22` for contracts of imported modules and modes `33`–`35` for callee headers when needed.
+
+Across 107 single-section selections from the public examples, the glyph rows and extraction records totaled 10,952 tokens in `o200k_base`, down from 12,395 with whole-file glyph rows. In `cl100k_base` they totaled 11,051, down from 12,403. Both tokenizers showed savings in 54 selections. These counts cover the requested excerpts, their framing, and the glyph rows.
+
 For a two-function edit in each of the five public examples with at least two named sections, returning just the two sections would take 1,040 instead of 5,110 output tokens in `o200k_base`, and 1,047 instead of 5,146 in `cl100k_base`. The estimate uses the two middle named sections as replacement text and counts one LF after each.
 
 For the 21 public examples with standard-library imports, the complete native standard-library contract table costs 2,666 tokens in `o200k_base` and 2,685 in `cl100k_base`. Target-specific output had medians of 272 and 281. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 89,047 to 39,770 and from 89,617 to 40,052 respectively. The comparison counts supplied reference and source text.
