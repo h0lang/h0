@@ -504,6 +504,8 @@ Modes `14`, `15`, and `16` use the same checks and emit only `offset op` followe
 
 With a missing block separator injected into each of 16 public examples, the median repair output went from 138 tokens to 4 in `o200k_base` and from 143.5 to 4 in `cl100k_base`. These counts cover compiler output only.
 
+The [file concatenation CLI](examples/cat.h0) copies files to stdout in argument order. With no paths or with `-`, it copies stdin. It reports missing files on stderr, continues to later inputs, and exits nonzero if an input fails. `트a` (also `:fk`) in `>+4` tries native Linux file transfer at the current offset when stdout is seekable. A result of 1 requests a buffered continuation, and 0 reports EOF. The CLI copies through one reusable buffer on both hosts. Use distinct files for input and redirected output.
+
 ## Developer
 
 Hyeonwoo Kim (kookmin20103324@gmail.com) created and maintains Project H0. Run either native compiler seed with argument `4` to display the author credit.
