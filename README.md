@@ -506,6 +506,8 @@ With a missing block separator injected into each of 16 public examples, the med
 
 The [file concatenation CLI](examples/cat.h0) copies files to stdout in argument order. With no paths or with `-`, it copies stdin. It reports missing files on stderr, continues to later inputs, and exits nonzero if an input fails. `트a` (also `:fk`) in `>+4` tries native Linux file transfer at the current offset when stdout is seekable. A result of 1 requests a buffered continuation, and 0 reports EOF. The CLI copies through one reusable buffer on both hosts. Use distinct files for input and redirected output.
 
+The [fixed-string grep CLI](examples/grep.h0) searches stdin or named files, prints 1-based line numbers, and returns 0 on a match, 1 when no line matches, or 2 for usage and I/O errors. The search is byte-exact and carries a line across read boundaries. Use `할ab` from `>+3` to build a little-endian prefix table for needle a, then `에abc` to find needle b in data a using its table c. The result is the first byte offset or Max. An empty needle matches at offset zero.
+
 ## Developer
 
 Hyeonwoo Kim (kookmin20103324@gmail.com) created and maintains Project H0. Run either native compiler seed with argument `4` to display the author credit.
