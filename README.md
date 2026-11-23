@@ -301,6 +301,8 @@ Use the same vector functions for fixed-width records of any byte width. Initial
 
 The [vector example](examples/vector.h0) uses these functions for u64 values and 13-byte records in the same heap. Each caller defines the record's byte layout. The core vector operations use the caller-provided heap on Windows, Linux, and RV64.
 
+The [stable priority queue](std/priority.h0) also comes with `>+v`. Initialize a 24-byte state with its first word zero and call `:pq(heap,state,initialEntries)`. Add unsigned u64 priority and payload with `:pa`. Smaller priorities come first, and equal priorities leave in insertion order. `:pr(heap,state,out)` removes the minimum and `:pv` reads it without removing it. Both need 16 output bytes and return 1 with the little-endian priority and payload, 0 when empty, or Max on error. `:pl` counts and `:pf` releases the queue. The queue grows in the caller's heap, and a failed insert preserves its contents. It resets the insertion counter when drained. [Priority queue example](examples/priority.h0)
+
 The [stdin example](examples/buffer-stdin.h0) reads arbitrary bytes until EOF using a caller-owned heap. Against an equivalent example with explicit heap growth and copying, using the buffer reduced source from 140 to 86 tokens in `o200k_base` and from 141 to 87 in `cl100k_base`. The Windows executable grew from 9,728 to 11,776 bytes and the Linux executable from 8,729 to 10,479 bytes.
 
 In one Windows x64 process benchmark, 8,000,019 aligned allocations with periodic rewind took a median of 109 ms in H0 and 30 ms in Rust 1.100.0 at `opt-level=3`. Both produced the same checksum. The executables were 9,216 and 137,728 bytes respectively.
