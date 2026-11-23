@@ -68,6 +68,10 @@ The same x64 lowering applies inside addition, subtraction, multiplication, AND,
 
 A Windows loop running `b^Tb7c c+*c13b d-+dcb b+^bdc c^|cbd d+*dcb` for 12 million iterations took a median of 38.43 ms versus 43.20 ms across eight paired runs on one logical CPU. The results matched. For the same set of existing public examples, Windows x64 binaries totaled 459,264 bytes versus 465,408, and Linux x64 binaries totaled 352,366 bytes versus 358,430.
 
+Simple x64 `?` and `W` comparisons now jump directly on the flags from `CMP`. The left operand must be a bound scalar and the right operand a bound scalar or a decimal constant from 0 to 2,147,483,647. The compiler also handles a single negation. [Branch and dynamic-frame example](examples/compare-branch.h0)
+
+On Windows, a 24-million-iteration loop with a scalar loop condition and a mix of taken and untaken branches took a median of 40.12 ms versus 61.39 ms across eight paired runs on one logical CPU. Both binaries produced the same result. Across the existing examples, Windows x64 output (37 builds) fell from 460,800 to 452,608 bytes and Linux x64 output (36 builds) from 353,451 to 343,940 bytes.
+
 Native x64 and RV64 builds lower unsigned multiplication, division, and remainder by a constant power of two to shifts or bit masks. The compiler evaluates the left operand before applying the operation, including when the divisor is one. In raw RV64 output for a single unary function, division and remainder by eight each fell from 36 to 20 bytes and from 12 to 8 executed instructions in emulation. Multiplication by 1,024 fell from 12 to 4 bytes and from 4 to 2 instructions.
 
 For other nonzero unsigned constant divisors below `2^63`, x64 builds compute an integer reciprocal at compile time and emit a high multiply, a shift, and a correction when required. Remainder reconstructs the quotient product and subtracts it from the dividend. Divisors above `2^63` use a comparison on x64 and RV64, since the quotient can only be zero or one. RV64 keeps native division for the remaining non-power-of-two constants. [Multiply-and-shift integer division](https://libdivide.com/)
