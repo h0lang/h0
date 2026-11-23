@@ -46,3 +46,4 @@ bootstrap/compiler/rv64-atomic.h0
 bootstrap/compiler/rv64-smp.h0
 bootstrap/compiler/rv64-trap.h0
 bootstrap/compiler/section-edit.h0
+bootstrap/compiler/batch-edit.h0
