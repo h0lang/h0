@@ -1,0 +1,302 @@
+{
+  "compiler_base_commit": "bd9184781ddaf6c4e1ed7305317f8993228e18d2",
+  "compiler_sha256": "09af26f6ae63b8b128c8b4290d638506234dc1cea5eff037ed09d3290bb544f5",
+  "guide_sha256": {
+    "full": "f2fa7750408fae0ac978077e45b6a03ae91e0c4b09d395f15a6ea3d081a2994d",
+    "scope": "eb92c81b487805c335ddce608d90fe06eec16504e44bba9c026dfa1d755f88f9"
+  },
+  "model": "gpt-6.2-sol",
+  "effort": "low",
+  "agent": "codex-cli 0.171.0-alpha.13",
+  "scope": "Previously used dispatch tasks and preselected function sets. Full receives the original five modules and editing guide. Scope receives the selected functions and support text from native mode 59 plus the grammar-only guide. Both submit one named replacement per function and use mode 57. Fresh ephemeral CLI turns, reversed order on the second repeat, no model retries.",
+  "planned_attempts": 12,
+  "complete_usage_pairs": 5,
+  "full_usage": false,
+  "summary": {
+    "full": {
+      "paired_attempts": 5,
+      "paired_accepted": 5,
+      "completed_attempts": 5,
+      "total_accepted": 5,
+      "input_tokens": 90592,
+      "output_tokens": 387,
+      "cached_input_tokens": 66688,
+      "reasoning_output_tokens": 0,
+      "median_end_to_end_ms": 8719,
+      "total_tokens": 90979
+    },
+    "scope": {
+      "paired_attempts": 5,
+      "paired_accepted": 4,
+      "completed_attempts": 6,
+      "total_accepted": 5,
+      "input_tokens": 86712,
+      "output_tokens": 535,
+      "cached_input_tokens": 52736,
+      "reasoning_output_tokens": 129,
+      "median_end_to_end_ms": 9813,
+      "total_tokens": 87247
+    }
+  },
+  "trials": [
+    {
+      "task": "zero_units",
+      "condition": "full",
+      "repeat": 1,
+      "usage": {
+        "input_tokens": 18409,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 60,
+        "reasoning_output_tokens": 0
+      },
+      "prompt_tokens_o200k": 1657,
+      "fixture_sha256": "2549653433b8222cf541786571c0a553ca75f0c85f2a2d8b5d7e44a588c87b59",
+      "author_ms": 8969,
+      "answer_tokens_o200k": 50,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 9094
+    },
+    {
+      "task": "zero_units",
+      "condition": "scope",
+      "repeat": 1,
+      "usage": {
+        "input_tokens": 17598,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 95,
+        "reasoning_output_tokens": 33
+      },
+      "prompt_tokens_o200k": 844,
+      "fixture_sha256": "2549653433b8222cf541786571c0a553ca75f0c85f2a2d8b5d7e44a588c87b59",
+      "author_ms": 9688,
+      "answer_tokens_o200k": 50,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 9813
+    },
+    {
+      "task": "last_peak",
+      "condition": "scope",
+      "repeat": 1,
+      "usage": {
+        "input_tokens": 17644,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 83,
+        "reasoning_output_tokens": 9
+      },
+      "prompt_tokens_o200k": 890,
+      "fixture_sha256": "b273a5260082d95088dc656a4207e2058477ba87041e684dbd522a624c9df2ec",
+      "author_ms": 8515,
+      "answer_tokens_o200k": 62,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 8640
+    },
+    {
+      "task": "last_peak",
+      "condition": "full",
+      "repeat": 1,
+      "usage": {
+        "input_tokens": 18411,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 72,
+        "reasoning_output_tokens": 0
+      },
+      "prompt_tokens_o200k": 1659,
+      "fixture_sha256": "b273a5260082d95088dc656a4207e2058477ba87041e684dbd522a624c9df2ec",
+      "author_ms": 8187,
+      "answer_tokens_o200k": 62,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 8296
+    },
+    {
+      "task": "priority_delivery",
+      "condition": "full",
+      "repeat": 1,
+      "usage": null,
+      "prompt_tokens_o200k": 1672,
+      "fixture_sha256": "fc39ab1af783ed636783ca32e2f86ed474126e4642f96899cbe006d0a594f2fc",
+      "author_ms": 52047,
+      "accepted": false,
+      "failure": "timeout",
+      "provider_interruption": "capacity",
+      "elapsed_ms": 52047
+    },
+    {
+      "task": "priority_delivery",
+      "condition": "scope",
+      "repeat": 1,
+      "usage": {
+        "input_tokens": 17700,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 137,
+        "reasoning_output_tokens": 0
+      },
+      "prompt_tokens_o200k": 946,
+      "fixture_sha256": "fc39ab1af783ed636783ca32e2f86ed474126e4642f96899cbe006d0a594f2fc",
+      "author_ms": 10453,
+      "answer_tokens_o200k": 127,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 10641
+    },
+    {
+      "task": "zero_units",
+      "condition": "scope",
+      "repeat": 2,
+      "usage": {
+        "input_tokens": 17598,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 151,
+        "reasoning_output_tokens": 87
+      },
+      "prompt_tokens_o200k": 844,
+      "fixture_sha256": "2549653433b8222cf541786571c0a553ca75f0c85f2a2d8b5d7e44a588c87b59",
+      "author_ms": 13094,
+      "answer_tokens_o200k": 52,
+      "accepted": false,
+      "failure": "error E102: invalid or unsupported instruction or operand. Section 4. Line 2, column 12.",
+      "elapsed_ms": 13109
+    },
+    {
+      "task": "zero_units",
+      "condition": "full",
+      "repeat": 2,
+      "usage": {
+        "input_tokens": 18409,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 59,
+        "reasoning_output_tokens": 0
+      },
+      "prompt_tokens_o200k": 1657,
+      "fixture_sha256": "2549653433b8222cf541786571c0a553ca75f0c85f2a2d8b5d7e44a588c87b59",
+      "author_ms": 8344,
+      "answer_tokens_o200k": 49,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 8563
+    },
+    {
+      "task": "last_peak",
+      "condition": "full",
+      "repeat": 2,
+      "usage": {
+        "input_tokens": 18411,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 58,
+        "reasoning_output_tokens": 0
+      },
+      "prompt_tokens_o200k": 1659,
+      "fixture_sha256": "b273a5260082d95088dc656a4207e2058477ba87041e684dbd522a624c9df2ec",
+      "author_ms": 8578,
+      "answer_tokens_o200k": 48,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 8719
+    },
+    {
+      "task": "last_peak",
+      "condition": "scope",
+      "repeat": 2,
+      "usage": {
+        "input_tokens": 16172,
+        "cached_input_tokens": 10880,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 69,
+        "reasoning_output_tokens": 0
+      },
+      "prompt_tokens_o200k": 890,
+      "fixture_sha256": "b273a5260082d95088dc656a4207e2058477ba87041e684dbd522a624c9df2ec",
+      "author_ms": 7907,
+      "answer_tokens_o200k": 59,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 8078
+    },
+    {
+      "task": "priority_delivery",
+      "condition": "scope",
+      "repeat": 2,
+      "usage": {
+        "input_tokens": 17700,
+        "cached_input_tokens": 13952,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 137,
+        "reasoning_output_tokens": 0
+      },
+      "prompt_tokens_o200k": 946,
+      "fixture_sha256": "fc39ab1af783ed636783ca32e2f86ed474126e4642f96899cbe006d0a594f2fc",
+      "author_ms": 9453,
+      "answer_tokens_o200k": 127,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 10000
+    },
+    {
+      "task": "priority_delivery",
+      "condition": "full",
+      "repeat": 2,
+      "usage": {
+        "input_tokens": 16952,
+        "cached_input_tokens": 10880,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 138,
+        "reasoning_output_tokens": 0
+      },
+      "prompt_tokens_o200k": 1672,
+      "fixture_sha256": "fc39ab1af783ed636783ca32e2f86ed474126e4642f96899cbe006d0a594f2fc",
+      "author_ms": 9657,
+      "answer_tokens_o200k": 128,
+      "accepted": true,
+      "passed": 5580,
+      "cases": 5580,
+      "failure": null,
+      "elapsed_ms": 9875
+    }
+  ],
+  "followup_prefix_example": {
+    "accepted": true,
+    "passed": 5580,
+    "cases": 5580,
+    "failure": null,
+    "usage": {
+      "input_tokens": 17609,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 165,
+      "reasoning_output_tokens": 101
+    },
+    "author_ms": 9547,
+    "end_to_end_ms": 10625,
+    "added_o200k_tokens": 17,
+    "scope": "One exploratory fresh turn on the failed task after adding a generic two-operand example. Different sampling can affect the result. Excluded from the fixed comparison."
+  }
+}

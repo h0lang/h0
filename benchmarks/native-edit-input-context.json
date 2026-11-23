@@ -1,0 +1,35 @@
+{
+  "scope": "Input token counts for equivalent selected source fragments. Compiler output and guide only, excluding model prompts and provider overhead.",
+  "mode59_seed_sha256": "09af26f6ae63b8b128c8b4290d638506234dc1cea5eff037ed09d3290bb544f5",
+  "compiler_selected_functions": 149,
+  "tokens": {
+    "o200k_base": {
+      "old_guide": 633,
+      "mode56": 12715,
+      "mode59": 11376,
+      "pilot_guide": 490,
+      "new_guide": 507
+    },
+    "cl100k_base": {
+      "old_guide": 631,
+      "mode56": 12872,
+      "mode59": 11533,
+      "pilot_guide": 488,
+      "new_guide": 505
+    }
+  },
+  "target_policies_validated": [
+    "win",
+    "linux",
+    "rv64",
+    "no_std"
+  ],
+  "linux_host_stdout_matches": true,
+  "legacy_packets_match": true,
+  "invalid_requests": 6,
+  "seed_fixed_point_sha256": {
+    "h0-windows-x64.exe": "09af26f6ae63b8b128c8b4290d638506234dc1cea5eff037ed09d3290bb544f5",
+    "h0-linux-x64": "80b65a2c58c077b89b88a211111250f3f878d6ca1d8024d6e5d34b25c1321376"
+  },
+  "linux_self_host": true
+}
