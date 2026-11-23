@@ -297,6 +297,10 @@ Use `:y4(mutHeap, offset, size)` to resize a live allocation. The returned offse
 
 Use `>+v` for [growable byte buffers](std/buffer.h0), which load the heap module automatically. Create a buffer with `:l0`, append with `:l1`, truncate with `:l2`, and release with `:l4`. End payload views before mutation and use the offset returned by a successful append. Append leaves the original buffer live on failure. The [portable buffer example](examples/buffer.h0) exercises relocation and reuse.
 
+Use the same vector functions for fixed-width records of any byte width. Initialize a 16-byte state with its first word set to zero, then call `:lv(heap,state,width,initialElements)`. `:lp` appends one element, and `:la` appends a whole number of elements from a byte view. `:ln` returns the element count, `:li` returns an element's byte offset in the heap, `:lt` truncates by element count, and `:ld` releases storage and clears its state. Mutators return 0 on success, and errors return Max. A failed append preserves the existing vector. End heap views before mutating it, since growth can move the payload.
+
+The [vector example](examples/vector.h0) uses these functions for u64 values and 13-byte records in the same heap. Each caller defines the record's byte layout. The core vector operations use the caller-provided heap on Windows, Linux, and RV64.
+
 The [stdin example](examples/buffer-stdin.h0) reads arbitrary bytes until EOF using a caller-owned heap. Against an equivalent example with explicit heap growth and copying, using the buffer reduced source from 140 to 86 tokens in `o200k_base` and from 141 to 87 in `cl100k_base`. The Windows executable grew from 9,728 to 11,776 bytes and the Linux executable from 8,729 to 10,479 bytes.
 
 In one Windows x64 process benchmark, 8,000,019 aligned allocations with periodic rewind took a median of 109 ms in H0 and 30 ms in Rust 1.100.0 at `opt-level=3`. Both produced the same checksum. The executables were 9,216 and 137,728 bytes respectively.
