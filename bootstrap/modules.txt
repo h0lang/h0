@@ -90,3 +90,4 @@ bootstrap/compiler/byte-reverse.h0
 bootstrap/compiler/sorted-find.h0
 bootstrap/compiler/sort-partition.h0
 bootstrap/compiler/ascii-count.h0
+bootstrap/compiler/utf8-validation.h0
