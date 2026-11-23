@@ -118,9 +118,13 @@ Mode `47` builds an ordered list of H0 source files. Write the target mode on th
 
 Mode `48` takes the same path list without the target line and returns the assembled source. Source and loaded standard-library modules must fit within the compiler’s 512 KiB source capacity. Direct builds and checks use the same capacity. Expanded source and emitted code each have a separate 1 MiB limit. When a diagnostic points into a listed file, mode `47` reports its original line and column and adds a `File <path>` line. Section ordinals follow the assembled source. For the failing section’s ordinal and source, use modes `30`–`32` through mode `47`; they follow the file line when available. Invalid lists report `E122`; file read failures, empty or oversized source, and invalid import headers report `E123` with the path.
 
+Mode `50` reads `target LF ordinal LF paths` for one section of a valid project. Use the ordinal from mode `23` on the mode `48` bundle. The caller and callee rows from mode `49` end at a blank line. The next three lines give the original path, zero-based byte offset, and byte count. Two scoped glyph rows and the ordinal precede the exact section bytes and a final LF. The original range accounts for merged import lines and preserves the source file’s encoding and line endings. Verify that the range still matches the returned bytes before replacing it, then check the project with mode `47`. Mode `50` uses the list errors from modes `47` and `48`, selection errors from mode `49`, and `E125` if the section crosses a project file boundary.
+
 ```sh
 printf '1\napp.h0\nlogic.h0\n' | bootstrap/seed/h0-linux-x64 47 > app
 ```
+
+On the compiler’s own project, mode 50 returned the exact original slice for all 435 sections. The median packet was 147 tokens in o200k_base and 149 in cl100k_base, including caller and callee headers, the file range, and glyph rows. The complete bundle plus its glyph rows was 75,309 and 76,283 tokens respectively. These figures measure the text exposed for one selection and exclude tool inputs and agent work.
 
 The [bootstrap source list](bootstrap/modules.txt) orders the compiler’s H0 modules and shared standard I/O. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell. Both scripts use mode `48` to assemble the source list, then build both seeds with H0.
 
