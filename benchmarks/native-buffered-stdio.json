@@ -1,0 +1,405 @@
+{
+  "windows": {
+    "seed_sha256": "78b208a41385a7da1d67937ae4c7e84d203df32d4407da7360207f055300a5a9",
+    "h0_stdio_buffer_bytes_per_stream": 16384,
+    "paired_input": "Recorded executable solutions to the six held-out pairs. H0 source changes are identical; only its benchmark driver changes.",
+    "base_benchmark_commit": "cf82ff40487d32977e95a17c2d1be4fd4443a621",
+    "runtime_includes": "Windows x64 process startup and binary stdin/stdout",
+    "cases_per_process": 44640,
+    "logical_cpu_index": 15,
+    "driver_tokens": {
+      "encoding": "o200k_base",
+      "unbuffered": 97,
+      "buffered": 130
+    },
+    "pairs": {
+      "zero_units-1": {
+        "buffered": {
+          "median_ms": 37.3066,
+          "samples_us": [
+            37306,
+            26814,
+            27513,
+            42433,
+            48305,
+            36718,
+            78609,
+            28792,
+            144023
+          ],
+          "executable_bytes": 20992
+        },
+        "unbuffered": {
+          "median_ms": 659.9426,
+          "samples_us": [
+            1905057,
+            496114,
+            551451,
+            598248,
+            1619790,
+            659942,
+            374944,
+            2343541,
+            752024
+          ],
+          "executable_bytes": 11264
+        },
+        "rust": {
+          "median_ms": 28.0283,
+          "samples_us": [
+            42717,
+            28028,
+            27424,
+            25338,
+            124947,
+            74539,
+            27741,
+            33269,
+            26126
+          ],
+          "executable_bytes": 140288
+        }
+      },
+      "zero_units-2": {
+        "buffered": {
+          "median_ms": 25.3748,
+          "samples_us": [
+            29347,
+            32953,
+            25374,
+            24825,
+            25464,
+            23700,
+            22793,
+            23165,
+            29067
+          ],
+          "executable_bytes": 20992
+        },
+        "unbuffered": {
+          "median_ms": 289.8977,
+          "samples_us": [
+            317907,
+            258718,
+            474880,
+            276935,
+            256662,
+            289897,
+            253915,
+            438587,
+            348182
+          ],
+          "executable_bytes": 11264
+        },
+        "rust": {
+          "median_ms": 28.8057,
+          "samples_us": [
+            31086,
+            32989,
+            27661,
+            35673,
+            28805,
+            23194,
+            31147,
+            24504,
+            23876
+          ],
+          "executable_bytes": 140288
+        }
+      },
+      "last_peak-1": {
+        "buffered": {
+          "median_ms": 25.76,
+          "samples_us": [
+            31219,
+            24357,
+            23423,
+            25760,
+            23896,
+            25633,
+            29119,
+            26256,
+            26391
+          ],
+          "executable_bytes": 20992
+        },
+        "unbuffered": {
+          "median_ms": 276.8354,
+          "samples_us": [
+            864835,
+            269295,
+            291203,
+            260080,
+            333109,
+            276835,
+            297180,
+            240104,
+            252792
+          ],
+          "executable_bytes": 11264
+        },
+        "rust": {
+          "median_ms": 23.3244,
+          "samples_us": [
+            33851,
+            22784,
+            23324,
+            25534,
+            26477,
+            23106,
+            22582,
+            23206,
+            24652
+          ],
+          "executable_bytes": 140800
+        }
+      },
+      "last_peak-2": {
+        "buffered": {
+          "median_ms": 25.1236,
+          "samples_us": [
+            27380,
+            26346,
+            28104,
+            26718,
+            23803,
+            24111,
+            23333,
+            25123,
+            21906
+          ],
+          "executable_bytes": 20992
+        },
+        "unbuffered": {
+          "median_ms": 327.7136,
+          "samples_us": [
+            327713,
+            284186,
+            451260,
+            481838,
+            449737,
+            240010,
+            236904,
+            438901,
+            243500
+          ],
+          "executable_bytes": 11264
+        },
+        "rust": {
+          "median_ms": 25.7505,
+          "samples_us": [
+            37647,
+            38868,
+            25750,
+            29000,
+            24128,
+            25221,
+            28215,
+            24311,
+            23875
+          ],
+          "executable_bytes": 140800
+        }
+      },
+      "priority_delivery-1": {
+        "buffered": {
+          "median_ms": 23.3296,
+          "samples_us": [
+            26703,
+            24793,
+            24244,
+            22781,
+            22465,
+            23799,
+            22962,
+            21877,
+            23329
+          ],
+          "executable_bytes": 20992
+        },
+        "unbuffered": {
+          "median_ms": 256.4466,
+          "samples_us": [
+            267770,
+            498784,
+            256446,
+            78980,
+            228576,
+            258622,
+            256581,
+            236585,
+            238263
+          ],
+          "executable_bytes": 11264
+        },
+        "rust": {
+          "median_ms": 24.0769,
+          "samples_us": [
+            27179,
+            31429,
+            23078,
+            23054,
+            24875,
+            25634,
+            24076,
+            23279,
+            23011
+          ],
+          "executable_bytes": 140288
+        }
+      },
+      "priority_delivery-2": {
+        "buffered": {
+          "median_ms": 26.5091,
+          "samples_us": [
+            26122,
+            24789,
+            32542,
+            27156,
+            29092,
+            30403,
+            23944,
+            26509,
+            24450
+          ],
+          "executable_bytes": 20992
+        },
+        "unbuffered": {
+          "median_ms": 260.4144,
+          "samples_us": [
+            248787,
+            248405,
+            458167,
+            280153,
+            242454,
+            332554,
+            260414,
+            275038,
+            258302
+          ],
+          "executable_bytes": 11264
+        },
+        "rust": {
+          "median_ms": 26.9736,
+          "samples_us": [
+            24787,
+            31895,
+            23813,
+            26973,
+            28834,
+            27096,
+            25427,
+            39260,
+            26917
+          ],
+          "executable_bytes": 140288
+        }
+      }
+    }
+  },
+  "wsl_linux": {
+    "logical_cpu_index": 15,
+    "cases_per_process": 44640,
+    "runtime_includes": "WSL Linux x64 process startup and binary stdin/stdout",
+    "pairs": {
+      "zero_units": {
+        "unbuffered": {
+          "median_ms": 72.768114,
+          "samples_us": [
+            72768,
+            70144,
+            77090,
+            64783,
+            80242,
+            73724,
+            73810,
+            61492,
+            58535
+          ],
+          "executable_bytes": 9919
+        },
+        "buffered": {
+          "median_ms": 14.884585,
+          "samples_us": [
+            13753,
+            13543,
+            14918,
+            14298,
+            24416,
+            16242,
+            13615,
+            16690,
+            14884
+          ],
+          "executable_bytes": 18924
+        }
+      },
+      "last_peak": {
+        "unbuffered": {
+          "median_ms": 65.460214,
+          "samples_us": [
+            76480,
+            65092,
+            59465,
+            65460,
+            65899,
+            67972,
+            65349,
+            67263,
+            59879
+          ],
+          "executable_bytes": 9774
+        },
+        "buffered": {
+          "median_ms": 14.504164,
+          "samples_us": [
+            17560,
+            18764,
+            14823,
+            13867,
+            14417,
+            13068,
+            14504,
+            14813,
+            13276
+          ],
+          "executable_bytes": 18779
+        }
+      },
+      "priority_delivery": {
+        "unbuffered": {
+          "median_ms": 62.978671,
+          "samples_us": [
+            60825,
+            62978,
+            58568,
+            63329,
+            69360,
+            62244,
+            73180,
+            62344,
+            71446
+          ],
+          "executable_bytes": 10022
+        },
+        "buffered": {
+          "median_ms": 14.408673,
+          "samples_us": [
+            14444,
+            14466,
+            13234,
+            14003,
+            15560,
+            12657,
+            14408,
+            14704,
+            12895
+          ],
+          "executable_bytes": 19027
+        }
+      }
+    }
+  },
+  "windows_host_note": "The first final-build timing pass on CPU 0 timed out in the unbuffered driver while the host was busy. The complete rerun used CPU 15. The two passes were kept separate.",
+  "source_buffering": "Two caller-owned 16 KiB I/O buffers plus 32 bytes of stream state per buffer."
+}
