@@ -1,0 +1,276 @@
+{
+  "baseline_commit": "3c0dddf23c18ab0f9a91c3fa206af34d879986b7",
+  "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+  "model": "gpt-6.2-sol",
+  "agent": "codex-cli 0.171.0-alpha.13",
+  "effort": "medium",
+  "cache": "fresh sessions with provider-managed caching",
+  "condition": "Tool-free Windows x64 dispatch edits; one response then 4,212 shared oracle cases. Only the reference changed. Each round reversed order by task.",
+  "examples_guide": "Native H0 Tape UTF-8. Header `N[name|-private|+extern]`, unnamed entry returns exit status. Args a,b,…, `'ab` shared byte views, `\"cd` mutable; shared before mutable. LF or `;;` separates functions outside literals and comments. Keep imports `>+IDs` and section order. SP separates instructions; TAB separates adjacent numbers, block counts, and named calls from identifier/digit operands. `:fn<TAB>ab` calls with a,b; numeric calls use source order, `:<`/`:>` neighbors, `::` self. Mutable call views disjoint.\n\nPrefix u64 wrapping `+-*/%&^|<>EDLGSTAO` add/sub/mul/div/rem/and/xor/or/lt/gt/eq/ne/le/ge/shl/shr/lazy-and/or; `!` not, `N` negate, `~` bitnot, `\\i` lazy cond/yes/no. `bx` binds or sets b; `+bx` adds x; `Yx` discards; tail x or `.x` returns. `?x` guards one statement, `?x<TAB>N[<TAB>M]` then N and optional else M. `@n<TAB>N` loop 0..<n with index in next free register; `Wx` while. Nested statements count once. Block locals end at exit; assignments to outer registers persist. `'` breaks, backtick continues. `1sum b0 @a<TAB>1 +bc b` sums 0..<a.\n\n`Za` len, `Bab` byte, `Xabc` store byte c at b, `Vabc` slice [b:c), `\\vab` tail, `bMn` zero buffer. `Kab` splits mutable a for the next statement into two new registers, suspending a. `\\B2/4/8` LE load(view,offset); `\\Q2/4/8` store(mut,offset,value). `\\b\"…\"` UTF-8 bytes, escapes `\\0\\n\\r\\t\\\"\\\\\\xHH`. `1head'a ?<Za4.0 \\B4a0` reads LE u32. Max u64 is `수`.\n\nSyntax examples (replace ⇥ with TAB). `2min ?<ab.a b` returns a when a<b, otherwise b. `2odd \\i&b1a0` returns a only for odd b. `1nested b0 @a⇥2 ?Ec0⇥2 +b1 +b2 +b4 b` returns 11 for a=2; the guard and its two inner instructions count as ONE instruction of the loop. `0 .:min⇥9⇥5` exits 5; a TAB separates the two numeric operands. `2pick'a ?LZab.0 Bab` returns 0 out of bounds, otherwise byte b. A function of arity 2 with header `2pick'a` has byte view a and scalar b.\n\nCompiler checkout CORE.md and AGENTS.md for details. Modes 19 glyph map, 20/21/22 scoped std, 30/31/32 checks Windows/Linux/RV64. Mode 47 builds/checks an ordered path list preceded by the target mode, one LF per line. Mode 50 takes target, function selector, then paths to find the original section and calls.\n",
+  "summary": {
+    "baseline": {
+      "accepted": 6,
+      "attempts": 6,
+      "median_elapsed_ms": 14750.0,
+      "tokens_per_accepted_edit": 24787.5,
+      "requests": 6,
+      "input_tokens": 146521,
+      "output_tokens": 2204,
+      "cached_input_tokens": 100608,
+      "cache_write_input_tokens": 0,
+      "reasoning_tokens": 912,
+      "total_tokens": 148725
+    },
+    "examples": {
+      "accepted": 6,
+      "attempts": 6,
+      "median_elapsed_ms": 14367.5,
+      "tokens_per_accepted_edit": 24919.166666666668,
+      "requests": 6,
+      "input_tokens": 147496,
+      "output_tokens": 2019,
+      "cached_input_tokens": 102656,
+      "cache_write_input_tokens": 0,
+      "reasoning_tokens": 763,
+      "total_tokens": 149515
+    }
+  },
+  "infrastructure_interruptions": [
+    {
+      "task": "all_depots",
+      "variant": "baseline",
+      "repeat": 1,
+      "reason": "provider capacity; provider usage unavailable"
+    }
+  ],
+  "runs_in_execution_order": [
+    {
+      "task": "priority_grace",
+      "variant": "baseline",
+      "repeat": 1,
+      "prompt_sha256": "4b925f281d9d99f8a6a6063d4463826dfef8844c5bb5b531eebf4cb5f9c9655d",
+      "prompt_o200k_tokens": 1585,
+      "elapsed_ms": 13703,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24671,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 334,
+        "reasoning_output_tokens": 60
+      }
+    },
+    {
+      "task": "priority_grace",
+      "variant": "examples",
+      "repeat": 1,
+      "prompt_sha256": "1a5a925ab034dda6e58e565ab08f98f71f5a70704cd5a2a5ee2b45bacea55fc7",
+      "prompt_o200k_tokens": 1749,
+      "elapsed_ms": 14875,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24835,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 370,
+        "reasoning_output_tokens": 110
+      }
+    },
+    {
+      "task": "return_credits",
+      "variant": "examples",
+      "repeat": 1,
+      "prompt_sha256": "433bf84440ac3a96c4efadce87a02518086fbbf416945dd60cdde45f72c87629",
+      "prompt_o200k_tokens": 1740,
+      "elapsed_ms": 15953,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24826,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 456,
+        "reasoning_output_tokens": 215
+      }
+    },
+    {
+      "task": "return_credits",
+      "variant": "baseline",
+      "repeat": 1,
+      "prompt_sha256": "af733e020a6cfbbb31343881e2aafa51580060c19a2819f448f3fbebf5a31a3f",
+      "prompt_o200k_tokens": 1576,
+      "elapsed_ms": 18141,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24662,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 557,
+        "reasoning_output_tokens": 306
+      }
+    },
+    {
+      "task": "all_depots",
+      "variant": "baseline",
+      "repeat": 1,
+      "prompt_sha256": "9713fe1b09bbcac9412dafd8fb7fb6f3dd34bc40c9bdaf1724931eb2e9410218",
+      "prompt_o200k_tokens": 1573,
+      "elapsed_ms": 10391,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23196,
+        "cached_input_tokens": 14208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 206,
+        "reasoning_output_tokens": 84
+      }
+    },
+    {
+      "task": "all_depots",
+      "variant": "examples",
+      "repeat": 1,
+      "prompt_sha256": "bcc575be64d4ac004ce10447565f9010f511671333d439f69ecd102f23acdc88",
+      "prompt_o200k_tokens": 1737,
+      "elapsed_ms": 9890,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23351,
+        "cached_input_tokens": 16256,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 152,
+        "reasoning_output_tokens": 44
+      }
+    },
+    {
+      "task": "priority_grace",
+      "variant": "examples",
+      "repeat": 2,
+      "prompt_sha256": "1a5a925ab034dda6e58e565ab08f98f71f5a70704cd5a2a5ee2b45bacea55fc7",
+      "prompt_o200k_tokens": 1749,
+      "elapsed_ms": 13860,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24835,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 349,
+        "reasoning_output_tokens": 75
+      }
+    },
+    {
+      "task": "priority_grace",
+      "variant": "baseline",
+      "repeat": 2,
+      "prompt_sha256": "4b925f281d9d99f8a6a6063d4463826dfef8844c5bb5b531eebf4cb5f9c9655d",
+      "prompt_o200k_tokens": 1585,
+      "elapsed_ms": 15797,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24671,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 373,
+        "reasoning_output_tokens": 95
+      }
+    },
+    {
+      "task": "return_credits",
+      "variant": "baseline",
+      "repeat": 2,
+      "prompt_sha256": "af733e020a6cfbbb31343881e2aafa51580060c19a2819f448f3fbebf5a31a3f",
+      "prompt_o200k_tokens": 1576,
+      "elapsed_ms": 18343,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24662,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 561,
+        "reasoning_output_tokens": 316
+      }
+    },
+    {
+      "task": "return_credits",
+      "variant": "examples",
+      "repeat": 2,
+      "prompt_sha256": "433bf84440ac3a96c4efadce87a02518086fbbf416945dd60cdde45f72c87629",
+      "prompt_o200k_tokens": 1740,
+      "elapsed_ms": 17485,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24826,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 492,
+        "reasoning_output_tokens": 241
+      }
+    },
+    {
+      "task": "all_depots",
+      "variant": "examples",
+      "repeat": 2,
+      "prompt_sha256": "bcc575be64d4ac004ce10447565f9010f511671333d439f69ecd102f23acdc88",
+      "prompt_o200k_tokens": 1737,
+      "elapsed_ms": 12984,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24823,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 200,
+        "reasoning_output_tokens": 78
+      }
+    },
+    {
+      "task": "all_depots",
+      "variant": "baseline",
+      "repeat": 2,
+      "prompt_sha256": "9713fe1b09bbcac9412dafd8fb7fb6f3dd34bc40c9bdaf1724931eb2e9410218",
+      "prompt_o200k_tokens": 1573,
+      "elapsed_ms": 9828,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24659,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 173,
+        "reasoning_output_tokens": 51
+      }
+    }
+  ]
+}

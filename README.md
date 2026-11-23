@@ -17,6 +17,8 @@ H0 used 0.64% more total tokens and took 21% less time at the median. It used 2,
 - Record provider usage for every request, including repair attempts and runs that fail or time out. Normalize input and output once, report cache reads and writes separately, and count reported reasoning within output. Measure elapsed time from task delivery through the final correctness check. Keep raw usage and the per-task outcome for every pair. A run without usage needs an explicit missing-data record and cannot establish a cost result.
 - Report passes and attempts, total input and output, total tokens per accepted solution, median elapsed time, and elapsed time per accepted solution. Totals include failed attempts. Claim a token advantage only when paired correctness is at least as high and total tokens per accepted solution are lower. Report billed cost separately when provider rates and cache classes are known.
 
+A follow-up varied only the H0 editing guide. Five added syntax examples cost 164 prompt tokens per edit in `o200k_base`. Both versions passed all six attempts. Examples reduced reported reasoning tokens from 912 to 763 and increased total tokens from 148,725 to 149,515, or 0.53%. The short guide remains the default. One attempt hit provider capacity and returned no usage. Its successful rerun is counted, and the interruption is recorded separately. [Guide variant and per-attempt results](benchmarks/native-edit-guide-codex.json)
+
 ## Native toolchain
 
 H0 (Human Zero) is a native programming language for AI agents. Its Tape notation uses positional registers and compact Hangul instructions. Separate packed functions with a newline or `;;`. The [calendar example](examples/calendar.h0) fits five functions on one line.
