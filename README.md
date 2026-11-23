@@ -112,7 +112,7 @@ The Linux seed is a static ELF that calls the kernel directly. The Windows seed 
 
 Mode `47` builds an ordered list of H0 source files. Write the target mode on the first line, followed by one UTF-8 path per line. Paths with spaces work as written, and relative paths resolve from the working directory. Files share one function namespace in list order. Use named calls across files. The compiler merges the leading `>+` declarations from all files into one standard-library selection.
 
-Mode `48` takes the same path list without the target line and returns the assembled source. Source and loaded standard-library modules must fit within the compiler’s 128 KiB source capacity. Source error positions refer to the assembled file. Use target modes `30`–`32` through mode `47` for diagnostics with the failing section. Invalid lists report `E122`; file read failures, empty or oversized source, and invalid import headers report `E123` with the path.
+Mode `48` takes the same path list without the target line and returns the assembled source. Source and loaded standard-library modules must fit within the compiler’s 128 KiB source capacity. When a diagnostic points into a listed file, mode `47` reports its original line and column and adds a `File <path>` line. Section ordinals follow the assembled source. For the failing section’s ordinal and source, use modes `30`–`32` through mode `47`; they follow the file line when available. Invalid lists report `E122`; file read failures, empty or oversized source, and invalid import headers report `E123` with the path.
 
 ```sh
 printf '1\napp.h0\nlogic.h0\n' | bootstrap/seed/h0-linux-x64 47 > app
