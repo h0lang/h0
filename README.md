@@ -74,6 +74,8 @@ On Windows and Linux x64 the [file module](std/fs.h0) provides open, read, write
 
 Use `>+a` to load file replacement and its file module dependency. Call `:f3<TAB>ab` with path bytes and contents on Windows or Linux x64. It writes and syncs a sibling temporary file before renaming. It returns the byte count or Max and rejects directories and symbolic links. The [example](examples/replace.h0) accepts a hex-encoded path and contents.
 
+To replace a file incrementally, allocate `152 + 4 * pathBytes` zeroed state bytes. Call `:f7(path, state)` to open a sibling temporary file and `:f8(state, bytes)` for each block. Finish with `:f9(state, 1)` to sync and replace the destination, or `:f9(state, 0)` to abort. Begin and finish return zero on success. Each successful append returns the block length. All three return `Max` on error. A failed append prevents commit. Retain the state until finish succeeds, so a failed cleanup can be retried with abort. [Linux rename](https://man7.org/linux/man-pages/man2/rename.2.html) [Windows MoveFileExW](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefileexw)
+
 ```sh
 mkdir -p build
 bootstrap/seed/h0-linux-x64 1 < examples/replace.h0 > build/replace
@@ -203,7 +205,7 @@ Load `>+d` for the [HTTP response module](std/http-response.h0). Call `:r0` with
 
 To stream a response, call `:r1(socket, state, method)` with at least 33 zeroed state bytes. It returns the final status code or `Max`. Call `:r2(socket, state, output)` with a nonempty, disjoint writable view. It returns the number of decoded body bytes, zero when the response is complete, or `Max` on error. Keep the state with the same socket so the next response can use bytes read ahead. Drain the body before starting the next response. If framing or I/O fails, close the connection and discard any partial body.
 
-The module handles Content-Length, chunked transfer, and responses ending at EOF. It limits headers and trailers to 16 KiB and supports fixed lengths and chunk sizes up to `u64::MAX - 1`. The [HTTP GET example](examples/http-get.h0) takes a numeric IPv4 DNS resolver address, its TCP port, the HTTP port, and the hex-encoded hostname. It writes the decoded body to standard output through an 8 KiB body buffer. [RFC 9112 HTTP/1.1 message framing](https://www.rfc-editor.org/rfc/rfc9112.html)
+The module handles Content-Length, chunked transfer, and responses ending at EOF. It limits headers and trailers to 16 KiB and supports fixed lengths and chunk sizes up to `u64::MAX - 1`. The [HTTP GET example](examples/http-get.h0) takes a decimal IPv4 DNS resolver address, its TCP port, the HTTP port, and the hex-encoded hostname. It writes the decoded body to standard output through an 8 KiB buffer. An optional fifth argument is a destination path. In this mode the example replaces the destination only after successfully receiving a complete 2xx response. [RFC 9112 HTTP/1.1 message framing](https://www.rfc-editor.org/rfc/rfc9112.html)
 
 ```sh
 mkdir -p build
