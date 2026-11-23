@@ -256,6 +256,8 @@ Use `>+3` for Base64 on Windows x64, Linux x64, and freestanding RV64. Call `:b0
 
 Load `>+3` and use `주abc` (also `:bw`) to parse one CSV record. The input may contain arbitrary bytes. Quoted fields accept commas, CR, LF, and doubled quotes. Mode 0 writes each field as a little-endian 32-bit length followed by its decoded bytes and returns the field count. Mode 1 validates and returns the required byte count. Malformed records and insufficient output space return Max and preserve the destination.
 
+For a bounded byte FIFO, allocate a zeroed mutable buffer of 24 bytes plus the desired capacity and load `>+3`. `:rq0` resets it, `:rq1` returns its length, `:rq2` appends a byte, and `:rq3` removes the oldest byte. Push returns 1 when full, and pop returns 256 when empty. `야abc` (also `:bp`) applies pairs of operation bytes from a to queue c and writes a pair for each result to b. Enqueue uses opcode 0 and its byte, and dequeue uses opcode 1. Results use status 0 for success, 1 for full, and 2 for empty, followed by the dequeued byte or zero. A malformed batch or insufficient destination returns Max and preserves the queue and destination. Mutations require exclusive access to the queue.
+
 The same module provides byte run-length encoding through 신abc (also :bd). Mode 0 writes (count, value) pairs, splitting runs at 255. Mode 1 expands those pairs. A zero-length destination queries the output size. Odd encoded lengths, zero counts, unsupported modes, and insufficient space return Max and leave the destination intact.
 
 Load the H0 [formatting module](std/fmt.h0) and its decimal encoder with `>+8`. The module uses single-syllable slots `값` for unsigned decimal, `간` for signed decimal, and `개` for hexadecimal in byte templates.
