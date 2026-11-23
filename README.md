@@ -48,6 +48,14 @@ For a one-function edit in each of 11 examples, returning the middle named secti
 
 Mode `29` applies several replacements together. Send the decimal record count followed by LF, then one `ordinal LF byteCount LF replacement LF` record per section, and finally the original source. Sort records by distinct ascending section ordinal from the original file. Byte counts use UTF-8 and exclude separators. The compiler verifies every replacement range before writing the patched source. Run the target check on the result.
 
+Mode `42` extracts several sections in one pass. Send a positive decimal count followed by LF, then that many distinct ascending zero-based ordinals, one per LF-terminated line, followed by the original source. The compiler writes the count and one `ordinal LF byteCount LF section LF` record per selection. Append the original source to the records and pass them to mode `29` to apply replacements. Update each byte count after editing its section. Invalid requests report `E121` and missing ordinals report `E112`.
+
+```sh
+(printf '2\n1\n2\n'; cat examples/atomic-threads.h0) | bootstrap/seed/h0-linux-x64 42
+```
+
+For the six public examples with at least two named functions, extracting the middle two with mode `42` took 1,360 tokens versus 5,682 for complete source in `o200k_base`, including the extraction metadata. In `cl100k_base` it took 1,373 versus 5,730. Extracting the first five named sections of the Windows viewer took a median of 7.47 ms in one call versus 37.40 ms in five mode `24` calls over 12 paired runs, including process startup.
+
 For a two-function edit in each of the five public examples with at least two named sections, returning just the two sections would take 1,040 instead of 5,110 output tokens in `o200k_base`, and 1,047 instead of 5,146 in `cl100k_base`. The estimate uses the two middle named sections as replacement text and counts one LF after each.
 
 For the 21 public examples with standard-library imports, the complete native standard-library contract table costs 2,666 tokens in `o200k_base` and 2,685 in `cl100k_base`. Target-specific output had medians of 272 and 281. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 89,047 to 39,770 and from 89,617 to 40,052 respectively. The comparison counts supplied reference and source text.
