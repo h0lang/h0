@@ -18,6 +18,10 @@ When the requested function is already known, use mode `24`. Put its exact name 
 (printf 'vf\n'; cat examples/bmp-viewer.h0) | bootstrap/seed/h0-linux-x64 24
 ```
 
+When the function name is unknown, mode `27` lists only the section ordinal and name, one pair per line. It skips imports and unnamed sections and preserves the original ordinals, including when a name occurs more than once. Pass the chosen ordinal to mode `24`. Use mode `23` when you need unnamed sections or byte offsets. Both listing modes use the same scanner and diagnostics.
+
+Across the 11 public examples with named sections, the lists alone fell from 496 to 157 tokens in both `o200k_base` and `cl100k_base`. For the Windows image viewer the list fell from 147 to 48 tokens.
+
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
 For the 21 public examples with standard-library imports, the complete native standard-library contract table costs 2,666 tokens in `o200k_base` and 2,685 in `cl100k_base`. Target-specific output had medians of 272 and 281. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 89,047 to 39,770 and from 89,617 to 40,052 respectively. The comparison counts supplied reference and source text.
