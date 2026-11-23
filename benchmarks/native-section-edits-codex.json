@@ -1,0 +1,364 @@
+{
+  "baseline_commit": "6e06cd2aaa01b45a28cf5c98242bd78e2faab775",
+  "seed_sha256": "73228f2bad38e501c0b59360f6296b23a4296e496e68df0e97587061b0b3c767",
+  "model": "gpt-6.2-sol",
+  "agent": "codex-cli 0.171.0-alpha.13",
+  "effort": "medium",
+  "cache": "fresh sessions with provider-managed caching",
+  "condition": "Tool-free Windows x64 dispatch edits; one response then 4,212 shared oracle cases. Full-file JSON via mode 47 versus named-function JSON resolved through mode 23 and checked via mode 53. Input files and guide identical; submission instructions and JSON schema varied. Each round reversed order by task.",
+  "schemas": {
+    "baseline": {
+      "type": "object",
+      "properties": {
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "files"
+      ],
+      "additionalProperties": false
+    },
+    "sections": {
+      "type": "object",
+      "properties": {
+        "edits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "edits"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "summary": {
+    "baseline": {
+      "accepted": 6,
+      "attempts": 6,
+      "median_elapsed_ms": 13109.0,
+      "tokens_per_accepted_edit": 24255.833333333332,
+      "requests": 6,
+      "input_tokens": 143559,
+      "output_tokens": 1976,
+      "cached_input_tokens": 65024,
+      "cache_write_input_tokens": 0,
+      "reasoning_tokens": 694,
+      "total_tokens": 145535
+    },
+    "sections": {
+      "accepted": 5,
+      "attempts": 6,
+      "median_elapsed_ms": 10554.5,
+      "tokens_per_accepted_edit": 29290.8,
+      "requests": 6,
+      "input_tokens": 145307,
+      "output_tokens": 1147,
+      "cached_input_tokens": 45696,
+      "cache_write_input_tokens": 0,
+      "reasoning_tokens": 600,
+      "total_tokens": 146454
+    }
+  },
+  "infrastructure_interruptions": [
+    {
+      "task": "priority_grace",
+      "variant": "sections",
+      "repeat": 1,
+      "reason": "provider capacity; provider usage unavailable"
+    },
+    {
+      "task": "priority_grace",
+      "variant": "baseline",
+      "repeat": 2,
+      "reason": "provider capacity; provider usage unavailable"
+    }
+  ],
+  "runs_in_execution_order": [
+    {
+      "task": "priority_grace",
+      "variant": "baseline",
+      "repeat": 1,
+      "prompt_sha256": "4b925f281d9d99f8a6a6063d4463826dfef8844c5bb5b531eebf4cb5f9c9655d",
+      "prompt_o200k_tokens": 1585,
+      "elapsed_ms": 12703,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24668,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 335,
+        "reasoning_output_tokens": 61
+      }
+    },
+    {
+      "task": "priority_grace",
+      "variant": "sections",
+      "repeat": 1,
+      "prompt_sha256": "488c27336d4444dba64f05ef2193fbe68dfe9608fcd8dafd19c42d340f801489",
+      "prompt_o200k_tokens": 1629,
+      "elapsed_ms": 8500,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24723,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 140,
+        "reasoning_output_tokens": 64
+      }
+    },
+    {
+      "task": "return_credits",
+      "variant": "sections",
+      "repeat": 1,
+      "prompt_sha256": "c737503def219613062f02667579c3fbee28a067d8efdca9334c00bf80283d07",
+      "prompt_o200k_tokens": 1620,
+      "elapsed_ms": 13953,
+      "accepted": false,
+      "cases_passed": null,
+      "cases_total": null,
+      "failure": "build_error",
+      "provider_usage": {
+        "input_tokens": 24705,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 300,
+        "reasoning_output_tokens": 160
+      }
+    },
+    {
+      "task": "return_credits",
+      "variant": "baseline",
+      "repeat": 1,
+      "prompt_sha256": "af733e020a6cfbbb31343881e2aafa51580060c19a2819f448f3fbebf5a31a3f",
+      "prompt_o200k_tokens": 1576,
+      "elapsed_ms": 16453,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24659,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 449,
+        "reasoning_output_tokens": 212
+      }
+    },
+    {
+      "task": "all_depots",
+      "variant": "baseline",
+      "repeat": 1,
+      "prompt_sha256": "9713fe1b09bbcac9412dafd8fb7fb6f3dd34bc40c9bdaf1724931eb2e9410218",
+      "prompt_o200k_tokens": 1573,
+      "elapsed_ms": 10203,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23184,
+        "cached_input_tokens": 14208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 202,
+        "reasoning_output_tokens": 80
+      }
+    },
+    {
+      "task": "all_depots",
+      "variant": "sections",
+      "repeat": 1,
+      "prompt_sha256": "da3fd206df510d525602364e817990adf6311c7d5f4a7c3fc3873c76770ffb39",
+      "prompt_o200k_tokens": 1617,
+      "elapsed_ms": 10593,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24702,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 176,
+        "reasoning_output_tokens": 118
+      }
+    },
+    {
+      "task": "priority_grace",
+      "variant": "sections",
+      "repeat": 2,
+      "prompt_sha256": "488c27336d4444dba64f05ef2193fbe68dfe9608fcd8dafd19c42d340f801489",
+      "prompt_o200k_tokens": 1629,
+      "elapsed_ms": 10516,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23242,
+        "cached_input_tokens": 14208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 136,
+        "reasoning_output_tokens": 62
+      }
+    },
+    {
+      "task": "priority_grace",
+      "variant": "baseline",
+      "repeat": 2,
+      "prompt_sha256": "4b925f281d9d99f8a6a6063d4463826dfef8844c5bb5b531eebf4cb5f9c9655d",
+      "prompt_o200k_tokens": 1585,
+      "elapsed_ms": 13515,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23205,
+        "cached_input_tokens": 16256,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 360,
+        "reasoning_output_tokens": 86
+      }
+    },
+    {
+      "task": "return_credits",
+      "variant": "baseline",
+      "repeat": 2,
+      "prompt_sha256": "af733e020a6cfbbb31343881e2aafa51580060c19a2819f448f3fbebf5a31a3f",
+      "prompt_o200k_tokens": 1576,
+      "elapsed_ms": 15844,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23187,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 445,
+        "reasoning_output_tokens": 192
+      }
+    },
+    {
+      "task": "return_credits",
+      "variant": "sections",
+      "repeat": 2,
+      "prompt_sha256": "c737503def219613062f02667579c3fbee28a067d8efdca9334c00bf80283d07",
+      "prompt_o200k_tokens": 1620,
+      "elapsed_ms": 10921,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24705,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 264,
+        "reasoning_output_tokens": 123
+      }
+    },
+    {
+      "task": "all_depots",
+      "variant": "sections",
+      "repeat": 2,
+      "prompt_sha256": "da3fd206df510d525602364e817990adf6311c7d5f4a7c3fc3873c76770ffb39",
+      "prompt_o200k_tokens": 1617,
+      "elapsed_ms": 8735,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 23230,
+        "cached_input_tokens": 14208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 131,
+        "reasoning_output_tokens": 73
+      }
+    },
+    {
+      "task": "all_depots",
+      "variant": "baseline",
+      "repeat": 2,
+      "prompt_sha256": "9713fe1b09bbcac9412dafd8fb7fb6f3dd34bc40c9bdaf1724931eb2e9410218",
+      "prompt_o200k_tokens": 1573,
+      "elapsed_ms": 9156,
+      "accepted": true,
+      "cases_passed": 4212,
+      "cases_total": 4212,
+      "failure": null,
+      "provider_usage": {
+        "input_tokens": 24656,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 185,
+        "reasoning_output_tokens": 63
+      }
+    }
+  ],
+  "follow_up_compiler_diagnostic": [
+    {
+      "trial": "return_credits-sections-1",
+      "initial_failure": "build_error",
+      "native_diagnostic": "error E102: invalid or unsupported instruction or operand. Section 16. Line 2, column 11.",
+      "first_attempt_total_tokens": 25005,
+      "repair_elapsed_ms": 24391,
+      "repair_provider_usage": {
+        "input_tokens": 24915,
+        "cached_input_tokens": 24448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 954,
+        "reasoning_output_tokens": 768
+      },
+      "combined_total_tokens": 50874,
+      "accepted": true,
+      "passed": 4212,
+      "cases": 4212,
+      "failure": null
+    }
+  ],
+  "operand_spacing_probe": {
+    "change": "Remove four ASCII spaces between operands of two prefix conditional expressions in the original failed answer.",
+    "oracle_cases_passed": 4212
+  }
+}
