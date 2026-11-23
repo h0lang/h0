@@ -71,6 +71,7 @@ bootstrap/compiler/windows-path-x64.h0
 bootstrap/compiler/edit-guide.h0
 bootstrap/compiler/project-list.h0
 bootstrap/compiler/project-diagnostics.h0
+bootstrap/compiler/large-source.h0
 std/io.h0
 std/fs.h0
 std/num.h0
