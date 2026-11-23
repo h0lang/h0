@@ -1,4 +1,6 @@
-1-moverlay'a b:movern	a0 ?Eb수.:moverlayerror c&b4294967295 ?O>c32!&T7616857063c1.:moverlayerror d:movern	aTb32 ?Ed수.:moverlayerror e&d4294967295 ?>e131071.:moverlayerror fTd32 g:296af ?GgZa.:moverlayerror ?!:mx	Vafg-gf.:moverlayerror :mproject	ac+g1|S+e1	32f
-4-mproject'a ?EcZa.:my e\iEb48	0:pl	ac fM*e8 :ly	abcfd
-0-moverlayerror Y:121\b"error E126: expected build target, original file index, replacement path, and project paths.\n" 3
+1-moverlay'a :moverlays	a0
+1-moverlaybatch'a :moverlays	a1
+2-moverlays'a c:movern	a0 ?Ec수.:moverlayerror d&c4294967295 ?O>d32!&T7616857063d1.:moverlayerror eTc32 f1 ?b	4 h:movern	ae ?Eh수.:moverlayerror eTh32 f&h4294967295 ?O!f>f/Za4.:moverlayerror gM*f16 h0 @f	14 j:movern	ae ?Ej수.:moverlayerror k&j4294967295 ?O>k131071AiLkh.:moverlayerror eTj32 l:296ae ?GlZa.:moverlayerror m:mx	Vael-le ?!m.:moverlayerror \Q4gSi4k \Q4g+Si4	4e \Q4g+Si4	8+em hk e+l1 :mproject	adeg
+4-mproject'ad ?EcZa.:my e\iEb48	0:pl	ac fM*e8 :ly	abcfd
+0-moverlayerror Y:121\b"error E126: invalid project replacement list or file index.\n" 3
 2-movern'a c:296ab ?GcZa.수 d:mx	Vabc-cb e:274Vab+bd ?>e4294967295.수 |eS+c1	32

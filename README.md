@@ -155,6 +155,8 @@ logic.h0
 ' | bootstrap/seed/h0-linux-x64 51
 ```
 
+Mode `52` checks or builds several proposed files in one project. Send `target LF count LF (fileIndex LF candidatePath LF)×count originalPaths`. Use a positive count and distinct zero-based indices in increasing order. The original path list keeps its usual order. All replacements take effect in the same build, with the same target modes, logical paths, diagnostics, and source limits as mode `51`.
+
 On the compiler’s own project, mode 50 returned the exact original slice for all 435 sections. The median packet was 147 tokens in o200k_base and 149 in cl100k_base, including caller and callee headers, the file range, and glyph rows. The complete bundle plus its glyph rows was 75,309 and 76,283 tokens respectively. These figures measure the text exposed for one selection and exclude tool inputs and agent work.
 
 The [bootstrap source list](bootstrap/modules.txt) orders the compiler’s H0 modules and shared standard I/O. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell. Both scripts use mode `48` to assemble the source list, then build both seeds with H0.
