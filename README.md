@@ -201,7 +201,9 @@ Use `>+2` for the [HTTP request framing module](std/http.h0). The [loopback exam
 
 Load `>+d` for the [HTTP response module](std/http-response.h0). Call `:r0` with the TCP socket, a zeroed reader buffer of at least 17 bytes, the method flag (`0` ordinary or `1` HEAD), and a disjoint writable body buffer. The result packs the status code in the high 32 bits and the body length in the low 32 bits. Reuse the reader buffer on the same socket to preserve bytes read ahead. A result of `Max` invalidates the reader state. Close the connection and discard the output on failure.
 
-The module handles Content-Length, chunked transfer, and responses ending at EOF. It limits both headers and trailers to 16 KiB and accepts only the chunked transfer coding. The [HTTP GET example](examples/http-get.h0) takes a numeric IPv4 DNS resolver address, its TCP port, the HTTP port, and the hex-encoded hostname. It writes the decoded body to standard output with a 64 KiB limit.
+To stream a response, call `:r1(socket, state, method)` with at least 33 zeroed state bytes. It returns the final status code or `Max`. Call `:r2(socket, state, output)` with a nonempty, disjoint writable view. It returns the number of decoded body bytes, zero when the response is complete, or `Max` on error. Keep the state with the same socket so the next response can use bytes read ahead. Drain the body before starting the next response. If framing or I/O fails, close the connection and discard any partial body.
+
+The module handles Content-Length, chunked transfer, and responses ending at EOF. It limits headers and trailers to 16 KiB and supports fixed lengths and chunk sizes up to `u64::MAX - 1`. The [HTTP GET example](examples/http-get.h0) takes a numeric IPv4 DNS resolver address, its TCP port, the HTTP port, and the hex-encoded hostname. It writes the decoded body to standard output through an 8 KiB body buffer. [RFC 9112 HTTP/1.1 message framing](https://www.rfc-editor.org/rfc/rfc9112.html)
 
 ```sh
 mkdir -p build
