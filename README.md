@@ -144,6 +144,17 @@ Mode `50` reads `target LF selector LF paths` for one section of a valid project
 printf '1\napp.h0\nlogic.h0\n' | bootstrap/seed/h0-linux-x64 47 > app
 ```
 
+Mode `51` evaluates a proposed file in place of one source in a project. Send `target LF fileIndex LF candidatePath LF projectPaths`. The file index is zero-based in the original ordered path list. The accepted targets are `0–2, 5–9, 25–26, 30–32` and the result uses the mode `47` build or check format. The compiler reads the candidate from its own path and leaves every file intact. For compiler diagnostics it names the original logical path and uses line and column positions from the candidate. Bad framing or a missing index reports `E126`. An unreadable replacement reports `E123` with its candidate path.
+
+```sh
+printf '5
+1
+scratch/logic.h0
+app.h0
+logic.h0
+' | bootstrap/seed/h0-linux-x64 51
+```
+
 On the compiler’s own project, mode 50 returned the exact original slice for all 435 sections. The median packet was 147 tokens in o200k_base and 149 in cl100k_base, including caller and callee headers, the file range, and glyph rows. The complete bundle plus its glyph rows was 75,309 and 76,283 tokens respectively. These figures measure the text exposed for one selection and exclude tool inputs and agent work.
 
 The [bootstrap source list](bootstrap/modules.txt) orders the compiler’s H0 modules and shared standard I/O. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell. Both scripts use mode `48` to assemble the source list, then build both seeds with H0.

@@ -76,6 +76,7 @@ bootstrap/compiler/rv64-frame.h0
 bootstrap/compiler/edit-context.h0
 bootstrap/compiler/project-edit-context.h0
 bootstrap/compiler/project-repair.h0
+bootstrap/compiler/project-overlay.h0
 bootstrap/compiler/x64-register-index.h0
 std/io.h0
 std/fs.h0
