@@ -55,3 +55,4 @@ bootstrap/compiler/call-context.h0
 bootstrap/compiler/directory-module.h0
 bootstrap/compiler/thread-module.h0
 bootstrap/compiler/atomic-x64.h0
+bootstrap/compiler/mutex-module.h0
