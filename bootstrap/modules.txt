@@ -52,3 +52,4 @@ bootstrap/compiler/error-context.h0
 bootstrap/compiler/unsigned-power.h0
 bootstrap/compiler/unsigned-reciprocal.h0
 bootstrap/compiler/call-context.h0
+bootstrap/compiler/directory-module.h0
