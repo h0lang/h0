@@ -110,7 +110,15 @@ One Windows x64 machine ran each program with affinity to one logical CPU. The b
 
 The Linux seed is a static ELF that calls the kernel directly. The Windows seed imports `KERNEL32.dll` for operating-system services. Both seeds run without a Python interpreter or C runtime.
 
-The bootstrap compiler is split into [H0 modules](bootstrap/compiler), with [standard I/O](std/io.h0) shared by the compiler and applications. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell to assemble the compiler sources and build both seeds with H0.
+Mode `47` builds an ordered list of H0 source files. Write the target mode on the first line, followed by one UTF-8 path per line. Paths with spaces work as written, and relative paths resolve from the working directory. Files share one function namespace in list order. Use named calls across files. The compiler merges the leading `>+` declarations from all files into one standard-library selection.
+
+Mode `48` takes the same path list without the target line and returns the assembled source. Source and loaded standard-library modules must fit within the compiler’s 128 KiB source capacity. Source error positions refer to the assembled file. Use target modes `30`–`32` through mode `47` for diagnostics with the failing section. Invalid lists report `E122`; file read failures, empty or oversized source, and invalid import headers report `E123` with the path.
+
+```sh
+printf '1\napp.h0\nlogic.h0\n' | bootstrap/seed/h0-linux-x64 47 > app
+```
+
+The [bootstrap source list](bootstrap/modules.txt) orders the compiler’s H0 modules and shared standard I/O. The rebuild scripts invoke mode `48` to assemble this source list before producing both native seeds. Run `sh bootstrap/rebuild.sh` on Linux or `.\bootstrap\rebuild.ps1` in Windows PowerShell to assemble the compiler sources and build both seeds with H0.
 
 On Windows and Linux x64, `>+1` loads standard I/O. Use `:!42` to print a word in decimal or `:!\b"hello"` to print bytes. The compiler selects the output function from the operand type. Use `:ew` to write a byte view to stderr. The decimal encoder in `std/num.h0` is loaded automatically.
 
