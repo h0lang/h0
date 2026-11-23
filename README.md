@@ -159,6 +159,8 @@ Mode `50` reads `target LF selector LF paths` for one section of a valid project
 printf '1\napp.h0\nlogic.h0\n' | bootstrap/seed/h0-linux-x64 47 > app
 ```
 
+Mode `55` extracts several sections from one project. Send a positive count, ascending distinct bundle ordinals, and the ordered project paths, each on its own line. Use mode `48` followed by mode `23` to find the ordinals. The response begins with two shared glyph rows and a count line. Each record has `ordinal fileIndex byteOffset byteCount` followed by LF, exactly `byteCount` source bytes, and another LF. File indices and byte offsets are zero-based and refer to the supplied path list and original files. Compare the bytes with the current source before preparing a mode `53` or `54` edit. Discard output on nonzero exit.
+
 Mode `51` evaluates a proposed file in place of one source in a project. Send `target LF fileIndex LF candidatePath LF projectPaths`. The file index is zero-based in the original ordered path list. The accepted targets are `0–2, 5–9, 14–16, 25–26, 30–32` and the result uses the mode `47` build, check, or repair format. The compiler reads the candidate from its own path and leaves every file intact. For compiler diagnostics it names the original logical path and uses line and column positions from the candidate. Bad framing or a missing index reports `E126`. An unreadable replacement reports `E123` with its candidate path.
 
 ```sh
