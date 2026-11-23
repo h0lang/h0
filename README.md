@@ -289,6 +289,8 @@ Load `>+z` on Windows x64, Linux x64, or RV64. `:zd(words, scratch, signed)` sor
 
 `:ze(words, key, mode)` returns the lower bound for modes 0 and 1 or the upper bound for modes 2 and 3. Even modes use unsigned order and odd modes use signed order. The lower bound is the first index whose value is at least the key. The upper bound is the first index whose value is greater than the key. The result may equal the number of words. The [sort filter](examples/sort.h0) takes a word count and a signed flag, reads that many words from standard input, and writes the sorted words.
 
+With `>+z`, `호ab` searches an ascending shared view `a` of packed little-endian `u64` words for scalar key `b`. It returns the first matching index by binary search, or `Max` for a missing key or a view with a partial trailing word. It performs no writes.
+
 The original 8-bit sort filter benchmark on Windows included process startup and pipe I/O. With 262,144 full-width random words it took 27.42 ms in H0 and 16.22 ms in Rust. On reversed input it took 12.02 ms and 12.91 ms. The filter executables were 14,848 and 150,528 bytes, and filter source using the respective standard libraries cost 96 and 207 tokens with `o200k_base`.
 
 A separate Windows benchmark times only sorting, excluding input, output, and copying the original array between iterations. With 262,144 full-width random words, median time per sort was 15.08 ms for the original H0 radix sort, 12.46 ms for the adaptive radix sort, and 3.04 ms for Rust. Each timed run used 24 sorts, with five runs after warmup. Both benchmarks used Rust 1.100.0 `sort_unstable` with `opt-level=3` and `target-cpu=native`. The adaptive Windows filter is 17,408 bytes.
