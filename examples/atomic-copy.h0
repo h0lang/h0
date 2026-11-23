@@ -1,0 +1,6 @@
+>+1aq
+0 aM4096 b:a4	1a cM1 d:a4	2c ?OO!b>b4095Dd-수	1.:acusage :accopy	Va0b
+0-acusage Y:ew	\b"usage: atomic-copy DESTINATION < INPUT\n" 2
+0-acerror Y:ew	\b"atomic-copy: read, write, or replace failed\n" 1
+1-accopy'a bM+152SZa2 \Q8b0	0 c:f7	ab ?c.:acerror dM65536 W1	5 e:들d ?>eZd.:acabort	b ?!e' f:f8	bVd0e ?Dfe.:acabort	b c:f9	b1 ?c.:acabort	b 0
+1-acabort"a Y:f9	a0 :acerror

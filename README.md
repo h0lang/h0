@@ -270,6 +270,8 @@ Use `>+a` to load file replacement and its file module dependency. Call `:f3<TAB
 
 To replace a file incrementally, allocate `152 + 4 * pathBytes` zeroed state bytes. Call `:f7(path, state)` to open a sibling temporary file and `:f8(state, bytes)` for each block. Finish with `:f9(state, 1)` to sync and replace the destination, or `:f9(state, 0)` to abort. Begin and finish return zero on success. Each successful append returns the block length. All three return `Max` on error. A failed append prevents commit. Retain the state until finish succeeds, so a failed cleanup can be retried with abort. [Linux rename](https://man7.org/linux/man-pages/man2/rename.2.html) [Windows MoveFileExW](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefileexw)
 
+The [atomic copy CLI](examples/atomic-copy.h0) streams stdin into a sibling temporary file and commits after a clean EOF. Existing destination files are replaced as a single name operation. A process killed before commit can leave its temporary file beside the untouched destination. This contract covers process termination. Crash consistency after power loss depends on filesystem and directory metadata persistence.
+
 ```sh
 mkdir -p build
 bootstrap/seed/h0-linux-x64 1 < examples/replace.h0 > build/replace
