@@ -230,6 +230,10 @@ Modes `30`, `31`, and `32` check Windows x64, Linux x64, and RV64 source and ret
 
 For unknown calls injected into 18 Windows-compatible public examples, sending the diagnostic and selected section instead of the diagnostic and full file reduced input from 5,678 to 3,155 tokens in `o200k_base`, and from 5,734 to 3,216 in `cl100k_base`. The counts cover the diagnostic and source sent to the agent.
 
+Modes `33`, `34`, and `35` report direct H0 call dependencies on Windows x64, Linux x64, and RV64. Send a zero-based section ordinal, LF, and the full valid source on stdin. Each row gives a callee ordinal and its header, including argument and result markers. The ordinals follow the compiler bundle, with root sections before imported sections. Rows are unique and sorted by ordinal. The list includes Windows callback addresses and reflects references surviving native lowering.
+
+Across seven Windows-compatible examples with local callees in the entry function, supplying the entry and local callee headers took 1,382 tokens instead of 1,990 in `o200k_base` and 1,396 instead of 2,016 in `cl100k_base`. The comparison uses full local callee bodies on the baseline side.
+
 Use modes `11`, `12`, and `13` to repair source for Windows x64, Linux x64, and RV64. The compiler tries one edit for a repeated view parameter marker, a missing space after a block count, or a missing tab after a call label. It writes the original source when valid or the repaired source when exactly one candidate passes the target check. Otherwise it reports the original diagnostic and status `2`. Check the program behavior with its tests after applying a repair.
 
 Modes `14`, `15`, and `16` use the same checks and emit only `offset op` followed by a newline. The offset is a zero-based UTF-8 byte index in the original input. Operation `1` deletes the byte at that index, `2` inserts a space before it, and `3` inserts a tab before it. Valid input produces empty output. A rejected repair returns the original diagnostic and status `2`.
