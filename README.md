@@ -510,6 +510,8 @@ The [fixed-string grep CLI](examples/grep.h0) searches stdin or named files, pri
 
 The [external line sorter](examples/sort-lines.h0) reads stdin and writes a bytewise sort to stdout. Give it two distinct scratch paths to create or overwrite, separate from the input and any redirected output. It sorts runs in a 4 MiB data buffer and merges them through disk files. Lines may contain up to 65,536 bytes before LF. Duplicate and empty lines are preserved, and an unterminated final line receives LF.
 
+The [SHA-256 CLI](examples/sha256.h0) hashes a file or stdin and prints its lowercase hexadecimal digest. In `>+3`, `아a` initializes a 104-byte state, `여ab` adds bytes, and `오ab` snapshots the 32-byte digest into b without consuming the state. `와ab` hashes a byte span in one call. The compiler emits x64 SHA instructions for CPUs that advertise them and uses scalar H0 on other targets. The algorithm follows [FIPS 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final).
+
 ## Developer
 
 Hyeonwoo Kim (kookmin20103324@gmail.com) created and maintains Project H0. Run either native compiler seed with argument `4` to display the author credit.

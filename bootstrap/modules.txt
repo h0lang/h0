@@ -99,3 +99,4 @@ bootstrap/compiler/io-vector.h0
 bootstrap/compiler/zero-view.h0
 bootstrap/compiler/file-transfer.h0
 bootstrap/compiler/fixed-search.h0
+bootstrap/compiler/sha256-x64.h0

@@ -1,0 +1,5 @@
+>+134q
+0 aM4096 b:a4	1a cM1 d:a4	2c ?ODd-수	1Eb수.:hxusage ?Eb-수	1.:hxcli	수 ?AEb1EBa0	45.:hxcli	수 e:결	Va0b0 ?Ee수.:hxerr f:hxcli	e g:디	e ?f.f ?g.:hxerr 0
+0-hxusage Y:ew	\b"usage: sha256 [FILE]\n" 2
+0-hxerr Y:ew	\b"sha256: I/O or length limit\n" 2
+1-hxcli bM104 cM65536 dM32 eM65 Y아b W1	6 f0 ?Ea수	1	1 f:들c f:닷ac ?>fZc.:hxerr ?!f' g여bVc0f ?g.:hxerr f오bd ?Df32.:hxerr f태de0 ?Df64.:hxerr Xe64	10 ?D:wr	e	65.:hxerr :fl
