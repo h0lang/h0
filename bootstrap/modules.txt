@@ -80,6 +80,7 @@ bootstrap/compiler/project-overlay.h0
 bootstrap/compiler/project-spans.h0
 bootstrap/compiler/x64-register-index.h0
 std/io.h0
+std/io-vector.h0
 std/fs.h0
 std/num.h0
 bootstrap/compiler/project-batch-context.h0
