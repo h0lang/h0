@@ -75,6 +75,7 @@ bootstrap/compiler/large-source.h0
 bootstrap/compiler/rv64-frame.h0
 bootstrap/compiler/edit-context.h0
 bootstrap/compiler/project-edit-context.h0
+bootstrap/compiler/x64-register-index.h0
 std/io.h0
 std/fs.h0
 std/num.h0

@@ -92,6 +92,8 @@ The same x64 lowering applies inside addition, subtraction, multiplication, AND,
 
 A Windows loop running `b^Tb7c c+*c13b d-+dcb b+^bdc c^|cbd d+*dcb` for 12 million iterations took a median of 38.43 ms versus 43.20 ms across eight paired runs on one logical CPU. The results matched. For the same set of existing public examples, Windows x64 binaries totaled 459,264 bytes versus 465,408, and Linux x64 binaries totaled 352,366 bytes versus 358,430.
 
+For x64 byte and little-endian word loads indexed by a scalar register, the compiler keeps the view address and length in registers throughout the load. Both span and index checks are retained. On one logical Windows CPU, 1,500 comparisons of equal 64 KiB buffers through the same H0 prefix function took a median of 16.0 ms versus 18.5 ms before the compiler change. Across the public examples, Windows output (41 builds) went from 528,384 to 520,704 bytes and Linux output (40 builds) went from 379,517 to 374,438 bytes.
+
 Simple x64 `?` and `W` comparisons now jump directly on the flags from `CMP`. The left operand must be a bound scalar and the right operand a bound scalar or a decimal constant from 0 to 2,147,483,647. The compiler also handles a single negation. [Branch and dynamic-frame example](examples/compare-branch.h0)
 
 On Windows, a 24-million-iteration loop with a scalar loop condition and a mix of taken and untaken branches took a median of 40.12 ms versus 61.39 ms across eight paired runs on one logical CPU. Both binaries produced the same result. Across the existing examples, Windows x64 output (37 builds) fell from 460,800 to 452,608 bytes and Linux x64 output (36 builds) from 353,451 to 343,940 bytes.
