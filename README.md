@@ -254,6 +254,8 @@ Import `>+3` for byte reductions. `셈a` sums the shared byte view `a` with wrap
 
 Use `>+3` for Base64 on Windows x64, Linux x64, and freestanding RV64. Call `:b0<TAB>ab` to encode and `:b1<TAB>ab` to decode, with source `a` and disjoint mutable destination `b`. The result is the byte count. An empty destination queries the size and validates the input. Malformed input or insufficient space returns Max before writing any bytes. The decoder requires the standard alphabet, padding, and zero pad bits. `튼abc` (also `:bc`) selects encoding with mode 0 or decoding with mode 1 using the same source and destination. [Base64 example](examples/base64.h0) · [RFC 4648, section 4](https://www.rfc-editor.org/rfc/rfc4648.html#section-4)
 
+Load `>+3` and use `주abc` (also `:bw`) to parse one CSV record. The input may contain arbitrary bytes. Quoted fields accept commas, CR, LF, and doubled quotes. Mode 0 writes each field as a little-endian 32-bit length followed by its decoded bytes and returns the field count. Mode 1 validates and returns the required byte count. Malformed records and insufficient output space return Max and preserve the destination.
+
 The same module provides byte run-length encoding through 신abc (also :bd). Mode 0 writes (count, value) pairs, splitting runs at 255. Mode 1 expands those pairs. A zero-length destination queries the output size. Odd encoded lengths, zero counts, unsupported modes, and insufficient space return Max and leave the destination intact.
 
 Load the H0 [formatting module](std/fmt.h0) and its decimal encoder with `>+8`. The module uses single-syllable slots `값` for unsigned decimal, `간` for signed decimal, and `개` for hexadecimal in byte templates.
