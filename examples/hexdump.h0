@@ -1,6 +1,5 @@
 >+14q
-0 aM4096 bM8192 cM45056 dM1056 Y:hxt	d e1 f0 g0 h0 W1	15 i:a4	ea ?Ei-수	1' ?Ei수.:hxhu j0 ?!f	1 j:hxhop	Va0i ?Ej1	2 +e1 ` ?Ej2	3 Xd25	1 +e1 ` ?Ej3	3 f1 +e1 ` ?Ej4.:hxhu f1 g1 j:hxhi	Va0ibcd ?Ej2.2 h|hj +e1 ?!g	2 h:hxhs	bcd수 ?h.:hxhe j\B8d0 kBd26 ?Ojk	6 l0 ?k	1 l:hxhr	Vb0kc0jd +jk l:hxha	clj Xcl10 ?D:wr	Vc0+l1+l1.:hxhe ?Eh1.1 :fl
-1-hxhop'a ?!Za.0 ?DBa0	45.0 ?AEZa1EBa0	45.0 ?EZa2	4 bBa1 ?Eb67.1 ?Eb118.2 ?Eb45.3 .4 4
+0 aM4144 bM8192 cM45056 dM1056 Y:hxt	d e:oi	a1 ?e.:hxhu g0 h0 W1	10 i:op	a\b"Cv"\b"" ?!i' ?>i256.:hxhu ?Ei118	2 Xd25	1 ` ?Ei67` g1 j\B8a24 k:hxhi	Vaj+j\B8a32bcd ?Ek2.2 h|hk ?!g	2 h:hxhs	bcd수 ?h.:hxhe j\B8d0 kBd26 ?Ojk	6 l0 ?k	1 l:hxhr	Vb0kc0jd +jk l:hxha	clj Xcl10 ?D:wr	Vc0+l1+l1.:hxhe ?Eh1.1 :fl
 0-hxhu Y:ew	\b"usage: hexdump [-C] [-v] [--] [FILE ...]\n" 2
 0-hxhe Y:ew	\b"hexdump: input or output failed\n" 2
 1-hxhf'a Y:ew	\b"hexdump: cannot read " Y:ew	a Y:ew	\b"\n" 1
