@@ -2,8 +2,8 @@
 0 aM4096 b:a4	1a ?Eb18446744073709551614.:xi ?O!bEb수.:xe\b"Usage: h0-image-linux IMAGE" cM0 d:a4	2c ?Dd18446744073709551614.:xe\b"Usage: h0-image-linux IMAGE" :xg	Va0b
 0-xi aM4096 b:rd	a ?O<b4Gb4095.:xe\b"Invalid display or image input." cBa0 ?O!c>c108.:xe\b"Invalid X11 socket address." d+c1 ?>d-b2.:xe\b"Missing image path." eBad ?ADe16e.:xe\b"Invalid X11 cookie length." f++d1e ?Gf-b1.:xe\b"Missing image path." g:u0	Va1d ?Eg수.:xe\b"Could not connect to the X11 server." h:xl	gVa+d1fVafb Y:찍	g h
 3-xl'bc @Zc	1 ?!Bcd.:xe\b"Image paths cannot contain NUL." d:결	c0 ?Ed수.:xe\b"Could not open the image." e:옮	d0	2 ?O!e>e67108864	2 Y:디	d .:xe\b"Empty image or file size above 64 MiB." f:옮	d0	0 ?f	2 Y:디	d .:xe\b"Could not rewind the image." g:m0	e ?!g	2 Y:디	d .:xe\b"Could not allocate the file buffer." h\!ge i:f0	dh Y:디	d ?Die	2 Y:m1	ge .:xe\b"Could not read the image." j:xm	abh Y:m1	ge j
-3-xm'bc d:q0	c e!!d ?!d d:p0	c ?!d.:xe\b"Unsupported or damaged image." fTd32 g&d4294967295 ?O>f32767>g32767.:xe\b"Image dimensions exceed 32767 pixels." hS*fg2 ?>h268435456.:xe\b"Pixel buffer exceeds 256 MiB." j:m0	h ?!j.:xe\b"Could not allocate the pixel buffer." k\!jh l0 ?e	1	1 l:xn	ck l:xo	ck ?!l	2 Y:m1	jh .:xe\b"Could not decode the image." m:x0	abkd Y:m1	jh ?m.:xe\b"X11 setup, format, or display failed." 0
-2-xn'a"b c:q2	a ?O!c>c335544320.0 d:m0	c ?!d.0 e\!dc f:q1	aeb Y:m1	dc ?!f.0 g**Tf32&f4294967295	4 h0 W<hg	2 \Q4bh:xk	\B4bh +h4 f
+3-xm'bc d:q0	c e!!d ?!d	2 d:g0	c ?d e2 ?!d d:p0	c ?!d.:xe\b"Unsupported or damaged image." fTd32 g&d4294967295 ?O>f32767>g32767.:xe\b"Image dimensions exceed 32767 pixels." hS*fg2 ?>h268435456.:xe\b"Pixel buffer exceeds 256 MiB." j:m0	h ?!j.:xe\b"Could not allocate the pixel buffer." k\!jh l0 ?Ee1 l:xn	ck ?Ee2	2 l:g1	ck ?l Y:xyg	kl ?!e l:xo	ck ?!l	2 Y:m1	jh .:xe\b"Could not decode the image." m:x0	abkd Y:m1	jh ?m.:xe\b"X11 setup, format, or display failed." 0
+2-xn'a"b c:q2	a ?O!c>c335544320.0 d:m0	c ?!d.0 e\!dc f:q1	aeb Y:m1	dc ?!f.0 Y:xyg	bf f
 2-xo'a"b c:p0	a ?!c.0 d*Tc32&c4294967295 ?>*d4Zb.0 e:p1	ab ?!e.0 Wd	5 -d1 f*d3 gBb+f2 h|SBbf16SBb+f1	8 \Q4b*d4|gh c
 1-xk bTa24 ?Eb255.&a16777215 c*192-255b d:xj	&a255bc e:xj	&Ta8	255bc f:xj	&Ta16	255bc ||dSe8Sf16
 3-xj /++*abc127	255
@@ -16,3 +16,4 @@
 2-xr'a ?O>bZa<-Zab2.수 c++b2:xv	ab \i>cZa	수c
 2-xv'a |SBab8Ba+b1
 2-xz'ab ?DZaZb.0 @Za	1 ?DBacBbc.0 1
+2-xyg"a c**Tb32&b4294967295	4 d0 W<dc	2 \Q4ad:xk	\B4ad +d4 0
