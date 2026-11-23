@@ -134,6 +134,8 @@ Import `>+3` for [Unicode text](std/utf.h0). Use `:u4` to read one UTF-8 scalar 
 
 Use `:u8(dst, src)` for UTF-8 to UTF-16LE and `:u9(dst, src)` for UTF-16LE to UTF-8. Supply disjoint buffers. The result is a byte count. An empty destination queries the size, and malformed text or a nonempty short destination returns `Max` before modifying the buffer. NUL and U+FEFF are preserved as data. JSON and Windows argument handling share this H0 implementation. [Runnable example](examples/utf.h0) [UTF-8 specification](https://www.rfc-editor.org/rfc/rfc3629.html)
 
+Use `>+3` for Base64 on Windows x64, Linux x64, and freestanding RV64. Call `:b0<TAB>ab` to encode and `:b1<TAB>ab` to decode, with source `a` and disjoint mutable destination `b`. The result is the byte count. An empty destination queries the size and validates the input. Malformed input or insufficient space returns Max before writing any bytes. The decoder requires the standard alphabet, padding, and zero pad bits. [Base64 example](examples/base64.h0) · [RFC 4648, section 4](https://www.rfc-editor.org/rfc/rfc4648.html#section-4)
+
 Load the H0 [formatting module](std/fmt.h0) and its decimal encoder with `>+8`. The module uses single-syllable slots `값` for unsigned decimal, `간` for signed decimal, and `개` for hexadecimal in byte templates.
 
 The H0 [scanning module](std/scan.h0) reads those fields from a byte view into little-endian 64-bit words and checks their range.
