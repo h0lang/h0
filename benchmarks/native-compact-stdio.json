@@ -1,0 +1,507 @@
+{
+  "baseline_commit": "aee2231f02f119366dc42a65eb08e4b023b0fd60",
+  "workload_commit": "cf82ff40487d32977e95a17c2d1be4fd4443a621",
+  "compiler_seed_sha256": "78b208a41385a7da1d67937ae4c7e84d203df32d4407da7360207f055300a5a9",
+  "configuration": "Same six held-out H0 solutions, 16 KiB per standard stream, shared std/stream driver versus compact std/io driver. Every output was checked against the same oracle.",
+  "driver_tokens": {
+    "encoding": "o200k_base",
+    "shared": 130,
+    "compact": 111
+  },
+  "sizes": {
+    "zero_units-1": {
+      "shared_exe": 20992,
+      "shared_elf": 18924,
+      "compact_exe": 15360,
+      "compact_elf": 13891
+    },
+    "zero_units-2": {
+      "shared_exe": 20992,
+      "shared_elf": 18933,
+      "compact_exe": 15360,
+      "compact_elf": 13900
+    },
+    "last_peak-1": {
+      "shared_exe": 20992,
+      "shared_elf": 18779,
+      "compact_exe": 15360,
+      "compact_elf": 13746
+    },
+    "last_peak-2": {
+      "shared_exe": 20992,
+      "shared_elf": 18779,
+      "compact_exe": 15360,
+      "compact_elf": 13746
+    },
+    "priority_delivery-1": {
+      "shared_exe": 20992,
+      "shared_elf": 19027,
+      "compact_exe": 15360,
+      "compact_elf": 13994
+    },
+    "priority_delivery-2": {
+      "shared_exe": 20992,
+      "shared_elf": 19027,
+      "compact_exe": 15360,
+      "compact_elf": 13994
+    }
+  },
+  "windows": {
+    "logical_cpu": 15,
+    "cases_per_process": 44640,
+    "includes": "Process startup and binary stdin/stdout",
+    "pairs": {
+      "zero_units-1": {
+        "shared": {
+          "median_ms": 21.797,
+          "samples_us": [
+            20594,
+            24438,
+            21373,
+            21797,
+            21842,
+            22586,
+            20016,
+            20615,
+            22020
+          ]
+        },
+        "compact": {
+          "median_ms": 21.1007,
+          "samples_us": [
+            20830,
+            21859,
+            23087,
+            21189,
+            20265,
+            20670,
+            24050,
+            21100,
+            20298
+          ]
+        },
+        "rust": {
+          "median_ms": 22.6353,
+          "samples_us": [
+            23005,
+            24285,
+            22650,
+            22294,
+            22635,
+            22845,
+            21350,
+            22138,
+            21663
+          ]
+        }
+      },
+      "zero_units-2": {
+        "shared": {
+          "median_ms": 21.5236,
+          "samples_us": [
+            21330,
+            21719,
+            21523,
+            21843,
+            21126,
+            20419,
+            23646,
+            21329,
+            22104
+          ]
+        },
+        "compact": {
+          "median_ms": 21.8328,
+          "samples_us": [
+            20674,
+            21630,
+            21563,
+            21832,
+            21867,
+            22500,
+            23079,
+            24143,
+            20730
+          ]
+        },
+        "rust": {
+          "median_ms": 22.4625,
+          "samples_us": [
+            22405,
+            21312,
+            23692,
+            22462,
+            22662,
+            22367,
+            24493,
+            25856,
+            22382
+          ]
+        }
+      },
+      "last_peak-1": {
+        "shared": {
+          "median_ms": 21.7986,
+          "samples_us": [
+            21400,
+            21861,
+            24572,
+            21257,
+            21920,
+            21798,
+            20297,
+            21886,
+            21553
+          ]
+        },
+        "compact": {
+          "median_ms": 20.9962,
+          "samples_us": [
+            19854,
+            21089,
+            21381,
+            20609,
+            20996,
+            21723,
+            21130,
+            20522,
+            20559
+          ]
+        },
+        "rust": {
+          "median_ms": 22.0147,
+          "samples_us": [
+            21995,
+            22246,
+            23023,
+            22014,
+            21421,
+            21475,
+            22992,
+            22358,
+            20725
+          ]
+        }
+      },
+      "last_peak-2": {
+        "shared": {
+          "median_ms": 23.2809,
+          "samples_us": [
+            23312,
+            23703,
+            21989,
+            22973,
+            21761,
+            25029,
+            23349,
+            22533,
+            23280
+          ]
+        },
+        "compact": {
+          "median_ms": 22.5113,
+          "samples_us": [
+            21728,
+            22723,
+            23219,
+            22320,
+            22511,
+            21391,
+            23190,
+            22595,
+            22018
+          ]
+        },
+        "rust": {
+          "median_ms": 23.4948,
+          "samples_us": [
+            23852,
+            23494,
+            23683,
+            23150,
+            22924,
+            23485,
+            23214,
+            24231,
+            24147
+          ]
+        }
+      },
+      "priority_delivery-1": {
+        "shared": {
+          "median_ms": 22.9769,
+          "samples_us": [
+            25022,
+            23422,
+            28492,
+            27010,
+            21620,
+            22716,
+            22976,
+            22129,
+            22735
+          ]
+        },
+        "compact": {
+          "median_ms": 23.5877,
+          "samples_us": [
+            23587,
+            23918,
+            25600,
+            24787,
+            24094,
+            21677,
+            22632,
+            23012,
+            21081
+          ]
+        },
+        "rust": {
+          "median_ms": 23.7252,
+          "samples_us": [
+            25770,
+            26131,
+            27462,
+            24613,
+            23368,
+            23307,
+            23461,
+            23725,
+            23674
+          ]
+        }
+      },
+      "priority_delivery-2": {
+        "shared": {
+          "median_ms": 23.3036,
+          "samples_us": [
+            23303,
+            23021,
+            23257,
+            23525,
+            22677,
+            23035,
+            23339,
+            25137,
+            25922
+          ]
+        },
+        "compact": {
+          "median_ms": 23.3635,
+          "samples_us": [
+            23365,
+            23761,
+            22678,
+            25110,
+            22999,
+            23190,
+            23363,
+            25642,
+            23075
+          ]
+        },
+        "rust": {
+          "median_ms": 24.6764,
+          "samples_us": [
+            25925,
+            25791,
+            24352,
+            24388,
+            24676,
+            23439,
+            27274,
+            26044,
+            24323
+          ]
+        }
+      }
+    }
+  },
+  "wsl_linux": {
+    "logical_cpu": 15,
+    "cases_per_process": 44640,
+    "includes": "Process startup and binary stdin/stdout",
+    "pairs": {
+      "zero_units-1": {
+        "shared": {
+          "median_ms": 13.350524,
+          "samples_us": [
+            13773,
+            13350,
+            14905,
+            13886,
+            12700,
+            12247,
+            13290,
+            14652,
+            13349
+          ]
+        },
+        "compact": {
+          "median_ms": 13.267598,
+          "samples_us": [
+            13267,
+            15298,
+            14896,
+            13174,
+            12785,
+            13543,
+            12599,
+            13869,
+            12434
+          ]
+        }
+      },
+      "zero_units-2": {
+        "shared": {
+          "median_ms": 13.973829,
+          "samples_us": [
+            14269,
+            17315,
+            13786,
+            16315,
+            14723,
+            13418,
+            13973,
+            13347,
+            12296
+          ]
+        },
+        "compact": {
+          "median_ms": 13.305923,
+          "samples_us": [
+            15351,
+            14126,
+            12988,
+            13305,
+            17045,
+            13558,
+            13216,
+            13212,
+            12588
+          ]
+        }
+      },
+      "last_peak-1": {
+        "shared": {
+          "median_ms": 15.301064,
+          "samples_us": [
+            17160,
+            12431,
+            13038,
+            15301,
+            15380,
+            15039,
+            18352,
+            16548,
+            14047
+          ]
+        },
+        "compact": {
+          "median_ms": 14.217345,
+          "samples_us": [
+            14377,
+            14217,
+            12864,
+            11756,
+            14215,
+            14963,
+            16544,
+            13475,
+            15313
+          ]
+        }
+      },
+      "last_peak-2": {
+        "shared": {
+          "median_ms": 14.264985,
+          "samples_us": [
+            12387,
+            12741,
+            14264,
+            14290,
+            14518,
+            13697,
+            14023,
+            15318,
+            15561
+          ]
+        },
+        "compact": {
+          "median_ms": 12.47779,
+          "samples_us": [
+            12279,
+            14595,
+            12387,
+            12146,
+            13604,
+            12477,
+            12051,
+            17079,
+            13959
+          ]
+        }
+      },
+      "priority_delivery-1": {
+        "shared": {
+          "median_ms": 14.774803,
+          "samples_us": [
+            14876,
+            15034,
+            15774,
+            13282,
+            13238,
+            14144,
+            14774,
+            13008,
+            15073
+          ]
+        },
+        "compact": {
+          "median_ms": 13.140217,
+          "samples_us": [
+            14049,
+            12746,
+            11959,
+            12610,
+            13300,
+            12003,
+            13140,
+            14553,
+            15089
+          ]
+        }
+      },
+      "priority_delivery-2": {
+        "shared": {
+          "median_ms": 13.678533,
+          "samples_us": [
+            14599,
+            13437,
+            17333,
+            13387,
+            13678,
+            15538,
+            14913,
+            12873,
+            12705
+          ]
+        },
+        "compact": {
+          "median_ms": 13.20357,
+          "samples_us": [
+            13938,
+            13203,
+            12575,
+            11919,
+            17598,
+            13117,
+            15496,
+            13547,
+            11534
+          ]
+        }
+      }
+    }
+  }
+}
