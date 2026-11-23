@@ -2,6 +2,16 @@
 
 H0 prioritizes reducing the total tokens AI agents use to complete programming tasks. Compare prompt and guide input, code, reasoning, and repair through a passing result on the same tasks. Track native runtime, binary size, and build time separately.
 
+## Evidence for agent cost
+
+The public results below measure source or supplied context size, compiler behavior, and native execution. The current public native toolchain has no published paired result showing a lower end-to-end agent cost than Rust.
+
+- Compare H0 and Rust on the same tasks with equivalent starting programs and an independent correctness oracle. Include both new programs and edits that cross file boundaries. Fix the model snapshot, agent version, reasoning effort, tool access, timeout, and retry budget. Run each attempt in a fresh session. Evaluate cold and warm cache conditions separately.
+- Record provider usage for every request, including repair attempts and runs that fail or time out. Normalize input and output once, report cache reads and writes separately, and count reported reasoning within output. Measure elapsed time from task delivery through the final correctness check. Keep raw usage and the per-task outcome for every pair. A run without usage needs an explicit missing-data record and cannot establish a cost result.
+- Report passes and attempts, total input and output, total tokens per accepted solution, median elapsed time, and elapsed time per accepted solution. Totals include failed attempts. Claim a token advantage only when paired correctness is at least as high and total tokens per accepted solution are lower. Report billed cost separately when provider rates and cache classes are known.
+
+## Native toolchain
+
 H0 (Human Zero) is a native programming language for AI agents. Its Tape notation uses positional registers and compact Hangul instructions. Separate packed functions with a newline or `;;`. The [calendar example](examples/calendar.h0) fits five functions on one line.
 
 H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AGENTS.md) for the language reference, native build commands, standard library, and compiler entry points.
