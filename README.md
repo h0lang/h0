@@ -29,6 +29,8 @@ H0 (Human Zero) is a native programming language for AI agents. Its Tape notatio
 
 H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AGENTS.md) for the language reference, native build commands, standard library, and compiler entry points.
 
+Import `>+5` for native numeric functions. `약ab` computes the unsigned greatest common divisor, with `gcd(0, 0) = 0`. `승ab` computes the unsigned least common multiple, returning zero for a zero operand and wrapping the result modulo `2^64`. The [integer divisors example](examples/integer-divisors.h0) runs on Windows x64, Linux x64, and bare-metal RV64.
+
 For editing existing native H0 code, start with [EDIT.md](EDIT.md) and the source plus its scoped glyph and module records. [CORE.md](CORE.md) and [AGENTS.md](AGENTS.md) provide the remaining operations and contracts on demand. Count any later reference reads in end-to-end agent usage.
 
 Native binary64 values use one scalar containing the IEEE 754 bit pattern. Use `\F+`, `\F-`, `\F*`, and `\F/` for arithmetic, `\F^` for square root, and `\F<`, `\F=`, and `\F>` for ordered comparisons. Comparisons involving NaN return zero. Use `\Fi` or `\Fu` to convert signed or unsigned 64-bit integers to binary64. The inverse operators `\FI` and `\FU` truncate toward zero and saturate at the destination limits. NaN converts to zero.
