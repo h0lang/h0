@@ -1,0 +1,693 @@
+{
+  "base_commit": "318124d316f18b01204df77d002bd9032a0d949d",
+  "correctness": {
+    "seed": 682921,
+    "cases_by_operation": {
+      "0": 20096,
+      "1": 26270,
+      "2": 114061
+    },
+    "targets": {
+      "0": {
+        "program_sha256": "6027e1cb28bd78781db7280954471db5e5ea629cb25009632329d9ba2af9c1dd",
+        "file_bytes": 14336,
+        "passed": 160427,
+        "total": 160427
+      },
+      "1": {
+        "program_sha256": "b83702c2a1c0daa571e743a8828d9b411e3531ab2cbf868b19b9cfd63f6b283b",
+        "file_bytes": 13109,
+        "passed": 160427,
+        "total": 160427
+      },
+      "2": {
+        "program_sha256": "0ecd229e5873692c205a5b771757d9f38f847ef81d864be47d0da3d2703cacc4",
+        "file_bytes": 4860,
+        "passed": 1156,
+        "total": 1156,
+        "environment": "Unicorn RV64"
+      }
+    }
+  },
+  "windows_paired": {
+    "scope": "Exploratory Windows x64 modular exponentiation with random 64-bit bases, top-bit-set moduli and random 24-bit or 64-bit exponents. Compares prior H0, new Montgomery setup, two-bit exponentiation with and without power-of-two exponent reduction, and Rust u128. Starts one process per batch and includes buffered binary I/O. Process cycle counts use QueryProcessCycleTime to exclude time when the child is not scheduled.",
+    "seed": 91793,
+    "logical_core": 0,
+    "rust": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
+    "binary_bytes": {
+      "h0-previous": 10240,
+      "h0-final": 11776,
+      "h0-window": 11776,
+      "rust-u128": 139776
+    },
+    "results": {
+      "odd-wide": {
+        "records": 8192,
+        "median_ms": {
+          "h0-previous": 35.9406,
+          "h0-final": 28.5317,
+          "h0-window": 26.1827,
+          "rust-u128": 24.9647
+        },
+        "samples_ms": {
+          "h0-previous": [
+            36.1571,
+            36.7023,
+            50.2752,
+            28.055,
+            35.9406,
+            30.7475,
+            38.2167,
+            31.0859,
+            31.8808
+          ],
+          "h0-final": [
+            31.2336,
+            32.4463,
+            32.4413,
+            22.9047,
+            27.8954,
+            28.5317,
+            25.3892,
+            22.0803,
+            30.328
+          ],
+          "h0-window": [
+            22.5077,
+            29.0037,
+            22.1508,
+            29.4632,
+            26.1827,
+            26.5848,
+            25.5821,
+            28.9919,
+            24.0403
+          ],
+          "rust-u128": [
+            30.9707,
+            21.8368,
+            41.7048,
+            24.9647,
+            22.2139,
+            20.4419,
+            28.8274,
+            21.881,
+            29.2366
+          ]
+        },
+        "median_cycles": {
+          "h0-previous": 57229940,
+          "h0-final": 42881818,
+          "h0-window": 41827253,
+          "rust-u128": 39754613
+        },
+        "samples_cycles": {
+          "h0-previous": [
+            57574225,
+            55736005,
+            65740911,
+            53564582,
+            55978916,
+            53174978,
+            60776238,
+            57775109,
+            57229940
+          ],
+          "h0-final": [
+            44210626,
+            40527572,
+            51594413,
+            41278772,
+            45076094,
+            45246384,
+            42881818,
+            40175924,
+            41131338
+          ],
+          "h0-window": [
+            44303136,
+            38634441,
+            39591697,
+            47941960,
+            39785940,
+            41827253,
+            39861136,
+            44334097,
+            44020429
+          ],
+          "rust-u128": [
+            38857442,
+            39754613,
+            44852355,
+            42607580,
+            36702606,
+            36367552,
+            46745850,
+            37612316,
+            41690495
+          ]
+        }
+      },
+      "even-wide": {
+        "records": 8192,
+        "median_ms": {
+          "h0-previous": 36.2363,
+          "h0-final": 29.5863,
+          "h0-window": 30.3958,
+          "rust-u128": 23.7217
+        },
+        "samples_ms": {
+          "h0-previous": [
+            30.1326,
+            45.6977,
+            36.9279,
+            46.5953,
+            34.906,
+            43.1968,
+            36.2363,
+            33.1496,
+            34.0891
+          ],
+          "h0-final": [
+            22.4211,
+            26.9604,
+            25.1394,
+            35.8752,
+            60.7257,
+            29.9272,
+            29.5863,
+            22.9567,
+            30.9573
+          ],
+          "h0-window": [
+            29.3676,
+            27.7743,
+            23.9786,
+            43.1646,
+            31.394,
+            28.9562,
+            32.8318,
+            35.3445,
+            30.3958
+          ],
+          "rust-u128": [
+            22.5542,
+            23.5998,
+            23.7217,
+            26.475,
+            22.433,
+            33.1529,
+            24.9828,
+            28.7203,
+            22.6176
+          ]
+        },
+        "median_cycles": {
+          "h0-previous": 64235183,
+          "h0-final": 40999372,
+          "h0-window": 47293600,
+          "rust-u128": 40693440
+        },
+        "samples_cycles": {
+          "h0-previous": [
+            55617320,
+            67740945,
+            74453521,
+            71178142,
+            58421631,
+            66731702,
+            64079637,
+            64235183,
+            59565392
+          ],
+          "h0-final": [
+            42415170,
+            42362089,
+            37545227,
+            45691664,
+            37366825,
+            47711953,
+            40222362,
+            40581755,
+            40999372
+          ],
+          "h0-window": [
+            47293600,
+            46104859,
+            44436948,
+            63499463,
+            45177828,
+            43942279,
+            57285967,
+            47399007,
+            50307265
+          ],
+          "rust-u128": [
+            41488882,
+            44744725,
+            43902840,
+            40848248,
+            39423615,
+            36773381,
+            37346920,
+            37759020,
+            40693440
+          ]
+        }
+      },
+      "odd-short": {
+        "records": 8192,
+        "median_ms": {
+          "h0-previous": 28.0459,
+          "h0-final": 22.4284,
+          "h0-window": 21.3236,
+          "rust-u128": 20.3733
+        },
+        "samples_ms": {
+          "h0-previous": [
+            31.423,
+            29.3551,
+            22.2346,
+            28.0459,
+            26.5526,
+            30.3242,
+            25.3465,
+            30.029,
+            22.1631
+          ],
+          "h0-final": [
+            24.2913,
+            23.3676,
+            23.4942,
+            21.5507,
+            19.2689,
+            18.1171,
+            22.0138,
+            24.0229,
+            22.4284
+          ],
+          "h0-window": [
+            22.9366,
+            20.9064,
+            17.2644,
+            17.0648,
+            31.8039,
+            21.3236,
+            19.4154,
+            29.4783,
+            54.754
+          ],
+          "rust-u128": [
+            20.3733,
+            24.3638,
+            18.0502,
+            18.0878,
+            17.7441,
+            20.3977,
+            17.7476,
+            25.6648,
+            20.9345
+          ]
+        },
+        "median_cycles": {
+          "h0-previous": 42555609,
+          "h0-final": 29267208,
+          "h0-window": 27291145,
+          "rust-u128": 29287114
+        },
+        "samples_cycles": {
+          "h0-previous": [
+            48540202,
+            45225752,
+            39280960,
+            42555609,
+            53162430,
+            43248580,
+            41315272,
+            41811774,
+            38456411
+          ],
+          "h0-final": [
+            33162207,
+            27825985,
+            29279736,
+            26336464,
+            28034606,
+            29267208,
+            26082506,
+            30550305,
+            30539617
+          ],
+          "h0-window": [
+            27011006,
+            28296315,
+            27291145,
+            25733446,
+            29426445,
+            27901542,
+            25664513,
+            28824886,
+            26158438
+          ],
+          "rust-u128": [
+            30505705,
+            30264275,
+            29287114,
+            27531838,
+            29186490,
+            30686321,
+            32971270,
+            29107234,
+            28281573
+          ]
+        }
+      },
+      "even-short": {
+        "records": 8192,
+        "median_ms": {
+          "h0-previous": 26.8084,
+          "h0-final": 20.0404,
+          "h0-window": 21.5993,
+          "rust-u128": 19.1267
+        },
+        "samples_ms": {
+          "h0-previous": [
+            35.0138,
+            27.3411,
+            20.4518,
+            26.8866,
+            26.0484,
+            21.2762,
+            27.7103,
+            24.7651,
+            26.8084
+          ],
+          "h0-final": [
+            22.9869,
+            19.4864,
+            17.5415,
+            22.6451,
+            17.6777,
+            20.0404,
+            25.678,
+            18.7185,
+            23.5745
+          ],
+          "h0-window": [
+            25.0258,
+            27.7195,
+            21.7168,
+            19.8217,
+            17.5147,
+            19.8443,
+            23.2067,
+            19.4866,
+            21.5993
+          ],
+          "rust-u128": [
+            41.5697,
+            18.0439,
+            16.9396,
+            21.0163,
+            19.1267,
+            17.8713,
+            23.0556,
+            20.1893,
+            17.7803
+          ]
+        },
+        "median_cycles": {
+          "h0-previous": 42088959,
+          "h0-final": 28255407,
+          "h0-window": 31170657,
+          "rust-u128": 28044931
+        },
+        "samples_cycles": {
+          "h0-previous": [
+            41370188,
+            44658471,
+            40210206,
+            45429579,
+            42088959,
+            42052836,
+            52368843,
+            42382364,
+            40714815
+          ],
+          "h0-final": [
+            31043487,
+            25103503,
+            28001434,
+            34288640,
+            27306260,
+            24695465,
+            28255407,
+            28568710,
+            29683360
+          ],
+          "h0-window": [
+            35424305,
+            30509025,
+            31298194,
+            27871322,
+            28070728,
+            31170657,
+            33774447,
+            32111692,
+            30438252
+          ],
+          "rust-u128": [
+            31658690,
+            29102079,
+            27858788,
+            26667109,
+            29657924,
+            28044931,
+            31145228,
+            26622127,
+            24809731
+          ]
+        }
+      }
+    }
+  },
+  "windows_cycle_reduction": {
+    "odd-wide": {
+      "vs_previous_percent": 25.071006539584005,
+      "vs_rust_percent": -7.866269506887158
+    },
+    "even-wide": {
+      "vs_previous_percent": 36.17302841652993,
+      "vs_rust_percent": -0.751796849811659
+    },
+    "odd-short": {
+      "vs_previous_percent": 31.225968355898747,
+      "vs_rust_percent": 0.06796845875629565
+    },
+    "even-short": {
+      "vs_previous_percent": 32.86741304293128,
+      "vs_rust_percent": -0.7504956956392528
+    }
+  },
+  "rv64_instructions": {
+    "h0-previous": {
+      "bytes": 1762,
+      "sha256": "499f7f73b4199421a85661d1c70c2430bb773dfe75646edf81cb559fa49ba19c",
+      "instructions": {
+        "odd-wide": {
+          "cases": 128,
+          "median": 11685.5,
+          "min": 10241,
+          "max": 12941
+        },
+        "even-wide": {
+          "cases": 128,
+          "median": 13271.5,
+          "min": 12065,
+          "max": 14759
+        },
+        "odd-short": {
+          "cases": 128,
+          "median": 6238.5,
+          "min": 5489,
+          "max": 7049
+        },
+        "even-short": {
+          "cases": 128,
+          "median": 6923.5,
+          "min": 5948,
+          "max": 7689
+        },
+        "odd-sparse": {
+          "cases": 64,
+          "median": 6230.0,
+          "min": 3073,
+          "max": 9260
+        },
+        "odd-alternating": {
+          "cases": 64,
+          "median": 11764.0,
+          "min": 11193,
+          "max": 12041
+        },
+        "even-power-of-two": {
+          "cases": 63,
+          "median": 4650,
+          "min": 1330,
+          "max": 8421
+        }
+      }
+    },
+    "h0-setup": {
+      "bytes": 1994,
+      "sha256": "1419a05e779fd8bf65d0e18e29a8180511be0e39caef8fd0ea57ed72c4ab953b",
+      "instructions": {
+        "odd-wide": {
+          "cases": 128,
+          "median": 9632.0,
+          "min": 8403,
+          "max": 10713
+        },
+        "even-wide": {
+          "cases": 128,
+          "median": 11267.0,
+          "min": 10272,
+          "max": 12782
+        },
+        "odd-short": {
+          "cases": 128,
+          "median": 4201.5,
+          "min": 3531,
+          "max": 4845
+        },
+        "even-short": {
+          "cases": 128,
+          "median": 4948.0,
+          "min": 3926,
+          "max": 5640
+        },
+        "odd-sparse": {
+          "cases": 64,
+          "median": 4142.0,
+          "min": 1115,
+          "max": 7207
+        },
+        "odd-alternating": {
+          "cases": 64,
+          "median": 9690.5,
+          "min": 9409,
+          "max": 9829
+        },
+        "even-power-of-two": {
+          "cases": 63,
+          "median": 4654,
+          "min": 1334,
+          "max": 8425
+        }
+      }
+    },
+    "h0-window": {
+      "bytes": 2678,
+      "sha256": "bb22315ae7cb2205737e3b79cd1a3da405f31690b0a52e810acde97c12adb76b",
+      "instructions": {
+        "odd-wide": {
+          "cases": 128,
+          "median": 9168.0,
+          "min": 8112,
+          "max": 9895
+        },
+        "even-wide": {
+          "cases": 128,
+          "median": 10794.5,
+          "min": 9997,
+          "max": 11735
+        },
+        "odd-short": {
+          "cases": 128,
+          "median": 4209.5,
+          "min": 3539,
+          "max": 4853
+        },
+        "even-short": {
+          "cases": 128,
+          "median": 4956.0,
+          "min": 3934,
+          "max": 5648
+        },
+        "odd-sparse": {
+          "cases": 64,
+          "median": 4167.5,
+          "min": 1123,
+          "max": 7250
+        },
+        "odd-alternating": {
+          "cases": 64,
+          "median": 9913.5,
+          "min": 9628,
+          "max": 10193
+        },
+        "even-power-of-two": {
+          "cases": 63,
+          "median": 4654,
+          "min": 1334,
+          "max": 8425
+        }
+      }
+    },
+    "h0-final": {
+      "bytes": 2910,
+      "sha256": "cc81dcaa81c2a1dae3f62bd484ac8061683cd476aa899c27c9f99062e26940c2",
+      "instructions": {
+        "odd-wide": {
+          "cases": 128,
+          "median": 9184.0,
+          "min": 8128,
+          "max": 9911
+        },
+        "even-wide": {
+          "cases": 128,
+          "median": 9559.5,
+          "min": 8799,
+          "max": 10370
+        },
+        "odd-short": {
+          "cases": 128,
+          "median": 4209.5,
+          "min": 3539,
+          "max": 4853
+        },
+        "even-short": {
+          "cases": 128,
+          "median": 4517.5,
+          "min": 3573,
+          "max": 5145
+        },
+        "odd-sparse": {
+          "cases": 64,
+          "median": 4175.5,
+          "min": 1123,
+          "max": 7266
+        },
+        "odd-alternating": {
+          "cases": 64,
+          "median": 9749.5,
+          "min": 9468,
+          "max": 9888
+        },
+        "even-power-of-two": {
+          "cases": 63,
+          "median": 4654,
+          "min": 139,
+          "max": 8425
+        }
+      }
+    }
+  },
+  "seed_fixed_point_sha256": {
+    "h0-windows-x64.exe": "945758faaa019fbb55aec2580658cd69b6ddc17320d1ff3568a6a2f1c0cc5d7e",
+    "h0-linux-x64": "7d99ba14e3c7309efcfd315996c8d427e5a1e4067b260a60605d1ee2a436d317"
+  },
+  "linux_self_host": true,
+  "cycle_counter_reference": "https://learn.microsoft.com/en-us/windows/win32/api/realtimeapiset/nf-realtimeapiset-queryprocesscycletime",
+  "scope": "Library correctness and unscored runtime comparison. Public Tape calls and the compiler seeds are unchanged."
+}

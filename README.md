@@ -41,6 +41,10 @@ The single-line example takes 63 tokens in both measured tokenizers. With ASCII 
 
 In the paired Windows x64 rerun, the native operator reduced the odd and even modular exponentiation batches from 22.98 to 20.25 ms and from 23.78 to 20.29 ms. The Rust u128 reference took 14.02 and 14.05 ms. [Operator validation and paired samples](benchmarks/native-mulhi.json)
 
+Modular exponentiation now obtains the Montgomery setup for wide residues through six squarings. It groups adjacent exponent bits when doing so reduces multiplication and shortens the power-of-two part of even-modulus calculations. The existing numeric calls retain the same input and result contracts.
+
+On four Windows batches of 8,192 exponentiations, the revised implementation used 25–36% fewer process CPU cycles than the previous H0 build. The Rust reference had lower median elapsed time in each batch. In separate RV64 emulation, wide odd and even cases used about 21% and 28% fewer executed instructions. [Measurements and correctness](benchmarks/native-montgomery-window.json) [Windows cycle counter](https://learn.microsoft.com/en-us/windows/win32/api/realtimeapiset/nf-realtimeapiset-queryprocesscycletime)
+
 For editing existing native H0 code, start with [EDIT.md](EDIT.md) and the source plus its scoped glyph and module records. [CORE.md](CORE.md) and [AGENTS.md](AGENTS.md) provide the remaining operations and contracts on demand. Count any later reference reads in end-to-end agent usage.
 
 Native binary64 values use one scalar containing the IEEE 754 bit pattern. Use `\F+`, `\F-`, `\F*`, and `\F/` for arithmetic, `\F^` for square root, and `\F<`, `\F=`, and `\F>` for ordered comparisons. Comparisons involving NaN return zero. Use `\Fi` or `\Fu` to convert signed or unsigned 64-bit integers to binary64. The inverse operators `\FI` and `\FU` truncate toward zero and saturate at the destination limits. NaN converts to zero.
