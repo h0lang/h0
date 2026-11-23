@@ -110,6 +110,10 @@ The bootstrap compiler is split into [H0 modules](bootstrap/compiler), with [sta
 
 On Windows and Linux x64, `>+1` loads standard I/O. Use `:!42` to print a word in decimal or `:!\b"hello"` to print bytes. The compiler selects the output function from the operand type. Use `:ew` to write a byte view to stderr. The decimal encoder in `std/num.h0` is loaded automatically.
 
+Import `>+3` for [Unicode text](std/utf.h0). Use `:u4` to read one UTF-8 scalar at a byte offset. Its result packs the next byte offset above the low 21 scalar bits. Use `:u5` to write one scalar at a byte offset, `:u6` to count scalars in a UTF-8 view, and `:u7` to find the byte offset of a zero-based scalar index. `:u7` validates the prefix it traverses and accepts the end position. Invalid input returns `Max`.
+
+Use `:u8(dst, src)` for UTF-8 to UTF-16LE and `:u9(dst, src)` for UTF-16LE to UTF-8. Supply disjoint buffers. The result is a byte count. An empty destination queries the size, and malformed text or a nonempty short destination returns `Max` before modifying the buffer. NUL and U+FEFF are preserved as data. JSON and Windows argument handling share this H0 implementation. [Runnable example](examples/utf.h0) [UTF-8 specification](https://www.rfc-editor.org/rfc/rfc3629.html)
+
 Load the H0 [formatting module](std/fmt.h0) and its decimal encoder with `>+8`. The module uses single-syllable slots `값` for unsigned decimal, `간` for signed decimal, and `개` for hexadecimal in byte templates.
 
 The H0 [scanning module](std/scan.h0) reads those fields from a byte view into little-endian 64-bit words and checks their range.
@@ -245,7 +249,7 @@ Load `>+n` to copy the Windows command line into a caller-owned UTF-16LE buffer 
 
 Load `>+q` in Windows and Linux x64 executables. `:a4` copies the argument at a zero-based index and `:a5` copies a value for an exact, case-sensitive environment key. Both return the byte count excluding the NUL terminator. `u64::MAX - 1` means absent. `u64::MAX` means an error or insufficient output space. The [process input example](examples/process-input.h0) prints argument 1 and the value of `H0_VALUE`.
 
-On Windows, H0 parses the native command line using Windows rules for spaces, quotes, and backslashes. The module reads a copy of the current environment and converts both results from UTF-16 to UTF-8. [Windows argument parsing](https://learn.microsoft.com/en-us/cpp/c-language/parsing-c-command-line-arguments?view=msvc-170) [Windows UTF-8 conversion](https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-widechartomultibyte)
+On Windows, H0 parses the native command line using Windows rules for spaces, quotes, and backslashes. The module reads a copy of the current environment and converts both results from UTF-16LE with the H0 text codec. [Windows argument parsing](https://learn.microsoft.com/en-us/cpp/c-language/parsing-c-command-line-arguments?view=msvc-170)
 
 On Linux, both calls return raw bytes from the original ELF startup stack and work without procfs. The executable reserves one 4 KiB writable page for the saved startup pointer. In WSL, 20,000 argument lookups and 20,000 environment lookups in the same program took a median of 4.82 ms across 11 runs, down from 62.03 ms with procfs. The program shrank from 3,774 to 3,611 bytes. [System V AMD64 process startup ABI](https://gitlab.com/x86-psABIs/x86-64-ABI/-/blob/master/x86-64-psABI/low-level-sys-info.tex)
 
