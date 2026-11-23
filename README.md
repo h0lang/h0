@@ -140,6 +140,10 @@ Use `:u8(dst, src)` for UTF-8 to UTF-16LE and `:u9(dst, src)` for UTF-16LE to UT
 
 The byte-prefix check "`:pb`" compares full eight-byte words and handles the final bytes individually. On Windows x64, 1,500 repeated comparisons of equal 64 KiB buffers took a median of 18 ms versus 134 ms before the change. Rust 1.100.0 "`starts_with`" compiled with "`-C opt-level=3 -C target-cpu=native`" took 2 ms. For two million equal 7-byte prefixes, the same measurements were 37.5, 30, and 4 ms, respectively. These timings exclude input and process startup.
 
+Use `:b2<TAB>ab` from `>+3` to copy source `a` into the start of a disjoint mutable destination `b`. The function returns the byte count, preserves the remaining destination bytes, and returns Max before writing if the destination is too short. For equal-length views, `]ba` directly uses the native bulk copy on x64 and RV64. The byte-key map uses the same primitive to store keys. [Byte copy example](examples/byte-copy.h0)
+
+On one logical Windows CPU, 8,000 copies of 64 KiB took a median of 10 ms through `:b2`, 80 ms through the eight-byte H0 loop, and 8 ms through optimized Rust `copy_from_slice`. Replacing that loop with the bulk call used 5 source tokens versus 19 in both o200k_base and cl100k_base. The H0 benchmark executable grew from 9,728 to 10,240 bytes.
+
 Use `>+3` for Base64 on Windows x64, Linux x64, and freestanding RV64. Call `:b0<TAB>ab` to encode and `:b1<TAB>ab` to decode, with source `a` and disjoint mutable destination `b`. The result is the byte count. An empty destination queries the size and validates the input. Malformed input or insufficient space returns Max before writing any bytes. The decoder requires the standard alphabet, padding, and zero pad bits. [Base64 example](examples/base64.h0) · [RFC 4648, section 4](https://www.rfc-editor.org/rfc/rfc4648.html#section-4)
 
 Load the H0 [formatting module](std/fmt.h0) and its decimal encoder with `>+8`. The module uses single-syllable slots `값` for unsigned decimal, `간` for signed decimal, and `개` for hexadecimal in byte templates.
