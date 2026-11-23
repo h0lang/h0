@@ -1,0 +1,8 @@
+>+135gqw
+0 aM4096 b:a4	1a cM1 d:a4	2c ?OO!b>b4095Dd-수	1.:tsusage e:tsrun	Va0b ?Ee수.:tserror fM24 g식fe ?O!gD:wr	Vf0gg.:tserror D:wr	\b"\n"1
+0-tsusage Y:ew	\b"usage: tree-size DIRECTORY\n" 2
+0-tserror Y:ew	\b"tree-size: traversal, size overflow, or I/O error\n" 1
+1-tsrun'a bM4096 cM1033 d:m0	8536064 ?!d.수 e:tswalk	abcd f:m1	d8536064 ?!f.수 e
+4-tswalk'a"bc Y:b2	ab eZa f47 ?AE!<e4E\B4a0\s"\\\\?\\"	1 f92 g:tsopen	ade ?g.수 h0 i0 W1	18 j+d*h4168 k\!j4168 l:fy	kc ?El수.:tsclose	dh ?!l	5 m:f6	k ?m.:tsclose	dh ?!h.i -h1 ` mBc0 ?Em1	4 n\B8c1025 ?>n-수i.:tsclose	dh +in ` ?Dm2` n\B8k4160 +nDBb-n1f ?>+nl4095.:tsclose	dh Xb-n1f o0 Kbn	1 o:b2	Vc1+l1q ?Dol.:tsclose	dh o:tsopen	Vb0+nl+j4168+nl ?o.:tsclose	dh +h1 수
+3-tsopen'a d\!b4168 \Q8d0	0 \Q8d4160c :f4	ad
+2-tsclose +b1 Wb	3 -b1 c\!+a*b4168	4168 Y:f6	c 수
