@@ -45,6 +45,8 @@ Modular exponentiation now obtains the Montgomery setup for wide residues throug
 
 On four Windows batches of 8,192 exponentiations, the revised implementation used 25–36% fewer process CPU cycles than the previous H0 build. The Rust reference had lower median elapsed time in each batch. In separate RV64 emulation, wide odd and even cases used about 21% and 28% fewer executed instructions. [Measurements and correctness](benchmarks/native-montgomery-window.json) [Windows cycle counter](https://learn.microsoft.com/en-us/windows/win32/api/realtimeapiset/nf-realtimeapiset-queryprocesscycletime)
 
+The primality routine selects its Miller–Rabin bases without allocating a writable table. The two-bit exponent path shares the same function frame as the basic path. For the same Stage 1 wrapper and 1,036 inputs, peak RV64 stack write depth fell from 5,792 to 3,440 bytes and the raw executable from 3,312 to 2,718 bytes. The revised test ran within a 4 KiB mapped stack. [RV64 stack and correctness checks](benchmarks/native-prime-stack.json)
+
 For editing existing native H0 code, start with [EDIT.md](EDIT.md) and the source plus its scoped glyph and module records. [CORE.md](CORE.md) and [AGENTS.md](AGENTS.md) provide the remaining operations and contracts on demand. Count any later reference reads in end-to-end agent usage.
 
 Native binary64 values use one scalar containing the IEEE 754 bit pattern. Use `\F+`, `\F-`, `\F*`, and `\F/` for arithmetic, `\F^` for square root, and `\F<`, `\F=`, and `\F>` for ordered comparisons. Comparisons involving NaN return zero. Use `\Fi` or `\Fu` to convert signed or unsigned 64-bit integers to binary64. The inverse operators `\FI` and `\FU` truncate toward zero and saturate at the destination limits. NaN converts to zero.

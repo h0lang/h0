@@ -1,0 +1,108 @@
+{
+  "trial": "T004 preflight fixed source and oracle",
+  "seed": 18940073,
+  "targets": {
+    "previous": {
+      "cases": 1036,
+      "stack_mapping_bytes": 65536,
+      "peak_stack_write_depth_bytes": 5792,
+      "raw_rv64_bytes": 3312,
+      "raw_rv64_sha256": "3c588aed00c8ce1ff96aac9c3d881b7111a91d8335d585e6ebe1e97901b2c8dc",
+      "max_instructions": 63473,
+      "median_instructions": 99.0
+    },
+    "candidate": {
+      "cases": 1036,
+      "stack_mapping_bytes": 4096,
+      "peak_stack_write_depth_bytes": 3440,
+      "raw_rv64_bytes": 2718,
+      "raw_rv64_sha256": "d1fd88f3a3e2f9f164beb6262a651a984c2faed6e1a4090692ad185bd507cf4f",
+      "max_instructions": 63114,
+      "median_instructions": 99.0
+    }
+  },
+  "source_token_counts": {
+    "o200k_base": {
+      "previous": 711,
+      "candidate": 685
+    },
+    "cl100k_base": {
+      "previous": 730,
+      "candidate": 708
+    }
+  },
+  "description": "Both RV64 builds use identical stage 1 wrapper and trial source. Stack write depth is measured below the incoming SP. The candidate runs all cases with the standard 4 KiB mapped stack. Emulator limit 500,000 covers valid full-width arithmetic.",
+  "library_correctness": {
+    "seed": 682921,
+    "cases_by_operation": {
+      "0": 20096,
+      "1": 26270,
+      "2": 114061
+    },
+    "targets": {
+      "0": {
+        "program_sha256": "323b63ce9ed388626a1c956b0c3077b802150bed2965a2db9b5370f84c8f5429",
+        "file_bytes": 14336,
+        "passed": 160427,
+        "total": 160427
+      },
+      "1": {
+        "program_sha256": "938874d158b3dfc648dd3b9e4a996cf9f1536afdce317bd2efd1f0aefef86024",
+        "file_bytes": 12951,
+        "passed": 160427,
+        "total": 160427
+      },
+      "2": {
+        "program_sha256": "247227d361d5de17c4146b2d64fc4ff648556f768acbd6d2cf1e19faedf4bb8d",
+        "file_bytes": 4180,
+        "passed": 1156,
+        "total": 1156,
+        "environment": "Unicorn RV64"
+      }
+    }
+  },
+  "windows_preflight": {
+    "logical_cpu": 15,
+    "measurement": {
+      "samples_ms": {
+        "h0": [
+          29.1572,
+          20.3972,
+          17.7046,
+          25.3598,
+          23.4059,
+          23.5496,
+          29.0068,
+          20.9782,
+          20.5119,
+          17.9255,
+          23.6781
+        ],
+        "rust": [
+          53.5985,
+          24.5319,
+          22.8611,
+          47.3812,
+          22.6501,
+          36.5147,
+          39.9009,
+          27.6454,
+          32.5896,
+          25.1713,
+          28.7081
+        ]
+      },
+      "median_ms": {
+        "h0": 23.4059,
+        "rust": 28.7081
+      },
+      "ratio": 0.8153064814460029,
+      "scope": "Original answer only. Variants and memory are separate gates."
+    }
+  },
+  "fixed_point_sha256": {
+    "h0-windows-x64.exe": "945758faaa019fbb55aec2580658cd69b6ddc17320d1ff3568a6a2f1c0cc5d7e",
+    "h0-linux-x64": "7d99ba14e3c7309efcfd315996c8d427e5a1e4067b260a60605d1ee2a436d317"
+  },
+  "linux_self_host": true
+}
