@@ -24,6 +24,10 @@ Across the 11 public examples with named sections, the lists alone fell from 496
 
 With the selector handled by the calling tool, the same five excerpts cost 877 input tokens in `o200k_base`, including the trailing LF of each excerpt. The viewer's file picker costs 234 tokens.
 
+Mode `28` applies one replacement to the original source. Send `selector LF byteCount LF replacement LF source` on stdin. Use the same name or ordinal as in mode `24`. Count UTF-8 bytes in the replacement and send the exact section bytes, excluding any trailing separator. The compiler writes the patched source to stdout and preserves every byte outside the replaced section. Discard output on a nonzero exit and run the target check (mode `5`, `6`, or `7`) before using a successful result.
+
+For a one-function edit in each of 11 examples, returning the middle named section instead of the whole file would take 998 instead of 6,453 output tokens in `o200k_base`, and 1,007 instead of 6,503 in `cl100k_base`. These counts use the original section text as a proxy for the replacement, with one trailing LF. They exclude instructions, reasoning, and repair.
+
 For the 21 public examples with standard-library imports, the complete native standard-library contract table costs 2,666 tokens in `o200k_base` and 2,685 in `cl100k_base`. Target-specific output had medians of 272 and 281. With one copy each of CORE, source, and compact glyph map per example, replacing the full contract table with the scoped output reduced summed input from 89,047 to 39,770 and from 89,617 to 40,052 respectively. The comparison counts supplied reference and source text.
 
 In the scoped guide benchmark across 19 public examples, the median input for the full guide and source was 6,832 tokens in `o200k_base`, compared with 1,154 for CORE, glyph records, and source. In `cl100k_base` the median went from 7,265 to 1,165. These figures count reference and source input.

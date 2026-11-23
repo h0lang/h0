@@ -45,3 +45,4 @@ bootstrap/compiler/rv64-boot.h0
 bootstrap/compiler/rv64-atomic.h0
 bootstrap/compiler/rv64-smp.h0
 bootstrap/compiler/rv64-trap.h0
+bootstrap/compiler/section-edit.h0
