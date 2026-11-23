@@ -208,6 +208,10 @@ The [timer example](examples/rv64-timer.h0) programs the QEMU `virt` machine tim
 
 For functions with fixed-size byte buffers, the native seed sizes the stack arena from the buffer declarations. Aligned fixed declarations above 4 MiB in one function report `E108`. The compiler sums declarations conservatively across branches. Functions with runtime-sized allocations keep a 512 KiB arena by default and can grow it through fixed declarations. On Windows and Linux x64, use `>+g` for larger or independently sized buffers.
 
+Modes `30`, `31`, and `32` check Windows x64, Linux x64, and RV64 source and return repair context. Success prints `ok`. An error exits with status 2 and prints the same diagnostic as the corresponding check mode. When the location matches an identifiable section in the root source, the output continues with its zero-based ordinal on a separate line and its exact source bytes followed by LF. Use that ordinal with mode `28` to apply a replacement, then check again.
+
+For unknown calls injected into 18 Windows-compatible public examples, sending the diagnostic and selected section instead of the diagnostic and full file reduced input from 5,678 to 3,155 tokens in `o200k_base`, and from 5,734 to 3,216 in `cl100k_base`. The counts cover the diagnostic and source sent to the agent.
+
 Use modes `11`, `12`, and `13` to repair source for Windows x64, Linux x64, and RV64. The compiler tries one edit for a repeated view parameter marker, a missing space after a block count, or a missing tab after a call label. It writes the original source when valid or the repaired source when exactly one candidate passes the target check. Otherwise it reports the original diagnostic and status `2`. Check the program behavior with its tests after applying a repair.
 
 Modes `14`, `15`, and `16` use the same checks and emit only `offset op` followed by a newline. The offset is a zero-based UTF-8 byte index in the original input. Operation `1` deletes the byte at that index, `2` inserts a space before it, and `3` inserts a tab before it. Valid input produces empty output. A rejected repair returns the original diagnostic and status `2`.
