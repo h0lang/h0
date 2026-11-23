@@ -353,7 +353,7 @@ Import buffered standard I/O with `>+1` or use `문` immediately before the firs
 
 `메abc` (also `:ig`) appends shared views `b` and `c` to buffered stdout state `a` in that order. It returns the total byte count or `u64::MAX` on error. Flush with `:if`.
 
-With `>+1`, `져ab` (also `:iz`) writes two spans to stdout in order and returns their combined byte count or Max. Linux x64 uses native vectored output without joining the spans in memory. Windows x64 uses complete writes. A failure can follow a partial transfer.
+With `>+1`, `져ab` (also `:iz`) writes two spans to stdout in order and returns their combined byte count or Max. Linux x64 uses native vectored output without joining the spans in memory. Windows x64 uses complete writes. A failure can follow a partial transfer. Use `은ab` (also `:iy`) for byte streams when separate write boundaries are unnecessary. It can join two nonempty spans up to 1,024 bytes in total on Windows and Linux x64. Larger pairs use the ordinary two-span output path.
 
 Use `:ip` on the zeroed stdin buffer to get the offset of a contiguous byte span. It returns zero at clean EOF and `Max` on a short span, read error, or invalid buffer state. `:ic` consumes pending bytes. A zero-byte preview returns the current offset. Use the offset before mutating the input state again. `:iq` writes a little-endian u64 to the buffered stdout state, and `:if` flushes it. The [framed echo example](examples/framed-stdio.h0) reads a little-endian u16 payload length followed by up to 4,096 bytes, then echoes the complete frame.
 
