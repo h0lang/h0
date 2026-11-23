@@ -84,3 +84,4 @@ std/fs.h0
 std/num.h0
 bootstrap/compiler/project-batch-context.h0
 bootstrap/compiler/project-named-edit.h0
+std/num-mod.h0

@@ -1,0 +1,154 @@
+{
+  "correctness": {
+    "seed": 682921,
+    "cases_by_operation": {
+      "0": 20096,
+      "1": 20096,
+      "2": 114061
+    },
+    "targets": {
+      "0": {
+        "program_sha256": "27712d6a2a0df70adeb9fd33b02ccafccca1ac498bccf77af750f3aac75f1d2d",
+        "file_bytes": 12800,
+        "passed": 154253,
+        "total": 154253
+      },
+      "1": {
+        "program_sha256": "c3466db09c511446e62b0d73a6ef4ba708ac080f930671ff7506daa40017273d",
+        "file_bytes": 11497,
+        "passed": 154253,
+        "total": 154253
+      },
+      "2": {
+        "program_sha256": "068fa76392c1498b4c2a2cd19e7387eedd8f44f0342eff625d404cedc9188735",
+        "file_bytes": 3856,
+        "passed": 1156,
+        "total": 1156,
+        "environment": "Unicorn RV64"
+      }
+    }
+  },
+  "runtime": {
+    "scope": "Exploratory Windows x64 modular exponentiation on 64-bit exponents and moduli with the high bit set. Odd and even moduli measured separately. Includes process and buffered binary I/O. This is not a scored replacement exam.",
+    "seed": 91793,
+    "logical_core": 0,
+    "rust": "rustc 1.100.0 (0ef1bc386 2026-11-09)",
+    "binary_bytes": {
+      "h0-native": 10240,
+      "h0-double-and-add": 8192,
+      "rust-u128": 139776
+    },
+    "results": {
+      "odd-wide": {
+        "records": 8192,
+        "median_ms": {
+          "h0-native": 25.0463,
+          "h0-double-and-add": 426.6847,
+          "rust-u128": 17.8499
+        },
+        "samples_ms": {
+          "h0-native": [
+            25.0463,
+            21.8353,
+            22.7429,
+            27.2694,
+            25.4723,
+            25.0987,
+            25.0295
+          ],
+          "h0-double-and-add": [
+            426.6847,
+            422.2294,
+            420.9276,
+            431.6178,
+            424.1137,
+            427.4258,
+            479.8864
+          ],
+          "rust-u128": [
+            17.8883,
+            16.6161,
+            17.8499,
+            18.0823,
+            17.3711,
+            20.2606,
+            16.0577
+          ]
+        }
+      },
+      "even-wide": {
+        "records": 8192,
+        "median_ms": {
+          "h0-native": 26.9006,
+          "h0-double-and-add": 432.304,
+          "rust-u128": 15.856
+        },
+        "samples_ms": {
+          "h0-native": [
+            29.4553,
+            24.7554,
+            25.8315,
+            27.0375,
+            26.9006,
+            27.597,
+            26.1887
+          ],
+          "h0-double-and-add": [
+            566.2668,
+            436.5276,
+            417.7108,
+            405.3513,
+            432.304,
+            441.2398,
+            429.9725
+          ],
+          "rust-u128": [
+            15.856,
+            15.713,
+            15.8544,
+            16.7822,
+            16.2265,
+            15.7684,
+            16.6722
+          ]
+        }
+      }
+    }
+  },
+  "example_source_tokens": {
+    "o200k_base": {
+      "ascii": 74,
+      "hangul": 63,
+      "trial_ascii": 12,
+      "trial_hangul": 8
+    },
+    "cl100k_base": {
+      "ascii": 73,
+      "hangul": 63,
+      "trial_ascii": 11,
+      "trial_hangul": 8
+    }
+  },
+  "unchanged_existing_examples": {
+    "integer-divisors": {
+      "0": "d7982ef3184bbc1bd383f91930f7da21f69e393a182cfa435f6952bb90a75a00",
+      "1": "a8f1af51b129cd62966471284276e99c5c7dd196c2c3291c8cdd952a90dcfdbb",
+      "2": "f5fcbf8aee326c4768326ba1d7e77e6e7efc8b8988e88c99958688e94b431578"
+    },
+    "calendar": {
+      "0": "12128777bdedacf939d0d11ec282cc8d0e0d351b885a91b238b7a9763f7a6b08",
+      "1": "04daab3124aa62282b0a96cecbcd58955f5cb7da811c6dc3ec201047d2b06d84"
+    },
+    "framed-stdio": {
+      "0": "702fe47246eda4e59a4d858e69d71e689c7be227b1b84b3162f437af148054f2",
+      "1": "e14bd1a0300f0bf9e26ed5b4d4e6ba2839c736ee7090212bda72f153ac0d982a"
+    }
+  },
+  "scope": "Library validation and exploratory workload measurement. These runs do not constitute an independent scored replacement exam.",
+  "prime_witness_reference": "https://miller-rabin.appspot.com/",
+  "seed_fixed_point_sha256": {
+    "h0-windows-x64.exe": "1d7bef1849368f729ebab23ba7718e2b63ba1ebe1ba78fa84141c4ce7cb41e8a",
+    "h0-linux-x64": "cb908bc212227d35cd195d4bbe010e4517061084b46cb35b834bacbc424ef461"
+  },
+  "linux_self_host": true
+}
