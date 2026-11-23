@@ -1,0 +1,637 @@
+{
+  "native_toolchain_commit": "e7c78410ac99102f13101bd732826202a4923a08",
+  "condition": {
+    "platform": "Windows x64",
+    "compiler_feedback": false,
+    "retries": 0,
+    "new_session_per_attempt": true,
+    "cache_controlled": false,
+    "submission_format": "JSON with complete replacement text for changed files",
+    "elapsed_time": "From starting Codex through local grading, including process startup",
+    "scoring": "4,212 shared dispatch cases in each attempt, all required"
+  },
+  "comparison": {
+    "pairs": 6,
+    "tasks": [
+      "priority_grace",
+      "return_credits",
+      "all_depots",
+      "priority_grace",
+      "return_credits",
+      "all_depots"
+    ],
+    "fixture": "native-dispatch-v1",
+    "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+    "guide": "edit",
+    "trial_ids": [
+      "codex-dispatch-priority_grace-1",
+      "codex-dispatch-return_credits-1",
+      "codex-dispatch-all_depots-1",
+      "codex-dispatch-priority_grace-2",
+      "codex-dispatch-return_credits-2",
+      "codex-dispatch-all_depots-2"
+    ],
+    "trial_config": {
+      "model": "gpt-6.2-sol",
+      "agent": "codex-cli 0.171.0-alpha.13",
+      "effort": "medium",
+      "cache": "fresh-session"
+    },
+    "h0": {
+      "attempts": 6,
+      "accepted": 6,
+      "tokens_per_accepted_edit": 24750.5,
+      "requests": 6,
+      "input_tokens": 146485,
+      "output_tokens": 2018,
+      "cached_input_tokens": 65024,
+      "cache_write_input_tokens": 0,
+      "reasoning_tokens": 722,
+      "total_tokens": 148503,
+      "elapsed_ms": 83265,
+      "median_elapsed_ms": 14031.0,
+      "elapsed_ms_per_accepted_edit": 13877.5
+    },
+    "rust": {
+      "attempts": 6,
+      "accepted": 6,
+      "tokens_per_accepted_edit": 24592.833333333332,
+      "requests": 6,
+      "input_tokens": 144765,
+      "output_tokens": 2792,
+      "cached_input_tokens": 65024,
+      "cache_write_input_tokens": 0,
+      "reasoning_tokens": 152,
+      "total_tokens": 147557,
+      "elapsed_ms": 103907,
+      "median_elapsed_ms": 17781.5,
+      "elapsed_ms_per_accepted_edit": 17317.833333333332
+    }
+  },
+  "runs_in_execution_order": [
+    {
+      "round": 1,
+      "prompt_sha256": "953cd88cdf35305bee00d58f2865864ee7d1f8a8de03eff2cf526423f6a4e3e0",
+      "input_file_tokens": {
+        "o200k_base": 1494,
+        "cl100k_base": 1493
+      },
+      "raw_codex_usage": {
+        "input_tokens": 24665,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 376,
+        "reasoning_output_tokens": 102
+      },
+      "grade": {
+        "language": "h0",
+        "task": "priority_grace",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "notation": "hangul",
+        "guide": "edit",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 94,
+        "changed_passed": 94,
+        "preserved_cases": 4118,
+        "preserved_passed": 4118,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 24665,
+          "output_tokens": 376,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 102,
+          "total_tokens": 25041
+        },
+        "trial": {
+          "id": "codex-dispatch-priority_grace-1",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 14281
+        }
+      }
+    },
+    {
+      "round": 1,
+      "prompt_sha256": "1db4f16a5f7664a69dd8edaa8be3600739507211bdb6bbdbf44a2b679ee0cd62",
+      "input_file_tokens": {
+        "o200k_base": 1708,
+        "cl100k_base": 1698
+      },
+      "raw_codex_usage": {
+        "input_tokens": 24869,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 395,
+        "reasoning_output_tokens": 17
+      },
+      "grade": {
+        "language": "rust",
+        "task": "priority_grace",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 94,
+        "changed_passed": 94,
+        "preserved_cases": 4118,
+        "preserved_passed": 4118,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 24869,
+          "output_tokens": 395,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 17,
+          "total_tokens": 25264
+        },
+        "trial": {
+          "id": "codex-dispatch-priority_grace-1",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 15031
+        }
+      }
+    },
+    {
+      "round": 1,
+      "prompt_sha256": "9f41dfedac42469ddd529d4e9cfce31d8353da549d629501fbb6a158e9e86568",
+      "input_file_tokens": {
+        "o200k_base": 1699,
+        "cl100k_base": 1691
+      },
+      "raw_codex_usage": {
+        "input_tokens": 23388,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 483,
+        "reasoning_output_tokens": 58
+      },
+      "grade": {
+        "language": "rust",
+        "task": "return_credits",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 50,
+        "changed_passed": 50,
+        "preserved_cases": 4162,
+        "preserved_passed": 4162,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 23388,
+          "output_tokens": 483,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 58,
+          "total_tokens": 23871
+        },
+        "trial": {
+          "id": "codex-dispatch-return_credits-1",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 17594
+        }
+      }
+    },
+    {
+      "round": 1,
+      "prompt_sha256": "74b635cbccc58b9e97b6eb6aaf7cc42314e31b4eca325f3fce1efd9816550a4e",
+      "input_file_tokens": {
+        "o200k_base": 1485,
+        "cl100k_base": 1486
+      },
+      "raw_codex_usage": {
+        "input_tokens": 24656,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 432,
+        "reasoning_output_tokens": 181
+      },
+      "grade": {
+        "language": "h0",
+        "task": "return_credits",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "notation": "hangul",
+        "guide": "edit",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 50,
+        "changed_passed": 50,
+        "preserved_cases": 4162,
+        "preserved_passed": 4162,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 24656,
+          "output_tokens": 432,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 181,
+          "total_tokens": 25088
+        },
+        "trial": {
+          "id": "codex-dispatch-return_credits-1",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 16828
+        }
+      }
+    },
+    {
+      "round": 1,
+      "prompt_sha256": "636b70b3abe6c6690d44484775552d2ed35582fd2e66c1ae02d6b58cd6f7b19b",
+      "input_file_tokens": {
+        "o200k_base": 1482,
+        "cl100k_base": 1482
+      },
+      "raw_codex_usage": {
+        "input_tokens": 24653,
+        "cached_input_tokens": 14208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 166,
+        "reasoning_output_tokens": 44
+      },
+      "grade": {
+        "language": "h0",
+        "task": "all_depots",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "notation": "hangul",
+        "guide": "edit",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 296,
+        "changed_passed": 296,
+        "preserved_cases": 3916,
+        "preserved_passed": 3916,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 24653,
+          "output_tokens": 166,
+          "cached_input_tokens": 14208,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 44,
+          "total_tokens": 24819
+        },
+        "trial": {
+          "id": "codex-dispatch-all_depots-1",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 11719
+        }
+      }
+    },
+    {
+      "round": 1,
+      "prompt_sha256": "196dff1a5b323de40e5dde336a7dd3c0b9106ec1ffd6726b7b3795ead9acb368",
+      "input_file_tokens": {
+        "o200k_base": 1696,
+        "cl100k_base": 1687
+      },
+      "raw_codex_usage": {
+        "input_tokens": 24857,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 521,
+        "reasoning_output_tokens": 0
+      },
+      "grade": {
+        "language": "rust",
+        "task": "all_depots",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 296,
+        "changed_passed": 296,
+        "preserved_cases": 3916,
+        "preserved_passed": 3916,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 24857,
+          "output_tokens": 521,
+          "cached_input_tokens": 17280,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 25378
+        },
+        "trial": {
+          "id": "codex-dispatch-all_depots-1",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 18657
+        }
+      }
+    },
+    {
+      "round": 2,
+      "prompt_sha256": "1db4f16a5f7664a69dd8edaa8be3600739507211bdb6bbdbf44a2b679ee0cd62",
+      "input_file_tokens": {
+        "o200k_base": 1708,
+        "cl100k_base": 1698
+      },
+      "raw_codex_usage": {
+        "input_tokens": 23400,
+        "cached_input_tokens": 16256,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 399,
+        "reasoning_output_tokens": 21
+      },
+      "grade": {
+        "language": "rust",
+        "task": "priority_grace",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 94,
+        "changed_passed": 94,
+        "preserved_cases": 4118,
+        "preserved_passed": 4118,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 23400,
+          "output_tokens": 399,
+          "cached_input_tokens": 16256,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 21,
+          "total_tokens": 23799
+        },
+        "trial": {
+          "id": "codex-dispatch-priority_grace-2",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 16468
+        }
+      }
+    },
+    {
+      "round": 2,
+      "prompt_sha256": "953cd88cdf35305bee00d58f2865864ee7d1f8a8de03eff2cf526423f6a4e3e0",
+      "input_file_tokens": {
+        "o200k_base": 1494,
+        "cl100k_base": 1493
+      },
+      "raw_codex_usage": {
+        "input_tokens": 24668,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 435,
+        "reasoning_output_tokens": 161
+      },
+      "grade": {
+        "language": "h0",
+        "task": "priority_grace",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "notation": "hangul",
+        "guide": "edit",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 94,
+        "changed_passed": 94,
+        "preserved_cases": 4118,
+        "preserved_passed": 4118,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 24668,
+          "output_tokens": 435,
+          "cached_input_tokens": 17280,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 161,
+          "total_tokens": 25103
+        },
+        "trial": {
+          "id": "codex-dispatch-priority_grace-2",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 13781
+        }
+      }
+    },
+    {
+      "round": 2,
+      "prompt_sha256": "74b635cbccc58b9e97b6eb6aaf7cc42314e31b4eca325f3fce1efd9816550a4e",
+      "input_file_tokens": {
+        "o200k_base": 1485,
+        "cl100k_base": 1486
+      },
+      "raw_codex_usage": {
+        "input_tokens": 24659,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 436,
+        "reasoning_output_tokens": 183
+      },
+      "grade": {
+        "language": "h0",
+        "task": "return_credits",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "notation": "hangul",
+        "guide": "edit",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 50,
+        "changed_passed": 50,
+        "preserved_cases": 4162,
+        "preserved_passed": 4162,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 24659,
+          "output_tokens": 436,
+          "cached_input_tokens": 17280,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 183,
+          "total_tokens": 25095
+        },
+        "trial": {
+          "id": "codex-dispatch-return_credits-2",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 15828
+        }
+      }
+    },
+    {
+      "round": 2,
+      "prompt_sha256": "9f41dfedac42469ddd529d4e9cfce31d8353da549d629501fbb6a158e9e86568",
+      "input_file_tokens": {
+        "o200k_base": 1699,
+        "cl100k_base": 1691
+      },
+      "raw_codex_usage": {
+        "input_tokens": 24863,
+        "cached_input_tokens": 17280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 473,
+        "reasoning_output_tokens": 56
+      },
+      "grade": {
+        "language": "rust",
+        "task": "return_credits",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 50,
+        "changed_passed": 50,
+        "preserved_cases": 4162,
+        "preserved_passed": 4162,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 24863,
+          "output_tokens": 473,
+          "cached_input_tokens": 17280,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 56,
+          "total_tokens": 25336
+        },
+        "trial": {
+          "id": "codex-dispatch-return_credits-2",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 17969
+        }
+      }
+    },
+    {
+      "round": 2,
+      "prompt_sha256": "196dff1a5b323de40e5dde336a7dd3c0b9106ec1ffd6726b7b3795ead9acb368",
+      "input_file_tokens": {
+        "o200k_base": 1696,
+        "cl100k_base": 1687
+      },
+      "raw_codex_usage": {
+        "input_tokens": 23388,
+        "cached_input_tokens": 14208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 521,
+        "reasoning_output_tokens": 0
+      },
+      "grade": {
+        "language": "rust",
+        "task": "all_depots",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 296,
+        "changed_passed": 296,
+        "preserved_cases": 3916,
+        "preserved_passed": 3916,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 23388,
+          "output_tokens": 521,
+          "cached_input_tokens": 14208,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 23909
+        },
+        "trial": {
+          "id": "codex-dispatch-all_depots-2",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 18188
+        }
+      }
+    },
+    {
+      "round": 2,
+      "prompt_sha256": "636b70b3abe6c6690d44484775552d2ed35582fd2e66c1ae02d6b58cd6f7b19b",
+      "input_file_tokens": {
+        "o200k_base": 1482,
+        "cl100k_base": 1482
+      },
+      "raw_codex_usage": {
+        "input_tokens": 23184,
+        "cached_input_tokens": 16256,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 173,
+        "reasoning_output_tokens": 51
+      },
+      "grade": {
+        "language": "h0",
+        "task": "all_depots",
+        "workload": "dispatch",
+        "fixture": "native-dispatch-v1",
+        "seed_sha256": "213d47609bbade4a9ce4ca4e8aca63d9104e3ddbf112127fef34961a6386c56d",
+        "notation": "hangul",
+        "guide": "edit",
+        "cases": 4212,
+        "passed": 4212,
+        "accepted": true,
+        "changed_cases": 296,
+        "changed_passed": 296,
+        "preserved_cases": 3916,
+        "preserved_passed": 3916,
+        "usage": {
+          "requests": 1,
+          "input_tokens": 23184,
+          "output_tokens": 173,
+          "cached_input_tokens": 16256,
+          "cache_write_input_tokens": 0,
+          "reasoning_tokens": 51,
+          "total_tokens": 23357
+        },
+        "trial": {
+          "id": "codex-dispatch-all_depots-2",
+          "model": "gpt-6.2-sol",
+          "agent": "codex-cli 0.171.0-alpha.13",
+          "effort": "medium",
+          "cache": "fresh-session",
+          "elapsed_ms": 10828
+        }
+      }
+    }
+  ]
+}

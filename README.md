@@ -4,7 +4,14 @@ H0 prioritizes reducing the total tokens AI agents use to complete programming t
 
 ## Evidence for agent cost
 
-The public results below measure source or supplied context size, compiler behavior, and native execution. The current public native toolchain has no published paired result showing a lower end-to-end agent cost than Rust.
+A paired Codex pilot used the Windows x64 native seed to grade three edits to a five-module dispatch program. Each task ran twice per language in fresh sessions, reversing the language order on the second round. Codex CLI 0.171.0-alpha.13 ran `gpt-6.2-sol` at medium effort with the complete task inputs in one prompt, without tools, compiler feedback, or retries. H0 used its short editing guide. Each submission had to pass all 4,212 shared oracle cases.
+
+| Language | Accepted | Total tokens | Tokens per accepted edit | Median seconds |
+| --- | ---: | ---: | ---: | ---: |
+| H0 | 6/6 | 148,503 | 24,751 | 14.03 |
+| Rust | 6/6 | 147,557 | 24,593 | 17.78 |
+
+H0 used 0.64% more total tokens and took 21% less time at the median. It used 2,018 output tokens, including 722 reasoning tokens, against Rust's 2,792 output tokens, including 152 reasoning tokens. Each language received 65,024 cached input tokens in aggregate. The pilot used fresh sessions with provider-managed caching, one model, and three edits. Time includes Codex startup and local grading. [Per-attempt usage and grades](benchmarks/native-dispatch-codex.json)
 
 - Compare H0 and Rust on the same tasks with equivalent starting programs and an independent correctness oracle. Include both new programs and edits that cross file boundaries. Fix the model snapshot, agent version, reasoning effort, tool access, timeout, and retry budget. Run each attempt in a fresh session. Evaluate cold and warm cache conditions separately.
 - Record provider usage for every request, including repair attempts and runs that fail or time out. Normalize input and output once, report cache reads and writes separately, and count reported reasoning within output. Measure elapsed time from task delivery through the final correctness check. Keep raw usage and the per-task outcome for every pair. A run without usage needs an explicit missing-data record and cannot establish a cost result.
