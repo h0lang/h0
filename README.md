@@ -315,7 +315,7 @@ Load `>+z` or put `째` before the first function header on Windows x64, Linux x
 
 `름ab` (also `:zs`) sorts the mutable packed word view `a` in place and returns its word count. Pass `b=0` for unsigned order or `b=1` for signed order. It returns `u64::MAX` without changing the view for an invalid mode or a byte length that is not a multiple of eight. No caller scratch is required.
 
-`소a` (also `:zz`) removes consecutive duplicates from mutable packed 64-bit words. It returns the number of words in the compacted prefix and preserves all bytes after it. With sorted input the prefix contains every distinct value in order. On x64, arrays of at least 512 words use a branchless compaction loop after the first duplicate. An invalid byte length returns `u64::MAX` and preserves the view.
+`소a` (also `:zz`) removes consecutive duplicates from mutable packed 64-bit words. It returns the number of words in the compacted prefix and preserves all bytes after it. With sorted input the prefix contains every distinct value in order. On x64, arrays of at least 32 words scan the distinct prefix in SSE2 pairs. Arrays of at least 512 words use a branchless compaction loop after the first duplicate. An invalid byte length returns `u64::MAX` and preserves the view.
 
 `:ze(words, key, mode)` returns the lower bound for modes 0 and 1 or the upper bound for modes 2 and 3. Even modes use unsigned order and odd modes use signed order. The lower bound is the first index whose value is at least the key. The upper bound is the first index whose value is greater than the key. The result may equal the number of words. The [sort filter](examples/sort.h0) takes a word count and a signed flag, reads that many words from standard input, and writes the sorted words.
 
