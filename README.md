@@ -169,6 +169,8 @@ Small x64 leaves can load a constant-index byte directly into the destination re
 
 Native integer lowering drops neutral operators such as OR with zero and AND with an all-ones mask while preserving evaluation of the other operand. The x64 comparison path handles constants on either side. Frameless leaf layout can discard a local store and reload immediately before return when both refer to the same slot.
 
+The x64 backend can branch directly on a checked constant-index byte compared with an immediate. It keeps the byte load and its bounds check and skips the temporary scalar spill and Boolean result.
+
 Packed x64 calls retain their argument layout. The function entry skips storing unused arguments when the body uses only supported explicit-register operations. It keeps all argument stores for bodies outside that subset.
 
 On Windows, a 24-million-iteration loop with a scalar loop condition and a mix of taken and untaken branches took a median of 40.12 ms versus 61.39 ms across eight paired runs on one logical CPU. Both binaries produced the same result. Across the existing examples, Windows x64 output (37 builds) fell from 460,800 to 452,608 bytes and Linux x64 output (36 builds) from 353,451 to 343,940 bytes.
