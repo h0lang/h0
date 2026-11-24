@@ -122,3 +122,4 @@ bootstrap/compiler/loop-repair.h0
 bootstrap/compiler/x64-parallel-divrem.h0
 bootstrap/compiler/x64-commutative-register.h0
 bootstrap/compiler/x64-register-if-convert.h0
+bootstrap/compiler/x64-empty-view-guard.h0

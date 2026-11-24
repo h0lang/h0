@@ -177,7 +177,7 @@ An x64 unsigned division or remainder with a scalar register as the divisor load
 
 An x64 parallel assignment can take the quotient and remainder from a single division when both expressions use the same two unsigned scalar registers.
 
-Packed Windows x64 leaf functions can keep scalar arguments in registers across division, remainder, and parallel assignment. The compiler emits a stack frame when the body needs stack storage. For eligible pairs of conditional scalar returns, it can evaluate the arithmetic in registers and select the return value with conditional moves.
+Packed Windows x64 leaf functions can keep scalar arguments in registers across division, remainder, and parallel assignment. The compiler emits a stack frame when the body needs stack storage. For eligible pairs of conditional scalar returns, it can evaluate the arithmetic in registers and select the return value with conditional moves. In packed Windows leaf functions, an early return on an empty view also establishes a byte bound for later accesses. The short Tape zero test and the explicit length comparison establish the same bound.
 
 For commutative x64 integer operations with a plain scalar on the left, the compiler can compute the other operand first and combine it directly with the scalar. This avoids saving the scalar in a temporary stack slot.
 
