@@ -110,3 +110,4 @@ bootstrap/compiler/shared-memory.h0
 bootstrap/compiler/author-guide.h0
 bootstrap/compiler/import-hint.h0
 bootstrap/compiler/import-repair.h0
+bootstrap/compiler/packed-arguments.h0
