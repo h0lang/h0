@@ -157,6 +157,8 @@ For a constant-index load from a named view, x64 compares the required size dire
 
 Windows x64 can keep up to two scalar arguments in registers for eligible leaf entry functions with a packed argument descriptor. It reads view pointers and lengths directly from that descriptor. The optimization covers a restricted set of untyped scalar operations, branches, and view reads. Entry functions with calls or view reassignment use the regular stack layout.
 
+Those leaf entries can keep their first scalar local in a register too. If lowering needs no stack access, the function starts without a stack frame and emits the corresponding Windows unwind record. Functions that need stack storage are re-emitted with their regular frame.
+
 Packed x64 calls retain their argument layout. The function entry skips storing unused arguments when the body uses only supported explicit-register operations. It keeps all argument stores for bodies outside that subset.
 
 On Windows, a 24-million-iteration loop with a scalar loop condition and a mix of taken and untaken branches took a median of 40.12 ms versus 61.39 ms across eight paired runs on one logical CPU. Both binaries produced the same result. Across the existing examples, Windows x64 output (37 builds) fell from 460,800 to 452,608 bytes and Linux x64 output (36 builds) from 353,451 to 343,940 bytes.
