@@ -3,10 +3,10 @@
 1-gop'a ?!Za.0 ?EZa2	4 b\B2a0 ?Eb11565.2 ?OEb17965Eb28205.1 .0 ?EZa3	2 b\B2a0 ?AEBa0	45OAEb17965EBa2	110AEb28205EBa2	70.1 0
 0-usage Y:ew	\b"usage: grep [-Fn] [--] PATTERN [FILE ...]\n" 2
 3-gargs'ab dM4096 e:a4	cd ?Ee-수	1.:gfile	ab\b"" f1 WDe-수	1	7 ?Ee수.:usage g2 ?!e	1	1 Y:gerror	\b"" g:gfile	abVd0e ?Eg2f2 ?A!gDf2f0 +c1 e:a4	cd f
-3-gfile'abc dM65568 e0 ?O!ZcAEZc1EBc0	45	1	1 e:sd	d0 e:s0	dc0 ?e.:gerror	c f:gscan	abd e:s5	d ?OeEf2.:gerror	c f
+3-gfile'abc dM65568 e0 ?O!ZcAEZc1EBc0	45	1	1 e왔d0 e웠dc0 ?e.:gerror	c f:gscan	abd e증d ?OeEf2.:gerror	c f
 1-gerror'a Y:ew	\b"grep: I/O failed " Y:ew	a Y:ew	\b"\n" 2
 3-gscan'ab"c dM16 e:glines	abcd f\B8d0 ?Af!:m1	f\B8d8.2 e
 4-glines'ab"cd e1 f1 W1	8 g:gnext	cd ?Eg수.2 ?!g.f h\!\B8d0g iEBh-g1	10 j에Vh0-giab ?Dj수	3 k:gemit	he ?k.2 f0 +e1 f
 2-gemit'a cM21 d식cb Xcd58 e져Vc0+d1a ?De++d1Za.2 ?DBa-Za1	10.D:wr	\b"\n"1 0
-2-gnext"ab c\B8b0 d\B8b8 e0 W1	7 ?Eed	3 c:ggrow	b ?!c.수 d\B8b8 f\!cd g0 Kfe	1 g:s8	ai10 ?Eg수.수 +eg ?O!gO<edEBf-e1	10.e e
+2-gnext"ab c\B8b0 d\B8b8 e0 W1	7 ?Eed	3 c:ggrow	b ?!c.수 d\B8b8 f\!cd g0 Kfe	1 g튀ai10 ?Eg수.수 +eg ?O!gO<edEBf-e1	10.e e
 1-ggrow"a b\B8a0 c\B8a8 ?Tc63.0 d\i!c65536Sc1 e:m0	d ?!e.0 ?b	4 f\!ed g\!bc Kfc	1 ]hg ?!:m1	bc	2 Y:m1	ed .0 \Q8a0e \Q8a8d e

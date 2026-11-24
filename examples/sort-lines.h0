@@ -3,14 +3,14 @@
 0-lsusage Y:ew	\b"usage: sort-lines SCRATCH-A SCRATCH-B < INPUT\n" 2
 0-lsbad Y:ew	\b"sort-lines: I/O, memory, or line-size limit\n" 2
 2-lsmain'ab c:lsg	a ?Ec수.1 d0 W>c1	3 c\id:lsmerge	bac:lsmerge	abc ?Ec수.1 ^d1 \id:lsout	b:lsout	a
-1-lsg'a bM65568 cM65568 d:sd	b0 ?d.수 d:s0	ca1 ?d.수 e:m0	4194304 ?!e	2 Y:s5	c .수 f\!e4194304 g:lsruns	bcf d:s5	c h:m1	e4194304 ?O!hd.수 g
-3-lsruns"abc dM65537 eM65536 fM65536 gM16 h0 W1	11 i0 j0 WA<i8192Lj-Zc65537	8 k:s8	ad10 ?Ek수.수 ?!k' ?DBd-k1	10	3 ?Ek65537.수 Xdk10 +k1 \Q8eSi3|jSk32 Kcj	1 Y:b2	Vd0km +jk +i1 ?!i.h Y:lstab	cefi \Q8g0j \Q8g8i k:s2	bg ?Dk16.수 @i	5 m\B8eSl3 n&m4294967295 oTm32 p:s2	bVcn+no ?Dpo.수 +h1 h
+1-lsg'a bM65568 cM65568 d왔b0 ?d.수 d웠ca1 ?d.수 e:m0	4194304 ?!e	2 Y증c .수 f\!e4194304 g:lsruns	bcf d증c h:m1	e4194304 ?O!hd.수 g
+3-lsruns"abc dM65537 eM65536 fM65536 gM16 h0 W1	11 i0 j0 WA<i8192Lj-Zc65537	8 k튀ad10 ?Ek수.수 ?!k' ?DBd-k1	10	3 ?Ek65537.수 Xdk10 +k1 \Q8eSi3|jSk32 Kcj	1 Y:b2	Vd0km +jk +i1 ?!i.h Y:lstab	cefi \Q8g0j \Q8g8i k즌bg ?Dk16.수 @i	5 m\B8eSl3 n&m4294967295 oTm32 p즌bVcn+no ?Dpo.수 +h1 h
 4-lstab'a"bc e8 fSd3 W<ef	3 Y:lspass	abcef Kbf	1 ]gVc0f *e2 0
 5-lspass'ab"c f0 W<fe	7 gf h\i<+fde+fde i\i<+hde+hde jh kf W<ki	5 l\iEgh1\iEji0E:lskey	a\B8bg\B8bj2 m\il\B8bj\B8bg \Q8ckm ?l	1	1 +j8 +g8 +k8 fi 0
 3-lskey'a d&b4294967295 e&c4294967295 :lscmp	Vad+d-Tb32	1Vae+e-Tc32	1
 2-lscmp'ab c\i<ZaZbZaZb d0 WG-cd8	2 ?D\B8ad\B8bd' +d8 W<dc	4 eBad fBbd ?Def.+1>ef +d1 ?EZaZb.0 +1>ZaZb
-3-lsmerge'ab dM65568 eM65568 fM65568 g:s0	da0 ?g.수 g:s0	ea0 ?g	2 Y:s5	d .수 g:s0	fb1 ?g	3 Y:s5	d Y:s5	e .수 h:lspairs	defc i:s5	d j:s5	e k:s5	f ?OOijk.수 h
-4-lspairs"abc eM16 fM16 g0 h0 Wd	19 i:s4	ag0 ?Dig.수 i:s7	ae ?Di16.수 i\B8e0 j\B8e8 k+g+i16 l0 m0 ?>d1	7 n:s4	bk0 ?Dnk.수 n:s7	bf ?Dn16.수 l\B8f0 m\B8f8 k+k+l16 \Q8e0+il \Q8e8+jm n:s2	ce ?Dn16.수 n:lsblend	abcjm ?n.수 gk d-d\i>d1	2	1 +h1 h
-5-lsblend"abc fM65537 gM65537 h0 i0 WOde	4 ?Ad!h	2 h:s8	af10 ?OO!h>hZfDBf-h1	10.수 ?Ae!i	2 i:s8	bg10 ?OO!i>iZgDBg-i1	10.수 j\i!i0\i!h1E:lscmp	Vf0-h1Vg0-i1	2 ?j	4	4 k:s2	cVg0i ?Dki.수 i0 -e1 k:s2	cVf0h ?Dkh.수 h0 -d1 0
-1-lsout'a bM65568 c:s0	ba0 ?c.1 d:lsflush	b c:s5	b |cd
-1-lsflush"a bM65536 c0 Kb16	1 c:s1	ad ?!c.0 ?Dc16.1 W1	4 c:s1	ab ?>cZb.1 ?!c.0 ?D:wr	Vb0cc.1 1
+3-lsmerge'ab dM65568 eM65568 fM65568 g웠da0 ?g.수 g웠ea0 ?g	2 Y증d .수 g웠fb1 ?g	3 Y증d Y증e .수 h:lspairs	defc i증d j증e k증f ?OOijk.수 h
+4-lspairs"abc eM16 fM16 g0 h0 Wd	19 i즘ag0 ?Dig.수 i탕ae ?Di16.수 i\B8e0 j\B8e8 k+g+i16 l0 m0 ?>d1	7 n즘bk0 ?Dnk.수 n탕bf ?Dn16.수 l\B8f0 m\B8f8 k+k+l16 \Q8e0+il \Q8e8+jm n즌ce ?Dn16.수 n:lsblend	abcjm ?n.수 gk d-d\i>d1	2	1 +h1 h
+5-lsblend"abc fM65537 gM65537 h0 i0 WOde	4 ?Ad!h	2 h튀af10 ?OO!h>hZfDBf-h1	10.수 ?Ae!i	2 i튀bg10 ?OO!i>iZgDBg-i1	10.수 j\i!i0\i!h1E:lscmp	Vf0-h1Vg0-i1	2 ?j	4	4 k즌cVg0i ?Dki.수 i0 -e1 k즌cVf0h ?Dkh.수 h0 -d1 0
+1-lsout'a bM65568 c웠ba0 ?c.1 d:lsflush	b c증b |cd
+1-lsflush"a bM65536 c0 Kb16	1 c즈ad ?!c.0 ?Dc16.1 W1	4 c즈ab ?>cZb.1 ?!c.0 ?D:wr	Vb0cc.1 1
