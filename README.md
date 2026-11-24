@@ -151,6 +151,8 @@ Simple x64 `?` and `W` comparisons now jump directly on the flags from `CMP`. Th
 
 The x64 backend also compares a byte view's length directly against a decimal constant in that range. This applies to parameter and local views, including mutable views. The conditional expression `\i` shares the same comparison lowering. In entry functions with explicit register operands, a view length read preserves that view's argument slots and allows unrelated unused argument stores to be dropped.
 
+On x64 and RV64, reading a named view's length as a value loads the length slot directly into the result register. Subviews and literals still compute their lengths from their bounds or contents.
+
 Packed x64 calls retain their argument layout. The function entry skips storing unused arguments when the body uses only supported explicit-register operations. It keeps all argument stores for bodies outside that subset.
 
 On Windows, a 24-million-iteration loop with a scalar loop condition and a mix of taken and untaken branches took a median of 40.12 ms versus 61.39 ms across eight paired runs on one logical CPU. Both binaries produced the same result. Across the existing examples, Windows x64 output (37 builds) fell from 460,800 to 452,608 bytes and Linux x64 output (36 builds) from 353,451 to 343,940 bytes.
