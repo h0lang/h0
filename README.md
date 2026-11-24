@@ -177,6 +177,8 @@ An x64 unsigned division or remainder with a scalar register as the divisor load
 
 An x64 parallel assignment can take the quotient and remainder from a single division when both expressions use the same two unsigned scalar registers.
 
+An x64 scalar loop such as `Wg(f,g=g,f%g)` can hold both values in machine registers until the loop exits. The loop condition must test the second value, and the sole body operation must copy that value to the first and compute the next second value from both. Addition, subtraction, multiplication, unsigned division and remainder, and bitwise AND, OR, and XOR are supported. For division and remainder, the loop condition already checks that the divisor is nonzero.
+
 Packed Windows x64 leaf functions can keep scalar arguments in registers across division, remainder, and parallel assignment. The compiler emits a stack frame when the body needs stack storage. For eligible pairs of conditional scalar returns, it can evaluate the arithmetic in registers and select the return value with conditional moves. In packed Windows leaf functions, an early return on an empty view also establishes a byte bound for later accesses. The short Tape zero test and the explicit length comparison establish the same bound.
 
 For commutative x64 integer operations with a plain scalar on the left, the compiler can compute the other operand first and combine it directly with the scalar. This avoids saving the scalar in a temporary stack slot.
