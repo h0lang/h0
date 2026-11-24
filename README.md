@@ -256,6 +256,8 @@ With `>+3`, `면a` returns `1` when shared byte view `a` is identical to its rev
 
 `생ab` (also `:b9`) counts words in a byte view. ASCII bytes 09–0D and 20 separate words. It writes the LF count and byte count as two little-endian u64 values to the first 16 bytes of the destination and returns the word count. A short destination returns `u64::MAX` and stays intact.
 
+Use `:bW` with repeat chunks and the same zeroed 25-byte state. The state stores word, LF, and byte totals as three little-endian u64 values, then one continuation byte. Keep input and state disjoint. A short or invalid state or count overflow returns `u64::MAX` without modifying the state. The [word count CLI](examples/wc.h0) reads stdin and prints LF, word, and byte totals in that order.
+
 `태abc` (also `:b6`) converts bytes between binary and ASCII hexadecimal. Mode 0 writes lowercase digits and mode 1 decodes either case. It returns the number of bytes written and preserves the rest of the destination. Invalid input or a short destination returns `u64::MAX` and leaves the destination intact.
 
 Import `>+3` for byte reductions. `셈a` sums the shared byte view `a` with wrapping arithmetic, `밑a` returns its minimum, and `윗a` returns its maximum. An empty view sums to zero and has minimum and maximum of 256. The native compiler lowers these operations to bounded 16-byte SSE2 loops on x64 and a register-only byte loop on RV64. An empty view never reads memory, and the x64 loop processes the final partial block byte by byte. [Intel SSE2 instruction reference](https://intel.github.io/SDM/sdm.html)
