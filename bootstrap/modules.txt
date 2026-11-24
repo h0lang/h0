@@ -118,3 +118,4 @@ bootstrap/compiler/scalar-neutral.h0
 bootstrap/compiler/x64-byte-compare.h0
 bootstrap/compiler/x64-scalar-divide.h0
 bootstrap/compiler/parallel-scalar-assign.h0
+bootstrap/compiler/loop-repair.h0
