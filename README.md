@@ -153,6 +153,8 @@ The x64 backend also compares a byte view's length directly against a decimal co
 
 On x64 and RV64, reading a named view's length as a value loads the length slot directly into the result register. Subviews and literals still compute their lengths from their bounds or contents.
 
+For a constant-index load from a named view, x64 compares the required size directly against the length slot before loading the pointer. Computed views and dynamic indices retain bounds checking through the existing lowering.
+
 Packed x64 calls retain their argument layout. The function entry skips storing unused arguments when the body uses only supported explicit-register operations. It keeps all argument stores for bodies outside that subset.
 
 On Windows, a 24-million-iteration loop with a scalar loop condition and a mix of taken and untaken branches took a median of 40.12 ms versus 61.39 ms across eight paired runs on one logical CPU. Both binaries produced the same result. Across the existing examples, Windows x64 output (37 builds) fell from 460,800 to 452,608 bytes and Linux x64 output (36 builds) from 353,451 to 343,940 bytes.
@@ -178,6 +180,8 @@ The Linux seed is a static ELF that calls the kernel directly. The Windows seed 
 Mode `47` builds an ordered list of H0 source files. Write the target mode on the first line, followed by one UTF-8 path per line. Paths with spaces work as written, and relative paths resolve from the working directory. Files share one function namespace in list order. Use named calls across files. The compiler merges the leading `>+` declarations from all files into one standard-library selection.
 
 Mode `48` takes the same path list without the target line and returns the assembled source. Source and loaded standard-library modules must fit within the compiler’s 512 KiB source capacity. Direct builds and checks use the same capacity. Expanded source and emitted code each have a separate 1 MiB limit. When a diagnostic points into a listed file, mode `47` reports its original line and column and adds a `File <path>` line. Section ordinals follow the assembled source. For the failing section’s ordinal and source, use modes `30`–`32` through mode `47`; they follow the file line when available. Invalid lists report `E122`; file read failures, empty or oversized source, and invalid import headers report `E123` with the path.
+
+A build can record up to 8,192 call sites for native linking. Exceeding the limit reports `E135` at the first excess call.
 
 For project syntax repair, send mode `47` a target line of `14` (Windows x64), `15` (Linux x64), or `16` (RV64), followed by the same ordered path list. A valid project produces empty output. A unique passing candidate in an original file produces `byteOffset op LF File path LF`. The offset is zero-based and accounts for merged import lines and mixed line endings. The tool leaves project files intact. With no unique mapped repair it returns the original project diagnostic and status 2.
 
