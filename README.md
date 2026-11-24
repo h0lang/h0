@@ -175,6 +175,8 @@ On x64, a branch on `!x` can test the value of `x` directly and invert the branc
 
 An x64 unsigned division or remainder with a scalar register as the divisor loads that operand directly into the division register. The existing divide-by-zero check still runs.
 
+An x64 parallel assignment can take the quotient and remainder from a single division when both expressions use the same two unsigned scalar registers.
+
 Packed x64 calls retain their argument layout. The function entry skips storing unused arguments when the body uses only supported explicit-register operations. It keeps all argument stores for bodies outside that subset.
 
 On Windows, a 24-million-iteration loop with a scalar loop condition and a mix of taken and untaken branches took a median of 40.12 ms versus 61.39 ms across eight paired runs on one logical CPU. Both binaries produced the same result. Across the existing examples, Windows x64 output (37 builds) fell from 460,800 to 452,608 bytes and Linux x64 output (36 builds) from 353,451 to 343,940 bytes.
