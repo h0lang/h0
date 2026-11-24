@@ -127,3 +127,4 @@ bootstrap/compiler/scalar-infix.h0
 bootstrap/compiler/parallel-infix.h0
 bootstrap/compiler/x64-loop-registers.h0
 bootstrap/compiler/scalar-literal-infix.h0
+bootstrap/compiler/x64-counted-registers.h0
