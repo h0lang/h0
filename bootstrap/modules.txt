@@ -113,3 +113,4 @@ bootstrap/compiler/import-repair.h0
 bootstrap/compiler/packed-arguments.h0
 bootstrap/compiler/x64-view-index.h0
 bootstrap/compiler/x64-leaf-args.h0
+bootstrap/compiler/x64-leaf-layout.h0
