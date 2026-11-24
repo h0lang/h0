@@ -171,6 +171,8 @@ Native integer lowering drops neutral operators such as OR with zero and AND wit
 
 The x64 backend can branch directly on a checked constant-index byte compared with an immediate. It keeps the byte load and its bounds check and skips the temporary scalar spill and Boolean result.
 
+On x64, a branch on `!x` can test the value of `x` directly and invert the branch. The unary operator produces a Boolean when used as a value.
+
 An x64 unsigned division or remainder with a scalar register as the divisor loads that operand directly into the division register. The existing divide-by-zero check still runs.
 
 Packed x64 calls retain their argument layout. The function entry skips storing unused arguments when the body uses only supported explicit-register operations. It keeps all argument stores for bodies outside that subset.
