@@ -163,6 +163,8 @@ When the first statement returns early on a short argument view, later constant-
 
 For small frameless Windows x64 entries, the compiler can place guarded returns and bounds traps after the fallthrough path. It verifies the complete instruction sequence and emits short branches to the moved blocks. Unsupported control flow keeps its original layout.
 
+Guarded exits with the same machine instructions as the final return can share that return. The compiler updates the remaining branch offsets after removing the duplicate bytes.
+
 Small x64 leaves can load a constant-index byte directly into the destination register. The compiler also removes a copy of the packed argument descriptor when the original input register can serve every descriptor read without interference.
 
 Native integer lowering drops neutral operators such as OR with zero and AND with an all-ones mask while preserving evaluation of the other operand. The x64 comparison path handles constants on either side. Frameless leaf layout can discard a local store and reload immediately before return when both refer to the same slot.
