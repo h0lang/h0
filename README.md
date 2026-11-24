@@ -27,7 +27,7 @@ A replay gave both languages the complete program and required only named functi
 
 ## Native toolchain
 
-H0 (Human Zero) is a native programming language for AI agents. Its Tape notation uses positional registers and compact Hangul instructions. Separate packed functions with a newline or `;;`. A complete two-register result can use `b+c` at the end of a function or `.b+c` in a guard that precedes another guard. Up to 32 register operands in a result or guarded return can use infix +-*/% with standard precedence and left associativity. Nested expressions can still use prefix notation. `a,b=c+d,a` and `a,b=0,a` assign existing scalar registers simultaneously using the original operands. The [calendar example](examples/calendar.h0) fits five functions on one line.
+H0 (Human Zero) is a native programming language for AI agents. Its Tape notation uses positional registers and compact Hangul instructions. Separate packed functions with a newline or `;;`. A complete two-register result can use `b+c` at the end of a function or `.b+c` in a guard that precedes another guard. Register expressions can use infix +-*/% in a result, guarded return, or assignment such as `h=b/c`, up to 32 operands with standard precedence and left associativity. Nested expressions can still use prefix notation. `a,b=c+d,a` and `a,b=0,a` assign existing scalar registers simultaneously using the original operands. The [calendar example](examples/calendar.h0) fits five functions on one line.
 
 H0 compiles its own compiler source on Windows and Linux x64. See [AGENTS.md](AGENTS.md) for the language reference, native build commands, standard library, and compiler entry points.
 
