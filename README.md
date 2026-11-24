@@ -149,7 +149,7 @@ x64 byte and little-endian word stores with a register index and a register or i
 
 Simple x64 `?` and `W` comparisons now jump directly on the flags from `CMP`. The left operand must be a bound scalar and the right operand a bound scalar or a decimal constant from 0 to 2,147,483,647. The compiler also handles a single negation. [Branch and dynamic-frame example](examples/compare-branch.h0)
 
-The x64 backend also compares a byte view's length directly against a decimal constant in that range. This applies to parameter and local views, including mutable views.
+The x64 backend also compares a byte view's length directly against a decimal constant in that range. This applies to parameter and local views, including mutable views. The conditional expression `\i` shares the same comparison lowering. In entry functions with explicit register operands, a view length read preserves that view's argument slots and allows unrelated unused argument stores to be dropped.
 
 Packed x64 calls retain their argument layout. The function entry skips storing unused arguments when the body uses only supported explicit-register operations. It keeps all argument stores for bodies outside that subset.
 
