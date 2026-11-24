@@ -105,3 +105,4 @@ bootstrap/compiler/checksums-x64.h0
 bootstrap/compiler/tag-dispatch.h0
 bootstrap/compiler/sort-module.h0
 bootstrap/compiler/windows-import-layout.h0
+bootstrap/compiler/forward-entry.h0
