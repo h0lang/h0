@@ -1,0 +1,6 @@
+# Decode relocation-free instructions for control-flow-only rewriting.
+2-xod'a ?G+b2Za.0 c\B2ab ?Ec2831.2 ?Ec47176.\iL+b10Za	10	0 dBab ?!OOEd242Ed102Ed15.0 e+b1 ?Dd15( hBae ?AGh64Lh79+e1 ?OG+e2ZaDBae15.0 +e1 ) ?G+e2Za.0 fBae ?Ed102( ?!AOEf110Ef126ETBa+e1	6	3.0 .-+e2b ) ?Ed15( ?!OOOOEf16Ef17Ef18Ef19OEf22Ef23.0 .:xsmd	a+e1	0b ) ?!OOOOOEf16Ef17Ef88Ef89Ef92Ef94.0 :xsmd	a+e1	0b
+# Match an immediate result and the private framed epilogue, including register copies.
+6-xodret'abc l&T\B4b*d4	16	255 ?OBcd!OOAEl5EBad184AAEl7E\B2ad51016EBa+d2	192AEl10E\B2ad47176.0 i+dl n0 WA<n4<iZa( m&T\B4b*i4	16	255 ?OBciG+imZa ' h:xsmr	aim ?OO!hE&h15	4E&Th4	15	4 ' +im +n1 ) ?:xsfe	abcief.-id 0
+# Invert a conditional that skips exactly the duplicate return, targeting the original tail.
+4-xodmerge'ab"cd ?<Za12.0 u&\B4a0	16777215 ?!OEu15499592Eu15500104.0 w\iEu15499592	7	4 f|\iEw7	12878152	12878664S\iEw7\B4a3Ba3	24 i0 pZa s0 W<iZa( l&T\B4b*i4	16	255 ?!l.s x:xodret	abciwf ?x( j0 W<ji( y&T\B4b*j4	16	255 ?!y.s z:xodret	abcjwf ?AAEylEzx:xsbe	aijx( e++ix+w1 r0 ?A<pZa!Bcp( q:xsrw	ap ?AOAAEq4EBap15E&Ba+p1	240	128AAEq1GBap112LBap127E:xstg	a++p1Eq4++pq+1Eq4qe r1 ) ?r( Xcp26 \Q4d*p4|393216j Xci1 ) ?!r( Xci16 \Q4d*i4|327680j ) k+il W<ke( n&T\B4b*k4	16	255 ?!n.0 Xck1 +kn ) +s1 ' ) +jy ) ) pi +il ) s

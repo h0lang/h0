@@ -136,3 +136,4 @@ bootstrap/compiler/signed-compare-branch.h0
 bootstrap/compiler/x64-immediate-product.h0
 bootstrap/compiler/x64-byte-guard.h0
 bootstrap/compiler/x64-immediate-compare.h0
+bootstrap/compiler/x64-opaque-decode.h0
