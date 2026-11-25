@@ -1,9 +1,11 @@
-# Decode local branches and framed stack operands before falling back to the x64 leaf decoder.
+# Decode ModRM and optional SIB operands. Refuse IP-relative and unbased addresses.
+4-xsmd'a ?GbZa.0 fBab gTf6 h&f7 i+b1 ?Dg3( ?A!gEh5.0 ?Eh4( ?GiZa.0 ?A!gE&Bai7	5.0 +i1 ) +i\iEg2	4Eg1 ) +ic \i>iZa0-id
+# Limit decoding to the instructions with no address operands that need external relocation.
 2-xsrw'a cBab ?OEc235AGc112Lc127.1 ?Ec233.4 ?ODc15G+b1Za.0 dBa+b1 \iAGd128Ld143	4	0
-2-xsdl'a ?GbZa.0 c:xsrw	ab ?c( d++b1c ?AEc4EBab15 +d1 .\i>dZa0-db ) p+b\iAGBab64LBab79	1	0 ?GpZa.0 dBap h0 ?Ed15( ?G+p1Za.0 +p1 dBap ?Dd175.&:xdl	ab255 h1 ) ?AEd247<+p1Za( fBa+p1 ?AGf192G&Tf3	7	6 .-+p2b ) ?AOOOEd137Ed139Ed131h<+p2Za( eBa+p1 fTe6 ?AAAE&e7	4EBa+p2	36Gf1Lf2( g+++p3\iEf1	1	4Ed131 .\i>gZa0-gb ) ?h.:xmd	a+p1	0b ) r:xdl	ab &r255
+2-xsdl'a ?GbZa.0 c:xsrw	ab ?c( d++b1c ?AEc4EBab15 +d1 .\i>dZa0-db ) p+b\iAGBab64LBab79	1	0 ?GpZa.0 dBap ?Ed15( ?G+p1Za.0 +p1 dBap ?OOOEd175Ed182Ed183AGd144Ld159.:xsmd	a+p1	0b r:xdl	ab .&r255 ) ?AEd247<+p1Za( fBa+p1 ?G&Tf3	7	6.:xsmd	a+p1	0b ) ?OOOAGd136Ld141Ed132Ed133Ed209.:xsmd	a+p1	0b ?OOOEd128Ed131Ed193Ed198.:xsmd	a+p1	1b ?OEd129Ed199.:xsmd	a+p1	4b ?AGd56Ld59.:xsmd	a+p1	0b r:xdl	ab &r255
 4-xstg'a e\iEd1Bab\B4ab f\iEd1	127	2147483647 +c-e\iGef\iEd1	256	4294967296	0
-# Skip the reload only when the decoded store and reload use the same RAX stack slot.
-5-xsrr'a ?O<d5Dde.0 f&\B4ab16777215 g&\B4ac16777215 ?O!OEf4491592Ef8685896Dg+f512.0 i3 W<id( ?DBa+biBa+ci.0 +i1 ) 1
+# Forward qword loads only between the same register and the same RSP-based stack slot.
+5-xsrr'a ?O<d5Dde.0 fBab ?OD&f251	72DBacf.0 gBa+b1 hBa+c1 ?O!OEg137Eg139Dh139.0 jBa+b2 ?OD&j7	4!OETj6	1ETj6	2.0 i2 W<id( ?DBa+biBa+ci.0 +i1 ) EBa+b3	36
 # Remap every local branch after selecting stack loads to forward. Emit nothing on a decode or relocation failure.
 1-xsrf"a nZa ?O<n12>n1024.0 mM*4+n1 kM+n1 oMn i0 j0 s0 h0 W<in( l:xsdl	ai ?O!l>+iln.0 \Q4m*i4Sl16 ?Ah:xsrr	ajihl( Xki1 +s1 ) ji hl +il ) ?!s.0 \Q4m*n4	1 i0 W<in( lT\B4m*i4	16 c:xsrw	ai ?c( d+il t:xstg	a-dcdc ?>tn.0 ?!\B4m*t4.0 ?Bkt( Xkt0 -s1 ) ) +il ) ?!s.0 i0 j0 W<in( lT\B4m*i4	16 \Q4m*i4|Sl16+j1 ?!Bki +jl +il ) \Q4m*n4+j1 i0 j0 W<in( lT\B4m*i4	16 ?!Bki( d+il :92aoidj c:xsrw	ai ?c( t:xstg	a-dcdc t&\B4m*t4	65535 e-t+l+j1 ?AAEc1>e127<e-0	128.0 ?Ec1 Xo-+jl1e ?Ec4 \Q4o-+jl4e ) +jl ) +il ) :92oa0j0 j
 3-xsfa"ab d:9b8 ?O>cd<-dc12.0 f&\B4ac16777215 ?!OEf15499592Ef15500104.0 g-dc ?>g1024.0 hMg :92ahcd0 e:xsrf	h ?e( :92ha0ec :11b8+ce ) 0
