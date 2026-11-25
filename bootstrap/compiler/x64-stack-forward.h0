@@ -2,18 +2,20 @@
 4-xsmd'a ?GbZa.0 fBab gTf6 h&f7 i+b1 ?Dg3( ?A!gEh5.0 ?Eh4( ?GiZa.0 ?A!gE&Bai7	5.0 +i1 ) +i\iEg2	4Eg1 ) +ic \i>iZa0-id
 # Limit decoding to the instructions with no address operands that need external relocation.
 2-xsrw'a cBab ?OEc235AGc112Lc127.1 ?Ec233.4 ?ODc15G+b1Za.0 dBa+b1 \iAGd128Ld143	4	0
-2-xsdl'a ?GbZa.0 ?EBab232.\iL+b5Za	5	0 ?L+b8Za( ?E&\B4ab	1073741823	84184392.8 ) c:xsrw	ab ?c( d++b1c ?AEc4EBab15 +d1 .\i>dZa0-db ) p+b\iAGBab64LBab79	1	0 ?GpZa.0 dBap ?Ed15( ?G+p1Za.0 +p1 dBap ?OOEd17Ed18Ed22( ?OOODp+b1G+p2ZaD&Ba+p1	63	4DBa+p2	36.0 .:xsmd	a+p1	0b ) ?OOOEd175Ed182Ed183AGd144Ld159.:xsmd	a+p1	0b r:xdl	ab .&r255 ) ?AEd247<+p1Za( fBa+p1 ?G&Tf3	7	6.:xsmd	a+p1	0b ) ?OOOAGd136Ld141Ed132Ed133Ed209.:xsmd	a+p1	0b ?OOOOEd107Ed128Ed131Ed193Ed198.:xsmd	a+p1	1b ?OOEd105Ed129Ed199.:xsmd	a+p1	4b ?OAAGd1Ld51&T723401728212339210d1AGd56Ld59.:xsmd	a+p1	0b r:xdl	ab &r255
+2-xsdl'a ?GbZa.0 ?EBab232.\iL+b5Za	5	0 ?L+b8Za( ?E&\B4ab	1073741823	84184392.8 ) c:xsrw	ab ?c( d++b1c ?AEc4EBab15 +d1 .\i>dZa0-db ) p+b\iAGBab64LBab79	1	0 ?GpZa.0 dBap ?Ed15( ?G+p1Za.0 +p1 dBap ?OOOEd16Ed17Ed18Ed22( ?OOODp+b1G+p2ZaD&Ba+p1	63	4DBa+p2	36.0 .:xsmd	a+p1	0b ) ?OOOEd175Ed182Ed183AGd144Ld159.:xsmd	a+p1	0b r:xdl	ab .&r255 ) ?AEd247<+p1Za( fBa+p1 ?G&Tf3	7	6.:xsmd	a+p1	0b ) ?OOOAGd136Ld141Ed132Ed133Ed209.:xsmd	a+p1	0b ?OOOOEd107Ed128Ed131Ed193Ed198.:xsmd	a+p1	1b ?OOEd105Ed129Ed199.:xsmd	a+p1	4b ?OAAGd1Ld51&T723401728212339210d1AGd56Ld59.:xsmd	a+p1	0b r:xdl	ab &r255
 4-xstg'a e\iEd1Bab\B4ab f\iEd1	127	2147483647 +c-e\iGef\iEd1	256	4294967296	0
 # Pack an ordinary stack view as a pair of qwords into the internal ABI area.
 # MOVLPS and MOVHPS gather the halves; MOVUPS works for every slot alignment.
 4-xvse"ab e:4ab15	1 ?e.1 :190abd0	0	4c
 # Identify loads of the two view fields before either of their destination slots is written.
 4-xvcm'a"b ic j0 W<j4( l:xsdl	ai ?O!l>+ild.0 x:xssp	ail ?O!xDBai72.0 q\B2a+i1 k&Tq11	7 ?Dk\iAGj1Lj2	2	0.0 ?D&q255\i<j2	139	137.0 \Q8b*j8-x1 +j1 +il ) ?D\B8b16+\B8b24	8.0 -ic
+# Scalar copies interleave loads and stores. The first store must not affect the second load.
+4-xvci'a"b ic j0 W<j4( l:xsdl	ai ?O!l>+ild.0 x:xssp	ail ?O!xDBai72.0 q\B2a+i1 ?D&Tq11	7	0.0 ?D&q255\i&j1	137	139.0 w\iEj0	0\iEj1	3\iEj2	1	2 \Q8b*w8-x1 +j1 +il ) m\B8b24 n\B8b8 ?D\B8b16+m8.0 \iOL+m8nL+n8m-ic0
 # Only fixed frame MOVs and the internal argument-pointer LEA may follow a packed copy.
 # The mask rejects reads of RAX or RDX until a later argument overwrites that register.
 4-xvck'a eBab ?OEe184E\B2ab49201.+1&d2 ?De72.0 fBa+b1 gBa+b2 ?AAAAEf141E&Tg3	7	1E&g7	4<g192EBa+b3	36.+1d ?!:xssp	abc.0 h&Tg3	7 r\iEh0	1\iEh2	2	0 ?Ef137.\i&dr0+1d \iEf139+1-d&dr0
-# Compact one checked copy in an internal-call setup with no relative instructions.
-3-xvct"ab n:9b8 ?O>cn<-nc20.0 dM32 ic j0 m0 q0 W<in( l:xsdl	ai ?O!l>+iln.0 ?!j( k:xvcm	adin ?k( j+i1 m+ik q3 i=m ` ) ) k:xvck	ailq ?!k.0 q-k1 +il ) ?!j.0 hM-nm :92ahmn0 :11b8-j1 e:xvse	ab\B8d0	18 ?e.1 e:xvse	ab\B8d8	22 ?e.1 e:xvse	ab\B8d24	17 ?e.1 e:9b8 :92ha0Zhe :11b8+eZh 0
+# Compact a checked copy, then look for further copies in the remaining call arguments.
+3-xvct"ab n:9b8 ?O>cn<-nc20.0 dM32 ic j0 m0 q0 W<in( l:xsdl	ai ?O!l>+iln.0 ?!j( k:xvcm	adin q3 ?!k( k:xvci	adin q1 ) ?k( j+i1 m+ik i=m ` ) q0 ) k:xvck	ailq ?!k.0 q-k1 +il ) ?!j.0 hM-nm :92ahmn0 :11b8-j1 e0 ?E+\B8d0	8\B8d8( e:xvse	ab\B8d0	16 ?e.1 ) ?D+\B8d0	8\B8d8( e:xvse	ab\B8d0	18 ?e.1 e:xvse	ab\B8d8	22 ?e.1 ) e:xvse	ab\B8d24	17 ?e.1 e:9b8 :92ha0Zhe :11b8+eZh :xvct	abe
 # Forward qword loads only between the same register and the same RSP-based stack slot.
 5-xsrr'a ?O<d5Dde.0 fBab ?OD&f251	72DBacf.0 gBa+b1 hBa+c1 ?O!OEg137Eg139Dh139.0 jBa+b2 ?OD&j7	4!OETj6	1ETj6	2.0 i2 W<id( ?DBa+biBa+ci.0 +i1 ) EBa+b3	36
 # Remap every local branch after selecting stack loads to forward. Emit nothing on a decode or relocation failure.
