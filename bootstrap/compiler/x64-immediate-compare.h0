@@ -34,3 +34,15 @@
 4-xcfplan'ab"cd ?<Za12.0 u&\B4a0	16777215 ?!OEu15499592Eu15500104.0 w\iEu15499592	7	4 f|\iEw7	12878152	12878664S\iEw7\B4a3Ba3	24 i0 s0 W<iZa( l&T\B4b*i4	16	255 ?!l.s ?El6( q:xcfone	abcdiwf +sq ) +il ) s
 # A simple constant shift can evaluate directly in RCX without spilling the left operand.
 5-xarhs'a"bc f:96b j:17' ?>+j3Za.0 kBaj ?!OEk83Ek84.0 :15b+j1 l:342ab ?>l63( :15bf .0 ) m:17' ?OOGmZa<Bam48>Bam57( :15bf .0 ) n:71ab o:9b16 ?OOn!o>o63( :15bf .0 ) p:xrm	:34blb q0 ?p q:191cb137	1p1 ?!p q:7cb:34bl1	0	0 ?q.2 q:4cb|\iEk83	14795080	15319368So24	4 ?q.2 q:4cbde +q1
+# Move the private frame TEST from a post-tested loop header to its sole backedge.
+5-xpostone'ab"cd fBae l&T\B4b*e4	16	255 w\iAEl5Ef233	4AEl2Ef235 ?O!wBce.0 j+el ?GjZa.0 u\B4b*j4 l&Tu16	255 ?OOOBcjD&u1610612736	1073741824!l!:xsfmt	ajl.0 k+jl ?GkZa.0 u\B4b*k4 v&Tu16	255 ?OOOBck&u1073741824!OEv2Ev6D:xscnd	ak5.0 m+kv ?OGmZaD:xstg	a-jwjwm.0 w-v2 t:xstg	a-mwmw ?OO<t+m2GtZa<t5.0 p-t5 w0 ?AAAGpmEBap233E&T\B4b*p4	16	255	5!Bcp w4 ?!w( p-t2 ?OOO<pmDBap235D&T\B4b*p4	16	255	2Bcp.0 w1 ) ?D:xstg	a-twtwj.0 Xce1 Xcj1 Xck1 Xcp24 \Q4d*p4||jSl12Sm16 1
+4-xpostplan'ab"cd i0 n0 W<iZa( l&T\B4b*i4	16	255 ?!l.n ?OEBai233EBai235( u:xpostone	abcdi +nu ) +il ) n
+# Decode a fixed RSP slot and its unextended ModRM register.
+4-xfslot'a ?OO>+bcZa!OEc5Ec8D\B2ab|72Sd8.0 hBa+b2 ?OD&h199	\iEc5	68	132DBa+b3	36.0 e\iEc5Ba+b4\B4a+b4 ?Ge\iEc5	127	2147483647.0 |+e1S&Th3	7	32
+# Recognize one checked byte load followed by a nonzero shift that replaces its compare flags.
+5-xbytecut'ab"c j+de ?>+j8Za.0 ?OOOD\B4aj185533042BcjBc+j2&\B4b*j4	1073741824.0 ?&\B4b*+j2	4	1073741824.0 k+j4 ?D\B4ak17085967.0 ?G+k7Za.0 ?D&\B4a+k4	16777215	14729544.0 ?!&Ba+k7	63.0 Xcd1 Xcj1 Xc+j2	1 3
+# Track the index and length through local frame loads and disjoint spills.
+6-xbytescan'ab"c i=d p0 q0 n0 WA<iZa<n10( u\B4b*i4 l&Tu16	255 ?OO!lBci&u1073741824.0 hBa+i1 ?AEl3E&\B4ai	16777215	13646152( ?AEpeEqf.:xbytecut	abcil .0 ) ?AEpeE:xspanmem	ail59f.:xbytecut	abcil r:xsmr	ail ?r( v&Tr4	15 t&r15 g\i!tp\iEt2	q	0 ?!v p=g ?Ev2 q=g +il +n1 ` ) ?!OOEh137Eh139Eh43.0 s:xfslot	ailh ?!s.0 t&s4294967295 vTs32 ?Eh137( ?!AOL+t8eL+e8tOL+t8fL+f8t.0 ) ?Dh137( g\iEh139t0 ?!v p=g ?Ev2 q=g ) +il +n1 ) 0
+# A dominating unsigned compare of unchanged frame slots proves the later byte guard.
+4-xbyteone'ab"c l&T\B4b*d4	16	255 u:xspanmem	adl139 ?!u.0 e+dl ?G+e1Za.0 l&T\B4b*e4	16	255 wBa+e1 ?!OEw57Ew59.0 v:xspanmem	aelw ?O!vEvu.0 k+el ?GkZa.0 f:xscnd	ak ?!OEf4Ef7.0 j+k&T\B4b*k4	16	255 ?GjZa.0 n:xsrw	ak ?!n.0 t:xstg	a-jnjn ?OLt+j3GtZa.0 gEEw59Ef4 ?g.:xbytescan	abcjuv :xbytescan	abcjvu
+3-xbyteplan'ab"c i0 n0 W<iZa( l&T\B4b*i4	16	255 ?!l.n ?!Bci( u:xbyteone	abci +nu ) +il ) n
