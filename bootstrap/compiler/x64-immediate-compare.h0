@@ -16,3 +16,11 @@
 1-xvsafe'a nZa ?O!n>n256.0 i0 W<in( d:xsdl	ai ?O!d>+idn.0 p=i qBap r0 ?Eq72( r1 +p1 qBap ) ?AEd+5rOOOEq5Eq13Eq37Eq45( +id ` ) ?!<+p1n.0 kBa+p1 gTk6 u&Tk3	7 v&k7 ?OEq193Eq209( ?OO!rDg3>v1.0 +id ` ) ?!OOOOOOOOOOOEq137Eq139Eq1Eq3Eq9Eq11Eq33Eq35Eq41Eq43Eq49Eq51.0 ?>u1.0 ?Eg3( ?>v1.0 +id ` ) ?OOO!rDv4!OEg1Eg2DBa+p2	36.0 w\iEg1Ba+p3\B4a+p3 ?OOAEg1Gw127>+w8	2147483647!OL+w8	72L80w.0 +id ) 1
 # Shift a proved value expression over its offset spill and keep the checked offset in RDX.
 5-xvkeep"ab i0 n-ed W<in( Xa++c3iBa+di +i1 ) \Q2ac35144 Xa+c2	194 :11b8++c3n 0
+# Decode a nonnegative fixed RSP slot addressed by RAX MOV or CMP.
+4-xspanmem'a ?OO>+bcZa!OEc5Ec8D\B2ab|72Sd8.0 ?ODBa+b2\iEc5	68	132DBa+b3	36.0 e\iEc5Ba+b4\B4a+b4 ?Ge\iEc5	127	2147483647.0 +e1
+# A nonzero shift overwrites the comparison flags after ordinary data movement.
+4-xspanflag'abc i=d n0 WA<iZa<n8( w\B4b*i4 l&Tw	16	255 ?O!lBci.0 uBai ?AEl4E\B2ai49480( zBa+i2 ?AAGz232Lz239&Ba+i3	63.1 ) ?E&u240	64 uBa+i1 ?!OEu137Eu139.0 +il +n1 ) 0
+# A dominating unsigned guard i < length >> k proves that (i << k) + (2^k - 1) < length.
+4-xspanone'ab"c h&T\B4b*d4	16	255 u:xspanmem	adh139 ?!u.0 e+dh ?>+e4Za.0 ?D&T\B4b*e4	16	255	4.0 ?D&\B4ae16777215	15253832.0 kBa+e3 ?O!k>k3.0 f+e4 ?>+f5Za.0 qBa+f1 ?!OEq57Eq59.0 l&T\B4b*f4	16	255 v:xspanmem	aflq ?!v.0 g+fl ?GgZa.0 r:xscnd	ag ?Dr\iEq57	4	7.0 s&T\B4b*g4	16	255 j+gs ?>+j5Za.0 t&T\B4b*j4	16	255 ?Dv:xspanmem	ajt139.0 m+jt ?>+m8Za.0 ?D&T\B4b*m4	16	255	8.0 ?D\B4am|298312S|5Sk6	24.0 ?D\B4a+m4-S1k1.0 p+m8 ?GpZa.0 h&T\B4b*p4	16	255 ?Du:xspanmem	aph59.0 f+ph ?>+f4Za.0 ?OD\B4af185533042D&T\B4b*f4	16	255	2.0 ?D&T\B4b*+f2	4	16	255	2.0 l+f4 j+d1 W<jl( ?OBcj&\B4b*j4	1073741824.0 +j1 ) Xcf1 Xc+f2	1 ?!:xspanflag	abcl.2 Xcp1 3
+# Apply the range proof to decoded instruction boundaries only.
+3-xspanplan'ab"c i0 n0 W<iZa( l&T\B4b*i4	16	255 ?!l.n ?!Bci( r:xspanone	abci +nr ) +il ) n
