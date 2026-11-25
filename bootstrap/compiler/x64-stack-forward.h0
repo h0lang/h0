@@ -2,7 +2,7 @@
 4-xsmd'a ?GbZa.0 fBab gTf6 h&f7 i+b1 ?Dg3( ?A!gEh5.0 ?Eh4( ?GiZa.0 ?A!gE&Bai7	5.0 +i1 ) +i\iEg2	4Eg1 ) +ic \i>iZa0-id
 # Limit decoding to the instructions with no address operands that need external relocation.
 2-xsrw'a cBab ?OEc235AGc112Lc127.1 ?Ec233.4 ?ODc15G+b1Za.0 dBa+b1 \iAGd128Ld143	4	0
-2-xsdl'a ?GbZa.0 ?EBab232.\iL+b5Za	5	0 ?L+b8Za( ?E&\B4ab	1073741823	84184392.8 ) c:xsrw	ab ?c( d++b1c ?AEc4EBab15 +d1 .\i>dZa0-db ) p+b\iAGBab64LBab79	1	0 ?GpZa.0 dBap ?Ed15( ?G+p1Za.0 +p1 dBap ?AAEd16Ep+b2EBab73( ?OG+p1ZaD&Ba+p1	63	2.0 .:xsmd	a+p1	0b ) ?OOOOOEd16Ed17Ed18Ed19Ed22Ed23( ?OOODp+b1G+p2ZaD&Ba+p1	63	4DBa+p2	36.0 .:xsmd	a+p1	0b ) ?OOOEd175Ed182Ed183AGd144Ld159.:xsmd	a+p1	0b r:xdl	ab .&r255 ) ?AEd247<+p1Za( fBa+p1 ?G&Tf3	7	6.:xsmd	a+p1	0b ) ?OOOAGd136Ld141Ed132Ed133Ed209.:xsmd	a+p1	0b ?OOOOEd107Ed128Ed131Ed193Ed198.:xsmd	a+p1	1b ?OOEd105Ed129Ed199.:xsmd	a+p1	4b ?OAAGd1Ld51&T723401728212339210d1AGd56Ld59.:xsmd	a+p1	0b r:xdl	ab &r255
+2-xsdl'a ?GbZa.0 ?EBab232.\iL+b5Za	5	0 ?L+b8Za( ?E&\B4ab	1073741823	84184392.8 ) c:xsrw	ab ?c( d++b1c ?AEc4EBab15 +d1 .\i>dZa0-db ) p+b\iAGBab64LBab79	1	0 ?GpZa.0 dBap ?Ed15( ?G+p1Za.0 +p1 dBap ?AAEd16Ep+b2EBab73( ?OG+p1ZaD&Ba+p1	63	2.0 .:xsmd	a+p1	0b ) ?OOOOOEd16Ed17Ed18Ed19Ed22Ed23( ?OOODp+b1G+p2ZaD&Ba+p1	63	4DBa+p2	36.0 .:xsmd	a+p1	0b ) ?OOOEd175Ed182Ed183AGd144Ld159.:xsmd	a+p1	0b r:xdl	ab .&r255 ) ?AEd247<+p1Za( f&TBa+p1	3	7 ?!f.:xsmd	a+p1	4b ?Gf6.:xsmd	a+p1	0b ) ?OOOAGd136Ld141Ed132Ed133Ed209.:xsmd	a+p1	0b ?OOOOEd107Ed128Ed131Ed193Ed198.:xsmd	a+p1	1b ?OOEd105Ed129Ed199.:xsmd	a+p1	4b ?OAAGd1Ld51&T723401728212339210d1AGd56Ld59.:xsmd	a+p1	0b r:xdl	ab &r255
 4-xstg'a e\iEd1Bab\B4ab f\iEd1	127	2147483647 +c-e\iGef\iEd1	256	4294967296	0
 # Pack an ordinary stack view as a pair of qwords into the internal ABI area.
 # MOVLPS and MOVHPS gather the halves; MOVUPS works for every slot alignment.
@@ -70,7 +70,7 @@
 # A fixed stack compare with a non-RAX register does not read RAX.
 3-xscmx'a ?O<c5D&Bab251	72.0 ?DBa+b1	59.0 dBa+b2 eTd6 ?OOD&d7	4!OEe1Ee2DBa+b3	36.0 |&Td3	7&TBab2	1
 # Prove that the old accumulator and requested flags die on every successor.
-6-xsli'abc ?!e.1 ?OO!fGdZaBcd.0 g&T\B4b*d4	16	255 ?!g.0 ?AEg2E\B2ad49201.1 h:xsrw	ad i+dg ?h( j:xstg	a-ihih ?GjZa.0 ?OOEBad233EBad235EBad195.:xsli	abcje-f1 ?&e2.0 .A:xsli	abcie-f1:xsli	abcje-f1 ) ?A&e1:xslw	adg .:xsli	abci&e2-f1 ?Ee2( r:xsfd	ad ?Er2.1 ?Er1.:xsli	abcie-f1 ) ?:xscmx	adg .:xsli	abcie-f1 ?!:xscmp	ad.0 ?&e1( ?<g3.0 kBad mBa+d2 ?OO<&m7	1<&Tm3	7	1<k72.0 ) :xsli	abci&e1-f1
+6-xsli'abc ?!e.1 ?OO!fGdZaBcd.0 g&T\B4b*d4	16	255 ?!g.0 ?AEg2E\B2ad49201.1 h:xsrw	ad i+dg ?h( j:xstg	a-ihih ?GjZa.0 ?OOEBad233EBad235EBad195.:xsli	abcje-f1 ?&e2.0 .A:xsli	abcie-f1:xsli	abcje-f1 ) ?A&e1:xslw	adg .:xsli	abci&e2-f1 ?Ee2( r:xsfd	ad ?Er2.1 ?Er1.:xsli	abcie-f1 ) ?:xsfmt	adg .:xsli	abci&e1-f1 ?:xscmx	adg .:xsli	abcie-f1 ?!:xscmp	ad.0 ?&e1( ?<g3.0 kBad mBa+d2 ?OO<&m7	1<&Tm3	7	1<k72.0 ) :xsli	abci&e1-f1
 # Sink a signed immediate into its stack store when the temporary accumulator is dead.
 5-xsim'ab"cd l&T\B4b*e4	16	255 ?Dl7.0 ?D&\B4ae	16777215	12633928.0 f+e7 ?GfZa.0 ?OOOBceBcf&T\B4b*f4	30	1DBa+f1	137.0 g&T\B4b*f4	16	255 ?O!:xssp	afg&Ba+f2	56.0 ?D&Baf255	72.0 Xce1 Xcf8 ?!:xsli	abc+fg1	12( Xce0 Xcf0 .0 ) \Q4d*f4\B4a+e3 1
 # Replace the addition and register copy with LEA after proving the altered values dead.
@@ -200,3 +200,5 @@
 3-xasr"a ?OO>bc>cZa<-cb5.0 ?OD\B2ab35656&Ba+b2	56.0 l:xsdl	ab ?O!l>+blc.0 ?!:xssp	abl.0 e+bl ?Dec( n-ce ?O<n3>n4.0 ?DBae72.0 fBa+e1 ?!OAEn3Ef209AEn4Ef193.0 gBa+e2 ?!OOEg224Eg232Eg248.0 Xa+e2|g1 ) Xa+b2|Ba+b2	8 1
 # A local x64 call with one scalar can move the evaluated result straight into the ABI register.
 7-xars"ab ?f( h:63e0 ?Eh1( j:xasr	ag:9b8 ?j.0 j:xarb	ag:9b8	1 ?j.0 ) .:191ab137	1dh ) :7abcd1e
+# TEST on a fixed frame slot updates flags without reading the accumulator.
+3-xsfmt'a ?OO<c9>+bcZaD\B2ab63304.0 fBa+b2 gTf6 ?OOD&f63	4!OEg1Eg2DBa+b3	36.0 1

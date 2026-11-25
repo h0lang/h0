@@ -8,3 +8,5 @@
 6-xframecmp'a"bc g:96b h:342ab ?>h63.0 i:xrm	:34bhb ?i( :15bg .0 ) j:17' ?OOOOGjZaEBaj36AGBaj97LBaj122AGBaj48LBaj57EBaj90( :15bg .0 ) k:22abc0	128d ?k.1 m:34bh n수 ?:9b112 n:xpa	bm qDn수 k:190cb57	1	0\iq10\i:9b8896	5	4\iqn+m32 ?k.1 +128^e^1f
 # Keep the computed left operand in RAX and read the right operand directly from its scalar slot.
 4-xcrf'a"bc e:119d ?!e.0 f:96b g:342ab ?>g63( :15bf .0 ) h:34bg ?:xrm	hb	2 :15bf .0 i수 ?:9b112 i:xpa	bh jDi수 k:190cb59	1	0\ij10\i:9b8896	5	4\iji+h32 ?k.2 k:4cb|211888180858895Se8	6 +k1
+# A mask used only as a branch condition can test its scalar frame slot directly.
+5-xftest'a"bc f:96b g:17' ?GgZa.0 hBag i0 j0 kAGh48Lh57 ?k( l:21ab127 ?l( :15bf .0 ) i:9b16 j:342ab ) ?!k( j:342ab ?>j63( :15bf .0 ) l:21ab127 ?l( :15bf .0 ) i:9b16 ) ?O>j63>i2147483647( :15bf .0 ) m:34bj ?:xrm	mb	2 :15bf .0 n수 ?:9b112 n:xpa	bm pDn수 l:190cb247	1	0\ip10\i:9b8896	5	4\ipn+m32 ?l.1 l:4cbi4 ?l.1 +132e
