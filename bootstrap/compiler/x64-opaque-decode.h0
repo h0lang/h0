@@ -24,3 +24,12 @@
 # The left expression must be a frame load followed by its ordinary frame save.
 5-xofleft'a ?OOOGbcGcdGde>eZa.0 ?OOOD-cb:xsdl	abD-dc:xsdl	acDBab72DBac72.0 f:xofs	ab-cb g:xofs	ac-dc ?OOO!f!gDBa+b1	139DBa+c1	137.0 ?OO&Ba+b2	56&Ba+c2	56!OL+f8gL+g8f.0 ?!:xofscan	Vade-g1-f1.0 f
 4-xofcopy"a ?OO>db>cZa>bc.1 i0 W<+bic( Xa+diBa+bi +i1 ) 0
+# Return frame offset plus two, one for no frame access, or zero if RSP can escape.
+# Mode 0 uses integer registers, 1 uses XMM registers, and 2 forms an address.
+4-xofrm'a eBab f&e7 gTe6 h&Te3	7 ?AADd1Eh4!&c4.0 ?Eg3.!AADd1Ef4!&c1 ?O!Ef4&c1.1 iBa+b1 ?D&i7	4.1 ?OOEd2Di36&c2.0 ?!g.2 j\iEg1Ba+b2\B4a+b2 ?Gj\iEg1	127	2147483647.0 +j2
+# Decode the remaining frame hazards only in call-free functions with a fixed stack frame.
+4-xofuse'a fBab ?OEBab195:xsrw	ab.1 ?AOEc2Ec5OOE\B2ab2831E\B2ab49201Ef184.1 ?AEc10E\B2ab47176.1 ?Ef242( ?<c4.0 ?D&\B4ab	65535	4082.0 hBa+b2 ?!OOOOOEh16Eh17Eh88Eh89Eh92Eh94.0 .:xofrm	a+b3	0	1 ) ?E\B4ab	2114930790.AAEc5E&Ba+b4	199	192!&Ba+b4	1 ?OO<c3<f72>f79.0 gBa+b1 ?AAEc7<+b7ZaE&\B4ab	16777215	12878152.AEBa+b7	195E\B4a+b3d ?!OOOOOOOOEg137Eg139Eg3Eg59Eg129Eg131Eg141Eg193Eg199.0 :xofrm	a+b2&f7\iEg141	2	0
+# A private slot with one remaining access cannot be read by the function.
+4-xofdead'ab"cd ?<Za16.0 ?D&\B4a0	16777215	15499592.0 f\B4a3 ?OO<f32>f4096&f7.0 uMf i7 W<iZa( l&T\B4b*i4	16	255 ?!l.0 ?DBci1( n:xofuse	ailf ?!n.0 ?Gn2( j-n2 ?G+j8f.0 k0 W<k8( ?<Bu+jk3 Xu+jk+Bu+jk1 +k1 ) ) ) +il ) i7 s0 W<iZa( t\B4b*i4 l&Tt16	255 ?!l.s q:xofmove	abcdui +sq ?OOOOBciTt30D\B2ai35144<l5>l8( +il ` ) h:xofs	ail ?h( j-h1 v0 k0 W<k8( |vDBu+jk1 +k1 ) ?!v( Xci1 +s1 ) ) +il ) s
+# Forward a checked indexed load through a private frame slot to its sole XMM consumer.
+6-xofmove'abe"cd l&T\B4b*f4	16	255 ?OOBcfT\B4b*f4	30>+f4Za.0 w\B4af ?!OAEl4Ew17075016AEl5Ew21269320.0 j+fl ?>+j5Za.0 n&T\B4b*j4	16	255 ?OOOOBcjT\B4b*j4	30D\B2aj35144&Ba+j2	56!OEn5En8.0 k:xofs	ajn ?!k.0 p-k1 i0 W<i8( ?DBe+pi2.0 +i1 ) i+jn ?>+i4Za.0 ?!OE\B4ai	608471880E\B4ai	612666184.0 q+i96 x0 WA<iZa<iq( m\B4b*i4 u&Tm16	255 ?OO!uBciDTm30x.0 x0 hBai ?OEh242Eh102( ?OEh102<u6.0 ?D&\B4ai	16777215	1052658.0 ?D:xofrm	a+i3	0	1+k1.0 Xcf29 \Q4d*f4&TBa+i3	3	7 Xcj1 Xci1 .2 ) ?:xsrw	ai( ?G+i4Za.0 ?D\B4ai	185533042.0 +i4 x1 ` ) +iu ) 0
