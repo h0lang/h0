@@ -57,3 +57,5 @@
 3-xsfa"ab d:9b8 ?O>cd<-dc12.0 f&\B4ac16777215 ?!OEf15499592Ef15500104.0 g-dc ?>g1024.0 hMg :92ahcd0 i+!:9b8896*4!!:9b112 e:xsrf	hi0 ?e( ?<eg( jMe :92hj0e0 k:xsrf	ji0 ?k( :92ja0kc :11b8+ck .0 ) ) :92ha0ec :11b8+ce ) 0
 # Only used on a tentative frameless body before xlt validates all its operands.
 3-xsfv"ab d:9b8 ?OO>cd<-dc12:9b8896.0 f&\B4ac16777215 ?Df13273417.0 g-dc ?>g1024.0 hMg :92ahcd0 e:xsrf	h6+:116b168 ?e( :92ha0ec :11b8+ce ) e
+# Store through an ordinary mutable view without copying its descriptor.
+5-vws'a"bc j:96b k:17' ?OGkZa!OEBak36AGBak97LBak122.0 :15bk l:72' ?Gl64( :15bj .0 ) mS1l ?OO!&:9b8832m&:9b8888m:110bl( :15bj .0 ) p:17' ?OGpZaAGBap48LBap57( :15bj .0 ) :11b8880l h:22	abc2	128d ?h.1 q:96b r:vwa	abpqe h:vwg	cb:48blerd0 ?h.1 t:96b s:342ab u:96b ?ALs63<uZa( vBau ?!OOOOEv9Ev10Ev13Ev32Ev41( :15bt s64 ) ) ?Ls63( h:191cb137	1	0	1 ?h.1 h:7cb:34bs0	0d ?h.1 ) ?Gs64( h:7cb40	0	1d ?h.1 h:22	abc2	128d ?h.1 h:7cb40	1	0d ?h.1 ) h:7cb:34bl2	0d ?h.1 h:175cbed1 -2h
