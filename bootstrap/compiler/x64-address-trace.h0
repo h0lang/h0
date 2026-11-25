@@ -19,3 +19,15 @@
 4-xantrace'a"d ?OO%Za32%Zd16>Zd128.수 eM4224 q0 W<q528( \Q8e*q8	수 +q1 ) q0 W<qZd( Xdq0 +q1 ) f=c ?>*f32Za.수 g0 h0 y0 i0 W<gf( ?Gib.수 j*g32 k\B8aj l\B8a+j8 m\B8a+j16 n\B8a+j24 p+g1 ?O<k1>k13.수 ?AOEk10Lk7Gl528.수 ?Ek1\Q8e*l8m ?Ek2( ?Gm528.수 \Q8e*l8\B8e*m8 ) ?OEk3Ek4( ?AEk3Gm528.수 q\B8e*l8 r\iEk3\B8e*m8m \Q8e*l8\iOEq수Er수	수+qr h0 y0 ) ?Ek5( q\B8e*l8 \Q8e*l8\iEq수	수+*qmn ) ?OEk6Ek7( ?AEk6Gm528.수 q\B8e*l8 r\iEk6\B8e*m8m h\iOEq수Er수	0\iEqr1\i<qr2	3 y0 ) ?Ek8( ?OO!h<m2>m7.수 ?OOOOOAEm2Eh2AEm3Dh2AEm4Eh1AEm5Dh1AEm6Dh3AEm7Eh3p=l ) ?Ek9p=l ?Ek10( w*n16 ?O>n7>+w16Zd.수 q\B8e*l8 ?Gqm.수 \Q8dw+1\B8dw ?Gq\B8d+w8\Q8d+w8q h0 y1 ) ?Ek11( ?Gl528.수 \Q8e*l8m h0 y0 ) ?Ek12( ?Aly.수 ./Zd16 ) g=p +i1 ) 수
 # Check every executed address and refuse changes when a guard is unvisited or already rewritten.
 3-xanapply'ab"c nZa ?O<n48>n1024.0 ?D&\B4a10	16777215	8028489.0 eM*n32 fM64 g:xanbuild	abef ?!g.0 tTg8 s&g255 wM*s16 u:xantrace	e40000000tw ?Dus.0 i0 W<is( j\B8f*i8 ?OOO!\B8w*i16BcjBc+j4Bc+j6.0 +i1 ) i0 W<is( j\B8f*i8 Xcj1 Xc+j4	1 Xc+j6	1 +i1 ) *s3
+
+# Identify a sole scaled address use and encode its ModRM position.
+4-xafmem'a ?O<c5>+bcZa.0 xBa+b1 m\iAEBab72Ec5	2\iAAAEBab242Ex15Ec6OOOOEBa+b2	16EBa+b2	88EBa+b2	89EBa+b2	92EBa+b2	94	3	0 ?!m.0 j+bm oBaj rBa+j1 ?OOOD&o199	68!OEr1Er2DBa+j2dAAEm2!E\B4ab	21269320D\B4ab	38570312.0 m
+# Returns and unknown instructions keep RAX live. A full overwrite kills it.
+5-xafeffect'ab"c i=d l:xanlen	bi u:xanop	abcde ?!u.0 p\B8c0 q\B8c8 r\B8c16 ?OOEp5Ep10Ep12.0 ?Ep11.2 ?Ep1( ?AAEl5E\B4ai	21269320Eq0.0 .+1!q ) ?Ep2( ?!r.0 .+1!q ) ?OOOEp3Ep4Ep6Ep7( ?OO!qAEp3!rAEp6!r.0 .1 ) ?OEp8Ep9.1 ?Dp13.0 ?AEl5E\B4ai	38570312.0 ?EBai242( hBa+i3 ?Gh192.1 .AE&h7	4EBa+i4	36 ) ?AEl5E\B4ai	1846495334.D&Ba+i4	7	0 0
+# Walk the reachable successors once and stop each path at a full overwrite.
+5-xaflive'abc nZa ?Gdn.0 gM+n1 hM*+n1	2 wM32 i0 j1 Xgd1 \Q2h0d W<ij( k\B2h*i2 +i1 ?Gkn.0 l:xanlen	bk ?O!l>+kln.0 mBck v+kl ?Dm1( ?m.0 f:xafeffect	abwke ?!f.0 ?Ef2 ` u\B8w0 ?OEu8Eu9( y\B8w8 ?Gyn.0 ?!Bgy( Xgy1 \Q2h*j2y +j1 ) ?Eu9 ` ) ) ?Gvn.0 ?!Bgv( Xgv1 \Q2h*j2v +j1 ) ) 1
+# Skip only instructions that do not touch RAX while looking for the single memory use.
+3-xafgap'a ?:xodptr	abc.1 ?<c4.0 ?AEc4E&\B4ab	16777215	5409609.1 ?AEc8E\B4ab	613190472.1 AAGc5E&\B4ab	16777215	1052658AE&Ba+b3	7	4EBa+b4	36
+5-xaffind'abc nZa i+d8 h+i8 ?O>hnT\B4b*i4	30.0 ?ODBci1D\B4a+i4	185533042.0 ?OODBc+i4	1DBc+i6	1&T\B4b*h4	29	1.0 v\B4a+d4 ?A>v128<v4294967169.0 w&-0v255 jh p0 WA<jn<p4( k:xanlen	bj ?O!k>+jkn.0 ?ADjhT\B4b*j4	30.0 uBcj ?Du1( ?u.0 f:xafmem	ajkw ?f( ?A!AEk5E\B4aj	21269320!:xaflive	abc+jke.0 .|Sj8f ) ?!:xafgap	ajk.0 ) +jk +p1 ) 0
+# After a certified guard removal, fold a disposable LEA into its scaled SIB operand.
+4-xanfold'ab"cd nZa ?O<n48>n1024.0 e\B4a3 i0 s0 W<in( l:xanlen	bi ?O!l>+iln.s ?AAAEl8!BciL+i16nE&\B4ai	1073741823	84184392( f:xaffind	abcie ?f( gTf8 w|&f255S&Ba+i3	192	8 Xci1 Xcg30 \Q4d*g4w +s1 ) ) +il ) s
