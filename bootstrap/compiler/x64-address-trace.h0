@@ -31,3 +31,8 @@
 5-xaffind'abc nZa i+d8 h+i8 ?O>hnT\B4b*i4	30.0 ?ODBci1D\B4a+i4	185533042.0 ?OODBc+i4	1DBc+i6	1&T\B4b*h4	29	1.0 v\B4a+d4 ?A>v128<v4294967169.0 w&-0v255 jh p0 WA<jn<p4( k:xanlen	bj ?O!k>+jkn.0 ?ADjhT\B4b*j4	30.0 uBcj ?Du1( ?u.0 f:xafmem	ajkw ?f( ?A!AEk5E\B4aj	21269320!:xaflive	abc+jke.0 .|Sj8f ) ?!:xafgap	ajk.0 ) +jk +p1 ) 0
 # After a certified guard removal, fold a disposable LEA into its scaled SIB operand.
 4-xanfold'ab"cd nZa ?O<n48>n1024.0 e\B4a3 i0 s0 W<in( l:xanlen	bi ?O!l>+iln.s ?AAAEl8!BciL+i16nE&\B4ai	1073741823	84184392( f:xaffind	abcie ?f( gTf8 w|&f255S&Ba+i3	192	8 Xci1 Xcg30 \Q4d*g4w +s1 ) ) +il ) s
+
+# A scalar packed-view return exposes RAX. These register copies touch volatile scratch only.
+4-xadwrite'a ?<c3.0 g:xsmr	abc ?g( r&Tg4	15 .OOOEr1Er8Er9Er11 ) ?O<c5D\B2ab	35144.0 v:xanloc	a+b2	72d Gv21
+# An untouched stack restoration and RET cannot read the private destination.
+3-xadexit'ab"c nZa ?<n16.0 ?OOD&\B4a0	16777215	15499592D&\B4a7	16777215	13273417<Zb*+n1	4.0 f\B4a3 ?OO<f32>f4096&f7.0 e|12878152Sf24 i7 s0 W<in( l:xanlen	bi ?O!l>+iln.s j+il ?AA!Bci!T\B4b*i4	30:xadwrite	ailf( ?OEjnAE:xanlen	bj7:xsfe	abcj7e( Xci1 +s1 ) ) i=j ) s
