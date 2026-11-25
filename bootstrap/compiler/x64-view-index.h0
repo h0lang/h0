@@ -2,7 +2,7 @@
 5-vxr'a"bc ?ODd1!:9b112.0 f:72' ?O>f63&T:9b8824f1.0 g:xrm	:34bfb ?!g.0 :11b8880e h:xbg	cbeg ?h.1 h:4cb185533042	4 ?h.1 h:7cb:34be1	0	0 ?h.1 h:207cb46607	0	0	1g0 -2h
 5-vip'a"bc k:96b j:72' ?Gj64	2 :15bk .0 gS1j ?O!&:9b8824g&:9b8888g	2 :15bk .0 h:329ab ?Eh수( i:vxr	abcdj ?i.i :15bk .0 ) :11b8880j i:vix	cbhdje -2i
 # Keep the descriptor during offset evaluation. Plain byte indices retain the loop-guard lowering.
-7-vwd'a"bc j:96b k:17' ?OGkZa!OEBak36AGBak97LBak122.0 :15bk l:72' ?Gl64( :15bj .0 ) mS1l ?OOO!&:9b8824m&:9b8888m:110blAEg1!&:9b8832m( :15bj .0 ) p:96b ?Eg1( t:17' ?OOGtZaEBat36AGBat97LBat122( :15bj .0 ) :15bp ) h:22`3+d2-e1' ?h.1 q:96b r:vwa	abpqg s0 ?AAADg1Lr3r!Ef2( s:vwe	cbrg ?Es2.1 ) ?Eg1 h:vbyteguard	cb:48blf ?Dg1 h:vwg	cb:48blgrfs ?h.1 h:7cb:34bl1	0f ?h.1 ?s( h:vwm	cbg .-2h ) h:175cbgf0 -2h
+7-vwd'a"bc j:96b k:17' ?OGkZa!OEBak36AGBak97LBak122.0 :15bk l:72' ?Gl64( :15bj .0 ) mS1l ?OOO!&:9b8824m&:9b8888m:110blAEg1!&:9b8832m( :15bj .0 ) p:96b ?Dg1( h:vtail	abcfglp ?h.h ) ?Eg1( t:17' ?OOGtZaEBat36AGBat97LBat122( :15bj .0 ) :15bp ) h:22`3+d2-e1' ?h.1 q:96b r:vwa	abpqg s0 ?AAADg1Lr3r!Ef2( s:vwe	cbrg ?Es2.1 ) ?Eg1 h:vbyteguard	cb:48blf ?Dg1 h:vwg	cb:48blgrfs ?h.1 h:7cb:34bl1	0f ?h.1 ?s( h:vwm	cbg .-2h ) h:175cbgf0 -2h
 # Prove alignment only when a shift of a scalar register consumes the entire offset.
 5-vwa'a"b ?OGcZaDBac83.0 h:9b16 :15b+c1 i:72' j:17' k1 ?ALi63<jZa( :15bj k:71ab ) l:9b16 m:96b :15bd :11b16h ?OOOkDmdGl64<l\iEe2	1\iEe4	2	3.0 l
 # Use one full-span trap. A proven aligned offset allows adding width minus one without wrap.

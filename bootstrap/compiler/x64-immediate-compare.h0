@@ -26,3 +26,5 @@
 3-xspanplan'ab"c i0 n0 W<iZa( l&T\B4b*i4	16	255 ?!l.n ?!Bci( r:xspanone	abci +nr ) +il ) n
 # A fixed frame scalar has no side effects. Evaluate the other operand first and read the scalar in the ALU instruction.
 8-xcal'a"bc ?!OOOEg43Eg38Eg94Eg124.0 ?:xrm	:34bhb.0 i:22abcdef ?i.2 j:34bh k수 ?:9b112 k:xpa	bj lDk수 m\iEg43	3\iEg38	35\iEg94	51	11 i:190cbm	1	0\il10\i:9b8896	5	4\ilk+j32 ?i.2 1
+# Read a fixed-width suffix after checking the same descriptor length once.
+7-vtail'a"bc ?!OOEe2Ee4Ee8.0 i:17' ?>+i4Za.0 ?D\B2ai23085.0 :15b+i2 j:72' k:17' ?ODjfGkZa( :15bg .0 ) l:71ab ?ODl0D:9b16e( :15bg .0 ) l:7cb:48bf0	0d ?l.1 l:4cb|16286536Se24	4 ?l.1 l:4cb185533043	4 ?l.1 l:7cb:34bf1	0d ?l.1 m\iEe2	21280527\iEe4	83083	21269320 l:4cbm\iEe4	3	4 ?l.1 l:4cb&-0e255	1 -2l
