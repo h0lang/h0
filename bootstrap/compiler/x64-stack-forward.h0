@@ -60,7 +60,7 @@
 # Recognize flag-preserving overwrites that do not need the previous accumulator value.
 3-xslw'a ?:xsmw	ab.1 v:xsmr	abc ?AAv!&Tv4	15&v15.1 ?OO<c3D&Bab252	72DBa+b1	141.0 mBa+b2 ?O&Tm3	7ETm6	3.0 r&m7 wBab ?Dr4.D|rS&w1	3	0 sBa+b3 A|&s7&w1|&Ts3	7&w2
 # While only flags are live, these immediate integer operations kill or ignore old flags.
-2-xsfd'a ?>+b3Za.0 ?D&Bab248	72.0 cBa+b1 d&TBa+b2	3	7 ?OAEc131!OEd2Ed3AEc129!OEd2Ed3.2 ?AOEc193Ec209OOEd4Ed5Ed7.1 0
+2-xsfd'a ?>+b3Za.0 ?D&Bab248	72.0 cBa+b1 mBa+b2 ?AETm6	3OOOOEc1Ec3OEc9Ec11OOEc33Ec35OEc41Ec43OOOEc49Ec51OEc57Ec59Ec133.2 d&Tm3	7 ?OAEc131!OEd2Ed3AEc129!OEd2Ed3.2 ?AOEc193Ec209OOEd4Ed5Ed7.1 0
 # Test a fixed stack slot directly when the loaded accumulator dies on every path.
 4-xsmz'ab"c l&T\B4b*d4	16	255 ?O<l5Bcd.0 ?OOD\B2ad35656&Ba+d2	56!:xssp	adl.0 j+dl ?OG+j4ZaBcj.0 ?D&\B4aj16777215	12617032.0 ?&\B4b*j4	1073741824.0 ?!:xsli	abc+j3	1	12.0 Xcd17 Xcj1 1
 # A fixed stack compare with a non-RAX register does not read RAX.
