@@ -4,3 +4,5 @@
 5-xcir'a"bc f:119e ?!f.0 g:96b h:21ab-d1 i:9b16 ?Oh>i2147483647( :15bg .0 ) j:xcim	cbfi +j1
 # A constant on the left may be compared after evaluating the dynamic right operand.
 7-xcil'a"bc h:119g ?!h.0 i:96b j:21ab-e1 k:9b16 ?Oj>k2147483647( :15bi .0 ) l:22abcd-e1f ?l.2 m\iEh2	7\iEh3	6\iEh6	3\iEh7	2h l:xcim	cbmk +l1
+# A frame scalar has no evaluation effects. Compare it directly after computing the right operand.
+6-xframecmp'a"bc g:96b h:342ab ?>h63.0 i:xrm	:34bhb ?i( :15bg .0 ) j:17' ?OOOOGjZaEBaj36AGBaj97LBaj122AGBaj48LBaj57EBaj90( :15bg .0 ) k:22abc0	128d ?k.1 m:34bh n수 ?:9b112 n:xpa	bm qDn수 k:190cb57	1	0\iq10\i:9b8896	5	4\iqn+m32 ?k.1 +128^e^1f
