@@ -166,6 +166,12 @@
 5-xslid'abc j+de ?>+j5Za.0 fBad gBa+d1 ?!OOAEe5Ef184AAEe7Ef72E\B2a+d1	49351AAEe10Ef72Eg184.0 kBbj m+jk ?ALmZa!OBcjBcm( uBbm ?:xsrr	ajmku( j+mu ) ) hBbj ?O!h>+jhZa.0 ?OOBcjBc+jhDBa+jh195.0 ?!OAEh4E&\B4aj16777215	12878664AEh7E&\B4aj16777215	12878152.0 -++jh1d
 # Fold identical immediate returns without moving code, data or relative addresses.
 1-xslie"a nZa ?O<n12>n4096.0 bM+n1 cM+n1 u:xslib	ab ?<u2.0 v:xslic	abc ?!v.0 i0 s0 W<in( lBbi ?!l( +i1 ` ) g:xslid	abcil ?g( j0 W<ji( mBbj ?!m( +j1 ` ) ?AAEmlEg:xslid	abcjm:xsbe	aijg( Xai233 \Q4a+i1-j+i5 +s1 j=i ` ) +jm ) ) +il ) s
+# Decode a qword frame slot with an exact MOV direction and register.
+5-xclf'a ?>+b5Za.0 ?OODBab72DBa+b1cD&TBa+b2	3	7d.0 h:xsdl	ab ?O!h>+bhZa.0 m:xssp	abh ?OO!mD&m7	1>+m7e.0 |Sh32m
+# A private leaf may replace a spilled read-only descriptor with a RIP-relative byte lookup.
+1-xclu"a nZa ?<n80.0 f&\B4a0	16777215 g\iEf15499592	7\iEf15500104	4	0 ?!g.0 e\iEg7\B4a3Ba3 ?OO<e40>e2147483647AEg4>e127.0 ?D\B4ag608995656.0 ?DBa+g4	32.0 j+g5 l:xslia	aj ?O!l>+l55n.0 ?DBa+l7	186.0 d\B4a+l8 ?Dd-l+j5.0 t+l12 b:xclf	at137	0e ?!b.0 +tTb32 b&b4294967295 c:xclf	at137	2e ?!c.0 +tTc32 c&c4294967295 h:xclf	at139	0e ?!h.0 +tTh32 h&h4294967295 i:xclf	at139	2e ?!i.0 +tTi32 i&i4294967295 k:xclf	at137	0e ?!k.0 +tTk32 k&k4294967295 m:xclf	at137	2e ?!m.0 +tTm32 m&m4294967295 o:xclf	at139	0e ?!o.0 +tTo32 o&o4294967295 ?OODhbDicDo33 ?OOOOOOOOOEb33Ec33Ek33Em33EbcEbkEbmEckEcmEkm.0 ?>+t17n.0 q0 r0 ?EBat37( q\B4a+t1 r5 ) ?AEBat131EBa+t1	224( qBa+t2 r3 ) ?OO!rGqdAEr3>q127.0 +tr u:xclf	at139	2e ?O!uD&u4294967295m.0 +tTu32 ?>+t14n.0 ?D\B4at1926248776.0 ?DBa+t4	2.0 ?D\B2a+t5	2831.0 +t7 u:xclf	at139	1e ?O!uD&u4294967295k.0 +tTu32 ?Dn+t4.0 ?D\B4at17085967.0 y+l7 Xay129 Xa+y1	225 \Q4a+y2q +y6 \Q4ay134526479 +y4
+3-xclp"ab d:9b8 ?O>cd>-dc4096.0 hM-dc :92ahcd0 w:xclu	h ?!w.0 :92ha0wc :11b8+cw 0
+4-xclend"ab ?Ed0 Y:xclp	ab:9b+c	24 :189abd
 3-xsfa"ab d:9b8 ?O>cd<-dc12.0 f&\B4ac16777215 ?!OEf15499592Ef15500104.0 g-dc ?>g4096.0 hMg :92ahcd0 e0 ?Lg1024( i+!:9b8896*4!!:9b112 e:xsrf	hi0 ?e( ?<eg( jMe :92hj0e0 k:xsrf	ji0 ?k( :92ja0kc :11b8+ck .0 ) ) :92ha0ec :11b8+ce ) ) ?!e( z:xbgo	h ?!z z:xslie	h ?z( :92ha0gc :11b8+cg ) ) 0
 # Only used on a tentative frameless body before xlt validates all its operands.
 3-xsfv"ab d:9b8 ?OO>cd<-dc12:9b8896.0 f&\B4ac16777215 ?Df13273417.0 g-dc ?>g1024.0 hMg :92ahcd0 e:xsrf	h6+:116b168 ?e( :92ha0ec :11b8+ce ) e
