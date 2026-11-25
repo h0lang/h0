@@ -12,3 +12,15 @@
 4-xopostplan'ab"cd i0 n0 W<iZa( l&T\B4b*i4	16	255 ?!l.n ?OEBai233EBai235( u:xopostone	abcdi +nu ) +il ) n
 # Register MOVs preserve flags and may precede the first unconditional flag writer.
 4-xoflags'abc i=d j0 WA<j4<iZa( l&T\B4b*i4	16	255 ?OOOBciT\B4b*i4	30!l!:xsmr	ail ' +il +j1 ) :xsli	abci2	12
+# Write a scalar SSE result straight into its frame slot when RAX is dead after the store.
+4-xostore'ab"cd i0 s0 W<iZa( l&T\B4b*i4	16	255 ?!l.s j+il ?AAAAEl5L+j5Za!Bci!BcjE\B4ai	2114930790( kBa+i4 ?AOEk192Ek200!T|\B4b*i4\B4b*j4	30( m&T\B4b*j4	16	255 n\B4aj ?AAOAEm5En608471368AEm8En612665672:xssp	ajm:xsli	abc+jm1	20( Xci1 Xcj28 \Q4d*j4Ek200 +s1 ) ) ) +il ) s
+# Read the offset of a direct scalar frame operand, accepting only RSP without an index.
+3-xofs'a d:xssp	abc ?!d.0 ?&-d1	7.0 d
+# Decode a local SSE qword load and verify that it does not observe the removed save.
+3-xofpread'a ?G+b6Za.0 ?D&\B4ab	16777215	1052658.0 h&Ba+b3	199 ?ODBa+b4	36!OEh68Eh132.0 k\iEh68	6	9 ?G+bkZa.0 j\iEh68Ba+b5\B4a+b5 ?OGj\iEh68	128	2147483648!OL+j8cL+c8j.0 k
+# Forward a left operand only through code that cannot write the original frame slot
+# or observe the temporary. The only admitted branches skip their own UD2.
+3-xofscan'a ?<Za5.0 ?!OE\B4a0	608471880E\B4a0	612666184.0 i0 W<iZa( ?AAE+i5ZaE\B4ai	2114930790E&Ba+i4	199	192.1 n:xsdl	ai ?!n n:xod	ai ?O!n>+inZa.0 k:xofs	ain ?k( j-k1 ?!OL+j8bL+b8j.0 ?AEBa+i1	137!OL+j8cL+c8j.0 +in ` ) w0 ?L+i4Za w\B4ai ?Ew185533042( +i4 ` ) ?EBai242( z:xofpread	aib ?z( +iz ` ) ?<n4.0 m&w16777215 ?!OOOEm5771250Em5836786Em6033394Em6164466.0 v&Ba+i3	199 ?!OOAGv192En4AEn5E\B2a+i3	260AEn6E\B2a+i3	324.0 +in ` ) ?AAEn5Ew2114930790E&Ba+i4	199	192( +in ` ) ?!OOOOAEn8Ew3305409864AEn4Ew138558281AAEn3E\B2ai	35657EBa+i2	10AEn4Ew17075016AEn5Ew21269320.0 +in ) 1
+# The left expression must be a frame load followed by its ordinary frame save.
+5-xofleft'a ?OOOGbcGcdGde>eZa.0 ?OOOD-cb:xsdl	abD-dc:xsdl	acDBab72DBac72.0 f:xofs	ab-cb g:xofs	ac-dc ?OOO!f!gDBa+b1	139DBa+c1	137.0 ?OO&Ba+b2	56&Ba+c2	56!OL+f8gL+g8f.0 ?!:xofscan	Vade-g1-f1.0 f
+4-xofcopy"a ?OO>db>cZa>bc.1 i0 W<+bic( Xa+diBa+bi +i1 ) 0
