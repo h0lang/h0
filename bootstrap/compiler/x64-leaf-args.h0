@@ -14,4 +14,5 @@
 2-xfd'a d0 eb W<eZa	5 fBae ?O<f48>f57' d+*d10-f48 ?>d2147483647.0 +e1 ?Eeb.0 |Sd32e
 2-xws'a WA<bZaOOOEBab9EBab10EBab13EBab32 +b1 b
 2-xfr'a b:xws	ab ?GbZa.0 cBab ?Ec46.1 ?Dc50.0 c:xws	a+b1 ?OEc+b1GcZa.0 dBac ?O<d97>d122.0 e:xws	a:19ac A<eZaEBae46
-2-xwl'a ?G+b2Za.0 cBa+b1 ?!OEc66Ec81.0 cBa+b2 OOEc50Ec52Ec56
+# These three-byte escapes do not clobber the registers reserved for leaf locals.
+2-xwl'a ?G+b2Za.0 cBa+b1 dBa+b2 ?Ec70.AAGd42Ld47&T43-d42	1 ?!OEc66Ec81.0 OOEd50Ed52Ed56
