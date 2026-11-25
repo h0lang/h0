@@ -181,3 +181,6 @@
 # Commit new call offsets only after the whole transformed body validates.
 5-xscc'a"bc f:xscv	abde1 ?!f.0 f:xscv	abde2 ?!f.0 :92ac0Zad :11b8+dZa 1
 4-xscf"ab e:9b8 ?O>ce<-ec12.0 f-ec ?>f2048.0 g&\B4ac16777215 ?!OEg15499592Eg15500104.0 hMf :92ahce0 i:xscv	hbcd0 ?!i.0 i+\i!:9b8896	4	0	8 j:xsrf	hi0 ?!j.0 ?<jf( kMj :92hk0j0 l:xsrf	ki0 ?l( m:xscc	Vk0lbacd .m ) ) :xscc	Vh0jbacd
+
+# A local x64 call with one scalar can move the evaluated result straight into the ABI register.
+6-xars"ab ?f.:191ab137	1d:63e0 :7abcd1e
