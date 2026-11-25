@@ -36,3 +36,9 @@
 4-xadwrite'a ?<c3.0 g:xsmr	abc ?g( r&Tg4	15 .OOOEr1Er8Er9Er11 ) ?O<c5D\B2ab	35144.0 v:xanloc	a+b2	72d Gv21
 # An untouched stack restoration and RET cannot read the private destination.
 3-xadexit'ab"c nZa ?<n16.0 ?OOD&\B4a0	16777215	15499592D&\B4a7	16777215	13273417<Zb*+n1	4.0 f\B4a3 ?OO<f32>f4096&f7.0 e|12878152Sf24 i7 s0 W<in( l:xanlen	bi ?O!l>+iln.s j+il ?AA!Bci!T\B4b*i4	30:xadwrite	ailf( ?OEjnAE:xanlen	bj7:xsfe	abcj7e( Xci1 +s1 ) ) i=j ) s
+
+# On a straight-line successor the prior flags must die before any conditional use.
+5-xadflags'abc i=d wM32 W<iZa( l:xanlen	bi ?O!l>+ilZa.0 kBci ?Dk1( ?AkDk30.0 u:xanop	abwie ?!u.0 p\B8w0 ?OOOOOEp3Ep4Ep6Ep7Ep11Ep12.1 ?OEp8Ep9.0 ) +il ) 1
+# Swap two private frame operands to keep the next loaded index in RAX.
+5-xadswap'ab"cd nZa ?O>+e26nD\B4ae	612666184.0 h+e8 q+h8 ?D\B4ah	612645704.0 k:xanlen	bq ?>+qkn.0 g+qk ?O>+g8nD\B4ag	612666184.0 ?OOOBceBchBcqBcg.0 ?OOT\B4b*h4	30T\B4b*q4	30T\B4b*g4	30.0 l\B4a+e4 m\B4a+h4 ?OOOElmD\B4a+g4m|&l7&m7>+\i>lmlm8\B4a3.0 r:xscnd	aq ?!OOOEr3Er4Er7Er8.0 t:xanflow	aqk ?!t.0 -t1 ?OO!:xaflive	abct\B4a3!:xadflags	abct\B4a3!:xadflags	abc+g8\B4a3.0 Xce31 Xch31 Xcq32 Xcg1 \Q4d*e4m \Q4d*h4l \Q4d*q4-10r 1
+4-xadswaps'ab"cd i0 s0 W<iZa( l:xanlen	bi ?!l.s ?El8( n:xadswap	abcdi +sn ) +il ) s
