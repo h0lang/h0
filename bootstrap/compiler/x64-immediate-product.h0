@@ -1,0 +1,4 @@
+# A signed x64 immediate product has the same low 64 bits as unsigned multiplication.
+3-xmii"ab ?Lc127.:4ab|12610376Sc24	4 d:4ab12609864	3 ?d.1 :4abc4
+# A constant left operand needs no temporary slot. Always evaluate the other operand.
+6-xmil'a"bc g:96b h:21ab-e1 i:9b16 ?Oh>i2147483647( :15bg .0 ) k:22abcd-e1f ?k.2 k:xmii	cbi +k1
