@@ -28,3 +28,7 @@
 8-xcal'a"bc ?!OOOEg43Eg38Eg94Eg124.0 ?:xrm	:34bhb.0 i:22abcdef ?i.2 j:34bh k수 ?:9b112 k:xpa	bj lDk수 m\iEg43	3\iEg38	35\iEg94	51	11 i:190cbm	1	0\il10\i:9b8896	5	4\ilk+j32 ?i.2 1
 # Read a fixed-width suffix after checking the same descriptor length once.
 7-vtail'a"bc ?!OOEe2Ee4Ee8.0 i:17' ?>+i4Za.0 ?D\B2ai23085.0 :15b+i2 j:72' k:17' ?ODjfGkZa( :15bg .0 ) l:71ab ?ODl0D:9b16e( :15bg .0 ) l:7cb:48bf0	0d ?l.1 l:4cb|16286536Se24	4 ?l.1 l:4cb185533043	4 ?l.1 l:7cb:34bf1	0d ?l.1 m\iEe2	21280527\iEe4	83083	21269320 l:4cbm\iEe4	3	4 ?l.1 l:4cb&-0e255	1 -2l
+# Reuse the same literal before a framed return. The success edge must skip exactly the literal and return jump.
+7-xcfone'ab"cd j+e6 ?OGjZaBce.0 ?!:xscnd	ae.0 u\B4b*j4 l&Tu16	255 ?OOO!OOEl5El7El10Bcj&u1073741824G+jlZa.0 k+jl u\B4b*k4 w&Tu16	255 ?OOOOBck&u1073741824!OAEBak233Ew5AEBak235Ew2G+kwZaD:xstg	a-j4j4+kw.0 t:xstg	a-+kw-w1+kw-w1 ?O<tlGtZa.0 h-tl ?D:xsrim	abchfgl.0 ?!:xsbe	ajhl.0 Xce13 Xcj1 Xck1 \Q4d*e4|393216h 1
+# Keep the target's original stack restoration and RET.
+4-xcfplan'ab"cd ?<Za12.0 u&\B4a0	16777215 ?!OEu15499592Eu15500104.0 w\iEu15499592	7	4 f|\iEw7	12878152	12878664S\iEw7\B4a3Ba3	24 i0 s0 W<iZa( l&T\B4b*i4	16	255 ?!l.s ?El6( q:xcfone	abcdiwf +sq ) +il ) s
