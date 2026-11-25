@@ -166,7 +166,7 @@
 # A forward jump over inline literal data lands on its exact RIP-relative address load.
 2-xslia'a ?>+b5Za.0 ?DBab233.0 c+b5 d\B4a+b1 ?OO<d3>+cdZa>++cd7Za.0 e+cd ?D&\B4ae16777215	363848.0 ?D\B4a+e3-4294967296+d7.0 e
 # Decode local register increments/decrements, deliberate traps, accumulator immediates, word MOVs and fixed-frame SSE copies.
-2-xslif'a ?AL+b1ZaE\B2ab2831.2 i+bAGBab64LBab79 ?AA<+i1ZaEBai255E&Ba+i1	240	192.-+i2b qEBab72 ?G+bqZa.0 kBa+bq ?AOOOOOEk5Ek13Ek37Ek45Ek53Ek61L++bq5Za.+q5 j+b2 ?>+j2Za.0 eBa+b1 ?AOEe137Ee139EBab102.:xsmd	aj0b vBaj ?!AAAEBab15AGe16Le23E&v7	4EBa+j1	36.0 ?!OETv6	1ETv6	2.0 :xsmd	aj0b
+2-xslif'a ?<+b1Za( ?E\B2ab2831.2 ) i+bAGBab64LBab79 ?<+i1Za( ?AEBai255E&Ba+i1	240	192.-+i2b ) qEBab72 ?G+bqZa.0 kBa+bq ?AOOOOOEk5Ek13Ek37Ek45Ek53Ek61L++bq5Za.+q5 j+b2 ?>+j2Za.0 eBa+b1 ?AOEe137Ee139EBab102.:xsmd	aj0b vBaj ?!AAAEBab15AGe16Le23E&v7	4EBa+j1	36.0 ?!OETv6	1ETv6	2.0 :xsmd	aj0b
 # Record instruction starts and lengths without decoding bytes owned by a literal.
 2-xslib'a"b i0 v0 W<iZa( l:xslia	ai ?l( Xbi5 Xbl7 i+l7 v1 ` ) hBai ?AE+i1ZaEh195( Xbi1 +i1 ` ) ?Eh232.0 t\iAGh64Lh79	1	0 ?G+i+t1Za.0 kBa+it ?Ek255.0 ?AEBa+it141E&Ba+i+t1	199	5.0 l:xsdl	ai ?!l l:xslif	ai ?O!l>+ilZa.0 Xbil +il ) +v1
 # All direct branch entries must be known instructions in this local body.
