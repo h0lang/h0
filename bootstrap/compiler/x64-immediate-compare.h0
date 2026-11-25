@@ -32,3 +32,5 @@
 7-xcfone'ab"cd j+e6 ?OGjZaBce.0 ?!:xscnd	ae.0 u\B4b*j4 l&Tu16	255 ?OOO!OOEl5El7El10Bcj&u1073741824G+jlZa.0 k+jl u\B4b*k4 w&Tu16	255 ?OOOOBck&u1073741824!OAEBak233Ew5AEBak235Ew2G+kwZaD:xstg	a-j4j4+kw.0 t:xstg	a-+kw-w1+kw-w1 ?O<tlGtZa.0 h-tl ?D:xsrim	abchfgl.0 ?!:xsbe	ajhl.0 Xce13 Xcj1 Xck1 \Q4d*e4|393216h 1
 # Keep the target's original stack restoration and RET.
 4-xcfplan'ab"cd ?<Za12.0 u&\B4a0	16777215 ?!OEu15499592Eu15500104.0 w\iEu15499592	7	4 f|\iEw7	12878152	12878664S\iEw7\B4a3Ba3	24 i0 s0 W<iZa( l&T\B4b*i4	16	255 ?!l.s ?El6( q:xcfone	abcdiwf +sq ) +il ) s
+# A simple constant shift can evaluate directly in RCX without spilling the left operand.
+5-xarhs'a"bc f:96b j:17' ?>+j3Za.0 kBaj ?!OEk83Ek84.0 :15b+j1 l:342ab ?>l63( :15bf .0 ) m:17' ?OOGmZa<Bam48>Bam57( :15bf .0 ) n:71ab o:9b16 ?OOn!o>o63( :15bf .0 ) p:xrm	:34blb q0 ?p q:191cb137	1p1 ?!p q:7cb:34bl1	0	0 ?q.2 q:4cb|\iEk83	14795080	15319368So24	4 ?q.2 q:4cbde +q1
