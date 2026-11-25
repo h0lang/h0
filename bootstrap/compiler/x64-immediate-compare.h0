@@ -24,3 +24,5 @@
 4-xspanone'ab"c h&T\B4b*d4	16	255 u:xspanmem	adh139 ?!u.0 e+dh ?>+e4Za.0 ?D&T\B4b*e4	16	255	4.0 ?D&\B4ae16777215	15253832.0 kBa+e3 ?O!k>k3.0 f+e4 ?>+f5Za.0 qBa+f1 ?!OEq57Eq59.0 l&T\B4b*f4	16	255 v:xspanmem	aflq ?!v.0 g+fl ?GgZa.0 r:xscnd	ag ?Dr\iEq57	4	7.0 s&T\B4b*g4	16	255 j+gs ?>+j5Za.0 t&T\B4b*j4	16	255 ?Dv:xspanmem	ajt139.0 m+jt ?>+m8Za.0 ?D&T\B4b*m4	16	255	8.0 ?D\B4am|298312S|5Sk6	24.0 ?D\B4a+m4-S1k1.0 p+m8 ?GpZa.0 h&T\B4b*p4	16	255 ?Du:xspanmem	aph59.0 f+ph ?>+f4Za.0 ?OD\B4af185533042D&T\B4b*f4	16	255	2.0 ?D&T\B4b*+f2	4	16	255	2.0 l+f4 j+d1 W<jl( ?OBcj&\B4b*j4	1073741824.0 +j1 ) Xcf1 Xc+f2	1 ?!:xspanflag	abcl.2 Xcp1 3
 # Apply the range proof to decoded instruction boundaries only.
 3-xspanplan'ab"c i0 n0 W<iZa( l&T\B4b*i4	16	255 ?!l.n ?!Bci( r:xspanone	abci +nr ) +il ) n
+# A fixed frame scalar has no side effects. Evaluate the other operand first and read the scalar in the ALU instruction.
+8-xcal'a"bc ?!OOOEg43Eg38Eg94Eg124.0 ?:xrm	:34bhb.0 i:22abcdef ?i.2 j:34bh k수 ?:9b112 k:xpa	bj lDk수 m\iEg43	3\iEg38	35\iEg94	51	11 i:190cbm	1	0\il10\i:9b8896	5	4\ilk+j32 ?i.2 1
