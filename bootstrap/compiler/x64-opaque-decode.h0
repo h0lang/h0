@@ -33,3 +33,10 @@
 4-xofdead'ab"cd ?<Za16.0 ?D&\B4a0	16777215	15499592.0 f\B4a3 ?OO<f32>f4096&f7.0 uMf i7 W<iZa( l&T\B4b*i4	16	255 ?!l.0 ?DBci1( n:xofuse	ailf ?!n.0 ?Gn2( j-n2 ?G+j8f.0 k0 W<k8( ?<Bu+jk3 Xu+jk+Bu+jk1 +k1 ) ) ) +il ) i7 s0 W<iZa( t\B4b*i4 l&Tt16	255 ?!l.s q:xofmove	abcdui +sq ?OOOOBciTt30D\B2ai35144<l5>l8( +il ` ) h:xofs	ail ?h( j-h1 v0 k0 W<k8( |vDBu+jk1 +k1 ) ?!v( Xci1 +s1 ) ) +il ) s
 # Forward a checked indexed load through a private frame slot to its sole XMM consumer.
 6-xofmove'abe"cd l&T\B4b*f4	16	255 ?OOBcfT\B4b*f4	30>+f4Za.0 w\B4af ?!OAEl4Ew17075016AEl5Ew21269320.0 j+fl ?>+j5Za.0 n&T\B4b*j4	16	255 ?OOOOBcjT\B4b*j4	30D\B2aj35144&Ba+j2	56!OEn5En8.0 k:xofs	ajn ?!k.0 p-k1 i0 W<i8( ?DBe+pi2.0 +i1 ) i+jn ?>+i4Za.0 ?!OE\B4ai	608471880E\B4ai	612666184.0 q+i96 x0 WA<iZa<iq( m\B4b*i4 u&Tm16	255 ?OO!uBciDTm30x.0 x0 hBai ?OEh242Eh102( ?OEh102<u6.0 ?D&\B4ai	16777215	1052658.0 ?D:xofrm	a+i3	0	1+k1.0 Xcf29 \Q4d*f4&TBa+i3	3	7 Xcj1 Xci1 .2 ) ?:xsrw	ai( ?G+i4Za.0 ?D\B4ai	185533042.0 +i4 x1 ` ) +iu ) 0
+
+# A packed descriptor pointer may be reused until RCX, R10, or their memory changes.
+3-xodptr'a ?<c3.0 q\B2ab ?Dq35657.0 mBa+b2 ?AEc3Em10.1 ?AEc4Em74.+256Ba+b3 0
+# Only instructions that leave RCX, R10 and memory unchanged preserve the cached value.
+3-xodkeep'a hBab ?AEh242Gc4( q\B2a+b1 .OOOOEq4111Eq22799Eq22543Eq23567Eq24079 ) ?AEc4E&\B4ab	16777215	4340553.1 ?ODh72<c3.0 qBa+b1 mBa+b2 AAOEq139Eq141!&m56Lm192
+# Only the exclusive successful edge of a checked access may carry the previous descriptor load.
+3-xodreuse'ab"c nZa ?<n16.0 ?D&\B4a0	16777215	15499592.0 i7 s0 v0 z0 W<in( u\B4b*i4 l&Tu16	255 ?!l.s ?A&u1073741824Diz v0 j+il pBci ?p v0 ?!p( y:xodptr	ail ?y( ?Eyv( Xci1 +s1 ) v=y ) ?!y( ?Av!:xodkeep	ail( ?AAAEl2L+j2nE\B4ai	185533042E&T\B4b*j4	16	255	2( w+j2 ?AAA!Bcj!&\B4b*j4	1073741824!&\B4b*w4	536870912&\B4b*w4	1073741824( z=w i=w ` ) ) v0 ) ) ) i=j ) s
