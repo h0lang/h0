@@ -2,8 +2,11 @@
 5-vxr'a"bc ?ODd1!:9b112.0 f:72' ?O>f63&T:9b8824f1.0 g:xrm	:34bfb ?!g.0 :11b8880e h:xbg	cbeg ?h.1 h:4cb185533042	4 ?h.1 h:7cb:34be1	0	0 ?h.1 h:207cb46607	0	0	1g0 -2h
 5-vip'a"bc k:96b j:72' ?Gj64	2 :15bk .0 gS1j ?O!&:9b8824g&:9b8888g	2 :15bk .0 h:329ab ?Eh수( i:vxr	abcdj ?i.i :15bk .0 ) :11b8880j i:vix	cbhdje -2i
 # An ordinary view register keeps its descriptor during scalar offset evaluation.
-7-vwd'a"bc j:96b k:17' ?OGkZa!OEBak36AGBak97LBak122.0 :15bk l:72' ?Gl64( :15bj .0 ) mS1l ?OO!&:9b8824m&:9b8888m:110bl( :15bj .0 ) p:96b h:22`3+d2-e1' ?h.1 q:96b r:vwa	abpqg h:vwg	cb:48blgrf ?h.1 h:7cb:34bl1	0f ?h.1 h:175cbgf0 -2h
+7-vwd'a"bc j:96b k:17' ?OGkZa!OEBak36AGBak97LBak122.0 :15bk l:72' ?Gl64( :15bj .0 ) mS1l ?OO!&:9b8824m&:9b8888m:110bl( :15bj .0 ) p:96b h:22`3+d2-e1' ?h.1 q:96b r:vwa	abpqg s0 ?AALr3r!Ef2( s:vwe	cbrg ?Es2.1 ) h:vwg	cb:48blgrfs ?h.1 h:7cb:34bl1	0f ?h.1 ?s( h:vwm	cbg .-2h ) h:175cbgf0 -2h
 # Prove alignment only when a shift of a scalar register consumes the entire offset.
-5-vwa'a"b ?OGcZaDBac83.0 h:9b16 :15b+c1 i:72' j:17' k1 ?ALi63<jZa( :15bj k:71ab ) l:9b16 m:96b :15bd :11b16h ?OOOkDmdGl64<l\iEe2	1\iEe4	2	3.0 1
+5-vwa'a"b ?OGcZaDBac83.0 h:9b16 :15b+c1 i:72' j:17' k1 ?ALi63<jZa( :15bj k:71ab ) l:9b16 m:96b :15bd :11b16h ?OOOkDmdGl64<l\iEe2	1\iEe4	2	3.0 l
 # Use one full-span trap. A proven aligned offset allows adding width minus one without wrap.
-6-vwg"ab ?e( g:190ab141	1	2	0-d1 ?g.1 h수 ?:9b112 h:xpa	bc iDh수 g:190ab59	1	2\ii10\i:9b8896	5	4\iih+c32 ?g.1 ) ?!e( g:7abc2	0f ?g.1 g:191ab131	1	5	2 ?g.1 g:4ab-d1	1 ?g.1 g:4ab1394	2 ?g.1 .:32ab0	2	1f ) :4ab185533042	4
+7-vwg"ab ?e( ?!g( j:190ab141	1	2	0-d1 ?j.1 ) h수 ?:9b112 h:xpa	bc iDh수 j:190ab59	1\ig0	2\ii10\i:9b8896	5	4\iih+c32 ?j.1 ) ?!e( j:7abc2	0f ?j.1 j:191ab131	1	5	2 ?j.1 j:4ab-d1	1 ?j.1 j:4ab1394	2 ?j.1 .:32ab0	2	1f ) :4ab185533042	4
+# Fold a checked scaled offset into the end address, then load with the inverse displacement.
+4-vwe"ab e:9b8 f\iEc1	3	4 ?<ef.0 g-ef ?Ec1( ?D|\B2agSBa+g2	16	14733640.0 ) ?Dc1( ?D\B4ag|14729544Sc24.0 ) :11b8g h:4ab|84184392Sc30	4 ?h.2 h:4ab-d1	4 +1h
+3-vwm"ab d\iEc2	21280527\iEc4	83083	21269320 h:4abd\iEc4	3	4 ?h.1 :4ab&-1c255	1

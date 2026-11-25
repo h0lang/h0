@@ -2,7 +2,7 @@
 4-xsmd'a ?GbZa.0 fBab gTf6 h&f7 i+b1 ?Dg3( ?A!gEh5.0 ?Eh4( ?GiZa.0 ?A!gE&Bai7	5.0 +i1 ) +i\iEg2	4Eg1 ) +ic \i>iZa0-id
 # Limit decoding to the instructions with no address operands that need external relocation.
 2-xsrw'a cBab ?OEc235AGc112Lc127.1 ?Ec233.4 ?ODc15G+b1Za.0 dBa+b1 \iAGd128Ld143	4	0
-2-xsdl'a ?GbZa.0 c:xsrw	ab ?c( d++b1c ?AEc4EBab15 +d1 .\i>dZa0-db ) p+b\iAGBab64LBab79	1	0 ?GpZa.0 dBap ?Ed15( ?G+p1Za.0 +p1 dBap ?OOOEd175Ed182Ed183AGd144Ld159.:xsmd	a+p1	0b r:xdl	ab .&r255 ) ?AEd247<+p1Za( fBa+p1 ?G&Tf3	7	6.:xsmd	a+p1	0b ) ?OOOAGd136Ld141Ed132Ed133Ed209.:xsmd	a+p1	0b ?OOOOEd107Ed128Ed131Ed193Ed198.:xsmd	a+p1	1b ?OOEd105Ed129Ed199.:xsmd	a+p1	4b ?OAAGd1Ld51&T723401728212339210d1AGd56Ld59.:xsmd	a+p1	0b r:xdl	ab &r255
+2-xsdl'a ?GbZa.0 ?L+b8Za( ?E&\B4ab	1073741823	84184392.8 ) c:xsrw	ab ?c( d++b1c ?AEc4EBab15 +d1 .\i>dZa0-db ) p+b\iAGBab64LBab79	1	0 ?GpZa.0 dBap ?Ed15( ?G+p1Za.0 +p1 dBap ?OOOEd175Ed182Ed183AGd144Ld159.:xsmd	a+p1	0b r:xdl	ab .&r255 ) ?AEd247<+p1Za( fBa+p1 ?G&Tf3	7	6.:xsmd	a+p1	0b ) ?OOOAGd136Ld141Ed132Ed133Ed209.:xsmd	a+p1	0b ?OOOOEd107Ed128Ed131Ed193Ed198.:xsmd	a+p1	1b ?OOEd105Ed129Ed199.:xsmd	a+p1	4b ?OAAGd1Ld51&T723401728212339210d1AGd56Ld59.:xsmd	a+p1	0b r:xdl	ab &r255
 4-xstg'a e\iEd1Bab\B4ab f\iEd1	127	2147483647 +c-e\iGef\iEd1	256	4294967296	0
 # Forward qword loads only between the same register and the same RSP-based stack slot.
 5-xsrr'a ?O<d5Dde.0 fBab ?OD&f251	72DBacf.0 gBa+b1 hBa+c1 ?O!OEg137Eg139Dh139.0 jBa+b2 ?OD&j7	4!OETj6	1ETj6	2.0 i2 W<id( ?DBa+biBa+ci.0 +i1 ) EBa+b3	36
