@@ -196,5 +196,7 @@
 
 # The argument can end in a byte load. Only allow checked fallthrough paths that must execute that load.
 4-xarb"a ?OODd1>cZaGbc.0 i=b j=b W<ic( l:xsdl	ai ?!l l:xslif	ai ?O!l>+ilc.0 qBai rAGq64Lq79 p+ir tBap h0 ?AEt15<+p1c( vBa+p1 hOOEv11Ev182Ev183 ) ?!OOOOOOOOOOOEt139Et137Et57Et59Et131Et129Et141Et49Et193Et9hAAAEl2Eq114EBa+i1	2A<+i4cE\B2a+i2	2831.0 j=i +il ) ?O>+j3cD\B2aj46607.0 vBa+j2 ?&v56.0 Xa+j2|v8 1
+# Use RCX for a fixed-frame scalar load and its optional immediate shift.
+3-xasr"a ?OO>bc>cZa<-cb5.0 ?OD\B2ab35656&Ba+b2	56.0 l:xsdl	ab ?O!l>+blc.0 ?!:xssp	abl.0 e+bl ?Dec( n-ce ?O<n3>n4.0 ?DBae72.0 fBa+e1 ?!OAEn3Ef209AEn4Ef193.0 gBa+e2 ?!OOEg224Eg232Eg248.0 Xa+e2|g1 ) Xa+b2|Ba+b2	8 1
 # A local x64 call with one scalar can move the evaluated result straight into the ABI register.
-7-xars"ab ?f( h:63e0 ?Eh1( j:xarb	ag:9b8	1 ?j.0 ) .:191ab137	1dh ) :7abcd1e
+7-xars"ab ?f( h:63e0 ?Eh1( j:xasr	ag:9b8 ?j.0 j:xarb	ag:9b8	1 ?j.0 ) .:191ab137	1dh ) :7abcd1e
