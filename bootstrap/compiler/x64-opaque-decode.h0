@@ -4,3 +4,11 @@
 6-xodret'abc l&T\B4b*d4	16	255 ?OBcd!OOAEl5EBad184AAEl7E\B2ad51016EBa+d2	192AEl10E\B2ad47176.0 i+dl n0 WA<n4<iZa( m&T\B4b*i4	16	255 ?OBciG+imZa ' h:xsmr	aim ?OO!hE&h15	4E&Th4	15	4 ' +im +n1 ) ?:xsfe	abcief.-id 0
 # Invert a conditional that skips exactly the duplicate return, targeting the original tail.
 4-xodmerge'ab"cd ?<Za12.0 u&\B4a0	16777215 ?!OEu15499592Eu15500104.0 w\iEu15499592	7	4 f|\iEw7	12878152	12878664S\iEw7\B4a3Ba3	24 i0 pZa s0 W<iZa( l&T\B4b*i4	16	255 ?!l.s x:xodret	abciwf ?x( j0 W<ji( y&T\B4b*j4	16	255 ?!y.s z:xodret	abcjwf ?AAEylEzx:xsbe	aijx( e++ix+w1 r0 ?A<pZa!Bcp( q:xsrw	ap ?AOAAEq4EBap15E&Ba+p1	240	128AAEq1GBap112LBap127E:xstg	a++p1Eq4++pq+1Eq4qe r1 ) ?r( Xcp26 \Q4d*p4|393216j Xci1 ) ?!r( Xci16 \Q4d*i4|327680j ) k+il W<ke( n&T\B4b*k4	16	255 ?!n.0 Xck1 +kn ) +s1 ' ) +jy ) ) pi +il ) s
+# Prove that an unsigned immediate comparison starts with a zero counter.
+# Only the exact register MOV or RSP-slot MOV immediately after XOR EAX,EAX qualifies.
+3-xoz'a ?O<b5>+bcZa.0 fBab gBa+b1 hBa+b2 ?OO!OEf72Ef73!OEg129Eg131D&h56	56.0 i\iEg129	4	1 j-ci ?O<j3>j8.0 l&h199 ?AA>h191Ef72E&h7	4.0 ?Lh191( ?OOOD&h7	4!OETh6	1ETh6	2DBa+b3	36D\iETh6	1	5	8j.0 ) ?OA>h191Dj3<b+j2.0 m-bj ?OOODBamfDBa+m1	137DBa+m2lD\B2a-m2	49201.0 ?Gj3( ?!:xsbe	a+m3+b3-j3.0 ) ?!\iEi1Ba+bj\B4a+bj.0 +m1
+# Rotate a proven nonempty loop whose only incoming header branch is its back edge.
+5-xopostone'ab"cd l&T\B4b*e4	16	255 ?OOOBceT\B4b*e4	30!l!OAEl2EBae235AEl5EBae233.0 h:xstg	a+e1+el-l1 ?O>h4095Ghe.0 ?OBchDT\B4b*h4	30	1.0 r&T\B4b*h4	16	255 ?!r.0 j+hr ?Gje.0 w:xsrw	aj ?OOBcjT\B4b*j4	30!OAEw1EBaj115AEw4E\B2aj33551.0 t++jw+1Ew4 ?Gte.0 ?D:xstg	a-twtw+el.0 q:xoz	ahr ?O!qBc-q1.0 m-q1 ?OD&T\B4b*m4	16	255-hmT\B4b*m4	30.0 ?ODBc-m2	0D&T\B4b*-m2	4	16	255	2.0 ?!:xoflags	abct.0 Xch1 Xcj1 Xce27 \Q4d*e4||hSr12St16 1
+4-xopostplan'ab"cd i0 n0 W<iZa( l&T\B4b*i4	16	255 ?!l.n ?OEBai233EBai235( u:xopostone	abcdi +nu ) +il ) n
+# Register MOVs preserve flags and may precede the first unconditional flag writer.
+4-xoflags'abc i=d j0 WA<j4<iZa( l&T\B4b*i4	16	255 ?OOOBciT\B4b*i4	30!l!:xsmr	ail ' +il +j1 ) :xsli	abci2	12
