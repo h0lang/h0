@@ -1,0 +1,6 @@
+# Emit unsigned comparison of RAX against a nonnegative sign-extendable x64 immediate.
+4-xcim"ab e\iLd127	4	2 f:4ab\iLd127	|16286536Sd24	15688e ?f.1 ?>d127( f:4abd4 ?f.1 ) :4ab|211888180858895Sc8	6
+# Keep the result of the already-evaluated left operand in RAX.
+5-xcir'a"bc f:119e ?!f.0 g:96b h:21ab-d1 i:9b16 ?Oh>i2147483647( :15bg .0 ) j:xcim	cbfi +j1
+# A constant on the left may be compared after evaluating the dynamic right operand.
+7-xcil'a"bc h:119g ?!h.0 i:96b j:21ab-e1 k:9b16 ?Oj>k2147483647( :15bi .0 ) l:22abcd-e1f ?l.2 m\iEh2	7\iEh3	6\iEh6	3\iEh7	2h l:xcim	cbmk +l1
