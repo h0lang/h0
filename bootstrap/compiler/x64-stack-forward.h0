@@ -104,7 +104,7 @@
 4-xqgs'ab ?OO<c11Dd5D&\B4ac4291297279	21268812.0 ?DBa+c4	249.0 ?&\B4b*c4	1073741824.0 e-c3 f0 ?D&\B4ae16777215	691017( ?<c12.0 -e1 ?D&\B4ae16777215	4885321.0 fBa+e3 ?O&f15>f112.0 ) ?&\B4b*e4	536870912.0 g-e8 ?D\B4ag|4340553S+f8	24.0 E\B4a+g4	185533042
 # Keep checks whose flags can be observed before the next flags-writing instruction.
 3-xqfl'ab i=c n0 WA<iZa<n8( l&T\B4b*i4	16	255 ?!l.0 ?OO:xscmp	aiE:xsfd	ai2AEl2E\B2ai49201.1 ?!AAGl3E&Bai248	72OOEBa+i1	137EBa+i1	139EBa+i1	141.0 +il +n1 ) 0
-5-xqrm'ab"c ?O>+d6ZaBcd.0 uBad ?OD&u248	72DBa+d1	59.0 wBa+d2 ?<w192.0 x|&w7S&u1	3 ?Dx&e255.0 y|&Tw3	7S&Tu2	1	3 f+d3 ?AA!Bcf!&\B4b*f4	1073741824E:xscnd	af4( g&T\B4b*f4	16	255 h+fg ?GhZa.0 i:xqad	abchy ?!i.0 .:xqck	abciTe8 ) 0
+5-xqrm'ab"c ?O>+d6ZaBcd.0 uBad ?OD&u248	72DBa+d1	59.0 wBa+d2 ?<w192.0 x|&w7S&u1	3 y|&Tw3	7S&Tu2	1	3 z&e255 q4 ?Dxz( ?Dyz.0 y=x q7 ) f+d3 ?AA!Bcf!&\B4b*f4	1073741824E:xscnd	afq( g&T\B4b*f4	16	255 h+fg ?GhZa.0 i:xqad	abchy ?!i.0 .:xqck	abciTe8 ) 0
 # Match a scaled last-byte address using either the index register or its private RAX copy.
 5-xqad'ab"c ?>+d11Za.0 f:xsmr	ad3 ?Ef+256e( ?OBcd&\B4b*d4	1073741824.0 +d3 e0 ) ?OOD&\B4ad16777215\i>e7	298314	298312DBa+d3|197S&e7	3D\B4a+d4	7.0 ?OBcd&\B4b*d4	1073741824.0 +d8
 # Drop the bounds compare and trap only when no branch enters the removed sequence.
