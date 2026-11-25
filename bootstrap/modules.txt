@@ -130,3 +130,4 @@ bootstrap/compiler/scalar-literal-infix.h0
 bootstrap/compiler/x64-counted-registers.h0
 bootstrap/compiler/wide-product-rem.h0
 bootstrap/compiler/control-delimited.h0
+bootstrap/compiler/x64-return-hoist.h0
