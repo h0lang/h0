@@ -46,3 +46,8 @@
 # A dominating unsigned compare of unchanged frame slots proves the later byte guard.
 4-xbyteone'ab"c l&T\B4b*d4	16	255 u:xspanmem	adl139 ?!u.0 e+dl ?G+e1Za.0 l&T\B4b*e4	16	255 wBa+e1 ?!OEw57Ew59.0 v:xspanmem	aelw ?O!vEvu.0 k+el ?GkZa.0 f:xscnd	ak ?!OEf4Ef7.0 j+k&T\B4b*k4	16	255 ?GjZa.0 n:xsrw	ak ?!n.0 t:xstg	a-jnjn ?OLt+j3GtZa.0 gEEw59Ef4 ?g.:xbytescan	abcjuv :xbytescan	abcjvu
 3-xbyteplan'ab"c i0 n0 W<iZa( l&T\B4b*i4	16	255 ?!l.n ?!Bci( u:xbyteone	abci +nu ) +il ) n
+# ADD to a fixed RSP slot uses neither RAX nor a register index.
+3-xmemadd'a ?OO>+bcZa!OEc6Ec9D\B2ab33608.0 dBa+b2 ?ODd\iEc6	68	132DBa+b3	36.0 1
+# Fold a load, constant shift and same-slot store when the accumulator is dead afterwards.
+5-xshmem'ab"cd l&T\B4b*e4	16	255 ?OO!OEl5El8BceD\B2ae35656.0 q:xssp	ael ?O!q&Ba+e2	56.0 j+el ?>+j4Za.0 ?OOOBcj&\B4b*j4	1073741824D&T\B4b*j4	16	255	4D\B2aj49480.0 hBa+j2 ?!OOEh224Eh232Eh248.0 i+j4 ?>+ilZa.0 ?OOOOBci&\B4b*i4	1073741824D&T\B4b*i4	16	255lDBa+i1	137!:xsrr	aiell.0 ?!:xsli	abc+il1	20.0 Xce25 Xcj1 Xci1 \Q2d*e4|&h56SBa+j3	8 1
+4-xshplan'ab"cd i0 s0 W<iZa( l&T\B4b*i4	16	255 ?!l.s ?!Bci( u:xshmem	abcdi +su ) +il ) s
