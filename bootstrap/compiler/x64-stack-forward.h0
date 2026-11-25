@@ -151,14 +151,14 @@
 # Decode accumulator immediates, word-sized MOVs and fixed-frame SSE copies.
 2-xslif'a qEBab72 kBa+bq ?AOOOOOEk5Ek13Ek37Ek45Ek53Ek61L++bq5Za.+q5 j+b2 ?>+j2Za.0 eBa+b1 ?AOEe137Ee139EBab102.:xsmd	aj0b vBaj ?!AAAEBab15AGe16Le23E&v7	4EBa+j1	36.0 ?!OETv6	1ETv6	2.0 :xsmd	aj0b
 # Record instruction starts and lengths without decoding bytes owned by a literal.
-2-xslib'a"b i0 v0 W<iZa( l:xslia	ai ?l( Xbi5 Xbl7 i+l7 v1 ` ) hBai ?AE+i1ZaEh195( Xbi1 +i1 ` ) ?Eh232.0 t\iAGh64Lh79	1	0 ?G+i+t1Za.0 kBa+it ?Ek255.0 ?AEBa+it141E&Ba+i+t1	199	5.0 l:xsdl	ai ?!l l:xslif	ai ?O!l>+ilZa.0 Xbil +il ) v
+2-xslib'a"b i0 v0 W<iZa( l:xslia	ai ?l( Xbi5 Xbl7 i+l7 v1 ` ) hBai ?AE+i1ZaEh195( Xbi1 +i1 ` ) ?Eh232.0 t\iAGh64Lh79	1	0 ?G+i+t1Za.0 kBa+it ?Ek255.0 ?AEBa+it141E&Ba+i+t1	199	5.0 l:xsdl	ai ?!l l:xslif	ai ?O!l>+ilZa.0 Xbil +il ) +v1
 # All direct branch entries must be known instructions in this local body.
 3-xslic'ab"c i0 W<iZa( lBbi ?!l( +i1 ` ) r:xsrw	ai ?r( j+il t:xstg	a-jrjr ?OGtZa!Bbt.0 Xct1 ) +il ) 1
 # Only an immediate RAX result followed by a frame restoration and RET is eligible.
 5-xslid'abc j+de ?>+j5Za.0 fBad gBa+d1 ?!OOAEe5Ef184AAEe7Ef72E\B2a+d1	49351AAEe10Ef72Eg184.0 kBbj m+jk ?ALmZa!OBcjBcm( uBbm ?:xsrr	ajmku( j+mu ) ) hBbj ?O!h>+jhZa.0 ?OOBcjBc+jhDBa+jh195.0 ?!OAEh4E&\B4aj16777215	12878664AEh7E&\B4aj16777215	12878152.0 -++jh1d
 # Fold identical immediate returns without moving code, data or relative addresses.
-1-xslie"a nZa ?O<n12>n4096.0 bM+n1 cM+n1 u:xslib	ab ?!u.0 v:xslic	abc ?!v.0 i0 s0 W<in( lBbi ?!l( +i1 ` ) g:xslid	abcil ?g( j0 W<ji( mBbj ?!m( +j1 ` ) ?AAEmlEg:xslid	abcjm:xsbe	aijg( Xai233 \Q4a+i1-j+i5 +s1 j=i ` ) +jm ) ) +il ) s
-3-xsfa"ab d:9b8 ?O>cd<-dc12.0 f&\B4ac16777215 ?!OEf15499592Ef15500104.0 g-dc ?>g4096.0 hMg :92ahcd0 e0 ?Lg1024( i+!:9b8896*4!!:9b112 e:xsrf	hi0 ?e( ?<eg( jMe :92hj0e0 k:xsrf	ji0 ?k( :92ja0kc :11b8+ck .0 ) ) :92ha0ec :11b8+ce ) ) ?!e( z:xslie	h ?z( :92ha0gc :11b8+cg ) ) 0
+1-xslie"a nZa ?O<n12>n4096.0 bM+n1 cM+n1 u:xslib	ab ?<u2.0 v:xslic	abc ?!v.0 i0 s0 W<in( lBbi ?!l( +i1 ` ) g:xslid	abcil ?g( j0 W<ji( mBbj ?!m( +j1 ` ) ?AAEmlEg:xslid	abcjm:xsbe	aijg( Xai233 \Q4a+i1-j+i5 +s1 j=i ` ) +jm ) ) +il ) s
+3-xsfa"ab d:9b8 ?O>cd<-dc12.0 f&\B4ac16777215 ?!OEf15499592Ef15500104.0 g-dc ?>g4096.0 hMg :92ahcd0 e0 ?Lg1024( i+!:9b8896*4!!:9b112 e:xsrf	hi0 ?e( ?<eg( jMe :92hj0e0 k:xsrf	ji0 ?k( :92ja0kc :11b8+ck .0 ) ) :92ha0ec :11b8+ce ) ) ?!e( z:xbgo	h ?!z z:xslie	h ?z( :92ha0gc :11b8+cg ) ) 0
 # Only used on a tentative frameless body before xlt validates all its operands.
 3-xsfv"ab d:9b8 ?OO>cd<-dc12:9b8896.0 f&\B4ac16777215 ?Df13273417.0 g-dc ?>g1024.0 hMg :92ahcd0 e:xsrf	h6+:116b168 ?e( :92ha0ec :11b8+ce ) e
 # Store through an ordinary mutable view without copying its descriptor.
