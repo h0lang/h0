@@ -132,3 +132,4 @@ bootstrap/compiler/wide-product-rem.h0
 bootstrap/compiler/control-delimited.h0
 bootstrap/compiler/x64-return-hoist.h0
 bootstrap/compiler/x64-stack-forward.h0
+bootstrap/compiler/signed-compare-branch.h0
