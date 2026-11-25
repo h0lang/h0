@@ -62,7 +62,7 @@
 # While only flags are live, these immediate integer operations kill or ignore old flags.
 2-xsfd'a ?>+b3Za.0 ?D&Bab248	72.0 cBa+b1 mBa+b2 ?AETm6	3OOOOEc1Ec3OEc9Ec11OOEc33Ec35OEc41Ec43OOOEc49Ec51OEc57Ec59Ec133.2 d&Tm3	7 ?OAEc131!OEd2Ed3AEc129!OEd2Ed3.2 ?AOEc193Ec209OOEd4Ed5Ed7.1 0
 # AND and TEST set the same flags here, including the sign for a zero-extended result.
-4-xsat'ab"c l:xanlen	bd ?O!lBcd.0 j+dl ?OG+j3ZaBcj.0 k0 ?El3 kAE\B2ad57475LBa+d2	127 ?El4 kAE&\B4ad16777215	14713672LBa+d3	127 ?El5 kAEBad37L\B4a+d1	2147483647 ?!AkE&\B4aj16777215	12617032.0 ?D:xanlen	bj3.0 Xcj1 1
+4-xsat'ab"c l:xanlen	bd ?O!lBcd.0 j+dl ?OOG+j3ZaBcj&T\B4b*j4	30	1.0 k0 ?El3 kAE\B2ad57475LBa+d2	127 ?El4 kAE&\B4ad16777215	14713672LBa+d3	127 ?El5 kAEBad37L\B4a+d1	2147483647 ?!AkE&\B4aj16777215	12617032.0 ?D:xanlen	bj3.0 Xcj1 1
 # Test the source byte directly when both paths overwrite the accumulator.
 5-xsabt'ab"cd ?>+e11Za.0 l&T\B4b*e4	16	255 ?OBceDl3.0 r:xsmr	ael ?OO!r!&r15&Tr4	15.0 j+e3 k+j3 t+k3 ?OOOBcjBck&\B4b*j4	1073741824&\B4b*k4	1073741824.0 ?D&\B4ak16777215	12617032.0 h:xscnd	at ?!OEh5Eh6.0 ?D\B2aj57475.0 qBa+j2 ?>q127.0 ?!:xsli	abct1	12.0 u&r15 Xce22 Xcj1 Xck1 \Q4d*e4|||12645952Tu3S&u7	16Sq24 3
 # Test a fixed stack slot directly when the loaded accumulator dies on every path.
